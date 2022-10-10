@@ -9,11 +9,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Pablo Jorge Hernandez Hernandez" />
+<meta name="author" content="Análisis númerico" />
 
 <meta name="date" content="2022-10-10" />
 
-<title>Sn</title>
+<title>S2</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,13 +350,55 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Sn</h1>
-<h4 class="author">Pablo Jorge Hernandez Hernandez</h4>
+<h1 class="title toc-ignore">S2</h1>
+<h4 class="author">Análisis númerico</h4>
 <h4 class="date">2022-10-10</h4>
 
 </div>
 
 
+<div id="evaluacion-de-un-polinomio" class="section level1">
+<h1>Evaluacion de un polinomio</h1>
+<p>Sea <span class="math inline">\(p_n(x)\)</span> un polinomio de grado
+<span class="math inline">\(n\)</span>, escribimos este de la forma:
+<span class="math display">\[\begin{equation}
+p_n(x):= a_n x^n + a_{n-1}x^{n-1} +\cdots + a_2x^2 + a_{1}x + a_0
+\end{equation}\]</span></p>
+<div id="método-de-horner-regla-de-riffini-o-división-sintética" class="section level2">
+<h2>Método de Horner, regla de Riffini o división sintética</h2>
+<p>Es una técnica para evaluar polinomios que puede ser visto como una
+colección de multiplicaciones anidadas.</p>
+<div id="ejemplo" class="section level3">
+<h3>Ejemplo</h3>
+<p>Un polinomio de quinto grado <span class="math inline">\(p_5(x):= a_5
+x^5 + a_4x^4 + a_3 x^3+ a_2x^2 + a_{1}x + a_0\)</span> puede escribirse
+como una multiplicación de 5 multiplicaciones anidadas:</p>
+<p><span class="math display">\[\begin{equation}
+p_n(x):= ((( a_5 x + a_4x)x + a_3)x + a_2)x +a_1)x + a_0
+\end{equation}\]</span></p>
+</div>
+<div id="teorema" class="section level3">
+<h3>Teorema</h3>
+<p>sea <span class="math inline">\(p_n(x):= a_n x^n + a_{n-1}x^{n-1}
++\cdots + a_2x^2 + a_{1}x + a_0\)</span> un polinomio de grado <span class="math inline">\(n\)</span> y sea <span class="math inline">\(c\)</span> un número para el que deseamos evaluar
+<span class="math inline">\(p(c)\)</span>. Si definimos <span class="math display">\[\begin{align*}
+b_n &amp;:= a_n\\
+b_{k} &amp;:= a_k + cb_{k+1}, \text{ para } k=n-1,n-2,\ldots, 2,1,0
+\end{align*}\]</span></p>
+<p>entonces <span class="math inline">\(b_0= f(c)\)</span>. Mas aún, si
+definimos el siguiente polinomio <span class="math display">\[\begin{equation}
+Q_o(x):= b_n x^n + b_{n-1}x^{n-1} +\cdots + b_2x^2 + b_{1}x + b_0
+\end{equation}\]</span> y <span class="math display">\[\begin{equation}
+R_0 = b_0
+\end{equation}\]</span> se verifica que:</p>
+<p><span class="math display">\[\begin{equation}
+p(x)= (x-c)Q_o(x)+ R_o
+\end{equation}\]</span></p>
+<p>Es decir, <span class="math inline">\(Q_0(x)\)</span> es el polinomio
+cociente de grado <span class="math inline">\(n-1\)</span> y <span class="math inline">\(R_o= b_0= p(c)\)</span> es el restode la división
+de <span class="math inline">\(p(x)\)</span> entre <span class="math inline">\(x-c\)</span></p>
+</div>
+</div>
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
 <p>This is an R Markdown document. Markdown is a simple formatting
@@ -366,6 +408,7 @@ on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http:
 generated that includes both content as well as the output of any
 embedded R code chunks within the document. You can embed an R code
 chunk like this:</p>
+<p><span class="math display">\[f(x)\]</span></p>
 <pre class="r"><code>summary(cars)</code></pre>
 <pre><code>##      speed           dist       
 ##  Min.   : 4.0   Min.   :  2.00  
@@ -382,6 +425,7 @@ chunk like this:</p>
 <p>Note that the <code>echo = FALSE</code> parameter was added to the
 code chunk to prevent printing of the R code that generated the
 plot.</p>
+</div>
 </div>
 
 
