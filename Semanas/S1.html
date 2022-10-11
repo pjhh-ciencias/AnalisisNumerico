@@ -91,12 +91,12 @@
     <h1 class="number-title flexbox"> Evaluacion de un polinomio</h1>   
     
     
-  <div class="nota-box"> <h2 class="number-title"> Método de  Horner, regla de Riffini o división sintética </h2>
+  <div class="nota-box"> <h2 class="number-title"> Método de  Horner, regla de Ruffini o división sintética </h2>
       
     <p> Sea $p_n(x)$ un polinomio de grado $n$, escribimos este de la forma:</p>
 
         \begin{equation}
-            p_n(x):= a_n x^n + a_{n-1}x^{n-1} +\cdots + a_2x^2 + a_{1}x + a_0
+            p_n(x)=  a_n x^n + a_{n-1}x^{n-1} +\cdots + a_2x^2 + a_{1}x + a_0
         \end{equation}
 
     <p><b>El método de Horner</b> es una técnica  para evaluar polinomios que puede ser visto como una colección 
@@ -110,13 +110,13 @@
         puede escribirse como una multiplicación de 5  multiplicaciones anidadas:
 
         \begin{equation}
-        p_n(x):= ((( a_5 x + a_4x)x + a_3)x + a_2)x +a_1)x + a_0
+        p_n(x)= <!--  ((( a_5 x + a_4x)x + a_3)x + a_2)x +a_1)x + a_0-->
         \end{equation}
         </p>
         
   </div>
 
-     <div class="nota-box"> <h2 class="number-title">Teorema</h2>
+     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
         <p>
         Sea $p_n(x):= a_n x^n + a_{n-1}x^{n-1} +\cdots + a_2x^2 + a_{1}x + a_0$ 
         un polinomio de grado $n$ y sea $c$ un número para el que 
@@ -174,18 +174,45 @@
     <p>
       Utilizamos los números en base $10$ para realizar la mayoría de las operaciones matematicas en nuestro día a día. 
       Por ejemplo el número $1563$ se puede expresar en <b>forma desarrollada</b> como:
-      $$1563=(1\times 10^3) + (5\times 10^2) + (6\times 10^1) + (3 \times 10^0)$$
+      $$1563=$$
     </p>
 
     <p>
       En general, dado un numero natural $N$, existen $K$ cifras $a_0,a_1, \ldots , a_K \in \{0,1,\ldots, 8,9 \}$ tales que 
       $N$ admite el siguiente desarrollo en base 10:
       $$N=a_{_K} a_{_{K-1}} \cdot a_{_{2}}a_{_{1}}a_{_{0}}\mbox{}_{diez}$$
-      si se se sobreentiende que  $10$ es la base, enttones escribimos:
-      $$N=a_{_K} a_{_{K-1}} \cdot a_{_{2}}a_{_{1}}a_{_{0}}$$
+      si se se sobreentiende que  $10$ es la base, entones escribimos:
+      $$N=a_{_K} a_{_{K-1}} \cdots a_{_{2}}a_{_{1}}a_{_{0}}$$
     </p>
 
-</p>
+    <p> Usando potencias de $2$, el número $1563$ se escribe como:
+    $$ 1563= $$
+    </p>
+
+    <p>En general, si $N \in \mathbb{N}$, entonces existen $J$ cifras $b_0, b_1, \ldots, b_J \in \{0,1 \}$ 
+      tales que $N$ admite el siguiente  desarrolo en base $2$:
+      $$1563= (b_J \times 2^J ) + (b_{J-1} \times 2^{J-1}+\cdots (b_{1} \times 2^{1} + (b_{0} \times 2^{0}  )$$
+    </p>
+    <p>$$N=b_{_J} b_{_{J-1}} \cdots b_{_{2}}b_{_{1}}b_{_{0}}\mbox{}_{dos}$$
+    </p>
+
+    <p>Por lo tanto, 
+      $$1563=$$
+    </p>
+
+
+  <HR>
+    
+  <p><b><u>Observación:</u></b> En general se da el caso que la representación  binaria de un 
+    número requiere más cifras  que su representación decimal. Eso se debe a que las potencias de 
+    $2$ "crecen" más lentamente que las potencias de $10$.
+  </p>
+  
+
+  <p>Un algoritmo  eficiente puede  </p>
+  <HR>
+
+
    </div>
 
 <div class="nota-box">
