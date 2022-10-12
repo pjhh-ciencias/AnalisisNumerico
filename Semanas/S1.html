@@ -146,12 +146,12 @@
 
         </div>
 
-    <h1 class="number-title flexbox"> Sistemas de numeración binario </h1>   
+    <h1 class="number-title flexbox"> Sistemas de numeración </h1>   
 
     <div class="nota-box">
       <h2 class="number-title"> Introducción </h2>  
-      <p>Los seres humanos hacemos los cálculos aritméticos usando el sistema númerico decimal (base $10$).
-         Mientras que las computadoras realizan los calculos aritméticos usando el sistema númerico binario.
+      <p>Los seres humanos hacemos los cálculos aritméticos usando el <b>sistema de numeración  decimal</b> (base $10$).
+         Mientras que las computadoras realizan los calculos aritméticos usando el <b>sistema de numeración binario</b>.
          (base $2$), es decir, sólo utiliza el 0 y el 1 para representar
          cualquier número
       </p>
@@ -182,7 +182,7 @@
     </div> 
 
 
-    <div class="nota-box"><h2 class="number-title"> Números binarios </h2>  
+    <div class="nota-box"><h2 class="number-title"> Sistema de numeración decimal </h2>  
     
     <p> Utilizamos los números en base $10$ para realizar la mayoría de las operaciones matematicas en nuestro día a día. </p>
     
@@ -195,17 +195,20 @@
       
     <HR>
     
-    <p><b><u>Observación:</u></b>
-      En general, dado un numero natural $N$, existen $K$ cifras $a_0,a_1, \ldots , a_K \in \{0,1,\ldots, 8,9 \}$ tales que 
-      $N$ admite el siguiente desarrollo en base 10:
+    <p><b><u>Afirmación:</u></b>
+      Si  $N$ es un número natural, existen $K$ cifras $a_0,a_1, \ldots , a_K \in \{0,1,\ldots, 8,9 \}$ tales que 
+      $N$ admite el siguiente desarrollo en base $10$:
       $$N=a_{_K} a_{_{K-1}} \cdot a_{_{2}}a_{_{1}}a_{_{0}}\mbox{}_{diez}$$
       si se se sobreentiende que  $10$ es la base, entones escribimos:
       $$N=a_{_K} a_{_{K-1}} \cdots a_{_{2}}a_{_{1}}a_{_{0}}$$
     </p>
     <HR>
 
+    </div>
 
-    <p> Usando potencias de $2$, el número $1563$ se escribe como: 
+    <div class="nota-box"><h2 class="number-title"> Sistema de numeración binario </h2>  
+    
+    <p> Similarmente, usando potencias de $2$, el número $1563$ se escribe como: 
        \begin{align*}1563&= (1\times 2^{10}) + (1\times 2^9) + (0\times 2^8) + (0\times 2^7) + (0\times 2^6)+(0\times 2^5)\\
        &+ (1\times 2^4) + (1\times 2^3)+ (0\times 2^{2}) + (1\times 2^{1}) + (1\times 2^{0})
        \end{align*}
@@ -213,7 +216,7 @@
 
     <HR>
 
-    <p><b><u>Observación: </u></b>En general, si $N \in \mathbb{N}$, entonces existen $J$ cifras
+    <p><b><u>Afirmación:</u></b> Si $N \in \mathbb{N}$, entonces existen $J$ cifras
       $b_0, b_1, \ldots, b_J \in \{0,1 \}$ tales que $N$ admite el siguiente  desarrolo en base $2$:
       $$N= (b_J \times 2^J ) + (b_{J-1} \times 2^{J-1}+\cdots (b_{1} \times 2^{1}) + (b_{0} \times 2^{0}) $$
     
@@ -225,18 +228,19 @@
     </p>
 
   
-  <HR>
-  <p><b><u>Observación:</u></b> En general se da el caso que la representación  binaria de un 
+    </div>
+    <div class="nota-box"><h2 class="number-title"> Observación</h2>  
+    
+    <p>En general se da el caso que la representación  binaria de un 
     número requiere más cifras  que su representación decimal. Eso se debe a que las potencias de 
     $2$ "crecen" más lentamente que las potencias de $10$.
-  </p>
-  <HR>
-   </div>
+    </p>
+     </div>
 
 <div class="nota-box"> <h2 class="number-title"> Representación en base $2$ un número  natural $N$  </h2>  
 
-  <p>Un algoritmo eficiente para hallar la representación en base $2$ de un numero $N \in\mathbb{N}$ se puede deducir 
-    de la rpresentación:
+  <p>Un algoritmo eficiente para hallar la representación en base $2$ de un número $N \in\mathbb{N}$ se puede deducir 
+    de la representación:
     $$N= (b_J \times 2^J ) + (b_{J-1} \times 2^{J-1}+\cdots (b_{1} \times 2^{1}) + (b_{0} \times 2^{0}) $$
   </p>
 
@@ -262,10 +266,26 @@
 
 
     <p>Si sólo usamos una cantidad finita de cifras lo que estamos obteniendo es una aproximación  $\displaystyle{\frac{1}{3}}$. 
-      Por ejemplo  $\displaystyle{\frac{1}{3} \approx 0.333= \frac{333}{1000}}$ </p>
+      Por ejemplo  $\displaystyle{\frac{1}{3} \approx 0.333= \frac{333}{1000}}$
+    </p>
+    </div>
 
+    <div class="nota-box"> <h2 class="number-title">Fracciones binarias </h2>
+
+      <p>Las fracciones binarias (base $2$) pueden expresarse como sumas en las que aparecen potencias negativas de $2$. 
+        
+       <HR>
+       <p><b><u>Afirmación:</u></b> Si $R$ es un número real tal que $0 < R < 1$, entonces existe una sucesión de cifras 
+        $d_1,d_2, \ldots, d_n, \ldots \in \{0,1\}$  tales que:
+
+        $$R= (d_{1} \times 2^{-1}) + (d_{2} \times 2^{-2}) + \cdots + + (d_{n} \times 2^{-n})+ \cdots $$
+
+        La expresión en el lado derecho de la igualdad anterior se escribe en notación binaria como:
+        
+        $$ R= 0. d_{1} d_{2} \ldots d_{n} \ldots \mbox{}_{dos}$$
+       </p>
       
-  </div>
+    </div>
 
 
 
