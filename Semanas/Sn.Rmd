@@ -1,0 +1,84 @@
+---
+title: "S2"
+author: "Análisis númerico"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+# Evaluacion de  un polinomio
+
+
+Sea $p_n(x)$ un polinomio de grado $n$, escribimos este de la forma:
+\begin{equation}
+p_n(x):= a_n x^n + a_{n-1}x^{n-1} +\cdots + a_2x^2 + a_{1}x + a_0
+\end{equation}
+
+## Método de  Horner, regla de Riffini o división sintética 
+
+Es una técnica  para evaluar polinomios que puede ser visto como una colección 
+de multiplicaciones anidadas.
+
+
+### Ejemplo
+
+Un polinomio de quinto grado $p_5(x):= a_5 x^5 +  a_4x^4 + a_3 x^3+ a_2x^2 + a_{1}x + a_0$ 
+puede escribirse como una multiplicación de 5  multiplicaciones anidadas:
+
+\begin{equation}
+p_n(x):= ((( a_5 x + a_4x)x + a_3)x + a_2)x +a_1)x + a_0
+\end{equation}
+
+
+### Teorema
+
+sea $p_n(x):= a_n x^n + a_{n-1}x^{n-1} +\cdots + a_2x^2 + a_{1}x + a_0$ 
+un polinomio de grado $n$ y sea $c$ un número para el que 
+deseamos evaluar $p(c)$. Si definimos 
+\begin{align*}
+b_n &:= a_n\\
+b_{k} &:= a_k + cb_{k+1}, \text{ para } k=n-1,n-2,\ldots, 2,1,0
+\end{align*}
+
+entonces $b_0= f(c)$. Mas aún, si definimos el siguiente polinomio
+\begin{equation}
+Q_o(x):= b_n x^n + b_{n-1}x^{n-1} +\cdots + b_2x^2 + b_{1}x + b_0
+\end{equation}
+ y 
+\begin{equation}
+R_0 = b_0
+\end{equation}
+se verifica que:
+
+\begin{equation}
+p(x)= (x-c)Q_o(x)+ R_o
+\end{equation}
+
+Es decir, $Q_0(x)$ es el polinomio cociente de grado $n-1$  y $R_o= b_0= p(c)$  es el resto de la división
+ de $p(x)$ entre $x-c$
+ 
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
+
+<<<<<<< HEAD
+=======
+
+$$f(x)$$
+
+```{r cars}
+summary(cars)
+```
+>>>>>>> 45e68fce4a6ad53765cc66b2d4cf18907e4a9540
+
+
+ 
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
