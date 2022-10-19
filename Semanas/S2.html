@@ -197,7 +197,7 @@
     <p><b><u>Afirmación:</u></b>
       Si  $N$ es un número natural, existen $K$ cifras $a_0,a_1, \ldots , a_K \in \{0,1,\ldots, 8,9 \}$ tales que 
       $N$ admite el siguiente desarrollo en base $10$:
-      $$N=a_{_K} a_{_{K-1}} \cdot a_{_{2}}a_{_{1}}a_{_{0}}\mbox{}_{diez}$$
+      $$N=(a_{_K} \times 10^{K}) +  (a_{_{K-1}} \times 10^{K-1}) + \cdot + (a_{_{2}} \times 10^{2}) + (a_{_{1}} \times 10^{1}) + (a_{_{0}}\times 10^{0})\mbox{}$$
       si se se sobreentiende que  $10$ es la base, entones escribimos:
       $$N=a_{_K} a_{_{K-1}} \cdots a_{_{2}}a_{_{1}}a_{_{0}}$$
     </p>
@@ -220,10 +220,10 @@
       $$N= (b_J \times 2^J ) + (b_{J-1} \times 2^{J-1}+\cdots (b_{1} \times 2^{1}) + (b_{0} \times 2^{0}) $$
     
       Esto nos permite expresar $N$ en notación binaria como: 
-      $$N=b_{_J} b_{_{J-1}} \cdots b_{_{2}}b_{_{1}}b_{_{0}}\mbox{}_{dos}$$
+      $$N=b_{_J} b_{_{J-1}} \cdots b_{_{2}}b_{_{1}}b_{_{0}}\mbox{}_{\text{dos}}$$
     
       Por lo tanto, de todo lo anterior podemos expresar $1563$ en notación binaria como:
-      $$1563= 11000011011\mbox{}_{dos}$$
+      $$1563= 11000011011\mbox{}_{\text{dos}}$$
     </p>
 
   
@@ -240,7 +240,7 @@
 
   <p>Un algoritmo eficiente para hallar la representación en base $2$ de un número $N \in\mathbb{N}$ se puede deducir 
     de la representación:
-    $$N= (b_J \times 2^J ) + (b_{J-1} \times 2^{J-1}+\cdots (b_{1} \times 2^{1}) + (b_{0} \times 2^{0}) $$
+    $$N= (b_J \times 2^J ) + (b_{J-1} \times 2^{J-1})+\cdots +(b_{1} \times 2^{1}) + (b_{0} \times 2^{0}) $$
   </p>
 
 </div>
