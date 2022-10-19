@@ -239,7 +239,7 @@
             <p><b><u>Ejemplo:</u></b> Dado el  número binario en Complemento a uno $10110101_{2}$, obtener el 
               número decimal correspondiente.
             </p>
-        <h2 class="number-subtitle">Desventajas de la representación en Complemento a uno</h2>
+        <h2>Desventajas de la representación en Complemento a uno</h2>
 
         <p>Siguiendo con el ejemplo de $n = 8$ ($8$ bits).<br>
 
@@ -247,7 +247,7 @@
           $00000000_{2}= +0_{10}$ y  $11111111_{2} =-0_{10}$.</p>
 
 
-          <h2 class="number-subtitle"> Ventajas de la representación en Complemento a uno</h2>
+          <h2> Ventajas de la representación en Complemento a uno</h2>
 
           <p>Siguiendo con el ejemplo de n = 8 (8 bits).<br>
           <ol>
@@ -295,8 +295,8 @@
           </p>
 
           <p> Si el bit de signo fuese $0$, el número hubiese sido $0110101_{2}=$ </p>
-
-          <h2 class="number-subtitle">Desventajas de la representación en Complemento a dos</h2>
+          <HR>
+          <h2>Desventajas de la representación en Complemento a dos</h2>
 
           <p>Siguiendo con el ejemplo de $n = 8$ ($8$ bits).<br>
 
@@ -307,44 +307,156 @@
             Por convención, se asigna a este número particular el valor $-128_{10}$ (para $8$ bits). En forma general,
             para $n$-bits, el rango (en decimal) para Complemento a dos es $(-2^{n-1}, 2^{n-1}-1)$.</p>
 
-            <h2 class="number-subtitle">Ventajas de la representación en Complemento a dos</h2>
+            <h2>Ventajas de la representación en Complemento a dos</h2>
 
-            <p>Siguiendo con el ejemplo de $n = 8$ ($8$ bits).<br>.  No posee doble representación del cero.
+            <p>Siguiendo con el ejemplo de $n = 8$ ($8$ bits).  No posee doble representación del cero.
 
             </p>
 
 
             <h2 class="number-title"> Notación cientifica  </h2>
-            <p>La <b>notación  científica</b> es una forma estandar de representar un número real: consiste en 
-            desplazar el punto decimal a la vez que proporcionamos una potencia de $10$ adecuada.
+
+            <p>En el sistema decimal, cualquier número real puede expresarse mediante <b>notación  científica normalizada</b>.
+               Para expresar un número en notación científica normalizada multiplicamos o dividimos por $10$ tantas veces como
+               sea necesario para que todos los dígitos aparezcan a la derecha del punto decimal y de modo que el primer dígito
+               después del punto no sea cero.
              </p>
              <HR>
               <p><b><u>Ejemplos:</u></b>
               <ol>
-                <li>$0.0000747= 7.47\times 10^{-5}$</li>
-                <li>$31.4159265=3.14159265\times 10$</li>
-                <li>$9\, 700 \, 000 \, 000 = 9.7 \times 10^{9}$</li>
+                <li>$0.0000747= 0.747\times 10^{-4}$</li>
+                <li>$31.4159265=0.314159265\times 10^{2}$</li>
+                <li>$9\, 700 \, 000 \, 000 = 0.97 \times 10^{10}$</li>
+                <li>$-0.0055612=-0.44512\times 10^{-2}$</li>
               </ol>
               </p>
-      
+
+              <p>En general, todo número real $x$ distinto de cero, se representa en <b>notación científica normalizada</b> como:<br>
+                $$x=\pm r \times 10^{n}$$ 
+                donde $r \in \mathbb{R}$ tal que $\displaystyle{\frac{1}{10} &le; r &lt; 1}$  Y $ n \in \mathbb{Z}$. Esta representación, 
+                permite  expresar números que son demasiado grandes o demasiado pequeños para escribirlos convenientemente en forma decimal.</p>
+
+                <p>
+                En la representación anterior podemos  distinguir  tres partes:
+                 <ol>
+                  <li>El <b>signo</b> del número $x$.</li>
+                  <li>Los dígitos significativos del número $x$ </li>
+                  <li>El <b>exponente</b>: controla hasta dónde y en qué dirección mover el punto decimal en la fracción decimal.</li>
+                </ol>
+              </p>
+                <p>La parte base, se puede  omitir teniendo presente que siempre será la misma. Exactamente de la  misma manera podemos utilizar 
+                  la notación científica en el sistema binario,  tomando a $2$ como base. En este caso, tenemos que:
+                  $$x=\pm q \times 2^{m}$$ 
+                  donde  $ n \in \mathbb{Z}$ y $q$ es una fracción binaria tal que su equivalente decimal $q_{2}$ satisface 
+                   $\displaystyle{\frac{1}{10} &le; q_{2} &lt; 1}$ y se le llama  <b>mantisa</b>.
+                </p>
+              <h3>El exponente sesgado</h3>
+              
+              <p>
+                Para que sea posible tener un exponente negativo, el estándar IEEE 754 utiliza el <b>exponente sesgado</b>. 
+                La idea es simple: reste el sesgo del valor del exponente para que sea negativo. Por ejemplo, 
+                si el exponente tiene $5$ bits, podría tomar valores del rango $[0, 31]$ (aquí todos los valores son positivos). 
+                Pero si le restamos el valor de 15, el rango será $[-15, 16]$. El número 15 se llama sesgo y se calcula mediante
+                la siguiente fórmula:
+               </p>
+
+
+                <h2 class="number-title">  Representación de los números en punto flotante</h2>
+
+                <p>Los formatos de almacenamiento binario de punto flotante más comunes utilizados por los procesadores
+                  Intel se crearon para Intel y versiones posteriores  estandarizado por la organización IEEE, Instituto de 
+                  Electricos y Electronicos:</p>
+
+                 
+                                
+                <p>        
+                  <table class="info">
+                    
+                    <caption><b><font size="4"></font></b></caption>
+                    <thead>
+                    <tr>
+                      <th>Formato del punto flotante</th>
+                      <th> Total de bits</th>
+                      <th>Bits para el signo</th>
+                      <th>Bit para el exponente</th>
+                      <th>Bits para la mantisa</th>
+                      <th>Base</th>
+                    </tr>
+                    </thead>
+                      <tbody>
+                      <tr>
+                        <td>Presición media</td>
+                        <td>$16$</td>
+                        <td>$1$</td>
+                        <td>$5$</td>
+                        <td>$10$</td>
+                        <td>$2$</td>
+                      </tr>
+                     
+                      <tr>
+                        <td>Precisión simple</td>
+                        <td>$32$</td>
+                        <td>$1$</td>
+                        <td>$8$</td>
+                        <td>$23$</td>
+                        <td>$2$</td>
+                      </tr>
+                      <tr>
+                        <td>Precisión doble</td>
+                        <td>$64$</td>
+                        <td>$1$</td>
+                        <td>$11$</td>
+                        <td>$52$</td>
+                        <td>$2$</td>
+                      </tr>
+                      
+                      </tbody>
+                  </table>
+                </p>
+
+                <p>En lugar de usar los $16$ bits, $32$ bits o $64$ bits para almacenar la fracción del número, podemos compartir 
+                  los bits y almacenar un <b>signo</b>, un <b>exponente</b> y una <b>fracción</b> al mismo tiempo. Dependiendo de la
+                  cantidad de bits que vamos a usar para almacenar el número. Por ejemplo Los bits en el formato IEEE precision simple se organizan de la siguiente manera:</p>
+
+                <p>
+                  <div class="flexbox">
+                      <img src="../Imagenes/32bits.JPG" alt="", width="auto" height="auto">
+                  </div>
+              </p>
+
+
+
+                <p>Con este enfoque, se ha reducido el número de bits para la fracción (es decir, para el número de 16 bits se 
+                  redujo de $16$ bits a $10$ bits). Significa que la fracción podría tomar un rango de valores más estrecho ahora
+                  (perdiendo algo de precisión). Sin embargo, dado que también tenemos una parte de exponente, en realidad
+                  aumentará el rango de números final y también nos permitirá describir los números entre $0$ y $1$ (si el exponente 
+                  es negativo).
+                </p>
+              
+                  <HR>
+                  <p><b><u>Ejemplos:</u></b>
+                  Una variable entera de $32$ bits con signo tiene un valor máximo de $2^{31}-1 = 2\, 147\, 483\, 647$, 
+                  mientras que una variable de punto flotante base $2$ de $32$ bits con este formato tiene un valor máximo de
+                  aproximadamente  $3.4028235 \times  10^{38}$.
+                  </p>
+                  <HR>                 
+
+
+
+
+
+
+
+                  
           </div>
 
-<!-- 
+
 
     <div class="nota-box">
       
-   
-
-    <p>Para almacenar números reales las computadoras usan una representación binaria en <b><em>punto flotante normalizada,</em></b>
-    i.e. lo que almacena la computadora no es una cantidad matematica $x$, si no una aproximación binaria a $x$ 
-  
-    $$ x\approx \pm q \times 10^n $$
-
-    El número $q$ se llama <b>mantisa</b> y es una expresión binaria finita que satisface la desigualdad 
-    $\displaystyle{\frac{1}{2} &le; q &lt; 1}$. El número entero $n$ se llama <b><em>exponente</em></b> </p>
    </div>
     
-  
+  <!-- 
     <div class="nota-box"> <h2 class="number-title"> Cifras significativas </h2>
 
     <p>
