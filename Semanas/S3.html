@@ -220,7 +220,7 @@
 
       
 
-      <h2 class="number-subtitle"> Complemento a uno </h2>  
+      <h2 class="number-title"> Complemento a uno </h2>  
 
       <p>La forma del <b>complemento a uno</b> de un número binario es un <b>NOT bit a bit</b> aplicado al número, 
         es decir, la inversión de unos por ceros y ceros por unos.</p>
@@ -251,10 +251,24 @@
             <p><b><u>Ejemplo:</u></b> Dado el  número binario en Complemento a uno $10110101_{2}$, obtener el 
               número decimal correspondiente.
             </p>
-          
+        <h2 class="number-subtitle">Desventajas de la representación en Complemento a uno</h2>
 
-            
-      <h2 class="number-subtitle"> Complemento a dos </h2>  
+        <p>Siguiendo con el ejemplo de $n = 8$ ($8$ bits).<br>
+
+          Posee doble representación del cero. Al representar en Complemento a uno, aparece nuevamente el cero signado: 
+          $00000000_{2}= +0_{10}$ y  $11111111_{2} =-0_{10}$.</p>
+
+
+          <h2 class="number-subtitle"> Ventajas de la representación en Complemento a uno</h2>
+
+          <p>Siguiendo con el ejemplo de n = 8 (8 bits).<br>
+          <ol>
+            <li>representa un <b>rango simétrico</b> de valores: los números van del $+127_{10} = 01111111_{2}$, pasando por el 
+              $+0_{10} = 00000000_{2}$ y el $-0_{10} = 11111111-{2}$, hasta el $-127_{10} = 10000000_{2}$. 
+              En forma general, para $n$-bits, el rango (en decimal) para Complemento a uno es $(-(2^{n-1}-1), 2^{n-1}-1)$</li>
+          </ol></p>
+          
+      <h2 class="number-title"> Complemento a dos </h2>  
 
       <p> El método para obtener el complemento a dos de un número binario es mediante la obtención del 
         complemento a uno y sumarle uno, o bien:
@@ -275,8 +289,48 @@
       </ol>
         </p>
 
+
+      <p>
+        <HR>
+          <p><b><u>Observación:</u></b> La representación en Complemento a dos de un número negativo se puede obtener
+             invirtiendo  unos por ceros y ceros por unos dela mantisa, y sumarle uno al valor obtenido.
+      </p>
+
+
+      <HR>
+        <p><b><u>Ejemplo:</u></b> Representar el número $-97_{10}$ en formato por complemento a Dos.
+        </p>
    
-      </div>
+        <HR>
+          <p><b><u>Ejemplo:</u></b> Dado el  número binario en Complemento a dos $10110101_{2}$, obtener el 
+            número decimal correspondiente.
+          </p>
+
+          <p> Si el bit de signo fuese $0$, el número hubiese sido $0110101_{2}=$ </p>
+
+          <h2 class="number-subtitle">Desventajas de la representación en Complemento a dos</h2>
+
+          <p>Siguiendo con el ejemplo de $n = 8$ ($8$ bits).<br>
+
+            Posee un <b>rango asimétrico:</b> los números van del $+127_{10} = 01111111_{2}$, pasando por el 
+            $+0_{10} = 00000000_{2}$. Y aquí aparece la primera diferencia, el $11111111_{2}$, ya no es $-0_{10}$ 
+            como en la representación anterior, sino que es $-1_{10}$, y al llegar al
+            $10000000_{2}$ nos encontramos con que el complemento a dos de $10000000_{2}$ es $10000000_{2}$, ¡el mismo número!.
+            Por convención, se asigna a este número particular el valor $-128_{10}$ (para $8$ bits). En forma general,
+            para $n$-bits, el rango (en decimal) para Complemento a dos es $(-2^{n-1}, 2^{n-1}-1)$.</p>
+
+            <h2 class="number-subtitle">Ventajas de la representación en Complemento a dos</h2>
+
+            <p>Siguiendo con el ejemplo de $n = 8$ ($8$ bits).<br>.  No posee doble representación del cero.
+
+            </p>
+
+
+            https://trekhleb.dev/blog/2021/binary-floating-point/
+      
+          </div>
+
+
 
     <div class="nota-box">
       
