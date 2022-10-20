@@ -135,7 +135,7 @@
 
         La expresión en el lado derecho de la igualdad anterior se escribe en notación binaria como:
         
-        $$ R= 0. d_{1} d_{2} \cdots d_{n} \cdots \mbox{}_{dos}$$
+        $$ R= 0. d_{1} d_{2} \cdots d_{n} \cdots \mbox{}_\text{dos}$$
        </p>
 
        <HR>
@@ -143,7 +143,7 @@
         iguales a $1$. Por ejemplo la fracción $\displaystyle{\frac{7}{10}}$, puede representarse como $0.7$ en 
         base $10$ como $0.7$, pero su representación en base $2$ requiere de una cantidad infnita de unos:
         
-        $$\displaystyle{\frac{7}{10}}=0.1\overline{0110}\mbox{}_{dos}$$
+        $$\displaystyle{\frac{7}{10}}=0.1\overline{0110}\mbox{}_{2}$$
        
         Esta fracción es periodica: el grupo de cuatro dígitos $0110$ se repite sin fin.  
       
@@ -160,7 +160,7 @@
    <HR>
     <p><b><u>Ejemplo:</u></b>
     Supongamos que la representación binaria de  $S$ esta  dado por 
-    $$S=0.00000\overline{11000}$$ 
+    $$S=0.00000\overline{11000}_\text{dos}$$ 
     </p>
     </div>
 
@@ -182,7 +182,7 @@
 
      <p>Para números enteros parece bastante sencillo. Supongamos que tenemos $16$ bits ($2$ bytes) para 
       almacenar un número entero, por ejemplo $17$, se tiene que:  
-        $$17= 0000000000010001\mbox{}_{\text{dos}}$$
+        $$17= 0000000000010001\mbox{}_{2}$$
     </p>
 
     <HR>
@@ -360,10 +360,16 @@
                 <p>Exactamente de la  misma manera podemos utilizar 
                   la notación científica en el sistema binario,  tomando a $2$ como base. En este caso, tenemos que:
                   $$x=\pm q \times 2^{m}$$ 
-                  donde  $ n \in \mathbb{Z}$ y $q$ es una fracción binaria tal que su equivalente decimal $q_{2}$ satisface 
-                   $\displaystyle{\frac{1}{10} &le; q_{2} &lt; 1}$.
+                  donde  $ n \in \mathbb{Z}$ y $q$ es una fracción binaria tal que su equivalente decimal $q$ satisface 
+                   $\displaystyle{\frac{1}{10} &le; q &lt; 1}$.
                 </p>
               
+                <p> Notemos que en la fracción binaria $q$, el primer dígito  que  aparece a la izquierda (El bit más significativo)
+                  del punto decimal siempre es $1$. Por lo tanto,  el $1$ inicial en la representación de $q$
+                  se omite del almacenamiento porque es redundante, por lo tanto podemos escribir: 
+                  $$x=\pm 1.f \times 2^{m}$$
+                  donde $f$ es una fracción binaria.   
+                  </p>
 
 
                 <h2 class="number-title">  Representación de los números de punto flotante</h2>
@@ -443,6 +449,7 @@
                   </table>
                 </p>
 
+                <HR>
                 <p><b><u>Ejemplos:</u></b>
                   Una variable entera de $32$ bits con signo tiene un valor máximo de $2^{31}-1 = 2\, 147\, 483\, 647$, 
                   mientras que una variable de punto flotante base $2$ de $32$ bits con este formato tiene un valor máximo de
@@ -451,6 +458,7 @@
 
 
                 <h3>El exponente sesgado</h3>
+
               
                 <p>
                   Para que sea posible tener un exponente negativo, el estándar IEEE 754 utiliza el <b>exponente sesgado</b>. 
@@ -465,17 +473,23 @@
 
               <p>
                 Para ahorrar almacenamiento y proporcionar una representación única para cada número
-                de punto flotante, se impone una normalización. Por ejemplo, en el caso de una representación de $64$ bits
+                de punto flotante, se impone una normalización. 
+              </p>
+                
+                <p>Por ejemplo, en el caso de una representación de $64$ bits
                 utilizada comunmente para almacenar números reales, por medio de este sistema obtenemos un número 
                 de punto flotante de la forma:
 
                 $$(-1)^{s}2^{c-1023}(1+f)_{2}$$
               </p>
-                  
-                  
-                  <HR>                 
+           
+            <HR>                 
 
+            <p><b><u>Ejemplos:</u></b> Determine el numero decimal representado usando $64$ bits bajo el estandar propuesto por 
+              el IEEE-754:
 
+              $$0100000000111011100100010000000000000000000000000000000000000000$$
+            </p>
 
 
 
