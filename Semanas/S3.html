@@ -443,6 +443,13 @@
                   </table>
                 </p>
 
+                <p><b><u>Ejemplos:</u></b>
+                  Una variable entera de $32$ bits con signo tiene un valor máximo de $2^{31}-1 = 2\, 147\, 483\, 647$, 
+                  mientras que una variable de punto flotante base $2$ de $32$ bits con este formato tiene un valor máximo de
+                  aproximadamente  $3.4028235 \times  10^{38}$.
+                </p>
+
+
                 <h3>El exponente sesgado</h3>
               
                 <p>
@@ -451,13 +458,21 @@
                   si el exponente tiene $5$ bits, podría tomar valores del rango $[0, 31]$ (aquí todos los valores son positivos). 
                   Pero si le restamos el valor de 15, el rango será $[-15, 16]$. El número 15 se llama sesgo y se calcula mediante
                   la siguiente fórmula:
-                 </p>
-                  <HR>
-                  <p><b><u>Ejemplos:</u></b>
-                  Una variable entera de $32$ bits con signo tiene un valor máximo de $2^{31}-1 = 2\, 147\, 483\, 647$, 
-                  mientras que una variable de punto flotante base $2$ de $32$ bits con este formato tiene un valor máximo de
-                  aproximadamente  $3.4028235 \times  10^{38}$.
-                  </p>
+                  $$2^{k-1}-1$$
+                donde $k$ es el número de bits destinados para el exponente.                </p>
+                
+               <HR>
+
+              <p>
+                Para ahorrar almacenamiento y proporcionar una representación única para cada número
+                de punto flotante, se impone una normalización. Por ejemplo, en el caso de una representación de $64$ bits
+                utilizada comunmente para almacenar números reales, por medio de este sistema obtenemos un número 
+                de punto flotante de la forma:
+
+                $$(-1)^{s}2^{c-1023}(1.f)_{2}$$
+              </p>
+                  
+                  
                   <HR>                 
 
 
