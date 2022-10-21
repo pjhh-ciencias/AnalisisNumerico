@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 0 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 0 cardCounter ;
+        }
+      </style>
+  
+    <!-- Top Menu  -->
+
+
+    <header class="main-header">
+        <h1> Análisis Númerico  </h1>
+       <nav class="top-nav">
+        <ul>
+          <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Informacion_General.html"> Información general </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Notas.html"> Notas </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Ejercicios.html"> Ejercicios </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Enlaces_externos.html"> Links </a> </li>
+        </ul>
+
+       </nav>
+       <!-- 
+        <nav class="small-nav" align=right>
+          <button onclick="myFunction()">Claro/Obscuro 
+        </nav> 
+      -->
+
+      </header>
+
+      <!-- This part is for title in tab-->
+      <title> Semana 2   </title>
+    
+  </head>
+
+
+
+  <body class="fondo-body" >
+    <h1 class="number-title flexbox"> Representación de números racionales  </h1>   
+    <div class="nota-box"><h2 class="number-title"> Desbordamiento y subdesbordamiento  </h2>
+      <p>El <b>número positivo más pequeño</b> que se puede representar usando $64$ bits bajo el estandar propuesto por 
+        el IEEE-754 se obtiene cuando: $s = 0$, $c = 1$, y $f = 0$ y es equivalente a:
+        
+        $$(-1)^{0} \cdot 2^{1-1023} \cdot (1 + 0)= 2^{-1022} \approx 0.22251\times  10^{-307}$$
+      </p>
+  
+      <p>El <b>número positivo más grande</b> que se puede representar usando $64$ bits bajo el estandar propuesto por 
+        el IEEE-754 se obtiene cuando: $s = 0$, $c= \displaystyle{\sum_{n=0}^{10} 2^{n}}= 2^{11}-1= 2047$ y 
+        \begin{align*}
+        f &= \displaystyle{\sum_{n=1}^{52}2^{-n}}\\
+          &= \frac{1-\left(\frac{1}{2}\right)^{53}}{1-\frac{1}{2}} - 1\\
+          &= 2\cdot (1 - 2^{-53}) -1\\
+          &=  1 - 2^{-52}
+          \end{align*}         y es equivalente a
+      $$ 2^{2047-1023} \cdot (1+(1 - 2^{-52}))= 2^{1024} \cdot  (2 - 2^{-52})   \approx 0.17977 \times 10^{309}.$$
+      </p>
+  
+      <p>De esta manera, todo  número real cuya  una magnitud sea menor que
+        $$2^{-1022} \cdot (1 + 0)$$
+        resultan en un <b>subdesbordamiento</b>,  y en general se configuran como cero. Mientras que los números superiores a 
+        $$2^{1023}\cdot  (2 - 2^{-52})$$
+        resultan en <b>desbordamiento</b> y, comúnmente, causan que los cálculos se detengan (a menos que el programa haya
+        sido detectado para detectar estas representaciones).
+  
+        
+      </p>
+     </div>
+
+     
+    <div class="nota-box">
+      <h2 class="number-title"> Problemas bien planteados</h2>  
+     
+      <HR>
+        <p><b><u>Definición:</u></b> Un problema matemático se dice <b>bien planteado</b>  (en el sentido de Hadamard)
+          si existe una solución del problema, es única  y depende continuamente de los datos del problema.
+        </p>
+
+        <p>
+          Un problema matemático se dice mal planteado si no esta bien planteado.
+        </p>
+        <HR>
+
+        <p>Un problema bien planteado es aquel que se pueden <em>resolver</em> 
+        <em>razonablemente bien</em> con la ayuda de una computadora. Sobre todo cuando la solución 
+        no se puede hallar de forma analítica. Para ello se necesita: 
+        </p>
+
+        <ol>
+          <li>Desarrollar metodos (algoritmos) para resolver ecuaciones numericamente.</li>
+          <li>Implementar los métodos en un software númerico</li>
+          <li>Ejecutar el software (o programa) en una computadora para simular numericamente un proceso</li>
+          <li>Representar los resultados obtenidos en alguna forma comprensible tales como visualizaciones 
+            gráficas.
+          </li>
+          <li>Interpretar y visualizar los resultados obtenidos (compararlos  con la realidad), repetir parte del
+             proceso númerico  o todo el proceso si es necesario.
+          </li>
+        </ol>
+    </div>
+
+
+
+
+  
+
+
+    <div class="nota-box"><h2 class="number-title"> Discretización de un problema matemático</h2>
+
+    <p>Para que un problema matemático se pueda resolver  con la ayuda de una computadora a traves de métodos 
+      númericos es necesario transformarlo a su vez en un problema computacional. El proceso de transformación
+      es llamado <b>discretización del problema matemático</b>. 
+    </p>
+
+    <p>Para discretizar un problema matemático se siguen algunas de las siguientes estrategias:</p>
+
+    <p>
+      <ol>
+        <li>Reemplazar espacios de dimension infinita con espacios de dimensión finita.</li>
+        <li>Reemplazar procesos infinitos con procesos finitos (por ejemplo una integral 
+          o una serie infinita con una suma finita)
+        </li>
+        <li>Reemplazar ecuaciones diferenciales (ordinarias o parciales) con ecuaciones algebráicas.</li>
+        <li>Reemplazar problemas no lineales en problemas problemas lineales.</li>
+        <li>Reemplazar problemas de orden alto en sistemas de orden bajo.</li>
+        <li>Reemplazar funciones complicadas en funciones  simples (como polinomios) </li>
+        <li>Reemplazar matrices generales con matrices que tiene formas simples (como triángulares)</li>
+      </ol>
+    </p>
+    </div>
+
+
+
+  
+
+    <div class="nota-box"><h2 class="number-title"> Fuentes de aproximación</h2>
+      <p>Se distinguen al menos 5 fuentes de aproximación que pueden generar errores que afectan los resultados de 
+        problema científico. 
+      </p>
+    <ol>
+      <li><b>De modelación:</b> Durante el proceso de modelación es posible que se omitan o simplifiquen algunas
+        consideraciones importantes del problema de estudio. (e.g. fricción, viscosidad, resistencia del aire, entre otros).      </li>
+    <li><b>De mediciones empiricas:</b> Ocurre cuando hay necesidad de obtener datos en el laboratorio o en el campo experimental
+    , pues todos los instrumentos de medición hasta ahora inventados son de precisión infinita (errorres sistematicos).
+    La exactitud de los datos puede estar fuertemente limitado por el tamaño de la muestra o las lecturas pueden estar 
+    sujetas a ruidos aleatorios (errores accidentales). Por ejemplo cuando hay necesidad de medir la temperatura durante 
+    una determinada hora del dia, durante un mes o cuando hay necesidad de obtener el censo de población de un país.
+   </li>
+    <li><b>De calculos previos</b>Ocurre cuando los datos de entrada del problema fueron resultados de calculos aritméticos
+    previos cuyos resultados fueron unicamente aproximados.
+    
+
+    <p>Estos tres tipos de fuentes de aproximación ocurren entre el problema científico y su planteaiento matemático, por lo general
+      los errores que generan, quedan fuera del control del análisis númerico.
+      </p>
+
+      <p>Las otras dos fuentes de aproximación ocurren entre el problema matemático y la solución del problema computacional. 
+        Los errores que se generan en estas dos últimas fuentes pueden ser controlados por el analisis númerico.
+      </p>
+
+      <li>Ocurre cuando el problema matemático es transformado en un problema computacional, pues algunas características
+        del modelo matemático pueden ser omitidas o simplificadas. 
+
+        <HR>
+          <p><b><u>Ejemplo:</u></b>
+          Cuando $\displaystyle{\sum_{k=0}^{\infty}} a_{n}$ es reemplazado por la suma finita $\displaystyle{\sum_{k=0}^{N}} a_{n}$
+          o cuando $\displaystyle{\int_{a}^{b}} f(x) dx$ es reemplazado por una suma finita de la forma $\displaystyle{\sum_{n=1}^{N}} w_{n} f(x_{n})$
+          </p>
+        </li>
+        <HR>
+
+      <li>Ocurre al realizar una infinidad de operaciones aritméticas (manualmente con una calculadora o computadora) para resolver 
+        problemas computacionales pues de nuevo todos los instrumentos de calculo hasta ahora invetnados son de precision finita, por lo que 
+        tiene que aproximar los resultados de las operaciones aritmeticas realizadas.
+      </li>
+
+    </ol>
+    <p>El estudio del efecto que producen las aproximaciones sobre los resultados de un problema cientifico  o matematico se le llama 
+      <b>análisis de error</b>
+    </p>
+    </div>
+    
+
+    
+    <div class="nota-box">
+      <h2 class="number-title">  Errores</h2>
+      <p>Recordemos que todo número real puede ser representado en  la forma decimal normalizada.
+        $$x=0.d_{1}d_{2}\cdots d_{k-1} d_{k}d_{k+1} \cdots \times 10^{n}$$
+        La reprsentación de punto flotante de $x$ denotada por $fl(x)$ se obtiene al cortar en $K$ cifras decimals el número $x$.
+        Hay dos formas de realizar esto:
+        <ol>
+          <li>Un primer método, llamado <b>Truncamiento</b> el cual consiste en eliminar los digitos $d_{K}d_{K+1} \cdots$ para 
+          obtener 
+        $$fl(y)=0.d_{1}d_{2}\cdots d_{K-1} d_{K}  \times 10^{n}$$ </li>
+        <li>El otro método, llamado de <b>Redondeo</b>, que consiste en sumar $5times 10^{n-(K+1)}$ 
+        al número $y$ y luego truncar el resultado en los primeros $K$ digitos para obtener un número de la forma:
+        $$fl(y)=0.\delta_{1}\delta_{2}\cdots \delta_{K-1} \delta_{K}  \times 10^{n}$$ 
+      </li>
+        </ol>
+      </p>
+
+      <HR>
+        <p><b><u>Observación:</u></b>
+        Si $d_{K+1}\leq 5$, se suma $1$ a $d_{K}$. Para obtener $fl(y)$  (redondeo hacia arriba). 
+        Si $d_{K+1}< 5$ se trunca el número en los primeros $K$ digitos (redondea hacia abajo).
+        </p>
+        <p>Observemos que los digitos pueden cambiar si el redondeo es hacia arriba.</p>
+      </li>
+      <HR>
+        <p><b><u>Ejemplo:</u></b> El número $\pi$ tiene una representación infinita de la forma:
+          $$3.14159265\ldots$$
+        Su forma decimal normalizada es:
+        $$.314159265\ldots\times 10^{1}$$
+        <ol>
+          <li>La forma decimal de punto flotante de $\pi$ con truncamiento a cinco cifras es: 
+            $$ fl(y)= 0.31415 \times 10^{1}$$
+          </li>
+          <li>Para obtener la forma punto flotante por redondeo, se observa que $n=1, K=5$, por lo que $n-(k+1)=-5$
+            por lo tanto:
+            $$(0.314159365\ldots \times 10^{1})+ (5\times 10^{-5})=(0.314159265\ldots \times 10^{1}= + (0.000005\times 10^1)$$
+            La forma de punto flotante de $\pi$ con cinco cifras  deimales aplicando redondeo es: 
+            $$fl(\pi)=0.31416\times 10^{1}= 3.1416$$
+            O bien al observar que la sexta cifra decimal de $\pi$ es $9$, la forma de punto flotante de $\pi$ usando redondeo 
+            a cinco cifras es:
+            $$fl(y)=3.1416$$
+          </li>
+        </ol>
+        </p>
+        <HR>
+
+        <p><b><u>Definición:</u></b>  El error que resulta al sustituir un número por su forma de punto flotante se
+          llama <b>error de redondeo</b> sin importar si se determina por truncamiento o redondeo) y se define como
+          la diferncia entre el valor aproximado y el valor verdadero. 
+        </p>
+          <HR>
+
+        <p>Como los errores sempre se consideran positivos, se tiene la siguiente definición:</p>
+
+        <HR>
+        <p><b><u>Definición:</u></b> Si $p^{\ast}$ es una aproximación al valor verdadero $p$. Se define y denota el 
+          <b>error absoluto</b> de $p^{\ast}$ con respecto a $p$ como:
+          $$EA=|p-p^{\ast}|$$
+        </p>
+        
+        <p>Geometricamente, nos proporciona la cercania de $p^{\ast}$ y $p$.</p>
+        <HR>
+
+        <p>Una desventaja en la definición de error absoluto es que no toma en consideración la maginitud del valor que se estima, 
+          por ejemplo un error de $1$ cm es mucho más significativo si se esta midiendo el grosor de una tuerca que la longitud de 
+          un puente.<br>
+
+          Una manera de tomar en cuenta las magnitudes de las cantidades que se estan trabajndo consiste en normalizar el error respecto 
+          al valor verdadero, con lo que se tiene otro tipo de error llamado error relativo (ER).
+          
+          <HR>
+            <p><b><u>Definición:</u></b> El <b>error relativo</b> de una aproximación $p^{\ast}$ al valor verdadero $p$
+              es 
+              $$ER=\frac{|p-p^{\ast}|}{|p|}$$
+              <p>Otro tipo de error que tambien es importante es el <b>error relativo porcentual</b> dado por 
+            $$ERP=ER \times 100\%$$
+              </p>
+            </p>
+            
+            <p>Geometricamente, nos proporciona la cercania de $p^{\ast}$ y $p$.</p>
+            <HR>
+      
+      </p>
+
+
+        
+      
+
+        
+      
+    </div>
+
+    <div class="nota-box">
+      <h2 class="number-title">  Error de redondeo</h2>
+
+
+      <p>
+        
+      </p>
+
+
+
+      <p>
+          El error que se produce cuando se utiliza una calculadora o computadora para realizar
+          cálculos con números reales recibe el nombre de error de redondeo. Se presenta porque la
+          aritmetica realizada en una maquina incluye numeros con un solo nuero finito de digitos
+          y esto da como resultado cálculos realizados únicamente con representaciones aproximadas
+          de los números reales. En una computadora, sólo un subconjunto relativamente pequeño del
+          sistema de números reales se usa para la representación de todos los números reales. Este
+          subconjunto sólo contiene números racionales, tanto positivos como negativos, y almacena
+          la parte fraccionaria, junto con una parte exponencial.
+      </p>
+    </div>
+
+
+
+
+
+
+
+      
+
+</body>
