@@ -470,7 +470,7 @@
                 donde $k$ es el número de bits destinados para el exponente.                </p>
                 
                <HR>
-
+              <h2 class="number-title"> Representación de  números de  punto flotante </h2>
               <p>
                 Para ahorrar almacenamiento y proporcionar una representación única para cada número
                 de punto flotante, se impone una normalización. 
@@ -520,7 +520,7 @@
 
 
 
-    <div class="nota-box">
+    <div class="nota-box"><h2 class="number-title"> Desbordamiento y subdesbordamiento  </h2>
     <p>El número positivo más pequeño que se puede representar tiene: $s = 0$, $c = 1$, y $f = 0$ y es equivalente a:
       
       $$2^{-1022} \cdot (1 + 0) \approx 0.22251  10^{-307}$$
@@ -534,7 +534,7 @@
     <p>De esta manera, todo  número real cuya  una magnitud sea menor que
       $$2^{-1022} \cdot (1 + 0)$$
       resultan en un <b>subdesbordamiento</b>,  y en general se configuran como cero. Mientras que los números superiores a 
-      $$2^{1023}\cdot  (2 - 2^{-52})
+      $$2^{1023}\cdot  (2 - 2^{-52})$$
       resultan en <b>desbordamiento</b> y, comúnmente, causan que los cálculos se detengan (a menos que el programa haya
       sido detectado para detectar estas representaciones).
 
