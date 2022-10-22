@@ -527,3 +527,22 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: rgb(196, 231, 255);
 }
+
+
+/*////  Listas //// */
+
+ol {
+  list-style: none;
+  counter-reset: my-counter;
+}
+ol li {
+  counter-increment: my-counter;
+  padding: 1px;
+}
+
+ol li::before {
+  content:  counter(my-counter) ".- ";
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+}

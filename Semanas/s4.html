@@ -50,10 +50,10 @@
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
         body.number-title{
-          counter-reset: sectionCounter 0 cardCounter ;
+          counter-reset: sectionCounter 3 cardCounter ;
         }
         h1.number-title{
-          counter-reset: sectionCounter 0 cardCounter ;
+          counter-reset: sectionCounter 3 cardCounter ;
         }
       </style>
   
@@ -88,42 +88,77 @@
 
 
   <body class="fondo-body" >
-    <h1 class="number-title flexbox"> Representación de números racionales  </h1>   
+    <h1 class="number-title flexbox">   </h1>   
+    
+    
+
     <div class="nota-box"><h2 class="number-title"> Desbordamiento y subdesbordamiento  </h2>
-      <p>El <b>número positivo más pequeño</b> que se puede representar usando $64$ bits bajo el estandar propuesto por 
-        el IEEE-754 se obtiene cuando: $s = 0$, $c = 1$, y $f = 0$ y es equivalente a:
+
+      <p>El <b>número positivo más grande</b> que se puede representar en  formato binario IEEE 754-2008 
+        de $64$ bits es: 
+        $$0 11111111110 1111111111111111111111111111111111111111111111111111$$
+        
+        es decir se obtiene cuando $s = 0$, $c= \displaystyle{\sum_{n=1}^{10} 2^{n}}= (2^{11}-1)-1= 2046$ y 
+        $
+        f = \displaystyle{\sum_{n=1}^{52}2^{-n}}
+          = \frac{1-\left(\displaystyle{\frac{1}{2}}\right)^{53}}{1-\displaystyle{\frac{1}{2}}} - 1
+          = 2\cdot (1 - 2^{-53}) -1
+          =  1 - 2^{-52}
+      $  <br>      
+          
+        el cual  es equivalente al número decimal:
+
+      $$ 2^{2046-1023} \cdot (1+(1 - 2^{-52}))= 2^{1023} \cdot  (2 - 2^{-52})   \approx 0.17977 \times 10^{309}.$$
+      </p>
+
+       La representación: 
+
+          $$0 11111111111 1111111111111111111111111111111111111111111111111111$$
+      <p>es reservada  para $+\mathrm{INF}$</p>
+      <HR>
+
+      <p>El <b>número positivo más pequeño</b> que se puede representar en el formato binario el
+         IEEE 754-2008 de $64$  bits es: 
+        $$0 00000000001 0000000000000000000000000000000000000000000000000000$$
+        
+        es decir se obtiene cuando: $s = 0$, $c = 1$, y $f = 0$ y es equivalente a:
         
         $$(-1)^{0} \cdot 2^{1-1023} \cdot (1 + 0)= 2^{-1022} \approx 0.22251\times  10^{-307}$$
-      </p>
-  
-      <p>El <b>número positivo más grande</b> que se puede representar usando $64$ bits bajo el estandar propuesto por 
-        el IEEE-754 se obtiene cuando: $s = 0$, $c= \displaystyle{\sum_{n=0}^{10} 2^{n}}= 2^{11}-1= 2047$ y 
-        \begin{align*}
-        f &= \displaystyle{\sum_{n=1}^{52}2^{-n}}\\
-          &= \frac{1-\left(\frac{1}{2}\right)^{53}}{1-\frac{1}{2}} - 1\\
-          &= 2\cdot (1 - 2^{-53}) -1\\
-          &=  1 - 2^{-52}
-          \end{align*}         y es equivalente a
-      $$ 2^{2047-1023} \cdot (1+(1 - 2^{-52}))= 2^{1024} \cdot  (2 - 2^{-52})   \approx 0.17977 \times 10^{309}.$$
-      </p>
+      </p>   
   
       <p>De esta manera, todo  número real cuya  una magnitud sea menor que
-        $$2^{-1022} \cdot (1 + 0)$$
-        resultan en un <b>subdesbordamiento</b>,  y en general se configuran como cero. Mientras que los números superiores a 
+
+        $$2^{-1022}$$
+
+        resultan en un <b>subdesbordamiento</b>,  y en general se configuran como $\mathrm{cero}$.
+        Mientras que los números superiores a  
+        
         $$2^{1023}\cdot  (2 - 2^{-52})$$
-        resultan en <b>desbordamiento</b> y, comúnmente, causan que los cálculos se detengan (a menos que el programa haya
-        sido detectado para detectar estas representaciones).
+        
+        resultan en un <b>desbordamiento</b> y, comúnmente, causan que los cálculos se detengan
+        (a menos que el programa haya sido programado para detectado  estas representaciones).
   
         
       </p>
+
+
+      <HR>
+        <p><b><u>Observación:</u></b>
+        Existen dos representaciones para el número cero: 
+            <ol>
+              <li>Un cero positivo cuando $s=0$, $c=0$, y $f=0$, y </li>
+              <li>Un cero negativo cuando $s=-1$, $c=0$, y $f=0$</li>
+        </p> 
      </div>
+
 
      
     <div class="nota-box">
       <h2 class="number-title"> Problemas bien planteados</h2>  
      
       <HR>
-        <p><b><u>Definición:</u></b> Un problema matemático se dice <b>bien planteado</b>  (en el sentido de Hadamard)
+        <p><b><u>Definición:</u></b> Un problema matemático se dice <b>bien planteado</b>
+         (en el <em>sentido de Hadamard</em>)
           si existe una solución del problema, es única  y depende continuamente de los datos del problema.
         </p>
 
@@ -138,15 +173,15 @@
         </p>
 
         <ol>
-          <li>Desarrollar metodos (algoritmos) para resolver ecuaciones numericamente.</li>
-          <li>Implementar los métodos en un software númerico</li>
-          <li>Ejecutar el software (o programa) en una computadora para simular numericamente un proceso</li>
+          <li>Desarrollar metodos (algoritmos) para resolver ecuaciones numericamente.</li><br>
+          <li>Implementar los métodos en un software númerico</li><br>
+          <li>Ejecutar el software (o programa) en una computadora para simular numericamente un proceso</li><br>
           <li>Representar los resultados obtenidos en alguna forma comprensible tales como visualizaciones 
             gráficas.
-          </li>
-          <li>Interpretar y visualizar los resultados obtenidos (compararlos  con la realidad), repetir parte del
-             proceso númerico  o todo el proceso si es necesario.
-          </li>
+          </li><br>
+          <li>Interpretar y visualizar los resultados obtenidos (compararlos  con la realidad), repetir
+             parte del proceso númerico  o todo el proceso si es necesario.
+          </li><br>
         </ol>
     </div>
 
@@ -163,19 +198,19 @@
       es llamado <b>discretización del problema matemático</b>. 
     </p>
 
-    <p>Para discretizar un problema matemático se siguen algunas de las siguientes estrategias:</p>
+    <p>Para discretizar un problema matemático se sigue algunas de las siguientes estrategias:</p>
 
     <p>
       <ol>
-        <li>Reemplazar espacios de dimension infinita con espacios de dimensión finita.</li>
+        <li>Reemplazar espacios de dimension infinita con espacios de dimensión finita.</li><br>
         <li>Reemplazar procesos infinitos con procesos finitos (por ejemplo una integral 
           o una serie infinita con una suma finita)
-        </li>
-        <li>Reemplazar ecuaciones diferenciales (ordinarias o parciales) con ecuaciones algebráicas.</li>
-        <li>Reemplazar problemas no lineales en problemas problemas lineales.</li>
-        <li>Reemplazar problemas de orden alto en sistemas de orden bajo.</li>
-        <li>Reemplazar funciones complicadas en funciones  simples (como polinomios) </li>
-        <li>Reemplazar matrices generales con matrices que tiene formas simples (como triángulares)</li>
+        </li><br>
+        <li>Reemplazar ecuaciones diferenciales (ordinarias o parciales) con ecuaciones algebráicas.</li><br>
+        <li>Reemplazar problemas no lineales en problemas problemas lineales.</li><br>
+        <li>Reemplazar problemas de orden alto en sistemas de orden bajo.</li><br>
+        <li>Reemplazar funciones complicadas en funciones  simples (como polinomios) </li><br>
+        <li>Reemplazar matrices generales con matrices que tiene formas simples (como triángulares)</li><br>
       </ol>
     </p>
     </div>
@@ -189,46 +224,61 @@
         problema científico. 
       </p>
     <ol>
-      <li><b>De modelación:</b> Durante el proceso de modelación es posible que se omitan o simplifiquen algunas
-        consideraciones importantes del problema de estudio. (e.g. fricción, viscosidad, resistencia del aire, entre otros).      </li>
-    <li><b>De mediciones empiricas:</b> Ocurre cuando hay necesidad de obtener datos en el laboratorio o en el campo experimental
-    , pues todos los instrumentos de medición hasta ahora inventados son de precisión infinita (errorres sistematicos).
-    La exactitud de los datos puede estar fuertemente limitado por el tamaño de la muestra o las lecturas pueden estar 
-    sujetas a ruidos aleatorios (errores accidentales). Por ejemplo cuando hay necesidad de medir la temperatura durante 
-    una determinada hora del dia, durante un mes o cuando hay necesidad de obtener el censo de población de un país.
-   </li>
-    <li><b>De calculos previos</b>Ocurre cuando los datos de entrada del problema fueron resultados de calculos aritméticos
-    previos cuyos resultados fueron unicamente aproximados.
-    
+      <li><b>De modelación:</b> Durante el proceso de modelación es posible que se omitan o
+         simplifiquen algunas consideraciones importantes del problema de estudio.
+        (e.g. fricción, viscosidad, resistencia del aire, entre otros).</li><br>
 
-    <p>Estos tres tipos de fuentes de aproximación ocurren entre el problema científico y su planteaiento matemático, por lo general
-      los errores que generan, quedan fuera del control del análisis númerico.
-      </p>
+    <li><b>De mediciones empiricas:</b> Ocurre cuando hay necesidad de obtener datos en el 
+      laboratorio o en el campo experimental, pues todos los instrumentos de medición hasta
+      ahora inventados son de precisión infinita (errorres sistematicos). La exactitud de los
+      datos puede estar fuertemente limitado por el tamaño de la muestra o las lecturas pueden
+      estar sujetas a ruidos aleatorios (errores accidentales). Por ejemplo cuando hay necesidad
+      de medir la temperatura durante una determinada hora del dia, durante un mes o cuando
+      hay necesidad de obtener el censo de población de un país.
+   </li><br>
 
-      <p>Las otras dos fuentes de aproximación ocurren entre el problema matemático y la solución del problema computacional. 
-        Los errores que se generan en estas dos últimas fuentes pueden ser controlados por el analisis númerico.
-      </p>
+    <li><b>De calculos previos:</b> Ocurre cuando los datos de entrada del problema fueron 
+      resultados de calculos aritméticos previos cuyos resultados fueron unicamente aproximados.
+    </li><br>
 
-      <li>Ocurre cuando el problema matemático es transformado en un problema computacional, pues algunas características
-        del modelo matemático pueden ser omitidas o simplificadas. 
+    <li>Ocurre cuando el problema matemático es transformado en un problema computacional, 
+      pues algunas características del modelo matemático pueden ser omitidas o simplificadas. 
 
-        <HR>
-          <p><b><u>Ejemplo:</u></b>
-          Cuando $\displaystyle{\sum_{k=0}^{\infty}} a_{n}$ es reemplazado por la suma finita $\displaystyle{\sum_{k=0}^{N}} a_{n}$
-          o cuando $\displaystyle{\int_{a}^{b}} f(x) dx$ es reemplazado por una suma finita de la forma $\displaystyle{\sum_{n=1}^{N}} w_{n} f(x_{n})$
-          </p>
-        </li>
-        <HR>
-
-      <li>Ocurre al realizar una infinidad de operaciones aritméticas (manualmente con una calculadora o computadora) para resolver 
-        problemas computacionales pues de nuevo todos los instrumentos de calculo hasta ahora invetnados son de precision finita, por lo que 
-        tiene que aproximar los resultados de las operaciones aritmeticas realizadas.
+      <HR>
+        <p><b><u>Ejemplo:</u></b>
+        Cuando $\displaystyle{\sum_{k=0}^{\infty}} a_{n}$ es reemplazado por la suma finita
+        $\displaystyle{\sum_{k=0}^{N}} a_{n}$ o cuando $\displaystyle{\int_{a}^{b}} f(x) dx$
+        es reemplazado por una suma finita de la forma $\displaystyle{\sum_{n=1}^{N}} w_{n} f(x_{n})$
+        </p>
       </li>
 
+      <HR><br>
+
+      <li>Ocurre al realizar una infinidad de operaciones aritméticas (manualmente con una calculadora 
+        o computadora) para resolver problemas computacionales pues de nuevo todos los instrumentos 
+        de calculo hasta ahora invetnados son de precision finita, por lo que 
+        tiene que aproximar los resultados de las operaciones aritmeticas realizadas.
+      </li><br>
     </ol>
-    <p>El estudio del efecto que producen las aproximaciones sobre los resultados de un problema cientifico  o matematico se le llama 
-      <b>análisis de error</b>
+
+    <HR>
+      <p><b><u>Definición</u></b>
+      El estudio del efecto que producen las aproximaciones sobre los resultados de un problema cientifico  
+      o matematico se le llama <b>análisis de error</b>
     </p>
+    
+
+
+    
+    <HR>
+      <p><b><u>Observaciones:</u></b>
+        <ol>
+          <li>Los primeros tres tipos de fuentes de aproximación ocurren entre el problema científico y su planteaiento matemático, por lo general
+            los errores que generan, quedan fuera del control del análisis númerico.</li>
+          <li>Las últimas dos fuentes de aproximación ocurren entre el problema matemático y la solución del problema computacional. 
+            Los errores que se generan en estas dos últimas fuentes pueden ser controlados por el analisis númerico.</li>
+        </ol>
+    <HR>
     </div>
     
 
@@ -298,8 +348,10 @@
 
         <p>Una desventaja en la definición de error absoluto es que no toma en consideración la maginitud del valor que se estima, 
           por ejemplo un error de $1$ cm es mucho más significativo si se esta midiendo el grosor de una tuerca que la longitud de 
-          un puente.<br>
+          un puente.</p>
 
+
+          <p>
           Una manera de tomar en cuenta las magnitudes de las cantidades que se estan trabajndo consiste en normalizar el error respecto 
           al valor verdadero, con lo que se tiene otro tipo de error llamado error relativo (ER).
           
@@ -326,24 +378,11 @@
     </div>
 
     <div class="nota-box">
-      <h2 class="number-title">  Error de redondeo</h2>
+      <h2 class="number-title"> </h2>
 
 
       <p>
-        
-      </p>
-
-
-
-      <p>
-          El error que se produce cuando se utiliza una calculadora o computadora para realizar
-          cálculos con números reales recibe el nombre de error de redondeo. Se presenta porque la
-          aritmetica realizada en una maquina incluye numeros con un solo nuero finito de digitos
-          y esto da como resultado cálculos realizados únicamente con representaciones aproximadas
-          de los números reales. En una computadora, sólo un subconjunto relativamente pequeño del
-          sistema de números reales se usa para la representación de todos los números reales. Este
-          subconjunto sólo contiene números racionales, tanto positivos como negativos, y almacena
-          la parte fraccionaria, junto con una parte exponencial.
+       
       </p>
     </div>
 
