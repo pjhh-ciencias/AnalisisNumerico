@@ -1,2 +1,3 @@
-# TIyCUNO
-Pagina del curso Tecnologías de la Información y Comunicación UNO impartido en la Universidad del Mar, a la carrera de Administración Turística.    
+# Análisis  Numérico
+
+Página del curso Análisis Numérico impartido a estudiantes de la Licenciatura en Actuaría en la Universidad del Mar, Campus Huatulco, Oaxaca, México.    
