@@ -50,10 +50,10 @@
     <!-- This part restart counter of cards to start at n+1 -->
     <style>
         body.number-title{
-          counter-reset: sectionCounter 0 cardCounter ;
+          counter-reset: sectionCounter 2 cardCounter ;
         }
         h1.number-title{
-          counter-reset: sectionCounter 0 cardCounter ;
+          counter-reset: sectionCounter 2 cardCounter ;
         }
       </style>
   
@@ -213,7 +213,7 @@
       <p>La forma del <b>complemento a uno</b> de un número binario es un <b>NOT bit a bit</b> aplicado al número, 
         es decir, la inversión de unos por ceros y ceros por unos.</p>
         
-      <p>En la representación por complemento a uno de un número con signo de $n$-bits asignamos:
+      <p>En la <b>representación por complemento a uno</b> de un número con signo de $n$-bits asignamos:
         <ol>
           <li>Un bit para representar el signo. Ese bit a menudo es el bit más significativo y,
              por convención: un $0$ denota un número positivo, y un $1$ denota un número negativo;</li>
@@ -259,7 +259,7 @@
           
       <h2 class="number-title"> Complemento a dos </h2>  
 
-      <p> El método para obtener el complemento a dos de un número binario es mediante la obtención del 
+      <p> El  <b>método por complemento a dos</b> de un número binario se obtiene  del 
         complemento a uno y sumarle uno, o bien:
         <ol>
           <li>Empezando desde la derecha encontramos el primer $1$</li>
@@ -267,7 +267,7 @@
         </ol>
       </p>
 
-      <p>De esta forma, en la representación por Complemento a dos de un número con signo 
+      <p>De esta forma, en la <b>representación por Complemento a dos</b> de un número con signo 
         de $n$-bits asignamos:
       <ol>
       <li>Un bit para representar el signo. Ese bit a menudo es el bit más significativo y,
@@ -495,13 +495,13 @@
             <HR>                 
 
             <p><b><u>Observaciones:</u></b> 
+            
               <ol>
                 <li>El siguiente número de máquina más pequeño es:
                   $$0 10000000011 1011100100001111111111111111111111111111111111111111$$
                 </li>
                 <li>El siguiente número de máquina más grande es:
-                  $$0 10000000011 1011100100010000000000000000000000000000000000000001.
-                  $$
+                  $$0 10000000011 1011100100010000000000000000000000000000000000000001$$
                 </li>
 
               </ol>
