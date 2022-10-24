@@ -158,24 +158,23 @@
      
       <HR>
         <p><b><u>Definición:</u></b> Un problema matemático se dice <b>bien planteado</b>
-         (en el <em>sentido de Hadamard</em>)
-          si existe una solución del problema, es única  y depende continuamente de los datos del problema.
+         (en el <b>sentido de Hadamard</b>) si <em>existe una solución</em> del problema,
+         es <em>única</em>  y <em>depende continuamente de los datos</em> del problema.
         </p>
 
         <p>
-          Un problema matemático se dice mal planteado si no esta bien planteado.
+          Un problema matemático se dice <b>mal planteado</b> si no esta bien planteado.
         </p>
         <HR>
 
-        <p>Un problema bien planteado es aquel que se pueden <em>resolver</em> 
-        <em>razonablemente bien</em> con la ayuda de una computadora. Sobre todo cuando la solución 
+        <p>Un problema bien planteado es aquel que se puede <b><em>resolver razonablemente bien</em></b> con la ayuda de una computadora. Sobre todo cuando la solución 
         no se puede hallar de forma analítica. Para ello se necesita: 
         </p>
 
         <ol>
-          <li>Desarrollar metodos (algoritmos) para resolver ecuaciones numericamente.</li><br>
-          <li>Implementar los métodos en un software númerico</li><br>
-          <li>Ejecutar el software (o programa) en una computadora para simular numericamente un proceso</li><br>
+          <li>Desarrollar métodos (algoritmos) para resolver ecuaciones numericamente.</li><br>
+          <li>Implementarlos  en algún software numérico.</li><br>
+          <li>Ejecutar el software (o programa) en una computadora para simular numericamente un proceso.</li><br>
           <li>Representar los resultados obtenidos en alguna forma comprensible tales como visualizaciones 
             gráficas.
           </li><br>
@@ -199,11 +198,11 @@
       es llamado <b>discretización del problema matemático</b>. 
     </p>
 
-    <p>Para discretizar un problema matemático se sigue algunas de las siguientes estrategias:</p>
+    <p>Para discretizar un problema matemático se sigue algunas de las siguientes estratégias:</p>
 
     <p>
       <ol>
-        <li>Reemplazar espacios de dimension infinita con espacios de dimensión finita.</li><br>
+        <li>Reemplazar espacios de dimensión infinita con espacios de dimensión finita.</li><br>
         <li>Reemplazar procesos infinitos con procesos finitos (por ejemplo una integral 
           o una serie infinita con una suma finita)
         </li><br>
@@ -231,31 +230,35 @@
 
     <li><b>De mediciones empiricas:</b> Ocurre cuando hay necesidad de obtener datos en el 
       laboratorio o en el campo experimental, pues todos los instrumentos de medición hasta
-      ahora inventados son de precisión infinita (errorres sistematicos). La exactitud de los
+      ahora inventados son de <b>precisión finita</b> (errorres sistematicos). La exactitud de los
       datos puede estar fuertemente limitado por el tamaño de la muestra o las lecturas pueden
       estar sujetas a ruidos aleatorios (errores accidentales). Por ejemplo cuando hay necesidad
-      de medir la temperatura durante una determinada hora del dia, durante un mes o cuando
+      de medir la temperatura durante una determinada hora del día, durante un mes o cuando
       hay necesidad de obtener el censo de población de un país.
    </li><br>
 
     <li><b>De calculos previos:</b> Ocurre cuando los datos de entrada del problema fueron 
-      resultados de calculos aritméticos previos cuyos resultados fueron unicamente aproximados.
+      resultados de cálculos aritméticos previos cuyos resultados fueron únicamente aproximados.
     </li><br>
 
-    <li>Ocurre cuando el problema matemático es transformado en un problema computacional, 
+    <li><b>Error de discretización (aproximación o redondeo):</b> Ocurre cuando el problema matemático es transformado en un problema computacional, 
       pues algunas características del modelo matemático pueden ser omitidas o simplificadas. 
 
       <HR>
-        <p><b><u>Ejemplo:</u></b>
-        Cuando $\displaystyle{\sum_{k=0}^{\infty}} a_{n}$ es reemplazado por la suma finita
-        $\displaystyle{\sum_{k=0}^{N}} a_{n}$ o cuando $\displaystyle{\int_{a}^{b}} f(x) dx$
+        <p><b><u>Ejemplos:</u></b>
+          <ol>
+        <li>Cuando $\displaystyle{\sum_{k=0}^{\infty}} a_{n}$ es reemplazado por la suma finita
+        $\displaystyle{\sum_{k=0}^{N}} a_{n}$</li>
+         <li>o cuando $\displaystyle{\int_{a}^{b}} f(x) dx$
         es reemplazado por una suma finita de la forma $\displaystyle{\sum_{n=1}^{N}} w_{n} f(x_{n})$
+      </li>
+      </ol>
         </p>
       </li>
 
       <HR><br>
 
-      <li>Ocurre al realizar una infinidad de operaciones aritméticas (manualmente con una calculadora 
+      <li><b>Error de redondeo:</b> Ocurre al realizar una infinidad de operaciones aritméticas (manualmente con una calculadora 
         o computadora) para resolver problemas computacionales pues de nuevo todos los instrumentos 
         de calculo hasta ahora invetnados son de precision finita, por lo que 
         tiene que aproximar los resultados de las operaciones aritmeticas realizadas.
@@ -286,15 +289,15 @@
     
     <div class="nota-box">
       <h2 class="number-title">  Errores</h2>
-      <p>Recordemos que todo número real puede ser representado en  la forma decimal normalizada.
+      <p>Recordemos que todo número real puede ser representado en  la <b>forma decimal normalizada</b>.
         $$x=0.d_{1}d_{2}\cdots d_{k-1} d_{k}d_{k+1} \cdots \times 10^{n}$$
-        La reprsentación de punto flotante de $x$ denotada por $fl(x)$ se obtiene al cortar en $K$ cifras decimals el número $x$.
+        La <b><em>representación de punto flotante</em></b> de $x$ denotada por $fl(x)$ se obtiene al cortar en $K$ cifras decimales el número $x$.
         Hay dos formas de realizar esto:
         <ol>
-          <li>Un primer método, llamado <b>Truncamiento</b> el cual consiste en eliminar los digitos $d_{K}d_{K+1} \cdots$ para 
+          <li>Un primer método , llamado <b>Truncamiento</b> el cual consiste en eliminar los digitos $d_{K}d_{K+1} \cdots$ para 
           obtener 
         $$fl(y)=0.d_{1}d_{2}\cdots d_{K-1} d_{K}  \times 10^{n}$$ </li>
-        <li>El otro método, llamado de <b>Redondeo</b>, que consiste en sumar $5times 10^{n-(K+1)}$ 
+        <li>El otro método, llamado de <b>Redondeo</b>, que consiste en sumar $5 \times 10^{n-(K+1)}$ 
         al número $y$ y luego truncar el resultado en los primeros $K$ digitos para obtener un número de la forma:
         $$fl(y)=0.\delta_{1}\delta_{2}\cdots \delta_{K-1} \delta_{K}  \times 10^{n}$$ 
       </li>
@@ -331,7 +334,7 @@
         <HR>
 
         <p><b><u>Definición:</u></b>  El error que resulta al sustituir un número por su forma de punto flotante se
-          llama <b>error de redondeo</b> sin importar si se determina por truncamiento o redondeo) y se define como
+          llama <b>error de redondeo</b> (sin importar si se determina por truncamiento o redondeo) y se define como
           la diferncia entre el valor aproximado y el valor verdadero. 
         </p>
           <HR>
