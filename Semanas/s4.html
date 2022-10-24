@@ -104,17 +104,22 @@
           = \frac{1-\left(\displaystyle{\frac{1}{2}}\right)^{53}}{1-\displaystyle{\frac{1}{2}}} - 1
           = 2\cdot (1 - 2^{-53}) -1
           =  1 - 2^{-52}
-      $  <br>      
+        $ 
+       <br>      
           
         el cual  es equivalente al número decimal:
 
       $$ 2^{2046-1023} \cdot (1+(1 - 2^{-52}))= 2^{1023} \cdot  (2 - 2^{-52})   \approx 0.17977 \times 10^{309}.$$
       </p>
 
+      <HR>
+        <p><b><u>Observación:</u></b>
        La representación: 
 
           $$0 11111111111 1111111111111111111111111111111111111111111111111111$$
+
       <p>es reservada  para $+\mathrm{INF}$</p>
+      
       <HR>
 
       <p>El <b>número positivo más pequeño</b> que se puede representar en el formato binario el
@@ -126,6 +131,21 @@
         $$(-1)^{0} \cdot 2^{1-1023} \cdot (1 + 0)= 2^{-1022} \approx 0.22251\times  10^{-307}$$
       </p>   
   
+
+      <HR>
+        <p><b><u>Observación:</u></b>
+          La representación: 
+
+          $$0 00000000000 0000000000000000000000000000000000000000000000000000$$
+          
+        <p>es reservada  para el cero. Como consecuencia se tienen dos representaciones para el número cero:</p>
+        <ol>
+          <li>Un cero positivo cuando $s=0$, $c=0$, y $f=0$, y </li>
+          <li>Un cero negativo cuando $s=-1$, $c=0$, y $f=0$</li>
+        </ol>
+        </p>
+        <HR>
+
       <p>De esta manera, todo  número real cuya  una magnitud sea menor que
 
         $$2^{-1022}$$
@@ -142,13 +162,6 @@
       </p>
 
 
-      <HR>
-        <p><b><u>Observación:</u></b>
-        Existen dos representaciones para el número cero: 
-            <ol>
-              <li>Un cero positivo cuando $s=0$, $c=0$, y $f=0$, y </li>
-              <li>Un cero negativo cuando $s=-1$, $c=0$, y $f=0$</li>
-        </p> 
      </div>
 
 
@@ -282,14 +295,14 @@
           <li>Las últimas dos fuentes de aproximación ocurren entre el problema matemático y la solución del problema computacional. 
             Los errores que se generan en estas dos últimas fuentes pueden ser controlados por el analisis númerico.</li>
         </ol>
-    <HR>
+    
     </div>
     
 
-    
+    <h1 class="number-title flexbox"> Errores    </h1>
+
     <div class="nota-box">
-      <h2 class="number-title">  Errores</h2>
-      <p>Recordemos que todo número real puede ser representado en  la <b>forma decimal normalizada</b>.
+      <p>Recordemos que todo número real puede ser representado en la <b>forma decimal normalizada</b>.
         $$x=0.d_{1}d_{2}\cdots d_{k-1} d_{k}d_{k+1} \cdots \times 10^{n}$$
         La <b><em>representación de punto flotante</em></b> de $x$ denotada por $fl(x)$ se obtiene al cortar en $K$ cifras decimales el número $x$.
         Hay dos formas de realizar esto:
@@ -301,19 +314,25 @@
         al número $y$ y luego truncar el resultado en los primeros $K$ digitos para obtener un número de la forma:
         $$fl(y)=0.\delta_{1}\delta_{2}\cdots \delta_{K-1} \delta_{K}  \times 10^{n}$$ 
       </li>
-        </ol>
+       </ol>
       </p>
+    </div>
 
-      <HR>
-        <p><b><u>Observación:</u></b>
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <p>
         Si $d_{K+1}\leq 5$, se suma $1$ a $d_{K}$. Para obtener $fl(y)$  (redondeo hacia arriba). 
         Si $d_{K+1}< 5$ se trunca el número en los primeros $K$ digitos (redondea hacia abajo).
         </p>
         <p>Observemos que los digitos pueden cambiar si el redondeo es hacia arriba.</p>
-      </li>
-      <HR>
-        <p><b><u>Ejemplo:</u></b> El número $\pi$ tiene una representación infinita de la forma:
+      
+      
+    </div>
+
+
+        <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>El número $\pi$ tiene una representación infinita de la forma:
           $$3.14159265\ldots$$
+      <p><b>Solución:</b>
         Su forma decimal normalizada es:
         $$.314159265\ldots\times 10^{1}$$
         <ol>
@@ -331,36 +350,43 @@
           </li>
         </ol>
         </p>
-        <HR>
-
-        <p><b><u>Definición:</u></b>  El error que resulta al sustituir un número por su forma de punto flotante se
-          llama <b>error de redondeo</b> (sin importar si se determina por truncamiento o redondeo) y se define como
-          la diferncia entre el valor aproximado y el valor verdadero. 
         </p>
-          <HR>
+        </div>
 
-        <p>Como los errores sempre se consideran positivos, se tiene la siguiente definición:</p>
+        <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+         <p>
+          El error que resulta al sustituir un número por su forma de punto flotante se
+          llama <b>error de redondeo</b> (sin importar si se determina por truncamiento o redondeo) y se define como
+          la diferencia entre el valor aproximado y el valor verdadero. 
+        </p>
+        
+        <p>Como los errores siempre se consideran positivos, se tiene la siguiente definición:</p>
+        </div>
 
-        <HR>
-        <p><b><u>Definición:</u></b> Si $p^{\ast}$ es una aproximación al valor verdadero $p$. Se define y denota el 
+        <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+        <p>Si $p^{\ast}$ es una aproximación al valor verdadero $p$. Se define y denota el 
           <b>error absoluto</b> de $p^{\ast}$ con respecto a $p$ como:
           $$EA=|p-p^{\ast}|$$
         </p>
         
-        <p>Geometricamente, nos proporciona la cercania de $p^{\ast}$ y $p$.</p>
-        <HR>
+        <p>Geometricamente, el error absoluto nos proporciona la cercania entre $p^{\ast}$ y $p$.</p>
+        </div>
 
-        <p>Una desventaja en la definición de error absoluto es que no toma en consideración la maginitud del valor que se estima, 
+        <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+        <p>Una desventaja en la definición de error absoluto es que no toma en consideración la magnitud del valor que se estima, 
           por ejemplo un error de $1$ cm es mucho más significativo si se esta midiendo el grosor de una tuerca que la longitud de 
           un puente.</p>
 
-
           <p>
-          Una manera de tomar en cuenta las magnitudes de las cantidades que se estan trabajndo consiste en normalizar el error respecto 
-          al valor verdadero, con lo que se tiene otro tipo de error llamado error relativo (ER).
+          Una manera de tomar en cuenta las magnitudes de las cantidades que se estan trabajando consiste en normalizar el 
+          error respecto al valor verdadero, con lo que se tiene otro tipo de error llamado <em>error relativo (ER)</em>.
+          </p>
+        </div>
+
+
+        <div class="nota-box"> <h2 class="number-title"> Definición</h2>
           
-          <HR>
-            <p><b><u>Definición:</u></b> El <b>error relativo</b> de una aproximación $p^{\ast}$ al valor verdadero $p$
+            <p> El <b>error relativo</b> de una aproximación $p^{\ast}$ al valor verdadero $p$
               es 
               $$ER=\frac{|p-p^{\ast}|}{|p|}$$
               <p>Otro tipo de error que tambien es importante es el <b>error relativo porcentual</b> dado por 
@@ -368,27 +394,148 @@
               </p>
             </p>
             
-            <p>Geometricamente, nos proporciona la cercania de $p^{\ast}$ y $p$.</p>
-            <HR>
-      
-      </p>
-
-
-        
-      
-
-        
-      
+            <p>Geometricamente, nos proporciona la cercania de $p^{\ast}$ y $p$. </p>    
+      </p> 
     </div>
 
-    <div class="nota-box">
-      <h2 class="number-title"> </h2>
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo </h2>
+      <p>En los siguientes ejercicios obtener  en cada caso el <b>error absoluto</b>, el  <b>error relativo</b> 
+        y el <b>error porcentual</b></p>
+      <ol>
+        <li> Sea $p=0.10\times 10^{2}$ el valor real y  $p^{\ast}=0.08 \times 10^{2}$. Entonces,
+          <p><b>Solución:</b>
+            <p>
+              <ol>
+              <li>$EA= $</li><br>
+              <li>$ER= $</li><br>
+              <li>$ERP= $</li><br>
+              </ol>
+            </p>
+          </p>
+    </li>
+    <li>Sea  $q=0.24\times 10^{-4}$ y el valor aproximado es $q^{\ast}= 0.12\times 10^{-4}$. Entonces,       
+      <p><b>Solución:</b> 
+        <p>
+          <ol>
+            <li>$EA= $</li><br>
+            <li>$ER= $</li><br>
+            <li>$ERP= $</li><br>
+          </ol>
+        </p>
+      </p>
 
+    </li>
+<!--
+    <li>Sea $x=3.141592$ el valor verdadero y $x^{\ast}= 3.14$. Entonces,
+      <p><ol>
+        <li>$EA= $</li><br>
+        <li>$ER= $</li><br>
+        <li>$ERP= $</li><br>
+      </ol>
+      </p>
+    </li>
+
+    <li>Sea $y=1\,000\,000$ y $y^{\ast}= 999\, 996$ el valor aproximado. Entonces,
+      <p><ol>
+        <li>$EA= $</li><br>
+        <li>$ER= $</li><br>
+        <li>$ERP= $</li><br>
+      </ol>
+      </p>
+     </li>
+
+    <li>Sea $z=0.000012$ valor verdadero y $z^{\ast}= 0.000009$ el valor obtenido. Entonces,
+      <p><ol>
+        <li>$EA= $</li><br>
+        <li>$ER= $</li><br>
+        <li>$ERP= $</li><br>
+      </ol>
+      </p>
+     </li>
+    </ol>
+    </div>
+-->
+
+      </ol></div>
+
+      
+<div class="nota-box"> <h2 class="number-title"> Observación </h2>
+  <p>En el Ejemplo 2, al no tomar en cuenta las cantidades con las que se esta 
+    trabajando se puede pensar que el error absoluto es muy pequeño 
+    y tomar el valor aproximado $p^{\ast}$ como muy buena aproximación. 
+    Sin embargo, al calcular el error relativo tenemos en el ejemplo $(2)$ 
+    que 
+    
+    $$ER=0.5$$
+
+    lo que nos dice que el valor aproximado es tan solo la mitad del valor verdadero
+    y por lo tanto no es una buena aproximación.
+  </p>
+
+   <p>
+    Además el valor relativo porcentual es: $$ERP=$$
+   </p>
+
+   <p>Por lo general, interesa el error absoluto y no el relativo;
+     pero cuando el valor exacto de una cantidad es muy pequeño o muy grande,
+    los errores relativos son más  significativos.
+    </p>
+
+
+  </div>
+
+          
+    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+    <p>El número <b>$p^{\ast}$ aproxima a $p$ con $t$ cifras significativas</b> si $t$ es el mayor entero 
+      no negativo para el cual se satisface 
+
+      $$\displaystyle{\frac{|p-p^{\ast}|}{|p|}} < 5 \times 10^{-t}$$
+
+    </p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo </h2>
+    <p>Sea $p=10$, encontrar un intervalo para que un valor $p^{\ast}$ aproxime a $2$ cifras significativas.</p>
+
+    <p><b>Solución:</b></p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <p>
+        La mayoría de los algoritmos numericos que de veran  a lo largo del curso generan una sucesión  de valores 
+        que por lo general  convergen a un número real  $X$.  Los elementos de la sucesión que se llaman aproximaciones 
+        se van generando a partir de las aproximaciones anteriores.  
+      </p>
+
+      <p>Un criterio para elegir los métodos que se utilizan es que, cambios pequeños en los 
+        datos iniciales produzcan otros correspondientes en los resutados finales. Un algoritmo que cumple con esta 
+      propiedad se llama <b>estable</b>  en caso contrario se llama <b>inestable</b>
+      </p>
 
       <p>
-       
+        Algunos algoritmos que sólo son estables para ciertas elecciones de datos iniciales; a estos se les conoce como 
+        <b>condicionalmente estables.</b>
       </p>
-    </div>
+
+      <p>Para estudiar el crecimiento de los errores de redondeo y su relación con la estabilidad de un algoritmo 
+        se tiene la siguiente definición:
+      </p>
+
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+        <p>Sea $E_{0} >0$ un error inicial y $E_{n}$ la maginitud de un error despues de $n$ operaciones 
+          sucesivas.
+        </p>
+        <ul>
+          <li>Si $E_{n}\approx C_{n} E_{0}$ donde $C$ es una constante independiente de $n$, entonces se dice que 
+            el crecimiento del error es <b>lineal</b> </li>
+          <li>Si $E_{n}\approx C^{n} E_{0}$ para algun $C>1$, entonces se dice que 
+            el crecimiento del error es <b>exponencial</b>  </li>
+        </ul>
+      </div>
 
 
 
@@ -396,6 +543,4 @@
 
 
 
-      
-
-</body>
+    </body>
