@@ -320,7 +320,7 @@
 
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
       <p>
-       En el método de redondeo, el efecto del redondeo es el siguiente:  si $d_{K+1}\leq 5$, se suma $1$ a $d_{K}$. Para obtener $fl(y)$  (redondeo hacia arriba). 
+       En el método de redondeo, el efecto del redondeo es el siguiente:  si $d_{K+1}\geq 5$, se suma $1$ a $d_{K}$. Para obtener $fl(y)$  (redondeo hacia arriba). 
         Si $d_{K+1}< 5$ se trunca el número en los primeros $K$ digitos (redondea hacia abajo).
         </p>
         <p>Observemos que los digitos pueden cambiar si el redondeo es hacia arriba.</p>

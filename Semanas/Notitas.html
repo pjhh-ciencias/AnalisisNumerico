@@ -88,8 +88,132 @@
 
 
   <body class="fondo-body" >
-    <h1 class="number-title flexbox"> Aritmetica Computacional </h1>   
+    <h1 class="number-title flexbox"> Notitas </h1>   
+
+    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+    <p>Particularmente es inevitable el crecimiento lineal de un error y cuando  $C$ y $E_{0}$ 
+      son pequeños, por lo general son aceptables los resultados.
+    </p>
+
+    <p>Por otro lado siempre se trata de evitar el crecimiento exponencial de error, pues el término 
+      $C_{n}$ crece incluso para valore  pequeños de $n$, lo que conduce a empresiones inaceptables.
+    </p>
+
+    <p>La siguiente definición proporciona una medida de la rapidez de convergencia de una sucesión:</p>
+
+   </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+      <p>
+        Sea $\{\beta_{n} \}$ una sucesión que converge a cero y $\{\alpha_{n} \}_{n=1}^{\infty}$.
+        Una sucesión que converge a a un número $\alpha$. Si existe una constante positiva $K$ tal que 
+        para $n$ lo suficientemente grande se satisface:
+
+        $$|\alpha_{n} - \alpha| \leq K |\beta_{n}|$$
+
+        entonces, se dice que la sucesión $\{\alpha_{n} \}_{n=1}^{\infty}$ converge a $\alpha$ 
+        con rapidez de convergencia $O(\beta_{n})$. Esta expresión se lee "O mayuscula de $\beta_{n}$"
+         y se indica escribiendo:
+         
+         $$\alpha_{n}= \alpha + O(\beta_{n})$$
+        
+      </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Observación </h2>
+      <p>Aunque en la definición anterior  se puede utilizar cualquier sucesión 
+        $\{\beta_{n} \}_{n=1}^{\infty}$ en casi todas las situaciones se utilizará 
+        
+        $$\beta_{n}:= \displaystyle{\frac{1}{n^{p}}}$$
+
+        para algún $p>0$. Por lo general se tiene interes en el mayor valor de $p$ 
+        tal que:
+        
+        
+        $$\alpha_{n}= \alpha + O\left(\displaystyle{\frac{1}{n^{p}}}\right)$$
+      </p>
+
+    </div>
 
     
+    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+      <p>
+        Para cada  $n \in \mathbb{N}$, definamos 
+        <ul>
+          <li>$\alpha_{n}:= \displaystyle{\frac{n+1}{n^{2}}}$</li>
+          <li>$\tilde{\alpha_{n}}:= \displaystyle{\frac{n+3}{n^{3}}}$</li>
+        </ul>
+      </p>
+      <p>Determine cual de entre las sucesiones $\{\alpha_{n} \}_{n\geq 1}$ y $\{\tilde{\alpha_{n}} \}_{n\geq 1}$ converge 
+      mucho más rapido al cero. 
+      </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Observación </h2>
+      <p>
+        Se tiene una definición analoga para la rápidez  de convergencia de funciones  
+      </p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+      <p>
+        Supongamos que $\lim_{h\to a} G(h)=0$ y $\lim_{h\to a} F(h)=0$. Si existe una constante positiva $K$ tal que 
+        para $h$ lo suficientemente pequeña, se satisface:
+
+        $$|F(h) - L| \leq K |G(h)|$$
+
+      lo cual se donota por 
+      
+      $$F(h) = L + O(G(h))$$ 
+
+      Frecuentemente, las funciones que se usan para la comparación tienen la  forma $G(h)= h^{p}$, donde $p >0$.  
+      </p>
+
+      <p>Nos interesa  el mayor valor de $p$ para el cual se satisface:
+
+        $$F(h)= L + O(h^{p})$$
+      </p>
+    </div>
+
+    <h1 class="number-title flexbox"> Ecuaciones no lineales </h1>   
+
+    <div class="nota-box"> <h2 class="number-title"> Introducción </h2>
+      <p>
+        Para resolver algunos problemas que se presentan en ciencias e ingenieria en ocasiones es necesario conocer 
+        los valores que anulan ciertas funciones o ecuaciones y porlo general la teoría que se tiene del álgebra 
+        o elcalculo para conocer dihos valores son tediosos o dificiles de aplicar. De aquí la necesidad de desarrolllar 
+        métodos o algoritmos que nos permiten en tiempo muy corto solucionar este tipo de problemas. 
+      </p>
+
+    </div>
+
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+      <p>
+        una raiz, cero o solucion de la ecuación:
+        $$f(x)=0$$
+        es cualquier número $\overline{x}$ que cumpla con $f(\overline{x})=0$
+      </p>
+
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Introducción </h2>
+      <p>
+       Entre los métodos que se tienen para resolver la ecuación $f(x)=0$ se encuentran los métodos cerrados y abiertos. 
+      </p>
+
+      <p>Los métodos  cerrados necesitan de dos valores iniciales $X_{I}$ y $X_{F}$ que encierran a la raiz $p$
+        y tienen la característica  de que siempre encuentran una raíz o en el mejor de los casos una aproximación a $p$.
+      </p>
+
+      <p>Los métodos abiertos requieren unicamente de un sólo valor de inicio $p_{0}$  o bien de dos valores iniciales 
+        que no necesariamente encierran a la raíz $p$. Estos a veces no encuentran  la raíz pero cuando lo hacen por lo general 
+        lo encuentran mucho más rápido que los métodos abiertos. 
+      </p>
+
+       </div>
 
 </body>
