@@ -307,7 +307,7 @@
         La <b><em>representación de punto flotante</em></b> de $x$ denotada por $fl(x)$ se obtiene al cortar en $K$ cifras decimales el número $x$.
         Hay dos formas de realizar esto:
         <ol>
-          <li>Un primer método , llamado <b>Truncamiento</b> el cual consiste en eliminar los digitos $d_{K}d_{K+1} \cdots$ para 
+          <li>Un primer método, llamado <b>Truncamiento</b> el cual consiste en eliminar los digitos $d_{K}d_{K+1} \cdots$ para 
           obtener 
         $$fl(y)=0.d_{1}d_{2}\cdots d_{K-1} d_{K}  \times 10^{n}$$ </li>
         <li>El otro método, llamado de <b>Redondeo</b>, que consiste en sumar $5 \times 10^{n-(K+1)}$ 
@@ -320,7 +320,7 @@
 
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
       <p>
-        Si $d_{K+1}\leq 5$, se suma $1$ a $d_{K}$. Para obtener $fl(y)$  (redondeo hacia arriba). 
+       En el método de redondeo, si $d_{K+1}\leq 5$, se suma $1$ a $d_{K}$. Para obtener $fl(y)$  (redondeo hacia arriba). 
         Si $d_{K+1}< 5$ se trunca el número en los primeros $K$ digitos (redondea hacia abajo).
         </p>
         <p>Observemos que los digitos pueden cambiar si el redondeo es hacia arriba.</p>
