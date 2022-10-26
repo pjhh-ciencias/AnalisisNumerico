@@ -68,15 +68,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
-<<<<<<< HEAD
-=======
 
 $$f(x)$$
 
 ```{r cars}
 summary(cars)
 ```
->>>>>>> 45e68fce4a6ad53765cc66b2d4cf18907e4a9540
 
 
  

@@ -333,6 +333,7 @@
         <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
         <p>El número $\pi$ tiene una representación infinita de la forma:
           $$3.14159265\ldots$$
+          Hallar la forma  decimal de punto flotante de $\pi$ con truncamiento y por redondeo a $5$ dígitos.
       <p><b>Solución:</b>
         Su forma decimal normalizada es:
         $$0.314159265\ldots\times 10^{1}$$
@@ -399,7 +400,7 @@
       </p> 
     </div>
 
-    <div class="nota-box"> <h2 class="number-title"> Ejemplo </h2>
+    <div class="nota-box" id="Ejemplo:Errores_1"> <h2 class="number-title" > Ejemplo </h2>
       <p>En los siguientes ejercicios obtener  en cada caso el <b>error absoluto</b>, el  <b>error relativo</b> 
         y el <b>error porcentual</b></p>
       <ol>
@@ -426,71 +427,105 @@
       </p>
 
     </li>
-<!--
-    <li>Sea $x=3.141592$ el valor verdadero y $x^{\ast}= 3.14$. Entonces,
-      <p><ol>
-        <li>$EA= $</li><br>
-        <li>$ER= $</li><br>
-        <li>$ERP= $</li><br>
-      </ol>
-      </p>
-    </li>
 
-    <li>Sea $y=1\,000\,000$ y $y^{\ast}= 999\, 996$ el valor aproximado. Entonces,
-      <p><ol>
-        <li>$EA= $</li><br>
-        <li>$ER= $</li><br>
-        <li>$ERP= $</li><br>
-      </ol>
-      </p>
-     </li>
-
-    <li>Sea $z=0.000012$ valor verdadero y $z^{\ast}= 0.000009$ el valor obtenido. Entonces,
-      <p><ol>
-        <li>$EA= $</li><br>
-        <li>$ER= $</li><br>
-        <li>$ERP= $</li><br>
-      </ol>
-      </p>
-     </li>
-    </ol>
-    </div>
--->
 
       </ol></div>
 
-      
+         
 <div class="nota-box"> <h2 class="number-title"> Observación </h2>
-  <p>En el Ejemplo 2, al no tomar en cuenta las cantidades con las que se esta 
+  <p>Al no tomar en cuenta las cantidades con las que se esta 
     trabajando se puede pensar que el error absoluto es muy pequeño 
-    y tomar el valor aproximado $p^{\ast}$ como muy buena aproximación. 
-    Sin embargo, al calcular el error relativo tenemos en el ejemplo $(2)$ 
-    que 
+    y tomar el valor aproximado $p^{\ast}$ como muy buena aproximación. Este es el caso 
+    del <a href="S4.html#Ejemplo:Errores_1">Ejemplo 4.7-(2)</a>, al calcular el error relativo
+    tenemos que 
     
     $$ER=$$
 
     lo que nos dice que el valor aproximado es tan solo la mitad del valor verdadero
-    y por lo tanto no es una buena aproximación.
-  </p>
-
-   <p>
-    Además el valor relativo porcentual es: $$ERP=$$
+    y por lo tanto no es una buena aproximación. Además  observemos que el  error relativo porcentual es:
+    
+    $$ERP=$$
    </p>
-
+<!-- 
    <p>Por lo general, interesa el error absoluto y no el relativo;
      pero cuando el valor exacto de una cantidad es muy pequeño o muy grande,
     los errores relativos son más  significativos.
     </p>
+-->
+
+  </div>
 
 
+
+    <div class="nota-box" id="Ejemplo:Errores_2"> <h2 class="number-title"> Ejemplo </h2>
+      <p> Encontrar el error absoluto y el error relativo en los siguientes casos:
+        <li>Sean $x=3.141592$  y $x^{\ast}= 3.14$. Entonces,
+          <p><ol>
+            <li>$EA= $</li><br>
+            <li>$ER= $</li><br>
+            <li>$ERP= $</li><br>
+          </ol>
+          </p>
+        </li>
+    
+        <li>Sean $y=1\,000\,000$ y $y^{\ast}= 999\, 996$. Entonces,
+          <p><ol>
+            <li>$EA= $</li><br>
+            <li>$ER= $</li><br>
+            <li>$ERP= $</li><br>
+          </ol>
+          </p>
+         </li>
+    
+        <li>Sea $z=0.000012$ y $z^{\ast}= 0.000009$. Entonces,
+          <p><ol>
+            <li>$EA= $</li><br>
+            <li>$ER= $</li><br>
+            <li>$ERP= $</li><br>
+          </ol>
+          </p>
+         </li>
+        </ol>
+      </p>
+    </div> 
+
+      
+<div class="nota-box"> <h2 class="number-title"> Observación </h2>
+  <p> 
+    <ol>
+      <li>En el primer caso no hay mucha diferencia entre el error absoluto y el error relativo,
+     cualquiera de los se puede usarse para determinar la precisión de $x^{\ast}$.  
+    </li><br>
+    <li>En el segundo caso el valor de $y$ es del orden de $10^{6}$, el error absoluto es más grande 
+      y el error relativo es pequeño. En este caso, $y^{\ast}$ sería considerada como una 
+    buena aproximación a $y$.  </li><br>
+    <li>En el tercer caso, $z$ es del orden de magnitud de $10^{-6}$  y el error absoluto 
+      es el menor de los tres casos. Sin embargo, el error relativo es el mayor; en términos
+      de porcentaje, es de un $25\%$, por lo que $z^{\ast}$ es considerada como una mala aproximación 
+      a $z$. 
+     </li><br>
+    </ol>
+  </p>
+
+
+  <ul>
+  <li><b>Observemos que conforme $|p|$ se aleja de $1$ (creciendo o decreciendo), el error relativo ER
+     se va siendo un indicador de la precisión de la aproximación mejor que el error absoluto EA. </b>
+    </li><br>
+
+
+  <li><b>El error absoluto no es más que la distancia entre el valor exacto y el valor aproximado, mientras 
+    que el error relativo mide el error entendido como una proporción del valor exacto. 
+  </b></li><br>
+</ul>
   </div>
 
           
     <div class="nota-box"> <h2 class="number-title"> Definición </h2>
-    <p>Se dice que el número <b>$p^{\ast}$ aproxima a $p$ con $t$ cifras significativas</b> si $t$ es el mayor entero 
-      no negativo para el cual se satisface 
+    <p>Se dice que el número <b>$p^{\ast}$ es una aproximación a  $p$ con $d$ cifras decimales  significativas
+      </b> si $d$ es el mayor entero no negativo para el cual se satisface 
 
-      $$\displaystyle{\frac{|p-p^{\ast}|}{|p|}} < 5 \times 10^{-t}$$
+      $$\displaystyle{\frac{|p-p^{\ast}|}{|p|}} < 5 \times 10^{-d}$$
 
     </p>
     </div>
@@ -503,44 +538,15 @@
     </div>
 
 
-    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
-      <p>
-        La mayoría de los algoritmos numericos que de veran  a lo largo del curso generan una sucesión  de valores 
-        que por lo general  convergen a un número real  $X$.  Los elementos de la sucesión que se llaman aproximaciones 
-        se van generando a partir de las aproximaciones anteriores.  
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo </h2>
+      <p> Determinar el número de cifras significativas de cada una de las siguientes aproximaciones 
+        del <a href="S4.html#Ejemplo:Errores_2">Ejemplo 4.9</a>
       </p>
-
-      <p>Un criterio para elegir los métodos que se utilizan es que, cambios pequeños en los 
-        datos iniciales produzcan otros correspondientes en los resutados finales. Un algoritmo que cumple con esta 
-      propiedad se llama <b>estable</b>  en caso contrario se llama <b>inestable</b>
-      </p>
-
-      <p>
-        Algunos algoritmos que sólo son estables para ciertas elecciones de datos iniciales; a estos se les conoce como 
-        <b>condicionalmente estables.</b>
-      </p>
-
-      <p>Para estudiar el crecimiento de los errores de redondeo y su relación con la estabilidad de un algoritmo 
-        se tiene la siguiente definición:
-      </p>
-
-      </div>
-
-      <div class="nota-box"> <h2 class="number-title"> Definición </h2>
-        <p>Sea $E_{0} >0$ un error inicial y $E_{n}$ la maginitud de un error despues de $n$ operaciones 
-          sucesivas.
-        </p>
-        <ul>
-          <li>Si $E_{n}\approx C_{n} E_{0}$ donde $C$ es una constante independiente de $n$, entonces se dice que 
-            el crecimiento del error es <b>lineal</b> </li>
-          <li>Si $E_{n}\approx C^{n} E_{0}$ para algun $C>1$, entonces se dice que 
-            el crecimiento del error es <b>exponencial</b>  </li>
-        </ul>
-      </div>
+    </div>
 
 
-
-
+    
+     
 
 
 
