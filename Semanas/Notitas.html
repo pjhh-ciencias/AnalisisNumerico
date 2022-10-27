@@ -81,7 +81,7 @@
       </header>
 
       <!-- This part is for title in tab-->
-      <title> Semana 2   </title>
+      <title> Notitas   </title>
     
   </head>
 
@@ -90,7 +90,166 @@
   <body class="fondo-body" >
     <h1 class="number-title flexbox"> Notitas </h1>   
 
+
+    <h1 class="number-title flexbox"> Orden de aproximación $\mathbf{O}(h^{n})$ </h1>   
+
+
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+    <p>
+  Esta claro que las sucesiones $\left \{\displaystyle{\frac{1}{n^{2}}}\right\}_{n=1}^{\infty}$ y
+  $\left \{\displaystyle{\frac{1}{n}} \right\}_{n=1}^{\infty}$  son ambas sucesiones convergentes  y 
+  convergen a cero, sin embargo, notemos que la primera sucesión crece converge a cero más 
+  rapidamente que la segunda.
+    </p>
+    </div>
+
+
+
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>Se dice que una función $f(h)$ es de orden $g(h)$ cuando $h \to 0$, lo que se denota 
+        por $f(h)=\mathbf{O}(g(h))$ (se le llama notación O mayuscula de Landau), si existen 
+        constantes $C$ y $c$ tales que:
+        $$|f(h)| \leq C|g(h)| \text{ siempre que } |h|< c $$
+      </p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Consideremos las funciones $f(x)= x^{3} + 2x^{2} $ y $g(x)=x^{2}$. Entonces $f(x)=\mathbf{O}(g(x))$
+      </p>
+      <p><b>Solución:</b></p>
+    </div>
+
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <p>
+        La notación $\mathbf{O}(\cdot)$ (que también se usa para límites en el infinito) proporciona 
+        una forma muy útil  para describir  la velocidad de crecimiento (o decrecimiento) de funciones 
+        en términos de la velocidad de crecimiento (decrecimiento) de funciones elementales bien conocidas 
+        ($x^{n},x^{\frac{1}{n}}, a^{x}, \text{log}_{a},$ etc.)
+      </p>
+
+      <p>La velocidad de convergencia de sucesiones puede definirse de forma similar:</p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+    <p>Sean $\{x_{n}\}_{n=1}^{\infty}$ y $\{y_{n}\}_{n=1}^{\infty}$ dos sucesiones. Se dice que la sucesión 
+      $\{x_{n}\}_{n=1}^{\infty}$ es de orden $\{y_{n}\}_{n=1}^{\infty}$, lo que denotamos por $x_{n} =\mathbf{O}(y_{n})$, 
+      si existen constantes $C$ y $N$ tales que 
+
+      $$|x_{n}| \leq C |y_{n}| \text{ siempre que } n \geq N$$
+    
+    </p>
+
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Consideremos las sucesiones $\left \{\displaystyle{\frac{n^{2}-1}{n^{3}}}\right\}_{n=1}^{\infty}$ y 
+        $\left \{\displaystyle{\frac{1}{n}}\right\}_{n=1}^{\infty}$. Entonces 
+        $\displaystyle{\frac{n^{2}-1}{n^{3}}}=\mathbf{O}\left(\displaystyle{\frac{1}{n}}\right)$
+      </p>
+      <p><b>Solución:</b></p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> </h2>
+      <p>
+        Con frecuencia nos encontramos con una función $f(h)$ se aproxima mediante 
+        otra función $p(h)$ y sabemos que una cota del error cometido es $M|h^{n}|$. Esto
+        nos condce a la siguiente definición.
+      </p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>
+        Supongamos que una función $p(x)$ aproxima a otra función $f(h)$ y que existen una constante 
+        real $M>0$ y un número natural  $n$ tales que: 
+        $$\displaystyle{\frac{|f(h) - p(h)|}{|h^{n}|}} \leq M \text{ para } h \text{ suficientemente pequeño }$$
+        Entonces  se dice que $p(h)$ aproxima a $f(h)$ con orden de aproximación $\mathbf{O}(h^{n})$ 
+        lo que se escribe como:
+      
+        $$f(h)= p(h) + \mathbf{O}(h^{n})$$
+      </p>
+    </div>
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+    <p>
+      Escribiendo la relación $\displaystyle{\frac{|f(h) - p(h)|}{|h^{n}|}} \leq M$  como $|f(h) - p(h)| \leq M |h^{n}|$,  
+      vemos que $\mathbf{O}(h^{n})$ ocupa el lugar de la cota de error $M|h^{n}|$.
+    </p>
+
+    <p> El siguiente resultado 
+      muestra como podemos aplicar esta definicion a combinaciones simples de funciones:
+    </p>
+    </div>
+    
+
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <p>
+        Supongamos que $f(h) = p(h) + \mathbf{O}(h^{n})$, $g(h)= q(h) + \mathbf{O}(h^{m})$ y 
+        sea $r=min\{ m,n\}$. Entonces 
+        <p>
+          <ol>
+            <li>$f(h) + g(h) = p(h) + q(h) + \mathbf{O}(h^{r})$</li>   <br>         
+            <li>$f(h) \cdot  g(h) = p(h) \cdot  q(h) + \mathbf{O}(h^{r})$</li><br>
+            <li>$\displaystyle{\frac{f(h)}{g(h)}} =\displaystyle{\frac{p(h)}{q(h)}} + \mathbf{O}(h^{r}), \text{ siempre que } g(h)\not= 0 \text{ y que } q(h)\not= 0$</li>            
+          </ol></p>
+      </p>
+      <p><b>Demostración:</b></p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <p>El teorema anterior se puede resumir de la siguiente manera:
+
+        <ul><li>$\mathbf{O}(h^p) + \mathbf{O}(h^p)= \mathbf{O}(h^p) $</li><br>
+        <li>$\mathbf{O}(h^p) + \mathbf{O}(h^q)= \mathbf{O}(h^r), \,\,\, \text{ siendo } r= \min\{p,q\} $</li><br>
+        <li>$\mathbf{O}(h^p) \cdot \mathbf{O}(h^q)= \mathbf{O}(h^s), \,\,\, \text{ siendo } s= p + q $</li>
+      </ul>
+      </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <p>
+       Consideremos el caso en el que $p(x)$ es la enesima aproximación por polinomios de Taylor 
+       de $f(x)$; entonces el resto de la formula de Taylor se designa simplemente por $\mathbf{O}(h^{n+1})$
+       y sustituye a todos los términos omitidos, que son el que contiene la potencia $h^{n+1}$ y los de 
+       grado superior. El resto de la fórmula de Taylor converge a cero con la misma rapidez que $h^{n+1}$ converge 
+       a cero cuando $h\to 0$, tal y como lo expresa la siguiente relación:
+
+       $$\mathbf{O}(h^{n+1})\approx M \cdot h^{n+1} \approx \displaystyle{\frac{f^{n+1}(c)}{(n+1)!}} \cdot h^{n+1}$$
+      
+       válida para $h$ suficientemente pequeño. En otras palabras, el término $\mathbf{O}(h^{n+1})$ sustituye 
+       a la cantidad $M \cdot h^{n+1}$, donde $M$ es constante o se "comporta como una constante." 
+      </p>
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Teorema de Taylor</h2>
+
+        <p>
+          Supongamos que $f \in C^{n+1}[a,b]$. Si $x_{0}, x= x_{0} + h \in [a,b]$, entonces 
+          $$f(x_{0} + h)= \sum_{k=0}^{n} \displaystyle{\frac{f^{k}(x_{0})}{k!}} h^{k} + \mathbf{O}(h^{n+1}) $$
+        </p>
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Consideremos los desarrollos de Taylor: 
+      <ul>
+        <li>$e^{h}=1 + h + \displaystyle{\frac{h^{2}}{2!}} + \displaystyle{\frac{h^{3}}{3!}} + \mathbf{O}(h^{4})$ y </li>
+        <li>$Cos(h)= 2 - \displaystyle{\frac{h^{2}}{2!}} + \displaystyle{\frac{h^{4}}{4!}} + \mathbf{O}(h^{6})$</li>
+      </ul>
+      </p>
+      <p>Determinar el orden de aproximación de la aproximación para la suma y el producto.</p>
+      <p><b>Solución:</b></p>
+      </div>
+
+      <h1 class="number-title flexbox"> El orden de aproximación de una sucesión</h1>   
+
+
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+
       <p>
         La mayoría de los algoritmos numericos que de veran  a lo largo del curso generan una sucesión  de valores 
         que por lo general  convergen a un número real  $X$.  Los elementos de la sucesión que se llaman aproximaciones 
