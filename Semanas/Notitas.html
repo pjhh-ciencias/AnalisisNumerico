@@ -187,7 +187,7 @@
     </div>
 
 
-    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+    <div class="nota-box" id="Def:aprox_O_funciones"> <h2 class="number-title"> Definición</h2>
       <p>
         Supongamos que una función $p(x)$ aproxima a otra función $f(h)$ y que existen una constante 
         real $M>0$ y un número natural  $n$ tales que: 
@@ -213,7 +213,7 @@
    
     </div>
     
-        
+    <!--
     <div class="nota-box"> <h2 class="number-title"> Nota</h2>
       <p>
     <p> El siguiente resultado  muestra como podemos aplicar esta definicion a combinaciones simples de funciones:
@@ -233,7 +233,7 @@
       </p>
       <p><b>Demostración:</b> Se deja de ejercicio al lector.</p>
     </div>
-
+-->    
     
 
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
@@ -272,6 +272,36 @@
       </div>
 
       <h1 class="number-title flexbox"> El orden de aproximación de una sucesión</h1>   
+
+
+      <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+        <p>
+          El orden de las aproximaciones númericas se suelen conseguir calculando
+          una sucesión de aproximaciones que se acerquen más y más a la respuesta deseada. 
+          La definicón de orden de aproximación de una sucesión es analoga a la dada 
+          para funciones en la <a href="#Def:aprox_O_funciones"> Definición 1.10</a>  
+        </p>
+      </div>
+
+      
+      <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+        <p>
+          Supoongamos que $\lim_{n\to \infty} x_{n}=x$ y que $\{r_{n}\}_{n=1}^{\infty}$ 
+          es unaa sucesión tal que $\lim_{n\to \infty} r_{n}=0$. Se dice que $\{x_{n}\}_{n=1}^{\infty}$
+          converge   a $x$ con orden de aproximación $O(r_{n})$ si existe una constante $K>0$ tal que 
+          
+          $$\displaystyle{\frac{|x_{n} - x|}{|r^{n}|}} \leq K \text{  para } n \text{ lo suficientemente grande}$$ 
+          
+          esto se denota por $x_{n}=x+ O(r_{n})$ o bien $x_{n} \to x$ con orden de aproximación $O(r_{n})$
+        </p>
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>
+          Sea $x_{n}= \displaystyle{\frac{\cos(n)}{n^2}}$ y $r_{n}= \displaystyle{\frac{1}{n^{2}}}$. Entonces 
+          $\lim_{n\to \infty} x_{n}=0$ con orden de aproximación $O(\frac{1}{n^{2}})$ 
+        </p>
+      </div>
 
 
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
