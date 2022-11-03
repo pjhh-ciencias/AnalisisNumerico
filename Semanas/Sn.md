@@ -6,10 +6,11 @@ output:
   pdf_document: default
   html_document: default
 ---
-
 # Evaluacion de un polinomio
 
-Sea $p_n(x)$ un polinomio de grado $n$, escribimos este de la forma: \begin{equation}
+Sea $p_n(x)$ un polinomio de grado $n$, escribimos este de la forma: 
+
+\begin{equation}
 p_n(x):= a_n x^n + a_{n-1}x^{n-1} +\cdots + a_2x^2 + a_{1}x + a_0
 \end{equation}
 
@@ -26,6 +27,7 @@ Un polinomio de quinto grado $p_5(x):= a_5 x^5 + a_4x^4 + a_3 x^3+ a_2x^2 + a_{1
 p_n(x):= ((( a_5 x + a_4x)x + a_3)x + a_2)x +a_1)x + a_0
 \end{equation}
 ```
+
 ### Teorema
 
 sea $p_n(x):= a_n x^n + a_{n-1}x^{n-1} +\cdots + a_2x^2 + a_{1}x + a_0$ un polinomio de grado $n$ y sea $c$ un número para el que deseamos evaluar $p(c)$. Si definimos \begin{align*}
@@ -44,17 +46,20 @@ R_0 = b_0
 p(x)= (x-c)Q_o(x)+ R_o
 \end{equation}
 ```
+
 Es decir, $Q_0(x)$ es el polinomio cociente de grado $n-1$ y $R_o= b_0= p(c)$ es el resto de la división de $p(x)$ entre $x-c$
 
-```{r setup, include=FALSE}
+```{r
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
 
-$$f(x)$$
+$$
+f(x)
+$$
 
-```{r cars}
+```{r
 summary(cars)
 ```
 
