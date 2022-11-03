@@ -11,7 +11,7 @@
 
 <meta name="author" content="Análisis númerico" />
 
-<meta name="date" content="2022-10-10" />
+<meta name="date" content="2022-11-02" />
 
 <title>S2</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">S2</h1>
 <h4 class="author">Análisis númerico</h4>
-<h4 class="date">2022-10-10</h4>
+<h4 class="date">2022-11-02</h4>
 
 </div>
 
@@ -373,9 +373,9 @@ colección de multiplicaciones anidadas.</p>
 <p>Un polinomio de quinto grado <span class="math inline">\(p_5(x):= a_5
 x^5 + a_4x^4 + a_3 x^3+ a_2x^2 + a_{1}x + a_0\)</span> puede escribirse
 como una multiplicación de 5 multiplicaciones anidadas:</p>
-<p><span class="math display">\[\begin{equation}
+<span class="math display">\[\begin{equation}
 p_n(x):= ((( a_5 x + a_4x)x + a_3)x + a_2)x +a_1)x + a_0
-\end{equation}\]</span></p>
+\end{equation}\]</span>
 </div>
 <div id="teorema" class="section level3">
 <h3>Teorema</h3>
@@ -391,14 +391,28 @@ Q_o(x):= b_n x^n + b_{n-1}x^{n-1} +\cdots + b_2x^2 + b_{1}x + b_0
 \end{equation}\]</span> y <span class="math display">\[\begin{equation}
 R_0 = b_0
 \end{equation}\]</span> se verifica que:</p>
-<p><span class="math display">\[\begin{equation}
+<span class="math display">\[\begin{equation}
 p(x)= (x-c)Q_o(x)+ R_o
-\end{equation}\]</span></p>
+\end{equation}\]</span>
 <p>Es decir, <span class="math inline">\(Q_0(x)\)</span> es el polinomio
 cociente de grado <span class="math inline">\(n-1\)</span> y <span class="math inline">\(R_o= b_0= p(c)\)</span> es el resto de la división
 de <span class="math inline">\(p(x)\)</span> entre <span class="math inline">\(x-c\)</span></p>
-<p>Demostración:</p>
 </div>
+</div>
+<div id="r-markdown" class="section level2">
+<h2>R Markdown</h2>
+<p><span class="math display">\[f(x)\]</span></p>
+<pre class="r"><code>summary(cars)</code></pre>
+<pre><code>##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00</code></pre>
+<p>Note that the <code>echo = FALSE</code> parameter was added to the
+code chunk to prevent printing of the R code that generated the
+plot.</p>
 </div>
 </div>
 
