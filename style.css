@@ -530,7 +530,7 @@ tr:nth-child(odd) {
 
 
 /*////  Listas //// */
-
+/*
 ol {
   list-style: none;
   counter-reset: my-counter;
@@ -540,9 +540,10 @@ ol li {
   padding: 1px;
 }
 
-ol li::before {
+
+ol li::before{
   content:  counter(my-counter) ".- ";
   color: rgb(0, 0, 0);
   font-weight: bold;
   font-size: 20px;
-}
+}*/

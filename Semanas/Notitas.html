@@ -213,15 +213,58 @@
        Entre los métodos que se tienen para resolver la ecuación $f(x)=0$ se encuentran los métodos cerrados y abiertos. 
       </p>
 
-      <p>Los métodos  cerrados necesitan de dos valores iniciales $X_{I}$ y $X_{F}$ que encierran a la raiz $p$
+      <p>Los <b>métodos  cerrados</b> necesitan de dos valores iniciales $X_{I}$ y $X_{F}$ que encierran a la raiz $p$
         y tienen la característica  de que siempre encuentran una raíz o en el mejor de los casos una aproximación a $p$.
       </p>
 
-      <p>Los métodos abiertos requieren unicamente de un sólo valor de inicio $p_{0}$  o bien de dos valores iniciales 
+      <p>Los <b>métodos abiertos</b> requieren unicamente de un sólo valor de inicio $p_{0}$  o bien de dos valores iniciales 
         que no necesariamente encierran a la raíz $p$. Estos a veces no encuentran  la raíz pero cuando lo hacen por lo general 
         lo encuentran mucho más rápido que los métodos abiertos. 
       </p>
 
+
        </div>
 
+
+       <div class="nota-box"> <h2 class="number-title"> Método de la bisección</h2>
+
+        <p>El método de bisección conocido también como de corte binario, de busqueda binaria, de partición,
+           de partición de intervalos, o de Bolzano. es un método cerrado que se basa en el teorema del
+           Valor Intermedio; encuentra la raíz $p$ de la ecuación $f(x)=0$ cuando se logra "encerrar" a 
+           la raiz en un intervalo cerrado $[x_{i},x_{f}]$ que se cumple con $f(x_{i})f(x_{f})\not =0$       
+        </p>
+
+        <h2>El metodo de Bisección sigue los siguientes pasos:</h2>
+        <p>Dada una función  continua $f(x)$:
+          <ol>
+            <li>Encontrar los valores iniciales $x_{i}$ y $x_{f}$ qe cumplen con la condición:
+              $$f(x_{i}) f(x_{f}) < 0$$
+            </li><br>
+            <li>La primera aproximación $x_{m_{1}}$ a la raiz $p$ es:
+              $$x_{m_{1}}:= \displaystyle{x_{i} + x_{f}}{2}$$
+            </li><br>
+            <li>Se evalua $f(x_{m_{1}})$ y se tienen tres casos:<br>
+              <ul>
+                <li>Caso 1. $f(x_{i})f(x_{m_{1}}) < 0$
+                  <p>En este caso $f(x_{i})$ y $f(x_{m_{1}})$ tienen signos opuestos por lo que la raiz se encuentra
+                    en l intervalo $[x_{i},x_{m_{1}}]$. Entonces se define $x_{f}= x_{m_{1}}$ </p>
+                </li><br>
+                <li>Caso 2. $f(x_{i})f(x_{m_{1}}) > 0$
+                <p>En este caso $f(x_{i})$ y $f(x_{m_{1}})$ tienen iguales, por lo que $f(x_{m_{1}})$ y $f(x_{f})$ 
+                  tienen signos opuestos, de aquí que la raiz $p$ se encuentra en el intervalo $[x_{m_{1}},x_{f}]$,
+                entonces se define 
+                $$x_{i}=x_{m_{1}} $$
+                </p>
+              </li><br>
+
+
+              </ul>
+            </p>
+
+              </ul>
+            </li>
+
+  
+          </ol>
+ 
 </body>

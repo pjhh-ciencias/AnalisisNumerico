@@ -249,7 +249,7 @@
        <p>El resto de la fórmula de Taylor converge a cero con la misma rapidez que $h^{n+1}$ converge 
        a cero cuando $h\to 0$, tal y como lo expresa la siguiente relación:
 
-       $$O(h^{n+1})\approx M \cdot h^{n+1} \approx \displaystyle{\frac{f^{n+1}(c)}{(n+1)!}} \cdot h^{n+1}$$
+       $$O(h^{n+1})\approx M \cdot h^{n+1} \approx \displaystyle{\frac{f^{(n+1)}(c)}{(n+1)!}} \cdot h^{n+1}$$
       
        válida para $h$ suficientemente pequeño. En otras palabras, el término $O(h^{n+1})$ sustituye 
        a la cantidad $M \cdot h^{n+1}$, donde $M$ es constante o se "comporta como una constante." 
@@ -308,10 +308,13 @@
         </p>
       </div>
 
-      <div class="nota-box"> <h2 class="number-title"> Propagación del error</h2>
+      <h1 class="number-title flexbox">   Propagación del error</h1>
+
+
+      <div class="nota-box"> 
         <p>Veamos enseguida como pueden propagarse los errores en una cadena de operaciones sucesivas</p>
 
-        <h3>Propagación del error en una suma</h3>
+        <h2 class="number-title"> Propagación del error en una suma</h2>
 
         <p>Consideremos la suma de dos números $p$ y $q$ (que son valores exactos) 
           con valores aproximados $p^{\ast} $ y $q^{\ast} $ cuyos errores son $\epsilon_{p}$ 
@@ -320,9 +323,9 @@
            $$p+q= (p^{\ast} + \epsilon_{p}) + (q^{\ast} + \epsilon_{q})= (p^{\ast} + q^{\ast}) + (\epsilon_{p} + \epsilon_{q}) $$
         </p>
         
-        <>Por lo tanto, <b>el error en una suma es la suma de los errores de los sumandos</b>.
+        <p>Por lo tanto, <b>el error en una suma es la suma de los errores de los sumandos</b>.</p>
 
-       <h3>Propagación del error en una multiplicación</h3>
+        <h2 class="number-title"> Propagación del error en una multiplicación</h2>
 
        <p>La propagación del error en una multiplicación es más complicada. Para el producto 
         se tiene:
@@ -345,10 +348,19 @@
         para la aproximación $p^{\ast}q^{\ast}$
       </p>
 
-      $$ER=$$
+      $$ER= \displaystyle{\frac{pq - p^{\ast}q^{\ast}}{pq} =\frac{p^{\ast}\epsilon_{q} +
+       q^{\ast}\epsilon_{p} + \epsilon_{p} \epsilon{q}}{pq} =\frac{p^{\ast} \epsilon_{q}}{pq}+ \frac{q^{\ast}\epsilon_{p}}{pq} + \frac{\epsilon_{p}\epsilon_{q}}{pq} } $$
+
+      <p>Si además, suponemos que $p^{\ast}$ y $q^{\ast}$ son buenas aproximaciones de $p$ y$q$ , entonces 
+        $\displaystyle{\frac{p^{\ast}}{p}} \approx 1$, $\displaystyle{\frac{q^{\ast}}{q}} \approx 1$ y $ER_{p} ER_{q} \approx \left(\frac{\epsilon_{p}}{p}\right)\left(\frac{\epsilon_{q}}{q}\right) \approx 0  $</p>
+
+
+      <p>Esto prueba que el error relativo  del producto $pq$ es aproximadamente la suma de los errores relativos
+        de las aproximaciones de las aproximaciones. </p>
       </div>
 
-      <div class="nota-box"> <h2 class="number-title"> Algoritmos estables</h2>
+
+      <div class="nota-box"> <h2 class="number-title"> Definición</h2>
 
         <p>Es normal que los errores iniciales en los datos se propaguen a lo largo de una cadena de de operaciones.
           Una cualidad deseable en en cualquier proceso númerico es que un error pequeño en las condiciones 
@@ -356,6 +368,7 @@
           en otro caso, se llama <b>inestable</b>. Siempre que sea posible elegiremos métodos que sean estables.  
         </p>
         
+
         <p>
           La mayoría de los algoritmos numericos que se veran  a lo largo del curso <b>generan una
           sucesión  de valores</b> que por lo general  convergen a un número real  $p$. Los elementos
