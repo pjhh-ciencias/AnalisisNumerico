@@ -308,9 +308,94 @@
         </p>
       </div>
 
+      <div class="nota-box"> <h2 class="number-title"> Propagación del error</h2>
+        <p>Veamos enseguida como pueden propagarse los errores en una cadena de operaciones sucesivas</p>
 
+        <h3>Propagación del error en una suma</h3>
+
+        <p>Consideremos la suma de dos números $p$ y $q$ (que son valores exactos) 
+          con valores aproximados $p^{\ast} $ y $q^{\ast} $ cuyos errores son $\epsilon_{p}$ 
+          y $\epsilon_{q}$ respectivamente. De esta manera se tiene que:  $p=p^{\ast} + \epsilon_{p}$ y
+           $q=q^{\ast} + \epsilon_{q}$. Luego, de aquí que la suma es:
+           $$p+q= (p^{\ast} + \epsilon_{p}) + (q^{\ast} + \epsilon_{q})= (p^{\ast} + q^{\ast}) + (\epsilon_{p} + \epsilon_{q}) $$
+        </p>
+        
+        <>Por lo tanto, <b>el error en una suma es la suma de los errores de los sumandos</b>.
+
+       <h3>Propagación del error en una multiplicación</h3>
+
+       <p>La propagación del error en una multiplicación es más complicada. Para el producto 
+        se tiene:
+       </p>
+
+       $$pq= (p^{\ast}  + \epsilon_{p} )(q^{\ast}  + \epsilon_{q}) =  p^{\ast} q^{\ast} + p^{\ast}\epsilon_{q}
+        + q^{\ast}\epsilon_{p} + \epsilon_{p}\epsilon_{q}$$
+
+      <p>Por lo tanto, si $p^{\ast}$ y q^{\ast} son mayores que $1$ en valor absoluto, los términos $p\epsilon_{q}$ 
+        y $q\epsilon_{p}$ indican que existe la posibilidad de que los errores originales $\epsilon_{p}$ y $\epsilon_{q}$
+        sean "magnificados". Si analizamos los errores relativos, tendremos una percepción más clara de la situación.
+
+      </p>
+
+      <p>Reordenando lo términos en la expresión anterior obtenemos: </p>
+
+      $$pq - p^{\ast} q^{\ast} = p^{\ast} \epsilon_{q} + q^{\ast} \epsilon_{p} + \epsilon_{p} \epsilon_{q}$$
+        
+      <p>Supongamos que $p\not= 0 $ y que $q\not=0$, entonces podemos obtener el error relativo del producto
+        para la aproximación $p^{\ast}q^{\ast}$
+      </p>
+
+      $$ER=$$
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Algoritmos estables</h2>
+
+        <p>Es normal que los errores iniciales en los datos se propaguen a lo largo de una cadena de de operaciones.
+          Una cualidad deseable en en cualquier proceso númerico es que un error pequeño en las condiciones 
+          iniciales produzca errores pequeños en el resultado final. Un algoritmo con esta cualidad se llama <b>estable</b>;
+          en otro caso, se llama <b>inestable</b>. Siempre que sea posible elegiremos métodos que sean estables.  
+        </p>
+        
+        <p>
+          La mayoría de los algoritmos numericos que se veran  a lo largo del curso <b>generan una
+          sucesión  de valores</b> que por lo general  convergen a un número real  $p$. Los elementos
+          de la sucesión que se llaman   <b>aproximaciones</b> se van generando a partir de las
+          aproximaciones anteriores.  
+        </p>
+
+
+  <!-- 
+        <p>Un criterio para elegir los métodos que se utilizan es que, cambios pequeños en los 
+          datos iniciales produzcan otros correspondientes en los resutados finales. Un algoritmo que
+          cumple con esta   propiedad se llama <b>estable</b>  en caso contrario se llama <b>inestable</b>
+        </p>
+  -->
+        <p>
+          Algunos algoritmos que sólo son estables para ciertas elecciones de datos iniciales; a estos se les conoce como 
+          <b>condicionalmente estables.</b>
+        </p>
+  
+        <p>Para estudiar el crecimiento de los errores de redondeo y su relación con la estabilidad de un algoritmo 
+          se tiene la siguiente definición:
+        </p>
+  
+        </div>
     
      
+
+      <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+        <p>Sea $\epsilon >0$ un error inicial y $\epsilon_{n}$ la maginitud de un error despues 
+          de $n$ operaciones sucesivas.
+        </p>
+        <ul>
+          <li>Si $|\epsilon_{n}|\approx n \epsilon_{0}$ entonces se dice que el crecimiento del error 
+            es <b>lineal</b> </li><br>
+          <li>Si $|\epsilon_{n}|\approx K^{n} \epsilon_{0}$ para alguna constante  $K$, entonces se dice
+             que el crecimiento del error es <b>exponencial</b>. Si $K>1$, entonces un error exponencial crece 
+            cuando $n\to \infty $ sin que podamos acotarlo; pero si $0< K < 1$, entonces el error exponencial 
+          disminuye a cero cuando $n \to \infty$   </li>
+        </ul>
+      </div>
 
 
 
