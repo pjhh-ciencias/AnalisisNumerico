@@ -8,7 +8,7 @@ output:
 ---
 # Evaluacion de un polinomio
 
-Sea $p_n(x)$ un polinomio de grado $n$, escribimos este de la forma: 
+Sea $p_n(x)$ un polinomio de grado $n$, escribimos este de la forma:
 
 \begin{equation}
 p_n(x):= a_n x^n + a_{n-1}x^{n-1} +\cdots + a_2x^2 + a_{1}x + a_0
@@ -20,9 +20,17 @@ Es una técnica para evaluar polinomios que puede ser visto como una colección 
 
 ### Ejemplo
 
+
+
+$$
+p
+
+
+$$
+
 Un polinomio de quinto grado $p_5(x):= a_5 x^5 + a_4x^4 + a_3 x^3+ a_2x^2 + a_{1}x + a_0$ puede escribirse como una multiplicación de 5 multiplicaciones anidadas:
 
-```{=latex}
+```
 \begin{equation}
 p_n(x):= ((( a_5 x + a_4x)x + a_3)x + a_2)x +a_1)x + a_0
 \end{equation}
@@ -64,3 +72,9 @@ summary(cars)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+```{python } 
+2+3
+````
