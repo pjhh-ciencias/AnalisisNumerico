@@ -90,101 +90,6 @@
   <body class="fondo-body" >
     <h1 class="number-title flexbox"> Notitas </h1>   
 
-
-    
-
-   
-
-
-
-
-    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
-    <p>Particularmente es inevitable el crecimiento lineal de un error y cuando  $C$ y $E_{0}$ 
-      son pequeños, por lo general son aceptables los resultados.
-    </p>
-
-    <p>Por otro lado siempre se trata de evitar el crecimiento exponencial de error, pues el término 
-      $C_{n}$ crece incluso para valore  pequeños de $n$, lo que conduce a empresiones inaceptables.
-    </p>
-
-    <p>La siguiente definición proporciona una medida de la rapidez de convergencia de una sucesión:</p>
-
-   </div>
-
-
-    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
-      <p>
-        Sea $\{\beta_{n} \}$ una sucesión que converge a cero y $\{\alpha_{n} \}_{n=1}^{\infty}$.
-        Una sucesión que converge a a un número $\alpha$. Si existe una constante positiva $K$ tal que 
-        para $n$ lo suficientemente grande se satisface:
-
-        $$|\alpha_{n} - \alpha| \leq K |\beta_{n}|$$
-
-        entonces, se dice que la sucesión $\{\alpha_{n} \}_{n=1}^{\infty}$ converge a $\alpha$ 
-        con rapidez de convergencia $O(\beta_{n})$. Esta expresión se lee "O mayuscula de $\beta_{n}$"
-         y se indica escribiendo:
-         
-         $$\alpha_{n}= \alpha + O(\beta_{n})$$
-        
-      </p>
-    </div>
-
-    <div class="nota-box"> <h2 class="number-title"> Observación </h2>
-      <p>Aunque en la definición anterior  se puede utilizar cualquier sucesión 
-        $\{\beta_{n} \}_{n=1}^{\infty}$ en casi todas las situaciones se utilizará 
-        
-        $$\beta_{n}:= \displaystyle{\frac{1}{n^{p}}}$$
-
-        para algún $p>0$. Por lo general se tiene interes en el mayor valor de $p$ 
-        tal que:
-        
-        
-        $$\alpha_{n}= \alpha + O\left(\displaystyle{\frac{1}{n^{p}}}\right)$$
-      </p>
-
-    </div>
-
-    
-    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
-      <p>
-        Para cada  $n \in \mathbb{N}$, definamos 
-        <ul>
-          <li>$\alpha_{n}:= \displaystyle{\frac{n+1}{n^{2}}}$</li>
-          <li>$\tilde{\alpha_{n}}:= \displaystyle{\frac{n+3}{n^{3}}}$</li>
-        </ul>
-      </p>
-      <p>Determine cual de entre las sucesiones $\{\alpha_{n} \}_{n\geq 1}$ y $\{\tilde{\alpha_{n}} \}_{n\geq 1}$ converge 
-      mucho más rapido al cero. 
-      </p>
-    </div>
-
-    <div class="nota-box"> <h2 class="number-title"> Observación </h2>
-      <p>
-        Se tiene una definición analoga para la rápidez  de convergencia de funciones  
-      </p>
-    </div>
-
-
-    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
-      <p>
-        Supongamos que $\lim_{h\to a} G(h)=0$ y $\lim_{h\to a} F(h)=0$. Si existe una constante positiva $K$ tal que 
-        para $h$ lo suficientemente pequeña, se satisface:
-
-        $$|F(h) - L| \leq K |G(h)|$$
-
-      lo cual se donota por 
-      
-      $$F(h) = L + O(G(h))$$ 
-
-      Frecuentemente, las funciones que se usan para la comparación tienen la  forma $G(h)= h^{p}$, donde $p >0$.  
-      </p>
-
-      <p>Nos interesa  el mayor valor de $p$ para el cual se satisface:
-
-        $$F(h)= L + O(h^{p})$$
-      </p>
-    </div>
-
     <h1 class="number-title flexbox"> Ecuaciones no lineales </h1>   
 
     <div class="nota-box"> <h2 class="number-title"> Introducción </h2>
@@ -244,27 +149,37 @@
               $$x_{m_{1}}:= \displaystyle{x_{i} + x_{f}}{2}$$
             </li><br>
             <li>Se evalua $f(x_{m_{1}})$ y se tienen tres casos:<br>
-              <ul>
-                <li>Caso 1. $f(x_{i})f(x_{m_{1}}) < 0$
+              <ul><br>
+                <li><b>Caso 1</b>. $f(x_{i})f(x_{m_{1}}) < 0$
                   <p>En este caso $f(x_{i})$ y $f(x_{m_{1}})$ tienen signos opuestos por lo que la raiz se encuentra
                     en l intervalo $[x_{i},x_{m_{1}}]$. Entonces se define $x_{f}= x_{m_{1}}$ </p>
                 </li><br>
-                <li>Caso 2. $f(x_{i})f(x_{m_{1}}) > 0$
-                <p>En este caso $f(x_{i})$ y $f(x_{m_{1}})$ tienen iguales, por lo que $f(x_{m_{1}})$ y $f(x_{f})$ 
+                <li><b>Caso 2</b>. $f(x_{i})f(x_{m_{1}}) > 0$
+                <p>En este caso $f(x_{i})$ y $f(x_{m_{1}})$ tienen signos iguales, por lo que $f(x_{m_{1}})$ y $f(x_{f})$ 
                   tienen signos opuestos, de aquí que la raiz $p$ se encuentra en el intervalo $[x_{m_{1}},x_{f}]$,
                 entonces se define 
                 $$x_{i}=x_{m_{1}} $$
                 </p>
               </li><br>
-
-
-              </ul>
+              <li><b>Caso 3.</b> $f(x_{i})f(x_{m_{1}}) > 0$
+              <p>En este caso se tiene que $f(x_{m_{1}})=0$ por lo que $x_{m_{1}}$ es una raiz de $f(x)$ y terminamos.</p>
+             </li><br>
+             </ul>
             </p>
-
-              </ul>
-            </li>
-
+           </li><br>
+           <li>Repetiremos el proceso hasta que 
+            $$ERP= \left|\displaystyle{\frac{x_{\text{actual}} - x_{\text{anterior}}}{x_{\text{actual}}}} \right|\times 100\% < \epsilon $$ </li>
+          <p> donde $\epsilon$ es un valor muy pequeño. Si no se satisface  la condición anterior y se  tiene cualquiera de los dos primeros casos, 
+            el proceso se repite con el nuevo intervalo. </p>
+        </li>
+      </ol> 
+           
+       </div>
   
-          </ol>
+      
+       <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+          <p>Aproximar la raiz de $f(x)= e^{-x} - \log(x)$ hasta que $|ERP | < 1\%$ aplicando el metodo de bisección.</p>
+       </div>
+
  
 </body>
