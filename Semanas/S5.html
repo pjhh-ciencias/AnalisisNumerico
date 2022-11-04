@@ -128,7 +128,7 @@
         <p>
           <ol>
             <li>Si $f_{1}(h) = O(g(h))$ y $f_{2}(h)=O(g(h))$, entonces $f_{1}(h) + f_{2}(h) = O(g(h))$</li>   <br>         
-            <li> Si $f_{1}(h) = O(g_{1}(h))$ y $f_{2}(h)=O(g_{2}(h))$, entonces $f_{1}(h) + f_{2}(h) = O(\max\{|g_{1}|(h), |g_{2}|(h)\})$</li>   <br>     
+            <li> Si $f_{1}(h) = O(g_{1}(h))$ y $f_{2}(h)=O(g_{2}(h))$, entonces $f_{1}(h) + f_{2}(h) = O(\max\{g_{1}(h), g_{2}(h)\})$</li>   <br>     
             <li>Si $f(h) = O(g(h))$ y $k>0$ es una constante positiva, entonces  $kf(h) = O(g(h))$</li><br>
             <li> Si $f_{1}(h) = O(g_{1}(h))$ y $f_{2}(h)=O(g_{2}(h))$, entonces $f_{1}(h) \cdot f_{2}(h) = O(g_{1}(h) \cdot g_{2}(h))$</li>   <br>     
           </ol></p>
@@ -141,7 +141,7 @@
       <p>El teorema anterior se puede resumir de la siguiente manera:
 
         <ul><li>$O(g(h)) + O(g(h))= O(g(h)) $</li><br>
-        <li>$O(g_{1}(h)) + O(g_{2}(h))= O(\max\{|g_{1}|,|g_{2}|\})$</li><br>
+        <li>$O(g_{1}(h)) + O(g_{2}(h))= O(\max\{g_{1},g_{2}\})$</li><br>
         <li>$k\cdot O(g(h)) = O(g(h))$, para todo constante positiva $k$</li><br>
         <li>$O(g_{1}(h)) \cdot O(g_{2}(h))= O(g_{1}\cdot g_{2})$</li><br>
       </ul>
@@ -260,7 +260,7 @@
 
         <p>
           Supongamos que $f \in C^{n+1}[a,b]$. Si $x_{0}, x= x_{0} + h \in [a,b]$, entonces 
-          $$f(x_{0} + h)= \sum_{k=0}^{n} \displaystyle{\frac{f^{k}(x_{0})}{k!}} h^{k} + O(h^{n+1}) $$
+          $$f(x_{0} + h)= \sum_{k=0}^{n} \displaystyle{\frac{f^{(k)}(x_{0})}{k!}} h^{k} + O(h^{n+1}) $$
         </p>
       </div>
 
