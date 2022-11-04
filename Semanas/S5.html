@@ -128,7 +128,7 @@
         <p>
           <ol>
             <li>Si $f_{1}(h) = O(g(h))$ y $f_{2}(h)=O(g(h))$, entonces $f_{1}(h) + f_{2}(h) = O(g(h))$</li>   <br>         
-            <li> Si $f_{1}(h) = O(g_{1}(h))$ y $f_{2}(h)=O(g_{2}(h))$, entonces $f_{1}(h) + f_{2}(h) = O(\max\{g_{1}(h), g_{2}(h)\})$</li>   <br>     
+            <li> Si $f_{1}(h) = O(g_{1}(h))$ y $f_{2}(h)=O(g_{2}(h))$, entonces $f_{1}(h) + f_{2}(h) = O(\max\{|g_{1}(h)|, |g_{2}(h)|\})$</li>   <br>     
             <li>Si $f(h) = O(g(h))$ y $k>0$ es una constante positiva, entonces  $kf(h) = O(g(h))$</li><br>
             <li> Si $f_{1}(h) = O(g_{1}(h))$ y $f_{2}(h)=O(g_{2}(h))$, entonces $f_{1}(h) \cdot f_{2}(h) = O(g_{1}(h) \cdot g_{2}(h))$</li>   <br>     
           </ol></p>
@@ -141,7 +141,7 @@
       <p>El teorema anterior se puede resumir de la siguiente manera:
 
         <ul><li>$O(g(h)) + O(g(h))= O(g(h)) $</li><br>
-        <li>$O(g_{1}(h)) + O(g_{2}(h))= O(\max\{g_{1},g_{2}\})$</li><br>
+        <li>$O(g_{1}(h)) + O(g_{2}(h))= O(\max\{|g_{1}|,|g_{2}|\})$</li><br>
         <li>$k\cdot O(g(h)) = O(g(h))$, para todo constante positiva $k$</li><br>
         <li>$O(g_{1}(h)) \cdot O(g_{2}(h))= O(g_{1}\cdot g_{2})$</li><br>
       </ul>
@@ -190,7 +190,7 @@
 
     <div class="nota-box" id="Def:aprox_O_funciones"> <h2 class="number-title"> Definición</h2>
       <p>
-        Supongamos que una función $p(x)$ aproxima a otra función $f(h)$ y que existen una constante 
+        Supongamos que una función $p(h)$ aproxima a otra función $f(h)$ y que existen una constante 
         real $M>0$ y un número natural  $n$ tales que: 
 
         $$\displaystyle{\frac{|f(h) - p(h)|}{|h^{n}|}} \leq M \text{ para } h \text{ suficientemente pequeño }$$
@@ -367,24 +367,26 @@
   
   
       <div class="nota-box"> <h2 class="number-title"> Definición </h2>
-        <p>
-          Supongamos que $\lim_{h\to a} G(h)=0$ y $\lim_{h\to a} F(h)=0$. Si existe una constante positiva $K$ tal que 
-          para $h$ lo suficientemente pequeña, se satisface:
+          <p>
+            Supongamos que $\lim_{h\to a} G(h)=0$ y $\lim_{h\to a} F(h)=0$. Si existe una constante
+            positiva $K$ tal que para $h$ lo suficientemente pequeña, se satisface:
+    
+            $$|F(h) - L| \leq K |G(h)|$$
+    
+            lo cual se denota por 
+          
+            $$F(h) = L + O(G(h))$$ 
+    
+            Frecuentemente, las funciones que se usan para la comparación tienen la  forma $G(h)= h^{p}$, 
+            donde $p >0$. 
+          </p>
+    
+          <p>Nos interesa  el mayor valor de $p$ para el cual se satisface:
   
-          $$|F(h) - L| \leq K |G(h)|$$
-  
-        lo cual se donota por 
+           $$F(h)= L + O(h^{p})$$
+          </p>
         
-        $$F(h) = L + O(G(h))$$ 
-  
-        Frecuentemente, las funciones que se usan para la comparación tienen la  forma $G(h)= h^{p}$, donde $p >0$.  
-        </p>
-  
-        <p>Nos interesa  el mayor valor de $p$ para el cual se satisface:
-  
-          $$F(h)= L + O(h^{p})$$
-        </p>
-      </div>
+        </div>
 -->
 
       <h1 class="number-title flexbox">   Propagación del error</h1>
