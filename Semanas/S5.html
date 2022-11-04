@@ -97,9 +97,9 @@
 
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
     <p>
-  Esta claro que las sucesiones $\left \{\displaystyle{\frac{1}{n^{2}}}\right\}_{n=1}^{\infty}$ y
+  Es claro que las sucesiones $\left \{\displaystyle{\frac{1}{n^{2}}}\right\}_{n=1}^{\infty}$ y
   $\left \{\displaystyle{\frac{1}{n}} \right\}_{n=1}^{\infty}$  son ambas sucesiones convergentes  y 
-  convergen a cero, sin embargo, notemos que la primera sucesión converge a cero más 
+  convergen a cero. Sin embargo, notemos que la primera sucesión converge a cero más 
   rapidamente que la segunda.
     </p>
     </div>
@@ -117,7 +117,7 @@
 
     <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
       <p>
-        Consideremos las funciones $f(x)= x^{3} + 2x^{2} $ y $g(x)=x^{2}$. Entonces $f(x)=O(g(x))$
+        Consideremos las funciones $f(x):= x^{3} + 2x^{2} $ y $g(x):=x^{2}$. Entonces $f(x)=O(g(x))$
       </p>
       <p><b>Solución:</b></p>
     </div>
@@ -195,13 +195,13 @@
 
         $$\displaystyle{\frac{|f(h) - p(h)|}{|h^{n}|}} \leq M \text{ para } h \text{ suficientemente pequeño }$$
   
-        Entonces  se dice que <b>$p(h)$ aproxima a $f(h)$ con orden de aproximación $O(h^{n})$</b> 
+        entonces  se dice que <b>$p(h)$ aproxima a $f(h)$ con orden de aproximación $O(h^{n})$</b> 
         lo que se denota como:
       
         $$f(h)= p(h) + O(h^{n})$$
       </p>
 
-      <p><b>De esta manera $p(h) + O(h^{n})$ denota el conjunto de funciones que tienen el crecimiento de $p(x)$ más 
+      <p>De esta manera, <b>$p(h) + O(h^{n})$ denota el conjunto de funciones que tienen el crecimiento de $p(x)$ más 
         una parte cuyo crecimiento se limita al de $h^{n}$.</b></p>
     </div>
 
@@ -242,14 +242,14 @@
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
       <p>
        Consideremos el caso en el que $p(x)$ es la $n$-ésima aproximación por polinomios de Taylor 
-       de $f(x)$, entonces el resto de la fórmula de Taylor se puede reemplazar  simplemente por $O(h^{n+1})$
+       de $f(x)$, entonces el <b>resto de la fórmula de Taylor</b> se puede reemplazar  simplemente por $O(h^{n+1})$
        y sustituye a todos los términos omitidos, que son el que contiene la potencia $h^{n+1}$ y los de 
        grado superior.</p>
        
-       <p>El resto de la fórmula de Taylor converge a cero con la misma rapidez que $h^{n+1}$ converge 
-       a cero cuando $h\to 0$, tal y como lo expresa la siguiente relación:
+       <p><b>El resto de la fórmula de Taylor converge a cero con la misma rapidez que $h^{n+1}$ converge 
+       a cero cuando $h\to 0$</b>, tal y como lo expresa la siguiente relación:
 
-       $$O(h^{n+1})\approx M \cdot h^{n+1} \approx \displaystyle{\frac{f^{(n+1)}(c)}{(n+1)!}} \cdot h^{n+1}$$
+       $$\displaystyle{\frac{f^{(n+1)}(c)}{(n+1)!}} \cdot h^{n+1} \approx M \cdot h^{n+1}  \approx O(h^{n+1}) $$
       
        válida para $h$ suficientemente pequeño. En otras palabras, el término $O(h^{n+1})$ sustituye 
        a la cantidad $M \cdot h^{n+1}$, donde $M$ es constante o se "comporta como una constante." 
@@ -282,22 +282,22 @@
       <div class="nota-box"> <h2 class="number-title"> Observación</h2>
         <p>
           El orden de las aproximaciones númericas se suelen conseguir calculando
-          una sucesión de aproximaciones que se acerquen más y más a la respuesta deseada. 
-          La definicón de orden de aproximación de una sucesión es analoga a la dada 
-          para funciones en la <a href="#Def:aprox_O_funciones"> Definición 1.10</a>  
+          una <b>sucesión de aproximaciones</b> que se acerquen más y más a la respuesta deseada. 
+          La definicón de <b>orden de aproximación de una sucesión</b> es análoga a la dada 
+          para funciones en la <a href="#Def:aprox_O_funciones"> Definición 5.10</a>  
         </p>
       </div>
 
       
       <div class="nota-box"> <h2 class="number-title"> Definición</h2>
         <p>
-          Supongamos que $\lim_{n\to \infty} x_{n}=x$ y que $\{r_{n}\}_{n=1}^{\infty}$ 
-          es una sucesión tal que $\lim_{n\to \infty} r_{n}=0$. Se dice que <b>$\{x_{n}\}_{n=1}^{\infty}$
+          Supongamos que $\displaystyle{\lim_{n\to \infty} x_{n}=x}$ y que $\{r_{n}\}_{n=1}^{\infty}$ 
+          es una sucesión tal que $\displaystyle{\lim_{n\to \infty} r_{n}=0}$. Se dice que <b>$\{x_{n}\}_{n=1}^{\infty}$
           converge   a $x$ con orden de aproximación $O(r_{n})$</b> si existe una constante $K>0$ tal que 
           
           $$\displaystyle{\frac{|x_{n} - x|}{|r^{n}|}} \leq K \text{  para } n \text{ lo suficientemente grande}$$ 
           
-          esto se denota por $x_{n}=x+ O(r_{n})$ o bien $x_{n} \to x$ con orden de aproximación $O(r_{n})$
+          esto se denota por $x_{n}=x+ O(r_{n})$ o bien <b>$x_{n} \to x$ con orden de aproximación $O(r_{n})$</b>
         </p>
       </div>
 
@@ -323,7 +323,7 @@
   
       <div class="nota-box"> <h2 class="number-title"> Observación </h2>
         <p>Aunque en la definición anterior  se puede utilizar cualquier sucesión 
-          $\{r_{n} \}_{n=1}^{\infty}$ en casi todas las situaciones se utilizará 
+          $\{r_{n} \}_{n=1}^{\infty}$ en casi todas las situaciones se utilizará sucesiones de la forma:
           
           $$r_{n}:= \displaystyle{\frac{1}{n^{p}}}$$
   
@@ -339,7 +339,7 @@
       <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
         <p>
           Sea $x_{n}= \displaystyle{\frac{\cos(n)}{n^2}}$ y $r_{n}= \displaystyle{\frac{1}{n^{2}}}$. Entonces 
-          $\lim_{n\to \infty} x_{n}=0$ con orden de aproximación $O(\frac{1}{n^{2}})$ 
+          $\displaystyle{\lim_{n\to \infty} x_{n}=0}$ con orden de aproximación $O\left(\displaystyle{\frac{1}{n^{2}}}\right)$ 
         </p>
         <p><b>Solución:</b></p>
       </div>
@@ -415,8 +415,8 @@
        $$pq= (p^{\ast}  + \epsilon_{p} )(q^{\ast}  + \epsilon_{q}) =  p^{\ast} q^{\ast} + p^{\ast}\epsilon_{q}
         + q^{\ast}\epsilon_{p} + \epsilon_{p}\epsilon_{q}$$
 
-      <p>Por lo tanto, si $p^{\ast}$ y q^{\ast} son mayores que $1$ en valor absoluto, los términos $p\epsilon_{q}$ 
-        y $q\epsilon_{p}$ indican que existe la posibilidad de que los errores originales $\epsilon_{p}$ y $\epsilon_{q}$
+      <p>Por lo tanto, si $p^{\ast}$ y $q^{\ast}$ son mayores que $1$ en valor absoluto, los términos $p^{\ast}\epsilon_{q}$ 
+        y $q^{\ast}\epsilon_{p}$ indican que existe la posibilidad de que los errores originales $\epsilon_{p}$ y $\epsilon_{q}$
         sean "magnificados". Si analizamos los errores relativos, tendremos una percepción más clara de la situación.
 
       </p>
@@ -430,23 +430,24 @@
       </p>
 
       $$ER= \displaystyle{\frac{pq - p^{\ast}q^{\ast}}{pq} =\frac{p^{\ast}\epsilon_{q} +
-       q^{\ast}\epsilon_{p} + \epsilon_{p} \epsilon{q}}{pq} =\frac{p^{\ast} \epsilon_{q}}{pq}+ \frac{q^{\ast}\epsilon_{p}}{pq} + \frac{\epsilon_{p}\epsilon_{q}}{pq} } $$
+       q^{\ast}\epsilon_{p} + \epsilon_{p} \epsilon_{q}}{pq} =\frac{p^{\ast} \epsilon_{q}}{pq}+ \frac{q^{\ast}\epsilon_{p}}{pq} + \frac{\epsilon_{p}\epsilon_{q}}{pq} } $$
 
       <p>Si además, suponemos que $p^{\ast}$ y $q^{\ast}$ son buenas aproximaciones de $p$ y$q$ , entonces 
         $\displaystyle{\frac{p^{\ast}}{p}} \approx 1$, $\displaystyle{\frac{q^{\ast}}{q}} \approx 1$ y $ER_{p} ER_{q} \approx \left(\frac{\epsilon_{p}}{p}\right)\left(\frac{\epsilon_{q}}{q}\right) \approx 0  $</p>
 
 
       <p>Esto prueba que el error relativo  del producto $pq$ es aproximadamente la suma de los errores relativos
-        de las aproximaciones de las aproximaciones. </p>
+        de las aproximaciones. </p>
       </div>
 
 
       <div class="nota-box"> <h2 class="number-title"> Definición</h2>
 
         <p>Es normal que los errores iniciales en los datos se propaguen a lo largo de una cadena de de operaciones.
-          Una cualidad deseable en en cualquier proceso númerico es que un error pequeño en las condiciones 
-          iniciales produzca errores pequeños en el resultado final. Un algoritmo con esta cualidad se llama <b>estable</b>;
-          en otro caso, se llama <b>inestable</b>. Siempre que sea posible elegiremos métodos que sean estables.  
+          Una cualidad deseable en en cualquier proceso númerico es que <b>un error pequeño en las condiciones 
+          iniciales produzca errores pequeños en el resultado final</b>. Un algoritmo con esta cualidad se llama <b>estable</b>;
+          en otro caso, se llama <b>inestable</b>. Algunos algoritmos que sólo son estables para ciertas elecciones de datos iniciales; a estos se les conoce como 
+          <b>condicionalmente estables.</b> Siempre que sea posible elegiremos métodos que sean estables.  
         </p>
         
 
@@ -464,10 +465,6 @@
           cumple con esta   propiedad se llama <b>estable</b>  en caso contrario se llama <b>inestable</b>
         </p>
   -->
-        <p>
-          Algunos algoritmos que sólo son estables para ciertas elecciones de datos iniciales; a estos se les conoce como 
-          <b>condicionalmente estables.</b>
-        </p>
   
         <p>Para estudiar el crecimiento de los errores de redondeo y su relación con la estabilidad de un algoritmo 
           se tiene la siguiente definición:
@@ -478,7 +475,7 @@
      
 
       <div class="nota-box"> <h2 class="number-title"> Definición </h2>
-        <p>Sea $\epsilon >0$ un error inicial y $\epsilon_{n}$ la maginitud de un error despues 
+        <p>Sea $\epsilon_{0} >0$ un error inicial y $\epsilon_{n}$ la maginitud de un error despues 
           de $n$ operaciones sucesivas.
         </p>
         <ul>
@@ -500,9 +497,9 @@
         <p>Por otro lado siempre se trata de evitar el crecimiento exponencial de error, pues el término 
           $C_{n}$ crece incluso para valore  pequeños de $n$, lo que conduce a empresiones inaceptables.
         </p>
-    
+    <!--
         <p>La siguiente definición proporciona una medida de la rapidez de convergencia de una sucesión:</p>
-    
+    -->
        </div>
     
     
