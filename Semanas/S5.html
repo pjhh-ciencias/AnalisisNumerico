@@ -148,17 +148,25 @@
       </p>
     </div>
 
-    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
-      <p>
-        La notación $O(\cdot)$ (que también se usa para límites en el infinito) proporciona 
+    <div class="nota-box">
+      <h2 class="number-title"> Observación</h2>
+
+      <p>La notación $O(\cdot)$ (que también se usa para límites en el infinito) proporciona 
         una forma muy útil  para describir  la velocidad de crecimiento (o decrecimiento) de funciones 
         en términos de la velocidad de crecimiento (decrecimiento) de funciones elementales bien conocidas 
-        ($x^{n},x^{\frac{1}{n}}, a^{x}, \text{log}_{a},$ etc.)
+        ($h^{n},h^{\frac{1}{n}}, a^{h}, \text{log}_{a},$ etc.)</p>
+
+      <p>Por ejemplo, del teorema anterior para $m, n \in  \mathbb{N}$ se tienen los siguientes resultados:
+
+        <ul>
+        <li>$O(h^{m}) + O(h^{m})= O(h^{m}) $</li><br>
+        <li>$O(h^{m}) + O(h^{n})= O(h^{r})$, donde $r=\min\{m,n\}$</li><br>
+        <li>$k\cdot O(h^{m}) = O(h^{m})$, para todo constante positiva $k$</li><br>
+        <li>$O(h^{m}) \cdot O(h^{n})= O(h^{m+n})$</li><br>
+      </ul>
       </p>
-
-      <!-- <p>La velocidad de convergencia de sucesiones puede definirse de forma similar:</p>-->
     </div>
-
+   
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
     <p>Sean $\{x_{n}\}_{n=1}^{\infty}$ y $\{y_{n}\}_{n=1}^{\infty}$ dos sucesiones. Se dice que la <b>sucesión 
       $\{x_{n}\}_{n=1}^{\infty}$ es de orden $\{y_{n}\}_{n=1}^{\infty}$</b>, lo que denotamos por $x_{n} =O(y_{n})$, 
