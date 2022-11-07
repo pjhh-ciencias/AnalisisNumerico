@@ -90,16 +90,135 @@
   <body class="fondo-body" >
     <h1 class="number-title flexbox">   </h1>   
     
-    
+    <h1 class="number-title flexbox"> Ecuaciones no lineales </h1>   
 
-    <h1 class="number-title flexbox">  </h1>   
+    <div class="nota-box"> <h2 class="number-title"> Introducción </h2>
+      <p>
+        Para resolver algunos problemas que se presentan en ciencias e ingenieria en ocasiones es necesario conocer 
+        los valores que anulan ciertas funciones o ecuaciones y por lo general la teoría que se tiene del Álgebra 
+        o el Cálculo para conocer dichos valores son tediosos o difíciles de aplicar. De aquí la necesidad de desarrolllar 
+        métodos o algoritmos que nos permiten en tiempo muy corto solucionar este tipo de problemas. 
+      
+      <p>Supongamos que ahorramos dinero haciendo depositos mensuales de $\$P$ pesos a una tasa de interes anual $I$
+        que se compone cada mes, entonces la cantidad total $\$A$ de pesos acumulados despues de $N$ depositos  es:
+        $$A= P + P\left(1+ \frac{I}{12}\right) + P\left(1+ \frac{I}{12}\right)^{2} + \cdots + P\left(1+ \frac{I}{12}\right)^{N-1}$$
+      </p>
 
+      <p>El primer término del miembro derecho de la expresión anterior es el último deposito; el segundo es el penultimo deposito 
+        cuya contribución, habiendo acumulado un periodo de interes,  es $P\left(1+ \frac{I}{12}\right)$ pesos; el antepenultimo 
+      deposito ha acumulado dos periodos de interés y su contribución al capital total  es: $ P\left(1+ \frac{I}{12}\right)^{2}$
+      pesos y así sucesivamente. Finalmente, el primer deposito que ha acumulado interes durante $N-1$ periodos, contribuye con 
+      $ P\left(1+ \frac{I}{12}\right)^{N-1}$ pesos al total.
+     </p>
 
-    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
-    <p>
+     <p>
+     Recordemos que la fórmula para la  suma de los primeros $N$ términos de una serie geométrica  es:
+     $$1 + r + r^{2} + \cdots + r^{N}= \frac{1-r^{N}}{1-r}$$
     </p>
+
+    <p>Luego, 
+
+      \begin{align*}
+      A&= P + P\left(1+ \frac{I}{12}\right) + P\left(1+ \frac{I}{12}\right)^{2} + \cdots + P\left(1+ \frac{I}{12}\right)^{N-1}\\
+      &=P\left(1 + \left(1+ \frac{I}{12}\right) + \left(1+ \frac{I}{12}\right)^{2} + \cdots + \left(1+ \frac{I}{12}\right)^{N-1} \right)
+      \end{align*}
+
+      y haciendo $r:= \displaystyle{1+ \frac{I}{12}}$ se obtiene: 
+
+      $$A= \displaystyle{\frac{1 - (1+ \frac{I}{12})^{N}}{1-(1+ \frac{I}{12})}}$$
+
+      Simplificando se obtiene la fórmula para obtener el <b>capital acumulado cuando el interes se compone mensualmente:</b> 
+
+      $$A= \frac{P}{\left( \frac{I}{12}\right)} \left(  \left( 1 + \frac{I}{12}\right)^{N} -1\right)$$
+    </p>
+
+
     </div>
 
 
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>Ahorramos $\$ 240$ pesos al mes durante $20$ años y deseamos que el capital acumulado al final de estos $20$
+        años sea de $\$250\,000$ pesos. ¿A que tasa de interes $I$ debo invertir ese dinero para obtener ese resultado? 
+      </p>
+    </div>
 
+    
+    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+      <p>
+       Supongamos que $f(x)$ es una función continua. Cualquier numero real  $\overline{x}$ tal que  $f(\overline{x})=0$ se llama 
+        <b>raiz</b> (<b>cero</b> o <b>solucion</b>) de la ecuación:
+        $f(x)=0$.
+      </p>
+
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Introducción </h2>
+      <p>
+       Entre los métodos que se tienen para resolver la ecuación $f(x)=0$ se encuentran los <em>métodos cerrados</em> y <em>abiertos</em>. 
+      </p>
+
+      <p>Los <b>métodos  cerrados</b> necesitan de dos valores iniciales $x_{i}$ y $x_{f}$ que encierran a la raiz $p$
+        y tienen la característica  de que siempre encuentran una raíz o en el mejor de los casos una aproximación a $p$.
+      </p>
+
+      <p>Los <b>métodos abiertos</b> requieren unicamente de un sólo valor de inicio $p_{0}$  o bien de dos valores iniciales 
+        que no necesariamente encierran a la raíz $p$. Estos a veces no encuentran  la raíz pero cuando lo hacen por lo general 
+        lo encuentran mucho más rápido que los métodos abiertos. 
+      </p>
+
+
+       </div>
+
+
+       <div class="nota-box"> <h2 class="number-title"> Método de la bisección de Bolzano</h2>
+
+        <p>El método de bisección conocido también como de corte binario, de busqueda binaria, de partición,
+           de partición de intervalos, o de Bolzano. es un método cerrado que se basa en el teorema del
+           Valor Intermedio; encuentra la raíz $p$ de la ecuación $f(x)=0$ cuando se logra "encerrar" a 
+           la raiz en un intervalo cerrado $[x_{i},x_{f}]$ que se cumple con $f(x_{i})f(x_{f})\not =0$       
+        </p>
+
+        <h2>El método de Bisección sigue los siguientes pasos:</h2>
+        <p>Dada una función  continua $f(x)$:
+          <ol>
+            <li>Encontrar  valores iniciales $x_{i}$ y $x_{f}$ que cumplen con la condición:
+              $$f(x_{i}) f(x_{f}) < 0$$
+            </li><br>
+            <li>La primera aproximación $x_{m_{1}}$ a la raiz $p$ es:
+              $$x_{m_{1}}:= \displaystyle{\frac{x_{i} + x_{f}}{2}}$$
+            </li><br>
+            <li>Se evalua $f(x_{m_{1}})$ y se tienen tres casos:<br>
+              <ul><br>
+                <li><b>Caso 1</b>. $f(x_{i})f(x_{m_{1}}) < 0$
+                  <p>En este caso $f(x_{i})$ y $f(x_{m_{1}})$ tienen signos opuestos por lo que la raiz se encuentra
+                    en el intervalo $[x_{i},x_{m_{1}}]$. Entonces se define $x_{f}:= x_{m_{1}}$ </p>
+                </li><br>
+                <li><b>Caso 2</b>. $f(x_{i})f(x_{m_{1}}) > 0$
+                <p>En este caso $f(x_{i})$ y $f(x_{m_{1}})$ tienen signos iguales, por lo que $f(x_{m_{1}})$ y $f(x_{f})$ 
+                  tienen signos opuestos, de aquí que la raiz $p$ se encuentra en el intervalo $[x_{m_{1}},x_{f}]$,
+                entonces se define 
+                $$x_{i}:=x_{m_{1}} $$
+                </p>
+              </li><br>
+              <li><b>Caso 3.</b> $f(x_{i})f(x_{m_{1}}) = 0$
+              <p>En este caso se tiene que $f(x_{m_{1}})=0$ por lo que $x_{m_{1}}$ es una raiz de $f(x)$ y terminamos.</p>
+             </li><br>
+             </ul>
+            </p>
+           </li><br>
+           <li>Repetiremos el proceso hasta que 
+            $$ERP= \left|\displaystyle{\frac{x_{\text{actual}} - x_{\text{anterior}}}{x_{\text{actual}}}} \right|\times 100\% < \epsilon $$ </li>
+          <p> donde $\epsilon$ es un valor muy pequeño. Si no se satisface  la condición anterior y se  tiene cualquiera de los dos primeros casos, 
+            el proceso se repite con el nuevo intervalo. </p>
+        </li>
+      </ol> 
+           
+       </div>
+  
+      
+       <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+          <p>Aproximar la raiz de $f(x)= e^{-x} - \log(x)$ hasta que $|ERP | < 1\%$ aplicando el metodo de bisección.</p>
+       </div>
+
+ 
     </body>
