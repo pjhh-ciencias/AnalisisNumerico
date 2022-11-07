@@ -187,17 +187,25 @@
             <li>La primera aproximación $x_{m_{1}}$ a la raiz $p$ es:
               $$x_{m_{1}}:= \displaystyle{\frac{x_{i} + x_{f}}{2}}$$
             </li><br>
-            <li>Se evalua $f(x_{m_{1}})$ y se tienen tres casos:<br>
+            <li>Se evalua $f(x_{m_{1}})$ y se tienen tres posibles casos:<br>
               <ul><br>
                 <li><b>Caso 1</b>. $f(x_{i})f(x_{m_{1}}) < 0$
                   <p>En este caso $f(x_{i})$ y $f(x_{m_{1}})$ tienen signos opuestos por lo que la raiz se encuentra
-                    en el intervalo $[x_{i},x_{m_{1}}]$. Entonces se define $x_{f}:= x_{m_{1}}$ </p>
+                    en el intervalo $[x_{i},x_{m_{1}}]$. Entonces se define 
+                    $$x_{f}:= x_{m_{1}}$$
+                    <!-- $$x_{\text{anterior}}:= x_{i}$$
+                    $$x_{\text{actual}}:= x_{m_{1}} $$-->
+
+                   </p>
                 </li><br>
                 <li><b>Caso 2</b>. $f(x_{i})f(x_{m_{1}}) > 0$
                 <p>En este caso $f(x_{i})$ y $f(x_{m_{1}})$ tienen signos iguales, por lo que $f(x_{m_{1}})$ y $f(x_{f})$ 
                   tienen signos opuestos, de aquí que la raiz $p$ se encuentra en el intervalo $[x_{m_{1}},x_{f}]$,
                 entonces se define 
                 $$x_{i}:=x_{m_{1}} $$
+                <!-- $$x_{\text{anterior}}:= x_{f}$$
+                $$x_{\text{actual}}:= x_{m_{1}} $$
+                -->
                 </p>
               </li><br>
               <li><b>Caso 3.</b> $f(x_{i})f(x_{m_{1}}) = 0$
@@ -209,7 +217,7 @@
            <li>Repetiremos el proceso hasta que 
             $$ERP= \left|\displaystyle{\frac{x_{\text{actual}} - x_{\text{anterior}}}{x_{\text{actual}}}} \right|\times 100\% < \epsilon $$ </li>
           <p> donde $\epsilon$ es un valor muy pequeño. Si no se satisface  la condición anterior y se  tiene cualquiera de los dos primeros casos, 
-            el proceso se repite con el nuevo intervalo. </p>
+            el proceso se repite con el nuevo intervalo $[x_{i},x_{f}]$. </p>
         </li>
       </ol> 
            
