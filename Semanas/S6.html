@@ -228,5 +228,111 @@
           <p>Aproximar la raiz de $f(x)= e^{-x} - \log(x)$ hasta que $|ERP | < 1\%$ aplicando el metodo de bisección.</p>
        </div>
 
+       
+      <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+     <p>Supongamos que $f\in C[a,b]$ y que $f(a)$ y $f(b)$ tienen signos distintos. 
+      Sea $\{x_n\}_{n\geq 1}$ la sucesión de puntos medios de los intervalos generados por el metodo de bisección.
+      Entonces existe un número $p \in [a,b]$ tal que $f(p)=0$ y, además para $n=1,2,3,\ldots $ se satisface
+     
+      $$ |p-x_{n}| \leq \frac{b-a}{2^{n+1}} $$
+
+      En particular,  la sucesión $\{x_{n}\}_{n\geq 1}$ converge a la raiz $p$, i.e. 
+
+      $$\lim_{n\to \infty} x_{n} = p$$
+    </p>
+    <p><b>Demostración.</b></p>
+      </div>
  
+
+      <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+        La sucesión $\{ x_{m}\}$ que aparece en el teorema anterior converge a $p$ con una rapidez $O(\frac{1}{2^{n}})$.  
+      </div>
+
+      
+      <div class="nota-box"> <h2 class="number-title"> Afirmación</h2>
+      <p>Se se desea que $x_{n}$ aproxime a $p$ con una tolerancia de $1\times 10^{-t}$, entonces 
+        $$n \geq \frac{ \mathrm{ln}(b-a) - \mathrm{ln}(1 \times 10^{-t})  }{\mathrm{ln}(2)}$$
+      </p>
+      <p><b>Demostración.</b></p>
+      </div>
+
+      
+    <h1 class="number-title flexbox"> Puntos fijos </h1>
+    
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+    <p>Sea $g$ una función continua en el intervalo $[a,b]$. Se dice que $g(x)$ tiene un punto fijo 
+      $x_{0}$ en $[a,b]$ si 
+    $$g(x_{0})=x_{0}$$
+   </p>
+
+   <p>Geometricamente hablando, los puntos fijos de una función $g(x)$ son los puntos de intersección 
+    de la curva $y=g(x)$ con la recta $y=x$.
+  </p>
+  </div>
+
+  
+  <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+  <p>Hallar los puntos fijos de la función $g(x)=x^{2}-2$ en el intervalo $[-2,3]$.  
+
+  </p>
+  </div>
+
+
+  
+  <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+    <p>La función $g(x)=x$ tiene un punto fijo $x_{0}$ en cada punto $x_{0}$ de  $[0,1]$.  
+  
+    </p>
+    </div>
+
+    
+  
+  <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+    <p>Hallar los puntos fijos de la función $g(x)=x-\mathrm{sen}(\pi x)$ en el intervalo $[0,1]$.  
+  
+    </p>
+    </div>
+  
+  
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+    <p>
+      <ol>
+        <li>Si $g:[a,b] \to [a,b] $ es una función continua  en $[a,b]$, entonces $g$ tiene un punto fijo en 
+          $[a,b]$. 
+        </li><br>
+        <li>Si además, $g^{'}(x)$ existe en $(a,b)$ y existe una constante positiva $K < 1$ 
+          tal que para todo $x \in (a,b)$ se satisface que:
+
+          $$|g^{'}(x)| \leq K $$
+        
+          entonces $g(x)$ tiene un punto fijo $p$ en $[a,b]$.
+        </li>
+      </ol>
+    </p>
+    
+    <p><b>Demostración.</b></p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>Determinar si la función $g$ definida como 
+        $$g(x):= \displaystyle{\frac{x^{2}-1}{3}}$$ 
+        tiene puntos fijos en el intervalo $[-1,1]$
+      </p>
+      
+      <p><b>Solución</b></p>
+      </div>
+      
+      <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+        <p>
+          En el intervalo $[3,4]$ la función $g(x):= \displaystyle{\frac{x^{2}-1}{3}}$ 
+          tiene un único punto fijo, pero $g(3) \not\in [3,4]$.
+        </p>
+        <p>Además, 
+          $$|g^{'}(4)|= \left| \frac{8}{3} \right| >1$$
+          En general, $|g^{'}(x)|\not \leq 1$ para todoo $x \in [3,4]$. La función $g(x)$ tiene un único 
+          punto fijo en el intervalo $[3,4]$. Sin embargo, no se cumplen las condiciones del Teorema del 
+          punto fijo. Son suficentes para garantizar la existencia de puntos fijos, pero no son necesarias.  
+        </p>
+
     </body>
