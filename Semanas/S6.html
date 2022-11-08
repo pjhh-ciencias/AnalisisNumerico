@@ -152,33 +152,37 @@
 
     </div>
 
-    <div class="nota-box"> <h2 class="number-title"> Introducción </h2>
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
       <p>
-       Entre los métodos que se tienen para resolver la ecuación $f(x)=0$ se encuentran los <em>métodos cerrados</em> y <em>abiertos</em>. 
+       Entre los métodos que se tienen para resolver la ecuación $f(x)=0$ se encuentran los <em>métodos cerrados</em>
+        y <em>abiertos</em>: 
       </p>
-
-      <p>Los <b>métodos  cerrados</b> necesitan de dos valores iniciales $x_{i}$ y $x_{f}$ que encierran a la raiz $p$
+      <ul>
+      <li>Los <b>métodos  cerrados</b> necesitan de dos valores iniciales $x_{i}$ y $x_{f}$ que encierran a la raiz $p$
         y tienen la característica  de que siempre encuentran una raíz o en el mejor de los casos una aproximación a $p$.
-      </p>
-
-      <p>Los <b>métodos abiertos</b> requieren unicamente de un sólo valor de inicio $p_{0}$  o bien de dos valores iniciales 
+      </li><br>
+      <li>Los <b>métodos abiertos</b> requieren unicamente de un sólo valor de inicio $p_{0}$  o bien de dos valores iniciales 
         que no necesariamente encierran a la raíz $p$. Estos a veces no encuentran  la raíz pero cuando lo hacen por lo general 
         lo encuentran mucho más rápido que los métodos abiertos. 
-      </p>
+      </li>
+    </ul>
 
 
        </div>
 
 
-       <div class="nota-box"> <h2 class="number-title"> Método de la bisección de Bolzano</h2>
+       <h1 class="number-title flexbox"> Método de bisección de Bolzano </h1>   
+
+
+       <div class="nota-box"> <h2 class="number-title"> Método de bisección de Bolzano</h2>
 
         <p>El método de bisección conocido también como de corte binario, de busqueda binaria, de partición,
            de partición de intervalos, o de Bolzano. es un método cerrado que se basa en el teorema del
            Valor Intermedio; encuentra la raíz $p$ de la ecuación $f(x)=0$ cuando se logra "encerrar" a 
-           la raiz en un intervalo cerrado $[x_{i},x_{f}]$ que se cumple con $f(x_{i})f(x_{f})\not =0$       
+           la raiz en un intervalo cerrado $[x_{i},x_{f}]$ en el que se  cumple con $f(x_{i})f(x_{f})\not =0$       
         </p>
 
-        <h2>El método de Bisección sigue los siguientes pasos:</h2>
+        <h2>El método de bisección sigue los siguientes pasos:</h2>
         <p>Dada una función  continua $f(x)$:
           <ol>
             <li>Encontrar  valores iniciales $x_{i}$ y $x_{f}$ que cumplen con la condición:
@@ -225,16 +229,22 @@
   
       
        <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
-          <p>Aproximar la raiz de $f(x)= e^{-x} - \log(x)$ hasta que $|ERP | < 1\%$ aplicando el metodo de bisección.</p>
+          <p>Aproximar la raiz de $f(x)= e^{-x} - \log(x)$ hasta que $|ERP | < 1\%$ aplicando el método de bisección.</p>
        </div>
 
+       <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+        <p>El proceso de bisección genera una sucesión de intervalos encajados, con sus respectivos puntos medios. La sucesión
+           de los extremos izquierdos de estos intervaloos es creciente y la sucesión de los extremos derechos es decreciente.
+        </p>
+
+       </div>
        
-      <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <div class="nota-box" id="Teo:Convergencia_método_biseccion"> <h2 class="number-title"> Teorema</h2>
      <p>Supongamos que $f\in C[a,b]$ y que $f(a)$ y $f(b)$ tienen signos distintos. 
-      Sea $\{x_n\}_{n\geq 1}$ la sucesión de puntos medios de los intervalos generados por el metodo de bisección.
+      Sea $\{x_n\}_{n\geq 1}$ la sucesión de puntos medios de los intervalos generados por el método de bisección.
       Entonces existe un número $p \in [a,b]$ tal que $f(p)=0$ y, además para $n=1,2,3,\ldots $ se satisface
      
-      $$ |p-x_{n}| \leq \frac{b-a}{2^{n+1}} $$
+      $$ |p-x_{n}| \leq \frac{b-a}{2^{n}} $$
 
       En particular,  la sucesión $\{x_{n}\}_{n\geq 1}$ converge a la raiz $p$, i.e. 
 
@@ -245,22 +255,26 @@
  
 
       <div class="nota-box"> <h2 class="number-title"> Observación</h2>
-        La sucesión $\{ x_{m}\}$ que aparece en el teorema anterior converge a $p$ con una rapidez $O(\frac{1}{2^{n}})$.  
+        Por el  <a href="#Teo:Convergencia_método_biseccion">Teorema 6.8</a>  podemos concluir que la 
+        sucesión $\{ x_{m}\}_{n \geq 1}$ la sucesión de puntos medios de los intervalos generados por el método de bisección  
+        converge a $p$ con una rapidez $O\left(\displaystyle{\frac{1}{2^{n}}}\right)$.  
       </div>
 
       
-      <div class="nota-box"> <h2 class="number-title"> Afirmación</h2>
-      <p>Se se desea que $x_{n}$ aproxime a $p$ con una tolerancia de $1\times 10^{-t}$, entonces 
-        $$n \geq \frac{ \mathrm{ln}(b-a) - \mathrm{ln}(1 \times 10^{-t})  }{\mathrm{ln}(2)}$$
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>Hallar el número mínimo de iteraciones que se tienen que realizar en el  método de Bisección para  que
+        $\{x_{n}\}_{n \geq 1}$  como en el <a href="#Teo:Convergencia_método_biseccion">Teorema 6.8 </a> 
+         aproxime a $p$ con una tolerancia menor que $1\times 10^{-t}$. <!-- entonces 
+        $$n \geq \frac{ \mathrm{ln}(b-a) - \mathrm{ln}(1 \times 10^{-t})  }{\mathrm{ln}(2)}$$-->
       </p>
-      <p><b>Demostración.</b></p>
+      <p><b>Solución.</b></p>
       </div>
 
       
     <h1 class="number-title flexbox"> Puntos fijos </h1>
     
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
-    <p>Sea $g$ una función continua en el intervalo $[a,b]$. Se dice que $g(x)$ tiene un punto fijo 
+    <p>Sea $g$ una función continua en el intervalo $[a,b]$. Se dice que $g(x)$ tiene un <b>punto fijo</b>
       $x_{0}$ en $[a,b]$ si 
     $$g(x_{0})=x_{0}$$
    </p>
@@ -268,33 +282,27 @@
    <p>Geometricamente hablando, los puntos fijos de una función $g(x)$ son los puntos de intersección 
     de la curva $y=g(x)$ con la recta $y=x$.
   </p>
+
   </div>
 
   
-  <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
-  <p>Hallar los puntos fijos de la función $g(x)=x^{2}-2$ en el intervalo $[-2,3]$.  
+  <div class="nota-box"> <h2 class="number-title"> Ejemplos</h2>
+  <p>Hallar los puntos fijos de las siguientes funciones en los intervalos dados 
+    
+    <ol>
+      <li>$g(x):=x^{2}-2$ en el intervalo $[-2,3]$.  </li><br>
+      <li>$h(x):=x$ en el intervalo $[0,1]$. </li><br>
+      <li>$g(x):=x-\mathrm{sen}(\pi x)$ en el intervalo $[0,1]$.</li>
+    </ol>
 
   </p>
+  <p><b>Solución.</b></p>
   </div>
 
 
   
-  <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
-    <p>La función $g(x)=x$ tiene un punto fijo $x_{0}$ en cada punto $x_{0}$ de  $[0,1]$.  
   
-    </p>
-    </div>
-
-    
-  
-  <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
-    <p>Hallar los puntos fijos de la función $g(x)=x-\mathrm{sen}(\pi x)$ en el intervalo $[0,1]$.  
-  
-    </p>
-    </div>
-  
-  
-    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+    <div class="nota-box"> <h2 class="number-title"> Teorema del punto fijo</h2>
     <p>
       <ol>
         <li>Si $g:[a,b] \to [a,b] $ es una función continua  en $[a,b]$, entonces $g$ tiene un punto fijo en 
@@ -305,7 +313,7 @@
 
           $$|g^{'}(x)| \leq K $$
         
-          entonces $g(x)$ tiene un punto fijo $p$ en $[a,b]$.
+          entonces $g(x)$ tiene  punto fijo $p$ en $[a,b]$ es único.
         </li>
       </ol>
     </p>
