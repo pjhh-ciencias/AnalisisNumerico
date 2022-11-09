@@ -224,7 +224,6 @@
             el proceso se repite con el nuevo intervalo $[x_{i},x_{f}]$. </p>
         </li>
       </ol> 
-           
        </div>
   
       
@@ -308,10 +307,9 @@
         <li>Si $g:[a,b] \to [a,b] $ es una función continua  en $[a,b]$, entonces $g$ tiene un punto fijo en 
           $[a,b]$. 
         </li><br>
-        <li>Si además, $g^{'}(x)$ existe en $(a,b)$ y existe una constante positiva $K < 1$ 
-          tal que para todo $x \in (a,b)$ se satisface que:
+        <li>Si además, para todo $x \in (a,b)$  existe  $g^{'}(x)$  y  se satisface que:
 
-          $$|g^{'}(x)| \leq K $$
+          $$|g^{'}(x)| < 1 $$
         
           entonces $g(x)$ tiene  punto fijo $p$ en $[a,b]$ es único.
         </li>
@@ -321,6 +319,12 @@
     <p><b>Demostración.</b></p>
     </div>
 
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Prueba que la funcion $g(x)= cos(x)$ tiene un único punto fijo en $[0,1]$
+      </p>
+    </div>
 
     <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
       <p>Determinar si la función $g$ definida como 
@@ -342,5 +346,37 @@
           punto fijo en el intervalo $[3,4]$. Sin embargo, no se cumplen las condiciones del Teorema del 
           punto fijo. Son suficentes para garantizar la existencia de puntos fijos, pero no son necesarias.  
         </p>
+
+      </div>
+
+      <h1 class="number-title flexbox"> Método iterativo de puntos fijo </h1>
+
+
+      <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+        <p>Para aproximar el punto fijo de una función continua $g(x)$ se toma un valor 
+          inicial $p_0$ y se genera una sucesión $\{p_{n} \}_{n=1}^{\infty}$ donde 
+          
+          $$p_{n} = g(p)$$ 
+
+          Cuando la sucesión converge a un punto $p$ entonces la continuidad de $g(x)$ implica que:
+
+          $$p=\lim_{n \to \infty} p_{n} = \lim_{n\to \infty} g(p_{n_1})= g(\lim_{n \to \infty} p_{n-1})= g(p)$$
+
+          esto es, $p$ es un punto fijo de la función $g(x)$ o bien una solución de la ecuación $x=g(x)$   
+        </p>
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>Prueba que la ecuación $x^{3}+ 4x^{2}-10=0$ tiene una raiz en $[1,2]$
+        </p>
+      </div>
+
+
+      <div class="nota-box"> <h2 class="number-title"> Nota</h2>
+        <p>Enseguida vamos a establecer un teorema que se suele usar para determinar si el proceso de iteración de punto fijo 
+          dado en () produce una sucesion convergente o divergente.
+        </p>
+      </div>
+
 
     </body>
