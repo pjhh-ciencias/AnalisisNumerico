@@ -245,7 +245,7 @@
      
       $$ |p-x_{n}| \leq \frac{b-a}{2^{n}} $$
 
-      En particular,  la sucesión $\{x_{n}\}_{n\geq 1}$ converge a la raiz $p$, i.e. 
+      En particular,  la sucesión $\{x_{n}\}_{n\geq 1}$ converge a la raiz $r$ de $f$ en $[a,b]$, i.e. $r \in [a,b]$,  $f(r)=0$ y 
 
       $$\lim_{n\to \infty} x_{n} = p$$
     </p>
@@ -255,7 +255,7 @@
 
       <div class="nota-box"> <h2 class="number-title"> Observación</h2>
         Por el  <a href="#Teo:Convergencia_método_biseccion">Teorema 6.8</a>  podemos concluir que la 
-        sucesión $\{ x_{m}\}_{n \geq 1}$ la sucesión de puntos medios de los intervalos generados por el método de bisección  
+        sucesión $\{ x_{n}\}_{n \geq 1}$ la sucesión de puntos medios de los intervalos generados por el método de bisección  
         converge a $p$ con una rapidez $O\left(\displaystyle{\frac{1}{2^{n}}}\right)$.  
       </div>
 
@@ -311,7 +311,7 @@
 
           $$|g^{'}(x)| < 1 $$
         
-          entonces $g(x)$ tiene  punto fijo $p$ en $[a,b]$ es único.
+          entonces $g$ tiene un único  punto fijo en $[a,b]$.
         </li>
       </ol>
     </p>
@@ -319,10 +319,17 @@
     <p><b>Demostración.</b></p>
     </div>
 
+    
+
+    <div class="nota-box"> <h2 class="number-title"> Lema</h2>
+      <p>Para $x \leq 0$, se satisface $\mathrm{Sen}(x) \leq x$
+      </p>
+    </div>
+
 
     <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
       <p>
-        Prueba que la funcion $g(x)= cos(x)$ tiene un único punto fijo en $[0,1]$
+        Prueba que la funcion $g(x)= \mathrm{Cos}(x)$ tiene un único punto fijo en $[0,1]$
       </p>
     </div>
 
@@ -365,16 +372,16 @@
           esto es, $p$ es un punto fijo de la función $g(x)$ o bien una solución de la ecuación $x=g(x)$   
         </p>
       </div>
-
+<!--
       <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
         <p>Prueba que la ecuación $x^{3}+ 4x^{2}-10=0$ tiene una raiz en $[1,2]$
         </p>
       </div>
-
+-->
 
       <div class="nota-box"> <h2 class="number-title"> Nota</h2>
         <p>Enseguida vamos a establecer un teorema que se suele usar para determinar si el proceso de iteración de punto fijo 
-          dado en () produce una sucesion convergente o divergente. 
+           produce una sucesion convergente o divergente. 
         </p>
       </div>
 
