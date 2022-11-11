@@ -149,6 +149,12 @@ h1.number-title{
   font-size: 33px;
 }
 
+h1.number-title_{
+  font-family: "Muli";
+  font-size: 33px;
+}
+
+
 
 h1.number-subtitle:before{
   font-family: "Muli";
@@ -163,16 +169,40 @@ h1.number-title:before{
  color: rgb(255, 255, 255);
 }
 
+
+
 h2.number-title{
   font-size: 35px;
   font-family: "Roboto";
 }
-
+/*
 h2.number-title:before{
  counter-increment: cardCounter;
  content: counter(sectionCounter)"."counter(cardCounter)"";
 }
+*/
 
+
+h2.number-title::after{
+  counter-increment: cardCounter;
+  content: " " counter(sectionCounter)"."counter(cardCounter)" ";
+ }
+ 
+
+
+ 
+h2.number-title_nota{
+  font-size: 35px;
+  font-family: "Roboto";
+}
+/*
+h2.number-title:before{
+ counter-increment: cardCounter;
+ content: counter(sectionCounter)"."counter(cardCounter)"";
+}
+*/
+
+ 
 
 /*/////////////// for body boxes  /////////////////////*/
 

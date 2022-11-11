@@ -55,7 +55,7 @@
         h1.number-title{
           counter-reset: sectionCounter 5 cardCounter ;
         }
-      </style>
+    </style>
   
     <!-- Top Menu  -->
 
@@ -88,11 +88,11 @@
 
 
   <body class="fondo-body" >
-    <h1 class="number-title flexbox">   </h1>   
+    
     
     <h1 class="number-title flexbox"> Ecuaciones no lineales </h1>   
 
-    <div class="nota-box"> <h2 class="number-title"> Introducción </h2>
+    <div class="nota-box"> <h2 class="number-title_nota"> Introducción </h2>
       <p>
         Para resolver algunos problemas que se presentan en ciencias e ingenieria en ocasiones es necesario conocer 
         los valores que anulan ciertas funciones o ecuaciones y por lo general la teoría que se tiene del Álgebra 
@@ -171,10 +171,10 @@
        </div>
 
 
-       <h1 class="number-title flexbox"> Método de bisección de Bolzano </h1>   
+       <h1 class="number-title_ flexbox"> Método de bisección de Bolzano </h1>   
 
 
-       <div class="nota-box"> <h2 class="number-title"> Método de bisección de Bolzano</h2>
+       <div class="nota-box"> <h2 class="number-title_nota"> Método de bisección de Bolzano</h2>
 
         <p>El método de bisección conocido también como de corte binario, de busqueda binaria, de partición,
            de partición de intervalos, o de Bolzano. es un método cerrado que se basa en el teorema del
@@ -254,7 +254,7 @@
  
 
       <div class="nota-box"> <h2 class="number-title"> Observación</h2>
-        Por el  <a href="#Teo:Convergencia_método_biseccion">Teorema 6.8</a>  podemos concluir que la 
+        Por el  <a href="#Teo:Convergencia_método_biseccion"> Teorema 6.6 </a>  podemos concluir que la 
         sucesión $\{ x_{n}\}_{n \geq 1}$ la sucesión de puntos medios de los intervalos generados por el método de bisección  
         converge a $p$ con una rapidez $O\left(\displaystyle{\frac{1}{2^{n}}}\right)$.  
       </div>
@@ -262,7 +262,7 @@
       
       <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
       <p>Hallar el número mínimo de iteraciones que se tienen que realizar en el  método de Bisección para  que
-        $\{x_{n}\}_{n \geq 1}$  como en el <a href="#Teo:Convergencia_método_biseccion">Teorema 6.8 </a> 
+        $\{x_{n}\}_{n \geq 1}$  como en el <a href="#Teo:Convergencia_método_biseccion">Teorema 6.6 </a> 
          aproxime a $p$ con una tolerancia menor que $1\times 10^{-t}$. <!-- entonces 
         $$n \geq \frac{ \mathrm{ln}(b-a) - \mathrm{ln}(1 \times 10^{-t})  }{\mathrm{ln}(2)}$$-->
       </p>
@@ -270,7 +270,7 @@
       </div>
 
       
-    <h1 class="number-title flexbox"> Puntos fijos </h1>
+    <h1 class="number-title_ flexbox"> Puntos fijos </h1>
     
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
     <p>Sea $g$ una función continua en el intervalo $[a,b]$. Se dice que $g(x)$ tiene un <b>punto fijo</b>
@@ -356,10 +356,10 @@
 
       </div>
 
-      <h1 class="number-title flexbox"> Método iterativo de punto fijo </h1>
+      <h1 class="number-title_ flexbox"> Método iterativo de punto fijo </h1>
 
 
-      <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+      <div class="nota-box"> <h2 class="number-title_nota"> Método iterativo de punto fijo</h2>
         <p>Para aproximar el punto fijo de una función continua $g(x)$ se toma un valor 
           inicial $p_0$ y se genera una sucesión $\{p_{n} \}_{n=1}^{\infty}$ donde 
           
@@ -380,7 +380,7 @@
       </div>
 -->
 
-      <div class="nota-box"> <h2 class="number-title"> Teorema </h2>
+      <div class="nota-box" id="Teo:Convergencia_iteracion_funcional" > <h2 class="number-title"> Teorema </h2>
         <p>
             Sea $g(x) \colon C[a,b] $ tal que $g(x) \colon [a,b] \to [a,b] $. Si $g^{'}(x)$ existe en $[a,b]$ y si existe 
             una constante positiva $K < 1$ tal que 
@@ -416,5 +416,36 @@
 
 
       </div>
+
+
+      <div class="nota-box"> <h2 class="number-title"> Corolario </h2>
+        <p>
+          Si $g$ satisface las hipótesis del <a href="#Teo:Convergencia_iteracion_funcional">Teorema 6.16 </a>, 
+          una cota para el error involucrado al usar $p_n$ para aproximar $p$ esta dado por 
+          $$|p_{n} - p| \leq  K^{n} \max\{ p_{0} -a, b-p_{0} \}\,\,\,\, \text{ para toda } \,\,\, n \geq 1 $$ 
+          
+        </p>
+      </div>
+
+
+      
+
+      <div class="nota-box"> <h2 class="number-title"> Corolario </h2>
+        <p>
+          Si $g$ satisface las hipótesis del <a href="#Teo:Convergencia_iteracion_funcional">Teorema 6.16 </a>, 
+          entonces 
+          $$|p_{n} - p| \leq \frac{K^{n}}{1-K} |p_{1} -  p_{0}|\,\,\,\, \text{ para toda } \,\,\, n \geq 1 $$ 
+          
+        </p>
+      </div>
+
+      
+      <div class="nota-box"> <h2 class="number-title"> Nota </h2>
+        <p>De los corolarios anteriores se tiene que más pequeño sea $K$, la sucesión generada 
+          encuentra más rápido el punto fijo $p$.  
+        </p>
+      </div>
+
+      
 
     </body>
