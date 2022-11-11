@@ -171,19 +171,20 @@ h2.number-title{
   font-size: 35px;
   font-family: "Roboto";
 }
-/*
+
 h2.number-title:before{
  counter-increment: cardCounter;
  content: counter(sectionCounter)"."counter(cardCounter)"";
 }
-*/
 
 
+/*
 h2.number-title::after{
   counter-increment: cardCounter;
   content: " " counter(sectionCounter)"."counter(cardCounter)" ";
  }
  
+ */
 
 
  

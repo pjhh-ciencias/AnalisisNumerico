@@ -88,11 +88,47 @@
 
 
   <body class="fondo-body" >
-    <h1 class="number flexbox">   </h1>   
-    
+
+    <h1 class="number-title flexbox"> Semana 4 </h1>   
     
 
-    <div class="nota-box"><h2 class="number-title"> Desbordamiento y subdesbordamiento  </h2>
+    <h1 class="title flexbox"> Desbordamiento y subdesbordamiento</h1>
+
+    
+    <div class="nota-box"><h2 class="number-title"> Definición </h2>
+      <p>
+          La representación: 
+
+          $$0 00000000000 0000000000000000000000000000000000000000000000000000$$
+          
+        <p>es reservada  para el cero. De esta manera, todo  número real cuya  una magnitud sea menor que
+
+        $$2^{-1022}$$
+
+        resultan en un <b>subdesbordamiento</b>,  y en general se configuran como $\mathrm{cero}$.
+        Mientras que los números superiores a  
+        
+        $$2^{1023}\cdot  (2 - 2^{-52})$$
+        
+        resultan en un <b>desbordamiento</b> y, comúnmente, causan que los cálculos se detengan
+        (a menos que el programa haya sido programado para detectado  estas representaciones).
+  
+        
+      </p>
+    </div>
+
+    
+    <div class="nota-box"><h2 class="number-title"> Observación </h2>
+      <p>
+        Se tienen dos representaciones para el número cero:</p>
+        <ol>
+          <li>Un cero positivo cuando $s=0$, $c=0$, y $f=0$, y </li>
+          <li>Un cero negativo cuando $s=-1$, $c=0$, y $f=0$</li>
+        </ol>
+      </p>
+    </div>
+
+    <div class="nota-box"><h2 class="number-title"> Observación </h2>
 
       <p>El <b>número positivo más grande</b> que se puede representar en  formato binario IEEE 754-2008 
         de $64$ bits es: 
@@ -111,18 +147,20 @@
 
       $$ 2^{2046-1023} \cdot (1+(1 - 2^{-52}))= 2^{1023} \cdot  (2 - 2^{-52})   \approx 0.17977 \times 10^{309}.$$
       </p>
+      </div>
 
-      <HR>
-        <p><b><u>Observación:</u></b>
+      <div class="nota-box"><h2 class="number-title"> Observación </h2>
+       <p> 
        La representación: 
 
           $$0 11111111111 1111111111111111111111111111111111111111111111111111$$
 
       <p>es reservada  para $+\mathrm{INF}$</p>
-      
-      <HR>
+       </p>
 
-      <p>El <b>número positivo más pequeño</b> que se puede representar en el formato binario el
+      </div>
+      <div class="nota-box"><h2 class="number-title"> Observación </h2>
+       <p>El <b>número positivo más pequeño</b> que se puede representar en el formato binario el
          IEEE 754-2008 de $64$  bits es: 
         $$0 00000000001 0000000000000000000000000000000000000000000000000000$$
         
@@ -131,55 +169,14 @@
         $$(-1)^{0} \cdot 2^{1-1023} \cdot (1 + 0)= 2^{-1022} \approx 0.22251\times  10^{-307}$$
       </p>   
   
+    </div>
+      
+    
 
-      <HR>
-        <p><b><u>Observación:</u></b>
-          La representación: 
+    <h1 class="title flexbox">  Problemas bien planteados</h1>  
 
-          $$0 00000000000 0000000000000000000000000000000000000000000000000000$$
-          
-        <p>es reservada  para el cero. Como consecuencia se tienen dos representaciones para el número cero:</p>
-        <ol>
-          <li>Un cero positivo cuando $s=0$, $c=0$, y $f=0$, y </li>
-          <li>Un cero negativo cuando $s=-1$, $c=0$, y $f=0$</li>
-        </ol>
-        </p>
-        <HR>
-
-      <p>De esta manera, todo  número real cuya  una magnitud sea menor que
-
-        $$2^{-1022}$$
-
-        resultan en un <b>subdesbordamiento</b>,  y en general se configuran como $\mathrm{cero}$.
-        Mientras que los números superiores a  
-        
-        $$2^{1023}\cdot  (2 - 2^{-52})$$
-        
-        resultan en un <b>desbordamiento</b> y, comúnmente, causan que los cálculos se detengan
-        (a menos que el programa haya sido programado para detectado  estas representaciones).
-  
-        
-      </p>
-
-
-     </div>
-
-
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>  
      
-    <div class="nota-box">
-      <h2 class="number-title"> Problemas bien planteados</h2>  
-     
-      <HR>
-        <p><b><u>Definición:</u></b> Un problema matemático se dice <b>bien planteado</b>
-         (en el <b>sentido de Hadamard</b>) si <em>existe una solución</em> del problema,
-         es <em>única</em>  y <em>depende continuamente de los datos</em> del problema.
-        </p>
-
-        <p>
-          Un problema matemático se dice <b>mal planteado</b> si no esta bien planteado.
-        </p>
-        <HR>
-
         <p>Un problema bien planteado es aquel que se puede <b><em>resolver razonablemente bien</em></b> con la ayuda de una computadora. Sobre todo cuando la solución 
         no se puede hallar de forma analítica. Para ello se necesita: 
         </p>
@@ -198,13 +195,25 @@
 
       </div>
 
+      <div class="nota-box"> <h2 class="number-title"> Definición</h2>  
+     
+        <p>Un problema matemático se dice <b>bien planteado</b>
+          (en el <b>sentido de Hadamard</b>) si <em>existe una solución</em> del problema,
+          es <em>única</em>  y <em>depende continuamente de los datos</em> del problema.
+         </p>
+ 
+         <p>
+           Un problema matemático se dice <b>mal planteado</b> si no esta bien planteado.
+         </p>
+      </div>
 
 
 
   
 
+    <h1 class="title flexbox"> Discretización de un problema matemático</h1>
 
-    <div class="nota-box"><h2 class="number-title"> Discretización de un problema matemático</h2>
+    <div class="nota-box"><h2 class="number-title"> Introducción</h2>
 
     <p>Para que un problema matemático se pueda resolver  con la ayuda de una computadora a traves de métodos 
       númericos es necesario transformarlo a su vez en un problema computacional. El proceso de transformación
@@ -231,8 +240,10 @@
 
 
   
+    
+    <h1 class="title flexbox">  Fuentes de aproximación </h1>
 
-    <div class="nota-box"><h2 class="number-title"> Fuentes de aproximación</h2>
+    <div class="nota-box"><h2 class="number-title"> Introducción</h2>
       <p>Se distinguen al menos 5 fuentes de aproximación que pueden generar errores que afectan los resultados de 
         problema científico. 
       </p>
@@ -299,7 +310,7 @@
     </div>
     
 
-    <h1 class="number flexbox"> Análisis  del  error    </h1>
+    <h1 class="title flexbox"> Análisis  del  error    </h1>
 
     <div class="nota-box">
       <p>Recordemos que todo número real puede ser representado en la <b>forma decimal normalizada</b>.
