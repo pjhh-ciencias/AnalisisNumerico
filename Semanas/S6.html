@@ -302,7 +302,7 @@
 
   
   
-    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+    <div class="nota-box" id="Teo:existencia_unicidad_puntos_fijos"> <h2 class="number-title"> Teorema</h2>
     <p>
       <ol>
         <li>Si $g:[a,b] \to [a,b] $ es una función continua  en $[a,b]$, entonces $g$ tiene un punto fijo en 
@@ -350,9 +350,13 @@
         </p>
         <p>Además, 
           $$|g^{'}(4)|= \left| \frac{8}{3} \right| >1$$
-          En general, $|g^{'}(x)|\not \leq 1$ para todoo $x \in [3,4]$. En resumen notemos que la función $g(x)$ tiene un único 
-          punto fijo en el intervalo $[3,4]$. Sin embargo, no se cumplen las condiciones del Teorema del 
-          punto fijo. Son suficentes para garantizar la existencia de puntos fijos, pero no son necesarias.  
+          En general, $|g^{'}(x)|\not \leq 1$ para todo $x \in [3,4]$. En resumen notemos que la 
+          función $g(x)$ tiene un único  punto fijo en el intervalo $[3,4]$. 
+          Sin embargo, no se cumplen las condiciones del 
+          <a href="Teo:existencia_unicidad_puntos_fijos"> Teorema 6.13</a>.
+          Por lo tanto, las condiciones del <a href="Teo:existencia_unicidad_puntos_fijos"> Teorema 6.13</a>
+           son suficientes para garantizar 
+          la existencia de puntos fijos, pero no son necesarias.  
         </p>
 
       </div>
@@ -364,14 +368,15 @@
         <p>Para aproximar el punto fijo de una función continua $g(x)$ se toma un valor 
           inicial $p_0$ y se genera una sucesión $\{p_{n} \}_{n=1}^{\infty}$ donde 
           
-          $$p_{n} = g(p_{n-1}), \,\,\,\,\,\,\, \text{ para } \,\,\, n \geq 1 $$ 
+          $$p_{n} := g(p_{n-1}), \,\,\,\,\,\,\, \text{ para } \,\,\, n \geq 1 $$ 
 
           Cuando la sucesión converge a un punto $p$ entonces la continuidad de $g(x)$ implica que:
 
           $$p=\lim_{n \to \infty} p_{n} = \lim_{n\to \infty} g(p_{n-1})= g(\lim_{n \to \infty} p_{n-1})= g(p)$$
 
-          esto es, $p$ es un punto fijo de la función $g(x)$ o bien una solución de la ecuación $x=g(x)$. Esta técnica
-          se llama <b>método iterativo de punto fijo</b> o <b>iteración funcional de punto fijo</b>.
+          esto es, $p$ es un punto fijo de la función $g(x)$ o bien una solución de la ecuación $x=g(x)$. 
+          A esta técnica
+          se le  llama <b>método iterativo de punto fijo</b> o <b>iteración funcional de punto fijo</b>.
         </p>
       </div>
 <!--
@@ -383,11 +388,11 @@
 
       <div class="nota-box" id="Teo:Convergencia_iteracion_funcional" > <h2 class="number-title"> Teorema </h2>
         <p>
-            Sea $g(x) \colon C[a,b] $ tal que $g(x) \colon [a,b] \to [a,b] $. Si $g^{'}(x)$ existe en $[a,b]$ y si existe 
+            Sea $g(x) \in C[a,b] $ tal que $g(x) \colon [a,b] \to [a,b] $. Si $g^{'}(x)$ existe en $[a,b]$ y si existe 
             una constante positiva $K < 1$ tal que 
             $$|g^{'}(x)| \leq K\,\,\,\,\, \text{ para toda } x \in (a,b)$$
             entonces para cualquier número $p_{0} \in [a,b]$, la sucesión definida por 
-            $$p_{n} := g(p_{n})\,\,\,\,\,\,\, \text{ para } \,\,\, n \geq 1 $$ 
+            $$p_{n} := g(p_{n-1})\,\,\,\,\,\,\, \text{ para } \,\,\, n \geq 1 $$ 
             converge al único punto fijo $p\in [a,b]$
         </p>
         <p><b>Demostración.</b></p>
@@ -422,15 +427,18 @@
       <div class="nota-box"> <h2 class="number-title"> Corolario </h2>
         <p>
           Si $g$ satisface las hipótesis del <a href="#Teo:Convergencia_iteracion_funcional">Teorema 6.19 </a>, 
-          una cota para el error involucrado al usar $p_n$ para aproximar $p$ esta dado por 
-          $$|p_{n} - p| \leq  K^{n} \max\{ p_{0} -a, b-p_{0} \}\,\,\,\, \text{ para toda } \,\,\, n \geq 1 $$ 
-          
+          entonces las siguientes desigualdades proporcionan cotas para el error involucrado al usar $p_n$ para
+          aproximar $p$  
+          <ol>
+          <li>$|p_{n} - p| \leq  K^{n} \max\{ p_{0} -a, b-p_{0} \}\,\,\,\, \text{ para toda } \,\,\, n \geq 1 $</li> <br>
+          <li>$|p_{n} - p| \leq \displaystyle{\frac{K^{n}}{1-K}} |p_{1} -  p_{0}|\,\,\,\, \text{ para toda } \,\,\, n \geq 1 $</li>
+          </ol>
         </p>
       </div>
 
 
       
-
+<!--
       <div class="nota-box"> <h2 class="number-title"> Corolario </h2>
         <p>
           Si $g$ satisface las hipótesis del <a href="#Teo:Convergencia_iteracion_funcional">Teorema 6.19 </a>, 
@@ -439,10 +447,10 @@
           
         </p>
       </div>
-
+-->
       
       <div class="nota-box"> <h2 class="number-title"> Nota </h2>
-        <p>De los corolarios anteriores se tiene que más pequeño sea $K$, la sucesión generada 
+        <p>Del corolario anterior se tiene que entre más pequeño sea $K$, la sucesión generada 
           encuentra más rápido el punto fijo $p$.  
         </p>
       </div>
