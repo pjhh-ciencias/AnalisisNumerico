@@ -91,19 +91,91 @@
     
     
     <h1 class="number-title flexbox"> Semana 7 </h1>   
-    <h1 class="title flexbox"> Titulo </h1>   
+    <h1 class="title flexbox">  Métodos tangenciales para el cálculo de raíces </h1>   
 
     <div class="nota-box"> <h2 class="number-title"> Introducción </h2>
       <p>
-       
+       Si $f(x), f^{'}(x) $ y $f^{''}(x)$ son continuas  cerca de una raiz $p$ de una función $f$,
+       esta información adicional sobre la naturaleza de $f(x)$ puede usarse para desarrollar algoritmos 
+       que produzcan sucesiones $\{p_{n}\}_{n=1}^{\infty}$ que converjan a $p$ más rapidamente que el 
+       método de Biseción. 
      </p>
+    </div>
+
+    <h1 class="title flexbox">  Método de Newton-Raphson </h1>
+
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+      <p>El método de Newton-Raphson que descansa en la continuidad de $f^{'}(x)$ y $f^{''}(x)$, 
+        es de los algoritmos más útiles y poderosos para encontrar la raiz $p$ de la ecuación:
+        
+        $$f(x)=0$$  
+      </p>
+
+      <p>Sea $p$ una raíz de la ecuación $f(x)$, entonces la curva $y=f(x)$ y el eje de las
+         abscisas se cortan en el punto $(p,0)$. Consideremos una aproximación inicial 
+         $p_{0}$ a la raiz $p$. Entonces, el punto $(p_{0}, f(p_{0})$ esta situado en la curva
+         $y=f(x)$ más cerca de $(p,f(p))$
+      </p>
+
+      <p>La ecuación de la recta tangente a la gráfica de la función $f(x)$ en el punto $(p_{0},f(p_{0}))$
+        esta dada por: 
+        $$y-f(p_{0})= f^{'}(p_{0}) (x - p_{0})$$
+      </p>
+
+      <p>Definiendo  $p_{1}$ como el punto de intersección  del eje de las abcisas  con la recta tangente 
+        al punto $(p_{0},f(p_{0}))$, se tiene que:
+      $$p_{1}:= p_{0} - \frac{f(p_{0})}{f^{'}(p_{0})}$$
+      </p>
+
+      <p>Graficamente se puede observar que el punto $p_{1}$ esta más cerca de $p$ que $p_{0}$ </p>
+      
+      <p>Luego, la ecuación de la recta tangente a la grafica del a función $f(x)$ en el punto
+         $(p_{1}, f(p_{1}))$ es:
+        $$y-f(p_{1})= f^{'}(x- p_{1}) $$
+      </p>
+
+      <p>Definiendo  $p_{2}$ como el punto de intersección  del eje de las abcisas  con la recta tangente 
+        al punto $(p_{1},f(p_{1}))$, se tiene que:
+
+       $$ p_{2} :=  p_{1} - \frac{f(p_{1})}{f^{'}(p_{1})} $$
+      
+       Continuando sucesivamente con este procedimiento, en general se tiene que:
+       
+       $$ p_{n} :=  p_{n-1} - \frac{f(p_{n-1})}{f^{'}(p_{n-1})} $$
+      
+       
+      </p>
 
 
+    <p>De esta manera el método de Newton-Raphson genera una sucesión $\{p_{n}\}_{n}^{\infty}$ 
+       partiendo de un valor incial y definiendo 
+       $$p_{n}:= p_{n-1} - \frac{p_{n-1}}{f^{'}(p_{n-1})}$$  
+    </p>
     </div>
 
 
-    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+    
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
       <p>
+        Sea $f\in C^{2}[a,b]$. Si $p\in [a,b]$ con $f(p)=0$ y $f^{'}(p)\not= 0$ entonces existe $\delta >0$
+        tal que el método de Newton-Raphson genera una sucesión $\{p_{n}\}_{n=1}^{\infty}$  que genera  a $p$
+        para cualquier aproximación inicial $p_{0} \in [p-\delta, p+ \delta]$.      
+      </p>
+      <p><b>Demostración:</b></p>
+    </div>
+
+    <h1 class="title flexbox">  Método de la Secante </h1>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <p>
+        El método de la secante requiere de dos valores iniciales $p_{0}$ y $p_{1}$. 
+      </p>
+
+      <p>Se encuentra la recta secante a la gráfica de $f(x)$ que pasa por lo puntos 
+        $(p_{0},f(p_{0}))$ y $(p_{1},f(p_{1}))$, esto es, 
+       
+        $$y - f(p_{0}) = \frac{f(p_{1}) - f(p_{0})}{p_{1} - p_{0}} (x-p_{0})  $$ 
       </p>
     </div>
 
