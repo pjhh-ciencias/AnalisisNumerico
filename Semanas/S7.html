@@ -95,7 +95,7 @@
 
     <div class="nota-box"> <h2 class="number-title"> Introducción </h2>
       <p>
-       Si $f(x), f^{'}(x) $ y $f^{''}(x)$ son continuas  cerca de una raiz $p$ de una función $f$,
+       Si $f(x), f^{'}(x) $ y $f^{''}(x)$ son continuas  cerca de una raíz $p$ de una función $f$,
        esta información adicional sobre la naturaleza de $f(x)$ puede usarse para desarrollar algoritmos 
        que produzcan sucesiones $\{p_{n}\}_{n=1}^{\infty}$ que converjan a $p$ más rapidamente que el 
        método de Biseción. 
@@ -105,15 +105,18 @@
     <h1 class="title flexbox">  Método de Newton-Raphson </h1>
 
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
-      <p>El método de Newton-Raphson que descansa en la continuidad de $f^{'}(x)$ y $f^{''}(x)$, 
-        es de los algoritmos más útiles y poderosos para encontrar la raiz $p$ de la ecuación:
+      <p>El método de Newton-Raphson descansa en la continuidad de $f^{'}(x)$ y $f^{''}(x)$, y 
+        es de los algoritmos más útiles y poderosos para encontrar la raíz $p$ de la ecuación:
         
         $$f(x)=0$$  
       </p>
 
       <p>Sea $p$ una raíz de la ecuación $f(x)$, entonces la curva $y=f(x)$ y el eje de las
-         abscisas se cortan en el punto $(p,0)$. Consideremos una aproximación inicial 
-         $p_{0}$ a la raiz $p$. Entonces, el punto $(p_{0}, f(p_{0})$ esta situado en la curva
+         abscisas se cortan en el punto $(p,0)$.
+        </p>
+         
+      <p>Consideremos una <b>aproximación inicial</b>
+         $p_{0}$ a la raíz $p$. Entonces, el punto $(p_{0}, f(p_{0})$ esta situado en la curva
          $y=f(x)$ más cerca de $(p,f(p))$
       </p>
 
@@ -148,8 +151,8 @@
 
 
     <p>De esta manera el método de Newton-Raphson genera una sucesión $\{p_{n}\}_{n}^{\infty}$ 
-       partiendo de un valor incial y definiendo 
-       $$p_{n}:= p_{n-1} - \frac{p_{n-1}}{f^{'}(p_{n-1})}$$  
+       partiendo de un valor inicial $p_{0}$ y definiendo 
+       $$p_{n}:= p_{n-1} - \frac{p_{n-1}}{f^{'}(p_{n-1})}\, \, \, \text{ para cada } n \geq 1$$  
     </p>
     </div>
 
@@ -163,6 +166,8 @@
       </p>
       <p><b>Demostración:</b></p>
     </div>
+
+    <!-- 
 
     <h1 class="title flexbox">  Método de la Secante </h1>
 
@@ -178,5 +183,6 @@
         $$y - f(p_{0}) = \frac{f(p_{1}) - f(p_{0})}{p_{1} - p_{0}} (x-p_{0})  $$ 
       </p>
     </div>
+    -->
 
     </body>
