@@ -90,11 +90,11 @@
     <h1 class="number-title flexbox"> Ejercicios propuestos segundo parcial </h1>   
     
   
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio</h2>
-      <p>Escribe un programa que implemente el método de bisección para encontrar una aproximación a la raíz de  una
-         función continua $f(x)$ en un intervalo  dado $[a_{0},b_{0}]$. El programa debe detenerse si se han realizado un número máximo de $K$ iteraciones
-         o bien en cuanto el error relativo porcentual sea menor que $\epsilon > 0 $, donde los números $K$ y 
+    <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
+      <p>Sea $f(x)$ una función continua  en $[a_{0},b_{0}]$. Escribe un programa que implemente el
+         método de bisección para encontrar una aproximación a una raíz de  $f(x)$ en  $[a_{0},b_{0}]$. 
+         El programa debe detenerse si se han realizado un número máximo de $K$ iteraciones
+         o bien en cuanto el error absoluto sea menor que $\epsilon > 0 $, donde los números $K$ y 
         $\epsilon$ son dados por el usuario. </p>
       
         
@@ -114,20 +114,18 @@
             <th>$f(x_{n})$</th>
             <th>$EA$</th>
             <th>$ER$</th>
-            <th>$ERP$</th>
           </tr>
           </thead>
             <tbody >
 
               <tr>
-                <td>iteración</td>
+                <td>$\# $Iteración</td>
                 <td>Extremo izquierdo del intervalo </td>
                 <td>Punto medio del intervalo </td>
                 <td>Extremo derecho del  intervalo </td>
                 <td>La función evaluada en el punto medio</td>
                 <td>Error absoluto</td>
-                <td>Error relativo</td>
-                <td>Error relativo porcentual</td>
+                <td>Error relativo (cuando sea posible calcular)</td>
               </tr>
               <!--
             <tr>
@@ -146,8 +144,7 @@
       </div>
 
       
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio</h2>
+      <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
         <p>
          En cada uno de los ejercicio siguientes hallar una aproximación a la tasa de interes anual $I$ con
           la que se conseguiría un capital acumulado final $A$ tras hacer $240$ depósitos mensuales.
@@ -160,8 +157,23 @@
         </p>
       </div>
 
+      <!-- 
       <div class="ejercicio-box">
         <h2 class="number-title"> Ejercicio</h2>
+        <p>
+         Encuentra  una aproximación exacta hasta la decima cifra decimal, a la tasa de interes anual $I$ con
+          la que se conseguiría un capital acumulado final de $A=\$500\, 000$ pesos si se realizaran  $240$ depósitos
+          mensuales de $\$ 300$ pesos. Aproxime la tasa  
+          mediante el método de bisección.
+          <ol>
+            <li>$P=\$ 275.00 $ pesos, $A= \$250\, 000$ pesos, $a_{0} = 0.11$ y $b_{0}=0.12$</li>
+            <li>$P=\$ 325.00 $ pesos, $A= \$400\, 000$ pesos, $a_{0} = 0.13$ y $b_{0}=0.14$</li>
+          </ol>     
+        </p>
+      </div>
+      -->
+
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
         <p> Supongamos que implementamos el método de biseccion para encontrar una raíz de $f(x)$ en el
           intervalo $[2,7]$. ¿Cuántas iteraciones/ bisecciones  $N$ hay que hacer para asegurar que  la aproximación
           $c_{N}$ tenga una precision de $5\times 10^{-9}$? 
@@ -172,11 +184,10 @@
           
     
 
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio</h2>
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
         <p>En cada uno de los siguientes ejercicios implementa el método de bisección para encontrar una
             aproximación a la solución de la ecuación  en el intervalo dado, de tal manera que  el  error 
-            relativo porcentual sea   menor que $1\times 10^{-3}$. 
+            absoluto sea   menor que $1\times 10^{-3}$. 
           <ol>
             <li>$e^{x} - 2 -x=0$, $[a_{0}, b_{0}]=[-2.4, -1-6]$</li>
             <li>$\mathrm{cos}(x) + 1- x=0$, $[a_{0}, b_{0}]= [0.8,1.6]$</li>
@@ -192,11 +203,10 @@
 
 
       
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio</h2>
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
         <p> En cada uno de los siguientes ejercicios implementa el método de bisección para encontrar 
           una aproximación a la raíz de la función en el intervalo dado,  de tal manera que  el  error 
-          relativo porcentual sea  menor que  $1\times 10^{-2}$. 
+          aboluto sea  menor que  $1\times 10^{-2}$. 
           <ol>
             <li>$f(x) = x -  e^{x} $, $[a_{0}, b_{0}]=[0,1]$</li>
             <li>$f(x) = \mathrm{ln}(x) + x$, $[a_{0}, b_{0}]= [0.1,1]$</li>
@@ -212,51 +222,87 @@
       
       
       
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio</h2>
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
         <p> En cada uno de los siguientes ejercicios implementa el método de bisección para encontrar 
           una aproximación a la raíz de la función en el intervalo dado,  de tal manera que  el  error 
           relativo porcentual sea  menor que  $1\times 10^{-2}$. 
           <ol>
             <li>$f(x) = x^{3} - 2 $, $[a_{0}, b_{0}]=[0,2]$</li>
-            <li>$f(x) = \mathrm{ln}(x) + x$, $[a_{0}, b_{0}]= [0.1,1]$</li>
-            <li>$f(x) = x^{3}-3$, $[a_{0}, b_{0}]=[0,3]$</li>
+            <li>$f(x) = e^{x} + x$, $[a_{0}, b_{0}]= [0,1]$</li>
+            <li>$f(x) = x- e^{-x}$, $[a_{0}, b_{0}]=[0,1]$</li>
             <li>$f(x)=x^{6}-x -1$, $[a_{0}, b_{0}]=[0,2]$</li>
-            <li>$f(x)= 3- 2^{x} $, $[a_{0}, b_{0}]=[0, 2]$</li>
+            <li>$f(x)=  x^{3} - 2x -5 $, $[a_{0}, b_{0}]=[0, 3]$</li>
+            <!-- <li>$f(x)=  1- 2x e^{-\frac{x}{2}} $, $[a_{0}, b_{0}]=[0, 2]$</li> -->
+            <li>$f(x)=  5- x^{-1} $, $[a_{0}, b_{0}]=[0.1, 0.25]$</li>
+            <!-- <li>$f(x)=  x^{2} - \mathrm{Sin}(x)$, $[a_{0}, b_{0}]=[0, \pi]$</li> -->
           </ol>
         </p>
+      </div>
 
 
-    <div class="ejercicio-box">
-    <h2 class="number-title"> Ejercicio</h2>
-    <p>  </p>
+    
+    
+    
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+    <p>Una variación del método de bisección se conoce como <b>regula-falsi</b>, o el <b>método de la posición falsa</b>. 
+      Dado un intervalo $[a_{0}, b_{0}]$, con $f(a_{0})f(b_{0}) < 0$,  el nuevo punto  $x_{0}$ en lugar de tomarlo como 
+      el punto medio del intervalo $[x_{0},y_{0}]$, se define  de tal manera
+      que $(x_{0},0)$ es el punto de intersección de  la línea recta que pasa por lo puntos
+       $(a_{0},f(a_{0})) y (b_{0},f(b_{0}) )$ con el eje de las absicas, el resto del proceso es el mismo que para 
+       el método de Bisección presentado en clase. Demuestre que para $n \geq 1$, se tiene que:
+      
+      $$x_{n}=b - \frac{f(b) (b-a)}{f(b) - f(a)}$$</p>
    
       </div>
 
       
-      <div class="ejercicio-box">
-        <h2 class="number-title"> Ejercicio</h2>
-        <p>  </p>
       
-          </div>
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>Escribe un programa que implemente el método de la posicion falsa para encontrar una aproximación a la raíz de 
+          una función continua $f(x)$ en un intervalo  dado $[a_{0},b_{0}]$. El programa debe detenerse si se han
+          realizado un número máximo de $K$ iteraciones
+         o bien en cuanto el error absoluto sea menor que $\epsilon > 0 $, donde los números $K$ y 
+        $\epsilon$ son dados por el usuario. </p>
+      
+      </div>
 
+        
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p> Utilizar el método de la posición falsa  para encontrar una raíz de la función $f(x) = x^{3}-2 $
+         en el intervalo $[0, 2]$, de tal manera que el error relativo sea menor que $1\times 10^{-5}$.</p>
 
+        <p>Si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada  detener el algoritmo
+          e imprimir la aproximación obtenida hasta ese punto.  </p>
+     
+        </p>
+        </div>
 
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio</h2>
+      
+        <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>El método de bisección siempre reducirá el intervalo de incertidumbre a la mitad, pero la el método de 
+          la posición falsa  podría reducir el intervalo en menos o en más de la mitad.
+          Aplica ambos metodos:  bisección y regula-falsi en la función $f(x)^{-4x} - \frac{1}{10}$  en 
+          el intervalo $[0,5]$. ¿Cuál método alcanza a la raíz más rápido? Justifica tu respuesta
+      
+      </p>
+    </div>
+
+    <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
       <p>Utilizar el método de bisección para encontrar una raíz de la función $f(x) = 2 -  e^{x} $
          en el intervalo $[0, 1]$, de tal manera que el error relativo sea menor que $1\times 10^{-5}$.</p>
 
-      <p>Si se excede de $20$ iteraciones antes de alcanzar la aproximación deseada  detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  </p>
+      <p>Si se excede de $20$ iteraciones antes de alcanzar la aproximación deseada  detener 
+         el algoritmo e imprimir la aproximación obtenida hasta ese punto.  </p>
       </div>
 
       
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio</h2>
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
       <p>Utilizar el método de bisección para encontrar una raíz de la función $f(x) = x^{3} - 2 $
          en el intervalo $[0, 2]$, de tal manera que el error relativo sea menor que $1\times 10^{-5}$.</p>
 
-      <p>Si se excede de $20$ iteraciones antes de alcanzar la aproximación deseada  detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  </p>
+         
+      <p>Si se excede de $20$ iteraciones antes de alcanzar la aproximación deseada  detener el algoritmo
+         e imprimir la aproximación obtenida hasta ese punto.  </p>
       </div>
 
 
@@ -264,12 +310,85 @@
       
 
 
-    <div class="ejercicio-box">
-      <h2 class="number-title"> Ejercicio</h2>
-    <p>Demuestre que la ecuacion $e^{x+1} − 2x = 3$ tiene al menos una raíz en
-       $[\mathrm{ln}(3)-1, \mathrm{ln}(5)-1]$  son puntos fijos</p>
 
-    </div>
+    <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
+      <p>Sea $g(x)$ una funcion continua en un intervalo dado $[a_{0},b_{0}]$. Escribe un programa que implemente
+         el Método iterativo de punto fijo para encontrar una aproximación a
+         una solución de la ecuacion $g(x)=x$  a partir de una aproximación
+         inicial $p_{0} \in [a,b]$. El programa debe detenerse
+         si se han realizado un número máximo de $K$ iteraciones o bien en cuanto el error absoluto sea menor que $\epsilon > 0 $, donde los números $K$ y 
+        $\epsilon$ son dados por el usuario. </p>
+      
+        
+      <p>
+        El programa debe imprimir en cada iteración la siguiente información:
+      <p>
+        <table class="info">
+                    
+          <caption><b><font size="4"></font></b></caption>
+          <thead>
+          <tr>
+            <th>$n$</th>
+            <th>$x_{n}$</th>
+            <th>$EA$</th>
+            <th>$ER$</th>
+          </tr>
+          </thead>
+            <tbody >
+
+              <tr>
+                <td>$\# $ Iteración</td>
+                <td>$g(x_{n-1})$</td>
+                <td>Error absoluto</td>
+                <td>Error relativo (cuando sea posible calcular)</td>
+              </tr>
+
+              <!--
+            <tr>
+              <td ><center>$0$</center></td>
+              <td><center>$a_{0}:= a$</center></td>
+              <td><center>$x_{0}=\displaystyle{\frac{a_{0} + b_{0}}{2}}$</center></td>
+              <td><center>$b_{0}:=b$</center></td>
+              <td><center>$\displaystyle{\left|\frac{x_{actual} - x_{anterior}}{x_{actual}}\right|}$</center></td>
+              <td><center>$\displaystyle{\left|\frac{x_{actual} - x_{anterior}}{x_{actual}}\right|}\times 100 \%$</center></td>
+              <td></td>
+            </tr>
+            -->
+            </tbody>
+        </table>
+      </p>
+      </div>
+
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>Determine si cada una de las siguientes funciones  tien un único punto fijo 
+           en el intervalo dado:
+           <ol>
+            <li>$\displaystyle{g(x)=1-\frac{x^{2}}{4}}$ en $[0,1]$</li><br>
+            <li>$g(x)= 2^{-x}$ en $[0,1]$</li><br>
+            <li>$\displaystyle{g(x)=\frac{1}{x}}$ en $[0.5,5.2]$</li><br>
+           </ol>
+        </div>
+
+        
+
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>Sea $g(x)= x^{2} + x - 4$, ¿podemos utilizar la iteración de punto fijo para hallar las soluciones 
+          de la ecuación $g(x)=x$? Justifica clara y detalladamente tu respuesta. </p>
+        </div>
+
+
+
+
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>Demuestre que la ecuacion $e^{x+1} − 2x = 3$ tiene al menos una raíz en
+           $[\mathrm{ln}(3)-1, \mathrm{ln}(5)-1]$  son puntos fijos</p>
+        </div>
+
+
+
+
+
+
 
 
 
