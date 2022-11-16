@@ -182,6 +182,25 @@
        
         $$y - f(p_{0}) = \frac{f(p_{1}) - f(p_{0})}{p_{1} - p_{0}} (x-p_{0})  $$ 
       </p>
+
+      <p>El punto $(p_{2},0)$ donde la recta secante intersecta al eje $x$ es:
+        $$p_{2}= p_{0} - \frac{f(p_{0}) (p_{1} - p_{0})}{f(p_{1}) - f(p_{0})}$$
+      </p>
+
+     <!--  <p>Si $p_{2}$ no satisface algún criterio de convergencia, entonces se encuentra l-->
+      <p>Luego, la ecuación de la recta secante que pasa a la gráfica de la función $f(x)$ que 
+        pasa por los puntos  $(p_{2},f(p_{2}))$ y $(p_{1},f(p_{1}))$  es:  
+        $$y - f(p_{1}) = \frac{f(p_{2}) - f(p_{1})}{p_{2} - p_{1}} (x-p_{1})  $$
+      </p>
+
+      <p>Y el punto de intersección de la gáfica de la función $f(x)$ con el eje de las abscisas es $(p_{3},f(p_{3}))$ 
+        donde:
+        $$p_{3}= p_{1} - \frac{f(p_{1}) (p_{2} - p_{1})}{f(p_{2}) - f(p_{1})}$$
+      </p>
+
+      <p>En general se tiene que:
+        $$p_{n}= p_{n-2} - \frac{f(p_{n-2}) (p_{n-1} - p_{n-2})}{f(p_{n-1}) - f(p_{n-2})}, \, \, \,\text{ para toda } n \geq 2$$
+      </p>
     </div>
     
 
