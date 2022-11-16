@@ -2,9 +2,8 @@
 title: "S2"
 author: "Análisis númerico"
 date: "`r Sys.Date()`"
-output:
-  pdf_document: default
-  html_document: default
+output: html_notebook
+
 ---
 # Evaluacion de un polinomio
 
@@ -55,32 +54,4 @@ p(x)= (x-c)Q_o(x)+ R_o
 \end{equation}
 ```
 
-Es decir, $Q_0(x)$ es el polinomio cociente de grado $n-1$ y $R_o= b_0= p(c)$ es el resto de la división de $p(x)$ entre $x-c$
 
-```{r
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
-$$
-f(x)
-$$
-
-
-
-```{python } 
-2+3
-````
-
-```{r
-summary(cars)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-
-
-```{python } 
-2+3
-````
