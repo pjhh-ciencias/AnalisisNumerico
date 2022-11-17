@@ -92,7 +92,7 @@
   
     <div class="ejercicio-box" id="Ejer:Programa_biseccion"> <h2 class="number-title"> Ejercicio</h2>
       <p>Sea $f(x)$ una función continua  en $[a_{0},b_{0}]$. Escribe un programa que implemente el
-         método de bisección para encontrar una aproximación a una raíz de  $f(x)$ en  $[a_{0},b_{0}]$. 
+         <b>método de bisección</b> para encontrar una aproximación a una raíz de  $f(x)$ en  $[a_{0},b_{0}]$. 
          El programa debe detenerse si se han realizado un número máximo de $K$ iteraciones
          o bien en cuanto el error absoluto sea menor que $\epsilon$, donde $K$ es un número entero positivo  y 
          $\epsilon$ un número real mayor que cero dados  por el usuario. </p>
@@ -187,7 +187,7 @@
       <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
         <p>En cada uno de los siguientes ejercicios implementa el método de bisección para encontrar una
             aproximación a la solución de la ecuación  en el intervalo $[a_{0}, b_{0}]$ dado, de tal manera que  el  error 
-            absoluto sea   menor que $1\times 10^{-3}$. 
+            absoluto sea   menor que $1\times 10^{-5}$. 
           <ol>
             <li>$e^{x} - 2 -x=0$, $[a_{0}, b_{0}]=[-2.4, -1-6]$</li><br>
             <li>$\mathrm{cos}(x) + 1- x=0$, $[a_{0}, b_{0}]= [0.8,1.6]$</li><br>
@@ -206,7 +206,7 @@
       <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
         <p> En cada uno de los siguientes ejercicios implementa el método de bisección para encontrar 
           una aproximación a la raíz de la función en el intervalo $[a_{0}, b_{0}]$ dado,  de tal manera que  el  error 
-          aboluto sea  menor que  $1\times 10^{-3}$. 
+          absoluto sea  menor que  $1\times 10^{-5}$. 
           <ol>
             <li>$f(x) = x -  e^{x} $, $[a_{0}, b_{0}]=[0,1]$</li><br>
             <li>$f(x) = \mathrm{ln}(x) + x$, $[a_{0}, b_{0}]= [0.1,1]$</li><br>
@@ -219,7 +219,8 @@
             <li>$f(x)=x^{6}-x -1$, $[a_{0}, b_{0}]=[0,2]$</li><br>
             <li>$f(x)=  x^{3} - 2x -5 $, $[a_{0}, b_{0}]=[0, 3]$</li><br>
             <!-- <li>$f(x)=  1- 2x e^{-\frac{x}{2}} $, $[a_{0}, b_{0}]=[0, 2]$</li> -->
-            <li>$f(x)=  5- x^{-1} $, $[a_{0}, b_{0}]=[0.1, 0.25]$</li>
+            <li>$f(x)=  5- x^{-1} $, $[a_{0}, b_{0}]=[0.1, 0.25]$</li><br>
+            <li>$f(x) = 2 -  e^{x} $,  $[a_{0}, b_{0}]=[0,1]$</li>
             <!-- <li>$f(x)=  x^{2} - \mathrm{Sin}(x)$, $[a_{0}, b_{0}]=[0, \pi]$</li> -->
           </ol>
         </p>
@@ -250,7 +251,7 @@
       
       
       <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-        <p>Escribe un programa que implemente el método de la posicion falsa para encontrar una aproximación a la raíz de 
+        <p>Escribe un programa que implemente el <b>método de la posicion falsa</b> para encontrar una aproximación a la raíz de 
           una función continua $f(x)$ en un intervalo  dado $[a_{0},b_{0}]$. El programa debe detenerse si se han
           realizado un número máximo de $K$ iteraciones
          o bien en cuanto el error absoluto sea menor que $\epsilon$, donde $K$ es un número entero positivo  y 
@@ -279,36 +280,19 @@
       </p>
     </div>
 
-    <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-      <p>Utilizar el método de bisección para encontrar una raíz de la función $f(x) = 2 -  e^{x} $
-         en el intervalo $[0, 1]$, de tal manera que el error relativo sea menor que $1\times 10^{-5}$.</p>
-
-      <p>Si se excede de $20$ iteraciones antes de alcanzar la aproximación deseada  detener 
-         el algoritmo e imprimir la aproximación obtenida hasta ese punto.  </p>
-      </div>
-
-      
-      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-      <p>Utilizar el método de bisección para encontrar una raíz de la función $f(x) = x^{3} - 2 $
-         en el intervalo $[0, 2]$, de tal manera que el error relativo sea menor que $1\times 10^{-5}$.</p>
-
-         
-      <p>Si se excede de $20$ iteraciones antes de alcanzar la aproximación deseada  detener el algoritmo
-         e imprimir la aproximación obtenida hasta ese punto.  </p>
-      </div>
-
-
-
+  
       
 
 
 
     <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
-      <p>Sea $g(x)$ una funcion continua en un intervalo dado $[a_{0},b_{0}]$. Escribe un programa que implemente
-         el Método iterativo de punto fijo para encontrar una aproximación a
+      <p>Sea $g(x)$ una funcion continua en un intervalo dado $[a_{0},b_{0}]$. 
+         Escribe un programa que implemente
+         el <b>método iterativo de punto fijo</b> para encontrar una aproximación a
          una solución de la ecuacion $g(x)=x$  a partir de una aproximación
          inicial $p_{0} \in [a,b]$. El programa debe detenerse
-         si se han realizado un número máximo de $K$ iteraciones o bien en cuanto el error absoluto sea menor que $\epsilon > 0 $, 
+         si se han realizado un número máximo de $K$ iteraciones o bien 
+         en cuanto el error absoluto sea menor que $\epsilon > 0 $, 
          donde $K$ es un número entero positivo  y 
          $\epsilon$ un número real mayor que cero dados  por el usuario. </p>
       
@@ -335,25 +319,62 @@
                 <td>Error absoluto</td>
                 <td>Error relativo (cuando sea posible calcular)</td>
               </tr>
-
-              <!--
-            <tr>
-              <td ><center>$0$</center></td>
-              <td><center>$a_{0}:= a$</center></td>
-              <td><center>$x_{0}=\displaystyle{\frac{a_{0} + b_{0}}{2}}$</center></td>
-              <td><center>$b_{0}:=b$</center></td>
-              <td><center>$\displaystyle{\left|\frac{x_{actual} - x_{anterior}}{x_{actual}}\right|}$</center></td>
-              <td><center>$\displaystyle{\left|\frac{x_{actual} - x_{anterior}}{x_{actual}}\right|}\times 100 \%$</center></td>
-              <td></td>
-            </tr>
-            -->
             </tbody>
         </table>
       </p>
       </div>
 
+      
+
       <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-        <p>Determine si cada una de las siguientes funciones  tien un único punto fijo 
+        <p>En cada uno de los siguientes ejercicios implementa el método iterativo de punto fijo  para encontrar 
+          una aproximación a la solución de la ecuación a partir de la aproximación inicial 
+          $p_{0}$ dada de tal manera que  el  error absoluto sea  menor que  $1\times 10^{-5}$. 
+          <ol>          
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+
+          </ol>
+        </p>
+
+        <p>En cada caso, si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
+          detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
+        </p>
+      </div>
+
+
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>En cada uno de los siguientes ejercicios con ayuda de algún software realiza un bosquejo de la gráfica de la función, 
+          luego en base a lo observado elige una  aproximación inicial 
+          $p_{0}$ e  implementa el método iterativo de punto fijo  para encontrar un punto fijo  de la función dada
+          a partir de la aproximación inicial propuesta por ti, de tal manera que el error absoluto sea menor
+          que  $1\times 10^{-5}$. 
+          <ol>
+            <li>$f(x)=\mathrm{Cos}(x)$</li><br>
+            <li>$f(x)=-x^{3}-1$</li><br>
+            <li>$f(x)= x^{2} + x - 4$</li><br>
+            <li>$f(x)=$</li><br>
+            <li>$f(x)=$</li><br>
+            <li>$f(x)=$</li><br>       
+          </ol>
+        </p>
+
+        <p>En cada caso, si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
+          detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
+        </p>
+      </div>
+
+
+
+      
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>Determine si cada una de las siguientes funciones  tiene un único punto fijo 
            en el intervalo dado:
            <ol>
             <li>$\displaystyle{g(x)=1-\frac{x^{2}}{4}}$ en $[0,1]$</li><br>
@@ -363,22 +384,35 @@
            En cada caso justifica tu respuesta.
         </div>
 
+        <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>Demuestre que la ecuacion $e^{x+1} − 2x = 3$ tiene al menos una raíz en
+           $[\mathrm{ln}(3)-1, \mathrm{ln}(5)-1]$.</p>
+        </div>
+
+
+
+
         
 
-      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-        <p>Sea $g(x)= x^{2} + x - 4$, ¿podemos utilizar la iteración de punto fijo para hallar las soluciones 
-          de la ecuación $g(x)=x$? Justifica clara y detalladamente tu respuesta. </p>
+
+        <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+          <p>En cada uno de los siguientes ejercicios implementa el método iterativo de punto fijo  para encontrar 
+            una aproximación a la solución de la ecuación a partir de la aproximación inicial 
+            $p_{0}$ dada, de tal manera que  el  error absoluto sea  menor que  $1\times 10^{-5}$. 
+            <ol>
+              <li>$x^{2} - \mathrm{Cos(x)} - 1$, $p_{0}=1.5 $</li><br>
+              <li>$$, $p_{0}= $</li><br>
+              <li>$$, $p_{0}= $</li><br>
+              <li>$$, $p_{0}= $</li><br>
+              <li>$$, $p_{0}= $</li><br>
+            </ol>
+          </p>
+  
+          <p>En cada caso, si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
+            detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
+          </p>
         </div>
-
-
-
-
-      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-        <p>Demuestre que la ecuacion $e^{x+1} − 2x = 3$ tiene al menos una raíz en
-           $[\mathrm{ln}(3)-1, \mathrm{ln}(5)-1]$</p>
-        </div>
-
-
+        
 
 
 
@@ -386,7 +420,7 @@
 
         <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
           <p>Sea $f(x) \in C[a_{0},b_{0}]$. Escribe un programa que implemente
-             el Método  de Newton-Raphson para encontrar una aproximación a
+             el <b>método  de Newton-Raphson</b> para encontrar una aproximación a
              una raíz de la ecuacion $f(x)=0$ a partir de una aproximación
              inicial $p_{0} \in [a_{0},b_{0}]$. El programa debe detenerse si
              se tiene alguna de las siguientes situaciones:</p>
@@ -445,7 +479,7 @@
             <p>En cada uno de los siguientes ejercicios implementa el método de Newton-Raphson para encontrar 
               una aproximación a la solución de la ecuación a partir de una aproximación inicial 
               $p_{0}$ dada, de tal manera
-              que  el  error aboluto sea  menor que  $1\times 10^{-3}$. 
+              que  el  error absoluto sea  menor que  $1\times 10^{-5}$. 
               <ol>
                 <li>$x^{2} - \mathrm{Cos(x)} - 1$, $p_{0}=1.5 $</li><br>
                 <li>$$, $p_{0}= $</li><br>
@@ -460,7 +494,17 @@
             </p>
           </div>
           
-
+     
+          <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+            <p></p>
+            </div>
+      
+            <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+              <p></p>
+              </div>
+        
+         
+        
 
   
 
