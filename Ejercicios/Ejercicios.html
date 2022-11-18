@@ -90,11 +90,11 @@
     <h1 class="number-title flexbox"> Ejercicios propuestos  </h1>   
   
     <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
-      <p>Sea $g(x)$ una funcion continua en un intervalo dado $[a,b]$. 
-         Escribe un programa que implemente
-         el <b>método iterativo de punto fijo</b> para encontrar una aproximación a
+      <p>Sea $g(x)$ una función continua en un intervalo dado $[a,b]$. 
+         Escribe un programa que implemente el <b>método iterativo de punto fijo</b>
+         para <b>encontrar una aproximación a
          una solución de la ecuacion $g(x)=x$  a partir de una aproximación
-         inicial $p_{0} \in [a,b]$. El programa debe detenerse
+         inicial $p_{0} \in [a,b]$</b>. El programa debe detenerse
          si se han realizado un número máximo de $K$ iteraciones o bien 
          en cuanto el error absoluto sea menor que $\epsilon > 0 $, 
          donde $K$ es un número entero positivo  y 
@@ -128,6 +128,7 @@
       </p>
       </div>
 
+
       
       <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
         <p>Determine si cada una de las siguientes funciones  tiene un único punto fijo 
@@ -151,23 +152,26 @@
 
 
       <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-        <p>En cada uno de los siguientes ejercicios con ayuda de algún software
-          realiza un bosquejo de la gráfica de la función en el intervalo $[a,b]$ dado, 
-          luego en base a lo observado elige una  aproximación 
-          inicial $p_{0} \in [a,b]$ e  implementa el método iterativo 
-          de punto fijo  para encontrar un punto fijo  de la
-          función a partir de la aproximación inicial
-          propuesta por ti, de tal manera que el error
+        <p>En cada uno de los siguientes funciones con ayuda de algún software
+          realiza un bosquejo de la gráfica de la función y encuentra un intervalo $[a,b]$
+          tal que $f([a,b]) \subseteq [a,b]$ y confirma que existe algún punto  fijo ahí.
+          Luego, mediante lo observado estima  el valor del punto fijo y usa este 
+          como una  aproximación inicial $p_{0}$ e  implementa el método iterativo 
+          de punto fijo  para <b>encontrar una aproximación al punto fijo  de la
+          función $f(x)$ a partir de la aproximación inicial
+          propuesta</b>, de tal manera que el error
           absoluto sea menor que  $1\times 10^{-5}$. 
           <ol>
-            <li>$f(x)=\mathrm{Cos}(x)$ en $[-1,1]$</li><br>
-            <li>$f(x)=\mathrm{Sen}(x)$ en $[-1,1]$</li><br>
+            <li>$f(x)=\mathrm{Cos}(x)$</li><br>
+            <li>$f(x)=\mathrm{Sen}(x)$</li><br>
             <li>$f(x)=-x^{3}-1$</li><br>
             <li>$f(x)= x^{2} + x - 4$</li><br>
             <li>$f(x)=x^{2}-1$</li><br>
             <li>$f(x)=\displaystyle{\frac{x^{4}-1}{4}}$</li><br>
-            <li>$f(x)=\displaystyle{\frac{x^{3}-1}{4}}$,  en $[-1,1]$</li><br>
-            <li>$f(x)=e^{-x}$,  en $[0, 1]$</li><br>       
+            <li>$f(x)=\displaystyle{\frac{x^{3}-1}{4}}$</li><br>
+            <li>$f(x)=e^{-x}$,  en $[0, 1]$</li><br>   
+            <li>$f(x)=x + e^{-x} -\frac{1}{4}$</li><br>   
+            <li>$f(x)=\displaystyle{ \frac{1}{2} \left(x^{2} +1 \right)}$</li>    
           </ol>
         </p>
 
@@ -178,20 +182,29 @@
 
       
       <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-        <p>En cada uno de los siguientes ejercicios con ayuda de algún software
-          realiza un bosquejo de la gráfica de la función en el intervalo $[a,b]$ dado, 
-          luego en base a lo observado elige una  aproximación 
-          inicial $p_{0} \in [a,b]$ e  implementa el método iterativo 
-          de punto fijo  para encontrar
-          una aproximación a la solución de la ecuación a partir de la aproximación inicial 
-          $p_{0}$  de tal manera que  el  error absoluto sea  menor que  $1\times 10^{-5}$. 
+        <p>Mediante una implementación del método iterativo 
+          de punto fijo,  encuentre una solución para cada una de las siguientes 
+          ecuaciones, para ello define una función "adecuada" tal que que resolver la ecuación
+          se traduzca en encontrar un punto fijo de esta función. Luego, con
+          ayuda de algún software realiza un bosquejo de la gráfica
+          de la función y encuentra un intervalo $[a,b]$
+          tal que $f([a,b]) \subseteq [a,b]$, confirma que existe algún punto  fijo ahí.
+          Entonces, mediante lo observado estima  el valor del punto fijo y usa esté 
+          como una  aproximación inicial $p_{0}$ e  implementa el método iterativo 
+          de punto fijo para <b>encontrar una aproximación a la solución de la
+          ecuación a partir de la aproximación inicial 
+          $p_{0}$</b>  de tal manera que  el  error absoluto sea  menor que  $1\times 10^{-5}$. 
           <ol>          
-            <li>$x^{3} -x-1$, en  $[1,2]$</li><br>
-            <li>$x^{5} -x + 1=0$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
+            <li>$x^{3} +x+1=0$,</li><br>
+            <li>$x^{2} -x-1=0$,</li><br>
+            <li>$x^{3} -x-1=0$,</li><br>
+            <li>$x^{4} -x - 1=0$, </li><br>
+            <li>$x^{5} -x + 1=0$, </li><br>
+            <li>$x^{6} -x - 1=0$, </li><br>
+            <li>$\mathrm{ln}(x+1) -x =0 $,</li><br>
+            <li>$\displaystyle{ \frac{1}{2} \left(x + \frac{3}{x} \right)}-x=0$,</li><br>
+            <li>$e^{-x} -x=0$, </li><br>
+            <li>$(x+1) \mathrm{Sin}(x^{2}) -x =0 $,</li><br>
             <li>$$, $p_{0}= $</li><br>
             <li>$$, $p_{0}= $</li><br>
 
