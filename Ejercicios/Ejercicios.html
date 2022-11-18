@@ -90,7 +90,7 @@
     <h1 class="number-title flexbox"> Ejercicios propuestos  </h1>   
   
     <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
-      <p>Sea $g(x)$ una funcion continua en un intervalo dado $[a_{0},b_{0}]$. 
+      <p>Sea $g(x)$ una funcion continua en un intervalo dado $[a,b]$. 
          Escribe un programa que implemente
          el <b>método iterativo de punto fijo</b> para encontrar una aproximación a
          una solución de la ecuacion $g(x)=x$  a partir de una aproximación
@@ -129,59 +129,12 @@
       </div>
 
       
-
-      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-        <p>En cada uno de los siguientes ejercicios implementa el método iterativo de punto fijo  para encontrar 
-          una aproximación a la solución de la ecuación a partir de la aproximación inicial 
-          $p_{0}$ dada de tal manera que  el  error absoluto sea  menor que  $1\times 10^{-5}$. 
-          <ol>          
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-
-          </ol>
-        </p>
-
-        <p>En cada caso, si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
-          detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
-        </p>
-      </div>
-
-
-      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-        <p>En cada uno de los siguientes ejercicios con ayuda de algún software realiza un bosquejo de la gráfica de la función, 
-          luego en base a lo observado elige una  aproximación inicial 
-          $p_{0}$ e  implementa el método iterativo de punto fijo  para encontrar un punto fijo  de la función dada
-          a partir de la aproximación inicial propuesta por ti, de tal manera que el error absoluto sea menor
-          que  $1\times 10^{-5}$. 
-          <ol>
-            <li>$f(x)=\mathrm{Cos}(x)$</li><br>
-            <li>$f(x)=-x^{3}-1$</li><br>
-            <li>$f(x)= x^{2} + x - 4$</li><br>
-            <li>$f(x)=$</li><br>
-            <li>$f(x)=$</li><br>
-            <li>$f(x)=$</li><br>       
-          </ol>
-        </p>
-
-        <p>En cada caso, si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
-          detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
-        </p>
-      </div>
-
-
-
-      
       <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
         <p>Determine si cada una de las siguientes funciones  tiene un único punto fijo 
            en el intervalo dado:
            <ol>
             <li>$\displaystyle{g(x)=1-\frac{x^{2}}{4}}$ en $[0,1]$</li><br>
+            <li>$\displaystyle{g(x)=\frac{x^{2}-1}{3}}$ en $[-1,1]$</li><br>
             <li>$g(x)= 2^{-x}$ en $[0,1]$</li><br>
             <li>$\displaystyle{g(x)=\frac{1}{x}}$ en $[0.5,5.2]$</li><br>
            </ol>
@@ -193,6 +146,69 @@
            $[\mathrm{ln}(3)-1, \mathrm{ln}(5)-1]$.</p>
         </div>
 
+      
+
+
+
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>En cada uno de los siguientes ejercicios con ayuda de algún software
+          realiza un bosquejo de la gráfica de la función en el intervalo $[a,b]$ dado, 
+          luego en base a lo observado elige una  aproximación 
+          inicial $p_{0} \in [a,b]$ e  implementa el método iterativo 
+          de punto fijo  para encontrar un punto fijo  de la
+          función a partir de la aproximación inicial
+          propuesta por ti, de tal manera que el error
+          absoluto sea menor que  $1\times 10^{-5}$. 
+          <ol>
+            <li>$f(x)=\mathrm{Cos}(x)$ en $[-1,1]$</li><br>
+            <li>$f(x)=\mathrm{Sen}(x)$ en $[-1,1]$</li><br>
+            <li>$f(x)=-x^{3}-1$</li><br>
+            <li>$f(x)= x^{2} + x - 4$</li><br>
+            <li>$f(x)=x^{2}-1$</li><br>
+            <li>$f(x)=\displaystyle{\frac{x^{4}-1}{4}}$</li><br>
+            <li>$f(x)=\displaystyle{\frac{x^{3}-1}{4}}$,  en $[-1,1]$</li><br>
+            <li>$f(x)=e^{-x}$,  en $[0, 1]$</li><br>       
+          </ol>
+        </p>
+
+        <p>En cada caso, si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
+          detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
+        </p>
+      </div>
+
+      
+      <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+        <p>En cada uno de los siguientes ejercicios con ayuda de algún software
+          realiza un bosquejo de la gráfica de la función en el intervalo $[a,b]$ dado, 
+          luego en base a lo observado elige una  aproximación 
+          inicial $p_{0} \in [a,b]$ e  implementa el método iterativo 
+          de punto fijo  para encontrar
+          una aproximación a la solución de la ecuación a partir de la aproximación inicial 
+          $p_{0}$  de tal manera que  el  error absoluto sea  menor que  $1\times 10^{-5}$. 
+          <ol>          
+            <li>$x^{3} -x-1$, en  $[1,2]$</li><br>
+            <li>$x^{5} -x + 1=0$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+            <li>$$, $p_{0}= $</li><br>
+
+          </ol>
+        </p>
+
+        <p>En cada caso, si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
+          detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
+        </p>
+
+
+        <p><b>Observación:</b>  Cada ejercicio pueder ser llevado a un problema de encontar el punto fijo de una función. 
+      </div>
+
+
+
+      
 
 
 
@@ -223,10 +239,10 @@
 
 
         <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
-          <p>Sea $f(x) \in C[a_{0},b_{0}]$. Escribe un programa que implemente
+          <p>Sea $f(x) \in C[a,b]$. Escribe un programa que implemente
              el <b>método  de Newton-Raphson</b> para encontrar una aproximación a
              una raíz de la ecuacion $f(x)=0$ a partir de una aproximación
-             inicial $p_{0} \in [a_{0},b_{0}]$. El programa debe detenerse si
+             inicial $p_{0} \in [a,b]$. El programa debe detenerse si
              se tiene alguna de las siguientes situaciones:</p>
              <ul>
              <li>Si se han realizado un número máximo de $K$ iteraciones 
