@@ -201,9 +201,9 @@
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
 
 
-      <p>Una desventaja obvia del método de Newton-raphson es que requiere que tengamos una fórmula para la 
-        derivada de $f(x)$. Para los ejemplos en la clase, esto no sera un problema, pero en el "mundo real"
-        esto  ya no es así. Una forma estrategica de abordar  este problema es usar una aproximación
+      <p>Una desventaja obvia del método de Newton-Raphson es que requiere que tengamos una fórmula para la 
+        derivada de $f(x)$. Para los ejemplos en la clase, esto no será un problema, pero en el "mundo real"
+        esto  ya no es así. Una forma estratégica de abordar  este problema es usar una aproximación
         a la derivada en la fórmula de la  función de iteración de Newton-Raphson:
       
         $$f^{´}(x)\approx \frac{f(x+h) -f(x)}{h} $$</p>
@@ -211,7 +211,7 @@
       <p> Recordemos que el método de Newton-Raphson se deriva, geométricamente, dibujando una línea tangente
          desde la raíz aproximada actual hasta el eje. Se requiere la derivada porque usamos la recta tangente. 
          Si, en cambio, usáramos una línea secante (es decir, una que pasa por dos puntos 
-         en la curva en lugar de solo uno), entonces no se requeriría derivada de la función:
+         en la curva en lugar de solo uno), entonces no se requeriría derivada de la función.
     </p>
 
     </div>
@@ -300,7 +300,7 @@
 
     
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
-      <p>Si $R$ es grande, entonces la sucesión $\{ p_{n}\}_{n=0}^{\infty}$ converge rapidamente a $p$, esto es, 
+      <p>Si $R$ es "grande", entonces la sucesión $\{ p_{n}\}_{n=0}^{\infty}$ converge rapidamente a $p$, esto es, 
         la relación implica que para valores grandes de $n$ tenemos la aproximación $|E_{n+1}| \approx A |E_{n}|^{R}$.   
         Por ejemplo, supongamos que $R=2$,  y que $|E_{n}|\approx 10^{-2}$, entonces cabe esperar que 
         $$|E_{n+1}| \approx A \times 10^{-4}$$
@@ -309,26 +309,23 @@
 
   
     
-    <div class="nota-box"> <h2 class="number-title"> Nota</h2>
-      <p>
-        El siguiente ejemplo compara una sucesión linealmente convergente lcon una sucesión cuadraticamente convergente.
-      </p>
-    </div>
 
 
-    <div class="nota-box"> <h2 class="number-title">Ejemplo</h2>
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      
+      <p>En este ejemplo comparamos una sucesión linealmente convergente con una sucesión cuadraticamente convergente.</p>
       <p>
         Sean $\{ p_{n}\}_{n=1}^{\infty}$ y  $\{ \tilde{p}_{n}\}_{n=1}^{\infty}$ dos sucesiones que convergen linealmente y 
-        cuadraticamente a cero, respectivamente,  la misma constante de error asintotico, $\lambda= 0.5$, esto es, 
+        cuadraticamente a cero, respectivamente,  con la misma constante de error asintótico, $A= 0.5$, esto es, 
         $$\lim_{n\to \infty} \frac{|p_{n+1}-0|}{|p_{n} - 0|}= \lim_{n\to \infty} \frac{|p_{n+1}|}{|p_{n}|}= 0.5$$
-        $$\lim_{n\to \infty} \frac{|\tilde{p}_{n+1}-0|}{|\tilde{p}_{n} - 0|}=\lim_{n\to \infty} \frac{|\tilde{p}_{n+1}|}{|\tilde{p}_{n}|}= 0.5$$
+        $$\lim_{n\to \infty} \frac{|\tilde{p}_{n+1}-0|}{|\tilde{p}_{n} - 0|^{2}}=\lim_{n\to \infty} \frac{|\tilde{p}_{n+1}|}{|\tilde{p}_{n}|^{2}}= 0.5$$
       </p>
 
       <p>Dado que los límites existen entonces:
         
-        $$|p_{n+1}| \approx 0.5| p_{n} |\,\,\,\,\text{ y } \,\,\,\,  |\tilde{p}_{n+1}| \approx 0.5 | \tilde{p}_{n}| $$ 
+        $$|p_{n+1}| \approx 0.5| p_{n} |\,\,\,\,\text{ y } \,\,\,\,  |\tilde{p}_{n+1}| \approx 0.5 | \tilde{p}_{n}|^{2} $$ 
 
-        Para la sucesión  que converge linealmente se tiene que:
+        Para que la sucesión  que converge linealmente se tiene que:
         
         $$|p_{n}| \approx 0.5 |p_{n-1}|\approx (0.5)^{2} |p_{n-2}| \approx (0.5)^{3} |p_{n-3}| \approx \cdots \approx  
         (0.5)^{n-1} |p_{1}| \approx  (0.5)^{n} |p_{0}|   $$
