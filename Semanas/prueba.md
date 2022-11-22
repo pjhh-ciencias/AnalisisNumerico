@@ -24,6 +24,8 @@ En Markdown, un párrafo no requiere sintaxis especial.
 
 ***Texto enfatizado y en negrita*** 
 
+<<Tachado>>
+
 # Código: 
 
 `x = 1`
@@ -58,6 +60,18 @@ Para crear listas de viñetas, empiece una línea con *, - o +, pero no mezcle l
 
 # Tablas 
 
- | Palabra | Significado |
+ | Símbolo | Significado |
  |---      |---|
- | How | are you? |
+ | $\tau$ | Topología |
+
+Puedes alinear el texto de las columnas a la izquierda, a la derecha o al centro agregando dos puntos (:) a la izquierda, a la derecha o a ambos lados de los guiones dentro de la fila del encabezado.
+
+|Columna 1| Columna 2  | Columna 3|
+|---:|:---:|:---| 
+|Derecha | Centro Izquierda|
+
+
+# Línea horizontal
+
+---
+
