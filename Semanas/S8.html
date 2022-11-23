@@ -109,17 +109,25 @@
 
     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
       <p>
-        Sea $p$ una solución de la ecuación $g(x)=x$ con $g^{'}(p)=0$ y $g^{''}$ continua 
-        y estrictamente acotada por $M$ en un intervalo abierto $I$ que contiene a $p$. 
+        Sea $p$ una solución de la ecuación $g(x)=x$ con $g^{'}(p)=0$ y que $g^{''}$ es continua 
+        y estrictamente acotada por $M$ en un intervalo abierto $I$ que contiene a $p$. i.e. 
+        $$|g^{''}(x)| < M, \,\,\, \,\,\,\, \forall x \in I$$
         Entonces existe $\delta >0$ tal que, para $p_{0} \in [p-\delta, p+ \delta]$  la sucesión 
-        definida por $p_{n} = g(p_{n-1})$, para cada $n \geq 1$, converge al menos cuadraticamente 
-        a $p$. Además, para valores suficientemente grandes de $n$ se satisface:
+        definida por $p_{n} := g(p_{n-1})$, para cada $n \geq 1$, converge al menos cuadraticamente 
+        a $p$.</p>
+        <p>Además, para valores suficientemente grandes de $n$ se satisface:
         $$|p_{n+1} - p| \leq \frac{M}{2} |p_{n} - p|^{2} $$
       </p>
       <b>Demostración:</b>
     </div>
 
 
+    
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <p>De los teoremas anteriores se observa que para que los métodos iterativos de punto fijo converjan 
+        cuadraticamente la derivada de la función en el ounto fijo $p$ debe ser igual a cero.
+      </p>
+    </div>
     <h1 class="title flexbox">  Algoritmo Aitken </h1>
 
     
@@ -140,7 +148,7 @@
       \end{equation}
       Despejando $p$ en la expresión: $p_{n+1} - p\approx g^{'}(p) (p_{n} - p)$  se tiene que:
       $$p \approx \frac{p_{n+1} - g^{'}(p) p_{n}}{1 - g^{'}(p)}$$
-      Sustitutendo en l aproximación  a $g^{'}(p)$ se tiene que:
+      Sustituyendo en la aproximación  a $g^{'}(p)$ se tiene que:
       $$p \approx \frac{p_{n+1} - \left( \displaystyle{\frac{p_{n+2} - p_{n+1}}{p_{n+1} - p_{n}}} \right) p_{n}}{1 - \left( \displaystyle{ \frac{p_{n+2} -p_{n+1}}{p_{n+1} - p_{n}} }\right)}$$
       o bien 
       \begin{align*} p &\approx p_{n} + \displaystyle{\frac{\left(  p_{n+1} - p_{n}\right)^{2}}{2 p_{n+1} - p_{n} - p_{n+2}}}\\
@@ -148,21 +156,50 @@
       \end{align*}
       </p>
 
-      <p>La parte derecha de la equivalencia anterior de aproximación a la raiz $p$ a partir de los valores ya obtenidos  en 
+      <p>La parte derecha de la equivalencia anterior da una aproximación a la raiz $p$ a partir de los valores ya obtenidos  en 
         alguna sucesión.
        </p>
 
        <p>Denotamos  a estas nuevas aproximaciones como: 
-        $$x_{0}^{'}, x_{1}^{'}, x_{2}^{'}, \ldots $$
-        para calcular $x_{1}^{'}$ se requieren de lo valores de $x_{1}, x_{2}$ y $x_{3}$:
-        $$x_{1}^{'} = x_{1} - \frac{(x_{2} - x_{1})^{2}}{x_{3}  - 2x_{2} - x_{1}}$$
-        En general, para $n \geq 1$ se tiene que:
+        $$x_{1}^{'}, x_{1}^{'}, x_{2}^{'}, x_{2}^{'} \ldots $$
+        para calcular $x_{0}^{'}$ se requieren de lo valores de $x_{1}, x_{2}$ y $x_{3}$:
+        
+        $$x_{0}^{'} = x_{0} - \frac{(x_{1} - x_{0})^{2}}{x_{2}  - 2x_{1} - x_{0}}$$
+        
+        <b>En general</b>, para $n \geq 1$ se tiene que:
         $$x_{n}^{'} = x_{n} - \frac{(x_{n+1} - x_{n})^{2}}{x_{n+3}  - 2x_{n+1} - x_{n}}$$
        </p>
 
        <p>Al proceso de aplicar la ecuación anterior a alguna sucesión dada,  se le llama <b>algoritmo Aitken</b></p>
 
     </div>
+
+    
+    
+    <h1 class="title flexbox">  Método de Steffenson  </h1>
+
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+    <p>El método de Steffenson es una aplicación del algoritmo de Aitken al método del punto fijo 
+    </p>
+
+    <p>Dado una aproximación inicial  se calculan  los valores $p_{1}:= g(p_{0}), p_{2}:= g(p_{1})$.</p>
+    
+    <p>Luego, con los valores $p_{0}, p_{1}$ y $p_{2}$ se aplica el algoritmo de Aitken, obteniendo:
+       $$p_{0}^{'} := p_{0} - \frac{(p_{1} - p_{0})^{2}}{p_{2}  - 2p_{1} - p_{0}}$$
+     </p>
+
+     <p>Si $p_{0}$ no umple algún criterio de convergencia, entonces se toma 
+      $$p_{3}:= p_{0}^{'}$$ 
+    y de nuevo se calcula $p_{4}:= g(p_{3})$ y $p_{5}:=g(p_{4})$</p>
+
+    <p>Con los valores $p_{3}, p_{4}$ y $p_{5}$ se aplica el algoritmo de Aitken,  para calcular $p_{1}^{'}$:
+      $$p_{1}^{'} := p_{3} - \frac{(p_{4} - p_{3})^{2}}{p_{5}  - 2p_{4} - p_{3}}$$
+
+      y así sucesivamente...
+    </p>
+
+    </div>
+
 
 
     </body>
