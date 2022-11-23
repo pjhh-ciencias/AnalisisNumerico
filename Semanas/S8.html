@@ -97,12 +97,12 @@
 
     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
       <p>
-        Sea $g \in C[a,b]$ tal que $g(x) \in [a,b]$ para toda $ x \in [a,b]$, sea además $g^{'} $ continua en $(a,b)$  
-        y una constante $0 < K < 1$ con 
+        Sea $g \in C[a,b]$ tal que $g(x) \in [a,b]$ para toda $ x \in [a,b]$, si además $g^{'} $  es continua en $(a,b)$  
+        y existe una constante positiva $0 < K < 1$ tal que 
         $$|g^{'}(x)| \leq K\, \, \, \, \text{ para toda  } x \in (a,b)$$
-        Si $g^{'}(x)$ existe para cualquier $p_{0} \in [a,b]$ la sucesión 
-        $$p_{n}= g(p_{n-1}), \, \, \, \, \text{ para toda  } n \geq 1$$  
-        converge linealmente al único punto fijo $p$  en $[a,bs]$ .
+        Si $g^{'}(p) \not = 0 $,  entonces para cualquier $p_{0} \in [a,b]$ la sucesión 
+        $$p_{n}:= g(p_{n-1}), \, \, \, \, \text{ para toda  } n \geq 1$$  
+        converge linealmente al único punto fijo $p$  en $[a,b]$ .
       </p>
       <b>Demostración:</b>
     </div>
@@ -114,7 +114,7 @@
         Entonces existe $\delta >0$ tal que, para $p_{0} \in [p-\delta, p+ \delta]$  la sucesión 
         definida por $p_{n} = g(p_{n-1})$, para cada $n \geq 1$, converge al menos cuadraticamente 
         a $p$. Además, para valores suficientemente grandes de $n$ se satisface:
-        $$|p_{n+1} - p \leq \frac{M}{2} |p_{n} - p|^{2} $$
+        $$|p_{n+1} - p| \leq \frac{M}{2} |p_{n} - p|^{2} $$
       </p>
       <b>Demostración:</b>
     </div>
