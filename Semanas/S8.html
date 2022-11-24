@@ -125,10 +125,10 @@
     
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
       <p>De los teoremas anteriores se observa que para que los métodos iterativos de punto fijo converjan 
-        cuadraticamente la derivada de la función en el ounto fijo $p$ debe ser igual a cero.
+        cuadraticamente la derivada de la función en el punto fijo $p$ debe ser igual a cero.
       </p>
     </div>
-    <h1 class="title flexbox">  Algoritmo Aitken </h1>
+    <h1 class="title flexbox">  Algoritmo de Aitken </h1>
 
     
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
@@ -160,8 +160,9 @@
         alguna sucesión.
        </p>
 
-       <p>Denotamos  a estas nuevas aproximaciones como: 
-        $$x_{1}^{'}, x_{1}^{'}, x_{2}^{'}, x_{2}^{'} \ldots $$
+
+              <p>Denotamos  a estas nuevas aproximaciones como: 
+        $$x_{0}^{'}, x_{1}^{'}, x_{2}^{'}, x_{3}^{'} \ldots $$
         para calcular $x_{0}^{'}$ se requieren de lo valores de $x_{1}, x_{2}$ y $x_{3}$:
         
         $$x_{0}^{'} = x_{0} - \frac{(x_{1} - x_{0})^{2}}{x_{2}  - 2x_{1} - x_{0}}$$
@@ -170,7 +171,7 @@
         $$x_{n}^{'} = x_{n} - \frac{(x_{n+1} - x_{n})^{2}}{x_{n+3}  - 2x_{n+1} - x_{n}}$$
        </p>
 
-       <p>Al proceso de aplicar la ecuación anterior a alguna sucesión dada,  se le llama <b>algoritmo Aitken</b></p>
+       <p>Al proceso de aplicar la ecuación anterior a alguna sucesión dada,  se le llama <b>Algoritmo de Aitken</b></p>
 
     </div>
 
@@ -179,7 +180,7 @@
     <h1 class="title flexbox">  Método de Steffenson  </h1>
 
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
-    <p>El método de Steffenson es una aplicación del algoritmo de Aitken al método del punto fijo 
+    <p>El <b>método de Steffenson</b> es una aplicación del algoritmo de Aitken al método del punto fijo 
     </p>
 
     <p>Dado una aproximación inicial  se calculan  los valores $p_{1}:= g(p_{0}), p_{2}:= g(p_{1})$.</p>
@@ -200,6 +201,111 @@
 
     </div>
 
+    
+    
+    <h1 class="title flexbox">  Raices multiples </h1>
+
+    
+   
+   
+    <div class="nota-box"><h2 class="number-title"> Introducción </h2>
+      
+      <p>Si  $f(p)=0$ y $f^{'}(x) \not= 0$, entonces para valores suficientemente cercanos a $p$, 
+        el método de Newton-Raphson convergerá cal menos cuadraticamente.
+        Particularmente el método de Newton-Raphson y el método de la Secante,
+        en general dan problemas si $f^{'}(x) \not= 0$ cuando $f(p)=0$. 
+      </p>
+    </div>
+
+    <div class="nota-box"><h2 class="number-title"> Definición </h2>
+      <ol>
+      <li><p>
+        Una solución $p$ de la ecuación $f(x)=0$ es un <b>cero de multiplicidad </b> $m$ de $f$ si para todo $x\not= p$, 
+        se verifica que   
+        $$f(x)= (x-p)^{m} q(x),$$ donde $\displaystyle{\lim_{x\to p } q(x) \not=0}$.
+      </p>
+    </li><br>
+     <li><p>En el caso en el que $f(x)$ es un polinomio, $p$ es un <b>cero de multiplicidad </b> $m$ de $f$ si
+      $$f(x)= (x-p)^{m} q(x) $$
+      donde $q(x)$ es un polinomio tal que $\mathrm{grado }(q(x)) < \mathrm{grado }(p(x))$ y $q(p)\not= 0.$
+      </p>
+    </li> 
+    </ol>
+    </div>
+
+
+
+    <div class="nota-box"><h2 class="number-title"> Nota </h2>
+      <p>
+      El siguiente resultado proporciona los medios para identificar facilmente los <b>ceros simples de una función</b> i.e. 
+      aquellos ceros de multiplicidad uno.
+      </p>
+    </div>
+
+    <div class="nota-box">
+      <h2 class="number-title"> Ejercicio </h2>
+      Sean \(f\) y \(g\) dos funciones definidas en una vecindad agujereada de
+      \(x_0\) y supongamos que existe \(M>0\) tal que
+      \(|g(x) | \leq M\), para \(x\) en la vecindad agujereada.
+      
+      Si \(\lim_{x\to x_0} f(x)=0\) demuestra que:
+      \[
+      \lim_{x\to x_0}f(x)g(x)=0.
+      \]
+      Nota: no se asume que el límite \(\lim_{x\to x_0}g(x)\) existe.
+      
+      </div>
+
+      
+    <div class="nota-box"><h2 class="number-title"> Teorema </h2>
+    <p>
+     Sea $f \in C^{1}[a,b]$. Entonces la función $f$ tiene un cero simple en $p \in (a,b)$ si y sólo si $f(p)$ 
+     y $f^{'}(p)\not= 0$ 
+    </p>
+    <p><b>Demostración:</b></p>
+    </div>
+
+    <div class="nota-box"><h2 class="number-title"> Teorema </h2>
+      <p>
+       Sea $m\in \mathbb{N}$ y $f \in C^{m}[a,b]$. Entonces la función $f$ tiene un cero $m$ en $p \in (a,b)$ si y sólo
+      si 
+      $$f(p) = f^{'}(p)= f^{''}(p)= \cdots =f^{m-1}(p)=0, \, \, \, \, \text{ pero }\,\,\,\, f^{m}(p)\not= 0$$ 
+      </p>
+      <p><b>Demostración:</b> Se deja como ejercicio al estudiante.</p>
+      </div>
+  
+<!-- 
+  <h1 class="title flexbox">  Ceros de polinomios</h1>
+   
+  <div class="nota-box"><h2 class="number-title"> Introducción </h2>
+      
+    <p>En el método de Newton-Raphson se tiene el problema de que hay que encontrar 
+      la derivada de la función $f(x)$ para la cual hay que encontrar la raíz. Más aun,  
+      si  $f(p)=0$ y $f^{'}(x) \not= 0$, entonces para valores suficientemente cercanos a $p$, 
+      el método de Newton-Raphson convergerá cal menos cuadraticamente. Particularmente el 
+      método de Newton-Raphson y el método de la Secante, en general dan problemas si 
+      $f^{'}(x) \not= 0$ cuando $f(p)=0$. 
+    </p>
+
+    <p>
+      Sin embargo, en el caso en el que $f(x)$ es un polinomio. El método de Newton-Raphson puede ser modificado 
+      para evitar trabajar con $f^{'}(x)$, esto se logra utilizando el método de Horner.  
+    </p>
+
+    <p>Dado un polinomio $p(x)$ y un valor $x_{0}$, entonces 
+      $$p(x)= (x-x_{0})Q(x) + p(x_{0})$$
+    donde $\mathrm{grado}(Q(x)) = \mathrm{grado}(p(x)) - 1 $.
+    </p>
+
+    <p>Por lo tanto, en el método de Newton-Raphson dada la aproximación inicial $x_{0}$
+      se tiene que:
+    $$x_{1}= x_{0} - \frac{f(x_{0})}{f^{'}(x)}$$
+    para obtener $f(x_{0})$ y $f^{'}(x_{0})$ se aplica el método de Horner a $f(x)$ y $x_{0} $
+    obteniendo $f(x_{0})$ y $f^{'}(x_{0})= Q(x_{0})$. 
+     </p>
+
+</div>
+-->
 
 
     </body>

@@ -96,31 +96,9 @@
 
     
     <h1 class="title flexbox">  Ceros de polinomios </h1>
-   
-    <div class="nota-box"><h2 class="number-title"> Introducción </h2>
-      
-        <p>En el método de Newton-Raphson se tiene el problema de que hay que encontrar 
-          la derivada de la función $f(x)$ para la cual hay que encontrar la raíz.
-        </p>
 
-        <p>
-          En el caso en el que $f(x)$ es un polinomio. El metodo de Newton puede ser modificado 
-          para evitar trabajar con $f^{'}(x)$, esto se logra utilizando el método de Horner.  
-        </p>
 
-        <p>Dado un polinomio $p(x)$ y un valor $x_{0}$, entonces 
-          $$p(x)= (x-x_{0})Q(x) + p(x_{0})$$
-        donde $\mathrm{grado}(Q(x)) = \mathrm{grado}(p(x)) - 1 $.
-        </p>
 
-        <p>Por lo tanto, en el metodo de Newton-Raphson dada la aproximación inicial $x_{0}$
-          se tiene que:
-        $$x_{1}= x_{0} - \frac{f(x_{0})}{f^{'}(x)}$$
-        para obtener $f(x_{0})$ y $f^{'}(x_{0})$ se aplica el método de Horner a $f(x)$ y $x_{0} $
-        obteniendo $f(x_{0})$ y $f^{'}(x_{0})= Q(x_{0})$. 
-         </p>
- 
-    </div>
     
 
 
