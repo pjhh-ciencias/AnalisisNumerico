@@ -161,7 +161,7 @@
        </p>
 
 
-              <p>Denotamos  a estas nuevas aproximaciones como: 
+        <p>Denotamos  a estas nuevas aproximaciones como: 
         $$x_{0}^{'}, x_{1}^{'}, x_{2}^{'}, x_{3}^{'} \ldots $$
         para calcular $x_{0}^{'}$ se requieren de lo valores de $x_{1}, x_{2}$ y $x_{3}$:
         
@@ -189,7 +189,7 @@
        $$p_{0}^{'} := p_{0} - \frac{(p_{1} - p_{0})^{2}}{p_{2}  - 2p_{1} - p_{0}}$$
      </p>
 
-     <p>Si $p_{0}$ no umple algún criterio de convergencia, entonces se toma 
+     <p>Si $p^{'}_{0}$ no cumple algún criterio de convergencia, entonces se toma 
       $$p_{3}:= p_{0}^{'}$$ 
     y de nuevo se calcula $p_{4}:= g(p_{3})$ y $p_{5}:=g(p_{4})$</p>
 
@@ -210,10 +210,10 @@
    
     <div class="nota-box"><h2 class="number-title"> Introducción </h2>
       
-      <p>Si  $f(p)=0$ y $f^{'}(x) \not= 0$, entonces para valores suficientemente cercanos a $p$, 
+      <p>Si  $f(p)=0$ y $f^{'}(p) \not= 0$, entonces para valores suficientemente cercanos a $p$, 
         el método de Newton-Raphson convergerá cal menos cuadraticamente.
         Particularmente el método de Newton-Raphson y el método de la Secante,
-        en general dan problemas si $f^{'}(x) \not= 0$ cuando $f(p)=0$. 
+        en general dan problemas si $f^{'}(p) \not= 0$ cuando $f(p)=0$. 
       </p>
     </div>
 
@@ -227,7 +227,7 @@
     </li><br>
      <li><p>En el caso en el que $f(x)$ es un polinomio, $p$ es un <b>cero de multiplicidad </b> $m$ de $f$ si
       $$f(x)= (x-p)^{m} q(x) $$
-      donde $q(x)$ es un polinomio tal que $\mathrm{grado }(q(x)) < \mathrm{grado }(p(x))$ y $q(p)\not= 0.$
+      donde $q(x)$ es un polinomio tal que $\mathrm{grado }(q(x)) < \mathrm{grado }(f(x))$ y $q(p)\not= 0.$
       </p>
     </li> 
     </ol>
@@ -242,24 +242,38 @@
       </p>
     </div>
 
+    
+<div class="nota-box">
+  <h2 class="number-title"> Ejercicio </h2>
+  Sean $f$ y $g$ dos funciones definidas en una vecindad agujereada de \(a\).
+  <ol>
+  <li> Si $\displaystyle{\lim_{x\to a}(f+g)(x)}$ existe y $\displaystyle{\lim_{x\to a} f(x)}$ existe,
+    demuestra que $\displaystyle{\lim_{x\to a}g(x)}$ también existe.
+  </li><br>
+  <li> Si $\displaystyle{\lim_{x\to a} (fg)(x)}$ existe , $\displaystyle{\lim_{x\to a} f(x)}$ existe y
+    es distinto de cero, demuestra que $\displaystyle{\lim_{x\to a}g(x)}$ existe.
+  </li>
+  </ol>
+  </div>
+
     <div class="nota-box">
       <h2 class="number-title"> Ejercicio </h2>
-      Sean \(f\) y \(g\) dos funciones definidas en una vecindad agujereada de
-      \(x_0\) y supongamos que existe \(M>0\) tal que
-      \(|g(x) | \leq M\), para \(x\) en la vecindad agujereada.
+      Sean $f$ y $g$ dos funciones definidas en una vecindad agujereada de
+      $x_0$ y supongamos que existe \(M>0\) tal que
+      $|g(x) | \leq M$, para $x$ en la vecindad agujereada.
       
-      Si \(\lim_{x\to x_0} f(x)=0\) demuestra que:
-      \[
+      Si $\displaystyle{\lim_{x\to x_0} f(x)=0}$ demuestra que:
+      $$
       \lim_{x\to x_0}f(x)g(x)=0.
-      \]
-      Nota: no se asume que el límite \(\lim_{x\to x_0}g(x)\) existe.
+      $$
+      Nota: no se asume que el límite $ \displaystyle{\lim_{x\to x_0}g(x)}$ existe.
       
       </div>
 
       
     <div class="nota-box"><h2 class="number-title"> Teorema </h2>
     <p>
-     Sea $f \in C^{1}[a,b]$. Entonces la función $f$ tiene un cero simple en $p \in (a,b)$ si y sólo si $f(p)$ 
+     Sea $f \in C^{1}[a,b]$. Entonces la función $f$ tiene un cero simple en $p \in (a,b)$ si y sólo si $f(p)=0$ 
      y $f^{'}(p)\not= 0$ 
     </p>
     <p><b>Demostración:</b></p>
@@ -274,6 +288,44 @@
       <p><b>Demostración:</b> Se deja como ejercicio al estudiante.</p>
       </div>
   
+
+      
+    
+    <div class="nota-box"><h2 class="number-title"> Teorema (Teorema fundamental del Álgebra) </h2>
+     
+      <p>Si $p(x)$ es un polinomio de grado $n \geq 1$  con coeficientes reales o complejos 
+        entonces $p(x)=0 $ tiene por lo menos una raíz (posiblemente compleja).</p>
+
+    </div>
+
+    <div class="nota-box"><h2 class="number-title"> Corolario </h2>
+     
+      <p>Si $p(x)$ es un polinomio de grado $n\geq 1$ con coeficientes reales o complejos, entonces 
+        existen únicas $x_{1}, x_{2}, \ldots , x_{k}$, posiblemente complejas y enteros positivos
+        únicos $m_{1}, m_{2},\ldots , m_{k},$ tal que $\displaystyle \sum_{i=1}^{k} m_{i} = n$
+        $$ p(x) = a_{n} (x - x_{1})^{m_{1}} (x - x_{2})^{m_{2}} \cdots (x - x_{k})^{m_{k}}$$ </p>
+
+    </div>
+
+    <div class="nota-box"><h2 class="number-title"> Observación  </h2>
+    <p>La colección de ceros de un polinomio es única y, si cada 
+      cero $x_{i}$ se cuenta tantas veces como su multiplicidad $m_{i}$,
+       un polinomio de grado $n$ tiene exactamente $n$ ceros</p>
+    </div>
+
+       <div class="nota-box"><h2 class="number-title"> Corolario </h2>
+     
+        <p>Sean  $p(x)$ y $q(x)$ polinomios de grado a lo más $n\geq 1$. Si $x_{1}, x_{2}, \ldots , x_{k}$,
+          con $k > n$ son números distintos con $p(x_{i})=q(x_{i})$ para $i=1,2,\ldots,k$ entonces 
+        $p(x)=q(x)$ para todos los valores de $x$</p>
+  
+      </div>
+
+      
+    <div class="nota-box"><h2 class="number-title"> Observación  </h2>
+      <p>Este resultado implica que para mostrar que dos polinomios de grado menor o igual que 
+        $n$s son iguales, sólo necesitamos mostrar que concuerdan en n 1 1 valores.</p>
+    </div>
 <!-- 
   <h1 class="title flexbox">  Ceros de polinomios</h1>
    
