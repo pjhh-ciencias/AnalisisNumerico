@@ -93,12 +93,12 @@
       <p>Sea $g(x)$ una función continua en un intervalo dado $[a,b]$. 
          Escribe un programa que implemente el <b>método iterativo de punto fijo</b>
          para <b>encontrar una aproximación a
-         una solución de la ecuacion $g(x)=x$  a partir de una aproximación
-         inicial $p_{0} \in [a,b]$</b>. El programa debe detenerse
-         si se han realizado un número máximo de $K$ iteraciones o bien 
-         en cuanto el error absoluto sea menor que $\epsilon > 0 $, 
+         una solución de la ecuación $g(x)=x$  a partir de una aproximación
+         inicial $p_{0} \in [a,b]$</b>. El programa debe detenerse si se han 
+         realizado un número máximo de $K$ iteraciones
+         o bien en cuanto el error absoluto sea menor que $\epsilon$, 
          donde $K$ es un número entero positivo  y 
-         $\epsilon$ un número real mayor que cero dados  por el usuario. </p>
+         $\epsilon$ es un número real mayor que cero dados  por el usuario. </p>
       
         
       <p>
@@ -143,7 +143,7 @@
         </div>
 
         <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
-        <p>Demuestre que la ecuacion $e^{x+1} − 2x = 3$ tiene al menos una raíz en
+        <p>Demuestre que la ecuación $e^{x+1} − 2x = 3$ tiene al menos una raíz en
            $[\mathrm{ln}(3)-1, \mathrm{ln}(5)-1]$.</p>
         </div>
 
@@ -175,7 +175,7 @@
           </ol>
         </p>
 
-        <p>En cada caso, si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
+        <p>En cada caso, si se excede de $20$ iteraciones antes de alcanzar la aproximación deseada 
           detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
         </p>
       </div>
@@ -184,7 +184,7 @@
       <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
         <p>Mediante una implementación del método iterativo 
           de punto fijo,  encuentre una solución para cada una de las siguientes 
-          ecuaciones, para ello define una función "adecuada" tal que que resolver la ecuación
+          ecuaciónes, para ello define una función "adecuada" tal que que resolver la ecuación
           se traduzca en encontrar un punto fijo de esta función. Luego, con
           ayuda de algún software realiza un bosquejo de la gráfica
           de la función y encuentra un intervalo $[a,b]$
@@ -205,18 +205,12 @@
             <li>$\displaystyle{ \frac{1}{2} \left(x + \frac{3}{x} \right)}-x=0$,</li><br>
             <li>$e^{-x} -x=0$, </li><br>
             <li>$(x+1) \mathrm{Sin}(x^{2}) -x =0 $,</li><br>
-            <li>$$, $p_{0}= $</li><br>
-            <li>$$, $p_{0}= $</li><br>
-
           </ol>
         </p>
 
-        <p>En cada caso, si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
+        <p>En cada caso, si se excede de $20$ iteraciones antes de alcanzar la aproximación deseada 
           detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
         </p>
-
-
-        <p><b>Observación:</b>  Cada ejercicio pueder ser llevado a un problema de encontar el punto fijo de una función. 
       </div>
 
 
@@ -254,7 +248,7 @@
         <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
           <p>Sea $f(x) \in C[a,b]$. Escribe un programa que implemente
              el <b>método  de Newton-Raphson</b> para encontrar una aproximación a
-             una raíz de la ecuacion $f(x)=0$ a partir de una aproximación
+             una raíz de la ecuación $f(x)=0$ a partir de una aproximación
              inicial $p_{0} \in [a,b]$. El programa debe detenerse si
              se tiene alguna de las siguientes situaciones:</p>
              <ul>
