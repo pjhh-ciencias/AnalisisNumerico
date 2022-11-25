@@ -376,50 +376,84 @@
 
 -->
 
-<div class="nota-box"><h2 class="number-title"> El método de Müller </h2>
-  <p>El método de Müller utiliza tres aproximaciones iniciales $x_{0}, x_{1}, x_{2}$.</p>
+        <div class="nota-box"><h2 class="number-title"> El método de Müller </h2>
+          <p>El método de Müller utiliza tres aproximaciones iniciales $x_{0}, x_{1}, x_{2}$.</p>
 
-  <p>La siguiente aproximación $x_{3}$ es la abscisa del punto de intersección del eje $X$ 
-     con la parábola que pasa por los puntos $(x_{0}, f(x_{0}))$, $(x_{1},f(x_{1}))$ y $(x_{2},f(x_{2}))$
-  </p>
+          <p>La siguiente aproximación $x_{3}$ es la abscisa del punto de intersección del eje $X$ 
+            con la parábola que pasa por los puntos $(x_{0}, f(x_{0}))$, $(x_{1},f(x_{1}))$ y $(x_{2},f(x_{2}))$
+          </p>
 
-  <p>Para encontrar la ecuación de la parabola, consideremos el polinomio 
-    
-    $$p(x):= a(x-x_{2})^{2}  + b(x - x_{2}) + c $$
-    
-    donde $a,b$ y $c$ son constantes a determinar. Como el polinomio pasa por los puntos 
-    $(x_{0}, f(x_{0}))$, $(x_{1},f(x_{1}))$ y $(x_{2},f(x_{2}))$ entonces 
+          <p>Para encontrar la ecuación de la parabola, consideremos el polinomio 
+            
+            $$p(x):= a(x-x_{2})^{2}  + b(x - x_{2}) + c $$
+            
+            donde $a,b$ y $c$ son constantes a determinar. Como el polinomio pasa por los puntos 
+            $(x_{0}, f(x_{0}))$, $(x_{1},f(x_{1}))$ y $(x_{2},f(x_{2}))$ entonces 
 
-    $$f(x_{0}) = a(x_{0} - x_{2})^{2} + b(x_{0} - x_{2}) + c$$
+            $$f(x_{0}) = a(x_{0} - x_{2})^{2} + b(x_{0} - x_{2}) + c$$
 
-    $$f(x_{1}) = a(x_{1}-x_{2})^{2}  + b(x_{1} - x_{2}) + c$$
+            $$f(x_{1}) = a(x_{1}-x_{2})^{2}  + b(x_{1} - x_{2}) + c$$
 
-    $$f(x_{2}) = a(x_{2}-x_{2})^{2}  + b(x_{2} - x_{2}) +c$$
+            $$f(x_{2}) = a(x_{2}-x_{2})^{2}  + b(x_{2} - x_{2}) +c$$
 
-    Luego, 
+            Luego, 
 
-    $$c= f(x_{2})$$
+            $$c= f(x_{2})$$
 
-    $$a(x_{0} - x_{2})^{2} + b(x_{0} - x_{2}) = f(x_{0}) - f(x_{2})$$
+            $$a(x_{0} - x_{2})^{2} + b(x_{0} - x_{2}) = f(x_{0}) - f(x_{2})$$
 
-    $$a(x_{1} - x_{2})^{2} + b(x_{1} - x_{2}) = f(x_{1}) - f(x_{2})$$
+            $$a(x_{1} - x_{2})^{2} + b(x_{1} - x_{2}) = f(x_{1}) - f(x_{2})$$
 
-    Por la regla de Cramer se deduce que, 
+            Por la regla de Cramer se deduce que, 
 
-    \begin{align*} 
-    a&= \frac{(x_{1} - x_{2})[f(x_{0}) - f(x_{2})] - (x_{0} - x_{2})[f(x_{1}) - f(x_{2})]}{(x_{0} - x_{2}) ( x_{1} - x_{2})(x_{0} - x_{2} -x_{1} +x_{2})}\\
-    &=  \frac{(x_{1} - x_{2})[f(x_{0}) - f(x_{2})] - (x_{0} - x_{2})[f(x_{1}) - f(x_{2})]}{(x_{0} - x_{2}) ( x_{1} - x_{2})(x_{0}  - x_{1} )}\\
-    \end{align*}
+            \begin{align*} 
+            a <!--&=  \frac{(x_{1} - x_{2})[f(x_{0}) - f(x_{2})] - (x_{0} - x_{2})[f(x_{1}) - f(x_{2})]}{(x_{0} - x_{2}) ( x_{1} - x_{2})(x_{0} - x_{2} -x_{1} +x_{2})}\\-->
+            &=  \frac{(x_{1} - x_{2})[f(x_{0}) - f(x_{2})] - (x_{0} - x_{2})[f(x_{1}) - f(x_{2})]}{(x_{0} - x_{2}) ( x_{1} - x_{2})(x_{0}  - x_{1} )}\\
+            \end{align*}
 
-y 
+            y 
+
+            \begin{align*} 
+            b&= \frac{(x_{0} - x_{2})^{2}[f(x_{1}) - f(x_{2})] - (x_{1} - x_{2})^{2}[f(x_{0}) - f(x_{2})]}{(x_{0} - x_{2}) ( x_{1} - x_{2})(x_{0} -x_{1})}\\
+            \end{align*}
+
+            Una vez que se tiene $a,b$ y $c$ se sustituyen en la ecuación: $ p(x):= a(x-x_{2})^{2}  + b(x - x_{2}) + c $ y 
+            se encuentra una solución de $p(x)$, $x_{3}$. Aplicando la fórmula cuadrática se tiene que:
+
+            $$x_{3} - x_{2} = \frac{-b \pm \sqrt{b^{2} -4ac}} {2a}$$
+
+            Racionalizando el numerador se tiene que:
+
+            \begin{align*} 
+            x_{3} - x_{2} =& \left( \frac{-b \pm \sqrt{b^{2} -4ac}} {2a} \right ) \cdot \left(  \frac{-b \mp \sqrt{b^{2} -4ac}} {-b \mp \sqrt{b^{2} -4ac} } \right) \\
+                          =& \frac{ 4ac } {2a (-b\mp \sqrt{b^{2} -4ac})}\\
+                          =& \frac{ -2c } { b\pm \sqrt{b^{2} -4ac}}\\
+            \end{align*}
 
 
-\begin{align*} 
-b&= \frac{(x_{0} - x_{2})^{2}[f(x_{1}) - f(x_{2})] - (x_{1} - x_{2})^{2}[f(x_{0}) - f(x_{2})]}{(x_{0} - x_{2}) ( x_{1} - x_{2})(x_{0} -x_{1})}\\
+            Así, se deduce que:
 
-\end{align*}
 
-  </p> 
+            \begin{align*} 
+            x_{3}  &= x_{2} - \frac{ 2c } { b\pm \sqrt{b^{2} -4ac}}\\
+            \end{align*}
+
+            Sin embargo en el método de Müller, el signo se selecciona de acuerdo  con el signo de $b$. Elegido de esta forma el denominador será
+            el más grande en magnitud:  
+            
+
+            \begin{align*} 
+            x_{3}  &= x_{2} - \frac{ 2c } { b + \mathrm{sgn}(b)  \sqrt{b^{2} -4ac}}\\
+
+            \end{align*}
+            
+            Entonces, si $x_{3}$ cumple algún criterio de convergencia se detiene el  proceso, siendo $x_{3}$ 
+            una aproximación a la raiz de $f(x)$. En caso contrario se redefine: $$x_{0}=x_{1}, x_{1}=x_{2}  \text{ y }  x_{2}=x_{3}$$
+
+            se repite el proceso ...
+            
+
+          </p> 
 
 
 
