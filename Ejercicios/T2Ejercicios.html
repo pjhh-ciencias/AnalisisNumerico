@@ -108,9 +108,9 @@
           <tr>
             <th>$n$</th>
             <th>$a_{n}$</th>
-            <th>$x_{n}$</th>
+            <th>$p_{n}$</th>
             <th>$b_{n}$</th>
-            <th>$f(x_{n})$</th>
+            <th>$f(p_{n})$</th>
             <th>$EA$</th>
             <th>$ER$</th>
           </tr>
@@ -463,7 +463,8 @@
               <thead>
               <tr>
                 <th>$n$</th>
-                <th>$x_{n}$</th>
+                <th>$p_{n}$</th>
+                <th>$f(p_{n})$</th>
                 <th>$EA$</th>
                 <th>$ER$</th>
               </tr>
@@ -473,6 +474,7 @@
                   <tr>
                     <td>$\# $ Iteración</td>
                     <td>$x_{n-1} +\displaystyle{\frac{f(x_{n-1})}{f^{'}(x_{n-1})}}$</td>
+                    <td>La función evaluada en el punto $p_{n}$</td>
                     <td>Error absoluto</td>
                     <td>Error relativo (cuando sea posible calcular)</td>
                   </tr>
@@ -494,4 +496,101 @@
           </div>
   
     
+          <div class="ejercicio-box" id="Ejer:Met_N-R"><h2 class="number-title"> Ejercicio</h2>
+            <p>En cada uno de los siguientes funciones con ayuda de algún software
+              realiza un bosquejo de la gráfica de la función en el  intervalo dado
+              y confirma que en efecto la ecuación $f(x)=0$ tiene una solución ahí.
+              Luego, mediante lo observado estima el valor de una solución de la 
+              ecuación y usa éste como una aproximación inicial $p_{0}$ e
+              implementa el método de Newton-Raphson
+              para <b>encontrar una aproximación a la solución  de la
+              ecuación $f(x)=0$ a partir de la aproximación inicial
+              propuesta</b>, de tal manera que el error
+              absoluto sea menor que  $1\times 10^{-5}$. 
+              <ol>
+                <li>$f(x)=x^{3}-2x^{2} - 5$,  en  $[1,4]$</li><br>
+                <li>$f(x)=x-\mathrm{Cos}(x)$, en $\left[0, \frac{\pi}{2}\right]$</li><br>
+                <li>$f(x)=x^{3}+3x^{2} - x$ en  $[-3,-2]$</li><br>
+                <li>$f(x)=x- 0.8 -0.2 \,\mathrm{Sen}(x)$, en $\left[0, \frac{\pi}{2}\right]$</li><br>
+                <li>$f(x)= x^{2} + x - 4$</li><br>
+                <li>$f(x)=e^{x} + 2^{-x} + 2\mathrm{Cos}(x) -6$, en  $[1,2]$</li><br>
+                <li>$f(x)=\mathrm{ln}(x-1) + \mathrm{Cos}(x-1)$, en  $[1.3,2]$</li><br>
+                <li>$f(x)=(x-2)^{2} - \mathrm{ln}(x)$ en  $[1,2]$</li><br>
+                <li>$f(x)=e^{x} - 3x^{2}$,  en $[0, 1]$</li><br>   
+                <li>$f(x)=\mathrm{Sen}(x) - e^{-x}$, en $[3,4]$</li>    
+              </ol>
+            </p>
+    
+            <p>En cada caso, si se excede de $20$ iteraciones antes de alcanzar la aproximación deseada 
+              detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.  
+            </p>
+          </div>
+
+
+
+
+
+          <div class="ejercicio-box"> <h2 class="number-title"> Ejercicio</h2>
+            <p>Sea $f(x) \in C[a,b]$. Escribe un programa que implemente
+               el <b>método  de la Secante</b> para encontrar una aproximación a
+               una raíz de la ecuacion $f(x)=0$ a partir de dos  aproximaciones 
+               iniciales $p_{0}, p_{1} \in [a,b]$. El programa debe detenerse si
+               se tiene alguna de las siguientes situaciones:</p>
+               <ul>
+               <li>Si se han realizado un número máximo de $K$ iteraciones 
+               o bien en cuanto el error absoluto sea menor que 
+               $\epsilon$, donde $K$ es un número entero positivo  y 
+              $\epsilon$ un número real mayor que cero dados  por el usuario. </p></li>
+
+              <li>Si en alguna iteración ocurre que $f^{'}(x_{n-1})=0$, detener el algoritmo 
+                e imprimir: "División entre $0$".
+              </li>
+            </ul>
+              
+            <p>
+                El programa debe imprimir en cada iteración la siguiente información:
+            <p>
+              <table class="info">
+                          
+                <caption><b><font size="4"></font></b></caption>
+                <thead>
+                  <tr>
+                    <th>$n$</th>
+                    <th>$p_{n}$</th>
+                    <th>$f(p_{n})$</th>
+                    <th>$EA$</th>
+                    <th>$ER$</th>
+                  </tr>
+                  </thead>
+                    <tbody >
+        
+                      <tr>
+                        <td>$\#$ Iteración, $n\geq 2$</td>
+                        <td>$x_{n-1} +\displaystyle{\frac{f(x_{n-1})}{f^{'}(x_{n-1})}}$</td>
+                        <td>La función evaluada en el punto $p_{n}$</td>
+                        <td>Error absoluto</td>
+                        <td>Error relativo (cuando sea posible calcular)</td>
+                      </tr>
+      
+                    <!--
+                  <tr>
+                    <td ><center>$0$</center></td>
+                    <td><center>$a_{0}:= a$</center></td>
+                    <td><center>$x_{0}=\displaystyle{\frac{a_{0} + b_{0}}{2}}$</center></td>
+                    <td><center>$b_{0}:=b$</center></td>
+                    <td><center>$\displaystyle{\left|\frac{x_{actual} - x_{anterior}}{x_{actual}}\right|}$</center></td>
+                    <td><center>$\displaystyle{\left|\frac{x_{actual} - x_{anterior}}{x_{actual}}\right|}\times 100 \%$</center></td>
+                    <td></td>
+                  </tr>
+                  -->
+                  </tbody>
+              </table>
+            </p>
+            </div>
+
+          <div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2>
+            <p>
+              Repita el  <a href="#Ejer:Met_N-R">  Ejercicio  2.16 </a>  usuando el método de la secante. Toma
+              como las primeras aproximaciones iniciales $p_{0}$ y $p_{1}$ a los extremos del intervalo $[a,b]$ dado. 
+            </p>
 </body>
