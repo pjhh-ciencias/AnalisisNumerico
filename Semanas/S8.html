@@ -211,10 +211,13 @@
     <div class="nota-box"><h2 class="number-title"> Introducción </h2>
       
       <p>Si  $f(p)=0$ y $f^{'}(p) \not= 0$, entonces para valores suficientemente cercanos a $p$, 
-        el método de Newton-Raphson convergerá cal menos cuadraticamente.
+        el método de Newton-Raphson convergerá al menos cuadraticamente.
         Particularmente el método de Newton-Raphson y el método de la Secante,
         en general dan problemas si $f^{'}(p) \not= 0$ cuando $f(p)=0$. 
       </p>
+
+
+      
     </div>
 
     <div class="nota-box"><h2 class="number-title"> Definición </h2>
@@ -281,7 +284,7 @@
 
     <div class="nota-box"><h2 class="number-title"> Teorema </h2>
       <p>
-       Sea $m\in \mathbb{N}$ y $f \in C^{m}[a,b]$. Entonces la función $f$ tiene un cero $m$ en $p \in (a,b)$ si y sólo
+       Sea $m\in \mathbb{N}$ y $f \in C^{m}[a,b]$. Entonces la función $f$ tiene un cero de multiplicidad $m$ en $p \in (a,b)$ si y sólo
       si 
       $$f(p) = f^{'}(p)= f^{''}(p)= \cdots =f^{m-1}(p)=0, \, \, \, \, \text{ pero }\,\,\,\, f^{m}(p)\not= 0$$ 
       </p>
@@ -326,38 +329,132 @@
       <p>Este resultado implica que para mostrar que dos polinomios de grado menor o igual que 
         $n$s son iguales, sólo necesitamos mostrar que concuerdan en n 1 1 valores.</p>
     </div>
-<!-- 
-  <h1 class="title flexbox">  Ceros de polinomios</h1>
+
+  <h1 class="title flexbox">  Método de Müller </h1>
    
   <div class="nota-box"><h2 class="number-title"> Introducción </h2>
-      
     <p>En el método de Newton-Raphson se tiene el problema de que hay que encontrar 
-      la derivada de la función $f(x)$ para la cual hay que encontrar la raíz. Más aun,  
-      si  $f(p)=0$ y $f^{'}(x) \not= 0$, entonces para valores suficientemente cercanos a $p$, 
-      el método de Newton-Raphson convergerá cal menos cuadraticamente. Particularmente el 
-      método de Newton-Raphson y el método de la Secante, en general dan problemas si 
-      $f^{'}(x) \not= 0$ cuando $f(p)=0$. 
+      la derivada de la función $f(x)$ para la cual hay que encontrar la raíz. 
     </p>
+  
 
     <p>
-      Sin embargo, en el caso en el que $f(x)$ es un polinomio. El método de Newton-Raphson puede ser modificado 
+      Sin embargo, en el caso en el que <b>$f(x)$ es un polinomio</b>. El método de Newton-Raphson puede ser modificado 
       para evitar trabajar con $f^{'}(x)$, esto se logra utilizando el método de Horner.  
     </p>
 
-    <p>Dado un polinomio $p(x)$ y un valor $x_{0}$, entonces 
-      $$p(x)= (x-x_{0})Q(x) + p(x_{0})$$
-    donde $\mathrm{grado}(Q(x)) = \mathrm{grado}(p(x)) - 1 $.
+    <p>Si $f(x)$ es un  polinomio, dado  un valor $x_{0}$, por el método de Horner  se tiene que:
+      $$f(x)= (x-x_{0})Q(x) + f(x_{0})$$
+    donde $\mathrm{grado}(Q(x)) = \mathrm{grado}(f(x)) - 1  $.
     </p>
 
     <p>Por lo tanto, en el método de Newton-Raphson dada la aproximación inicial $x_{0}$
       se tiene que:
-    $$x_{1}= x_{0} - \frac{f(x_{0})}{f^{'}(x)}$$
+    $$x_{1}:= x_{0} - \frac{f(x_{0})}{f^{'}(x_{0})}$$
     para obtener $f(x_{0})$ y $f^{'}(x_{0})$ se aplica el método de Horner a $f(x)$ y $x_{0} $
-    obteniendo $f(x_{0})$ y $f^{'}(x_{0})= Q(x_{0})$. 
+    obteniendo $f(x_{0})$ y $f^{'}(x_{0})= Q(x_{0})$ y así sucesivamente.
      </p>
 
 </div>
+
+
+<div class="nota-box"><h2 class="number-title"> Observación </h2>
+<p>Un problema con la aplicación de los métodos de la secante, de posición falsa o de Newton a 
+  los polinomios, es la posibilidad de que el polinomio tenga raíces complejas incluso cuando todos 
+  los coeficientes son números reales son números reales.  Si las aproximaciones subsiguientes
+  también serán números reales</p>
+</div>
+
+<!--- 
+<div class="nota-box"><h2 class="number-title"> Teorema </h2>
+  <p>Si $z= a +  ib$ es un cero complejo de multiplicidad $m$ del polinomio 
+    $p(x)$ con coeficientes   reales, entonces $\overline{z} = a − ib$ también 
+    es un cero de multiplicidad $m$ del polinomio $p(x)$ y $(x^{2} - 2ax + a^{2} + b^{2})^{m}$ 
+    es un un factor de $p(x)$. 
+  </p>
+</div>
+
 -->
+
+        <div class="nota-box"><h2 class="number-title"> El método de Müller </h2>
+          <p>El método de Müller utiliza tres aproximaciones iniciales $x_{0}, x_{1}, x_{2}$.</p>
+
+          <p>La siguiente aproximación $x_{3}$ es la abscisa del punto de intersección del eje $X$ 
+            con la parábola que pasa por los puntos $(x_{0}, f(x_{0}))$, $(x_{1},f(x_{1}))$ y $(x_{2},f(x_{2}))$
+          </p>
+
+          <p>Para encontrar la ecuación de la parabola, consideremos el polinomio 
+            
+            $$p(x):= a(x-x_{2})^{2}  + b(x - x_{2}) + c $$
+            
+            donde $a,b$ y $c$ son constantes a determinar. Como el polinomio pasa por los puntos 
+            $(x_{0}, f(x_{0}))$, $(x_{1},f(x_{1}))$ y $(x_{2},f(x_{2}))$ entonces 
+
+            $$f(x_{0}) = a(x_{0} - x_{2})^{2} + b(x_{0} - x_{2}) + c$$
+
+            $$f(x_{1}) = a(x_{1}-x_{2})^{2}  + b(x_{1} - x_{2}) + c$$
+
+            $$f(x_{2}) = a(x_{2}-x_{2})^{2}  + b(x_{2} - x_{2}) +c$$
+
+            Luego, 
+
+            $$c= f(x_{2})$$
+
+            $$a(x_{0} - x_{2})^{2} + b(x_{0} - x_{2}) = f(x_{0}) - f(x_{2})$$
+
+            $$a(x_{1} - x_{2})^{2} + b(x_{1} - x_{2}) = f(x_{1}) - f(x_{2})$$
+
+            Por la regla de Cramer se deduce que, 
+
+            \begin{align*} 
+            a <!--&=  \frac{(x_{1} - x_{2})[f(x_{0}) - f(x_{2})] - (x_{0} - x_{2})[f(x_{1}) - f(x_{2})]}{(x_{0} - x_{2}) ( x_{1} - x_{2})(x_{0} - x_{2} -x_{1} +x_{2})}\\-->
+            &=  \frac{(x_{1} - x_{2})[f(x_{0}) - f(x_{2})] - (x_{0} - x_{2})[f(x_{1}) - f(x_{2})]}{(x_{0} - x_{2}) ( x_{1} - x_{2})(x_{0}  - x_{1} )}\\
+            \end{align*}
+
+            y 
+
+            \begin{align*} 
+            b&= \frac{(x_{0} - x_{2})^{2}[f(x_{1}) - f(x_{2})] - (x_{1} - x_{2})^{2}[f(x_{0}) - f(x_{2})]}{(x_{0} - x_{2}) ( x_{1} - x_{2})(x_{0} -x_{1})}\\
+            \end{align*}
+
+            Una vez que se tiene $a,b$ y $c$ se sustituyen en la ecuación: $ p(x):= a(x-x_{2})^{2}  + b(x - x_{2}) + c $ y 
+            se encuentra una solución de $p(x)$, $x_{3}$. Aplicando la fórmula cuadrática se tiene que:
+
+            $$x_{3} - x_{2} = \frac{-b \pm \sqrt{b^{2} -4ac}} {2a}$$
+
+            Racionalizando el numerador se tiene que:
+
+            \begin{align*} 
+            x_{3} - x_{2} =& \left( \frac{-b \pm \sqrt{b^{2} -4ac}} {2a} \right ) \cdot \left(  \frac{-b \mp \sqrt{b^{2} -4ac}} {-b \mp \sqrt{b^{2} -4ac} } \right) \\
+                          =& \frac{ 4ac } {2a (-b\mp \sqrt{b^{2} -4ac})}\\
+                          =& \frac{ -2c } { b\pm \sqrt{b^{2} -4ac}}\\
+            \end{align*}
+
+
+            Así, se deduce que:
+
+
+            \begin{align*} 
+            x_{3}  &= x_{2} - \frac{ 2c } { b\pm \sqrt{b^{2} -4ac}}\\
+            \end{align*}
+
+            Sin embargo en el método de Müller, el signo se selecciona de acuerdo  con el signo de $b$. Elegido de esta forma el denominador será
+            el más grande en magnitud:  
+            
+
+            \begin{align*} 
+            x_{3}  &= x_{2} - \frac{ 2c } { b + \mathrm{sgn}(b)  \sqrt{b^{2} -4ac}}\\
+
+            \end{align*}
+            
+            Entonces, si $x_{3}$ cumple algún criterio de convergencia se detiene el  proceso, siendo $x_{3}$ 
+            una aproximación a la raiz de $f(x)$. En caso contrario se redefine: $$x_{0}=x_{1}, x_{1}=x_{2}  \text{ y }  x_{2}=x_{3}$$
+
+            se repite el proceso ...
+            
+
+          </p> 
+
 
 
     </body>
