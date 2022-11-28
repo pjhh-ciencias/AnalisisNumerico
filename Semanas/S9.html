@@ -95,11 +95,105 @@
 
     
 
-    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
       <p>
        Resolveremos ecuaciones lineales de la forma:
+       $$
+        \begin{matrix} 
+      a_{11}x_{1} & + &  a_{12}x_{2} & + & \cdots & + &  a_{1n}x_{n} & =& b_{1} \\
+      a_{21}x_{1} & + & a_{22}x_{2}  & + & \cdots & + &  a_{2n}x_{n} & =& b_{2} \\
+                  &\vdots&           &\vdots &  \ddots &  \vdots & &  \vdots&   \\
+      a_{n1}x_{1} & + & a_{n2}x_{2}  & + & \cdots & +  &  a_{nn}x_{n} &  = & b_{n}
+     \end{matrix}
+        $$
+        donde para cada $i,j = 1, \ldots , n$, $a_{i,j}, b_{j}$ son constantes dadas y $x_{i}$
+        son los valores a determinar.
+      </p>
+
+      <p>
+        La matriz aumentada del sistema es:
+        $$\begin{pmatrix} 
+        a_{11} & a_{12} & \cdots & a_{1n} & b_{1} \\
+        a_{21} & a_{22} & \cdots & a_{2n} & b_{2} \\
+        \vdots & \vdots & \ddots & \vdots & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} & b_{n} \\
+       \end{pmatrix}$$
+
+       Si denotamos por $A$ la matriz de coeficientes del sistema 
+
+       $$A:= \begin{pmatrix} 
+       a_{11} & a_{12} & \cdots & a_{1n} \\
+       a_{21} & a_{22} & \cdots & a_{2n} \\
+       \vdots & \vdots & \ddots & \vdots \\
+       a_{n1} & a_{n2} & \cdots & a_{nn}
+      \end{pmatrix}$$
+
+      y por $b$ el vector de términos independientes del sistema
+
+      $$\vec{b}:= \begin{pmatrix} 
+      b_{1} \\
+      b_{2} \\
+      \vdots \\
+      b_{n}
+     \end{pmatrix}$$
+       
+      
+      Entonces el sistema de ecuaciones se denota como $A\vec{x}=\vec{b}$ donde $\vec{x}:=\begin{pmatrix} 
+      x_{1} \\
+      x_{2} \\
+      \vdots \\
+      x_{n}
+     \end{pmatrix}$.
+    </p>
+
+    <p>Para resolver el sistema $A\vec{x}=\vec{b}$ se pueden aplicar técnicas directas y técnicas iterativas. 
+      Los métodos directos son técnicas que proporcionan una respuesta en un número fijo de pasos y sólo
+      esta sujetos a errores de redondeo.  
+    </p>
+
+    <p>Los métodos iterativos generan una sucesión de aproximaciones (que puede tener límite)
+      a partir de un valor inicial. Si esta sucesión tiene límite, dicho límite es una solución al 
+    sistema $A\vec{x}=\vec{b}$. </p>
+
+    
+    </div>
+
+    <h1 class="title flexbox"> Eliminación Gaussina</h1>   
+
+    <div class="nota-box"> <h2 class="number-title"> Eliminación Gaussina</h2>
+      <p>
+       En un sistema de ecuaciones lineales se pueden utilizar las siguientes operaciones:
+       <ol>
+        <li>La ecuación $E_{i}$ se puede multiplicar por una constante $\lambda \in \mathbb{R}$ 
+          distinta de cero y la ecuación resultante se emplea en vez de $E_{i}$. Esta operación 
+          se denota por 
+          $$(\lambda E_{i}) \longrightarrow (E_{i})$$
+        </li><br>
+        <li>La ecuación $E_{i}$ se puede multiplicar por una constante $\lambda \in \mathbb{R}$ 
+          distinta de cero y sumarse a la ecuación resultante se emplea en vez de $E_{i}$. Esta operación 
+          se denota por 
+          $$(E_{i} + \lambda E_{i}) \longrightarrow (E_{i})$$
+        </li><br>
+        <li>El orden de la ecuaciones $E_{i}$ y $E_{j}$ pueden intercambiars. Esta operación 
+          se denota por 
+          $$(E_{j}) \longleftrightarrow (E_{i})$$
+        </li><br>
+       </ol>
+
+       Con estas  operaciones, podemos transformar un sistema lineal en otro que puede resolverse 
+       más fácilmente con las mismas soluciones.
       </p>
     </div>
+
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Eliminación Gaussina hacia atras</h2>
+      <p>
+      </p>
+    </div>
+
+
+
 
 
 
