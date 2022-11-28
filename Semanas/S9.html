@@ -97,9 +97,9 @@
 
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
       <p>
-       Resolveremos ecuaciones lineales de la forma:
+       Resolveremos sistemas de ecuaciones lineales de la forma:
        $$
-        \begin{matrix} 
+      \begin{matrix} 
       a_{11}x_{1} & + &  a_{12}x_{2} & + & \cdots & + &  a_{1n}x_{n} & =& b_{1} \\
       a_{21}x_{1} & + & a_{22}x_{2}  & + & \cdots & + &  a_{2n}x_{n} & =& b_{2} \\
                   &\vdots&           &\vdots &  \ddots &  \vdots & &  \vdots&   \\
@@ -110,16 +110,8 @@
         son los valores a determinar.
       </p>
 
-      <p>
-        La matriz aumentada del sistema es:
-        $$\begin{pmatrix} 
-        a_{11} & a_{12} & \cdots & a_{1n} & b_{1} \\
-        a_{21} & a_{22} & \cdots & a_{2n} & b_{2} \\
-        \vdots & \vdots & \ddots & \vdots & \vdots \\
-        a_{n1} & a_{n2} & \cdots & a_{nn} & b_{n} \\
-       \end{pmatrix}$$
-
-       Si denotamos por $A$ la matriz de coeficientes del sistema 
+     <p>
+      Si denotamos por $A$ la matriz de coeficientes del sistema i.e.
 
        $$A:= \begin{pmatrix} 
        a_{11} & a_{12} & \cdots & a_{1n} \\
@@ -128,7 +120,7 @@
        a_{n1} & a_{n2} & \cdots & a_{nn}
       \end{pmatrix}$$
 
-      y por $b$ el vector de términos independientes del sistema
+      por $\vec{b}$ el vector de términos independientes del sistema i.e.
 
       $$\vec{b}:= \begin{pmatrix} 
       b_{1} \\
@@ -136,25 +128,49 @@
       \vdots \\
       b_{n}
      \end{pmatrix}$$
+
+     y por $\vec{x}$ al vector de valores a determinar (incognitas):
+      
+     $$\vec{x}:=\begin{pmatrix} 
+     x_{1} \\
+     x_{2} \\
+     \vdots \\
+     x_{n}
+    \end{pmatrix}$$
        
       
-      Entonces el sistema de ecuaciones se denota como $A\vec{x}=\vec{b}$ donde $\vec{x}:=\begin{pmatrix} 
-      x_{1} \\
-      x_{2} \\
-      \vdots \\
-      x_{n}
-     \end{pmatrix}$.
+    Entonces el sistema de ecuaciones lineales presentado al inicio se denota por:
+    
+    $$A\vec{x}=\vec{b}.$$
     </p>
 
-    <p>Para resolver el sistema $A\vec{x}=\vec{b}$ se pueden aplicar técnicas directas y técnicas iterativas. 
-      Los métodos directos son técnicas que proporcionan una respuesta en un número fijo de pasos y sólo
+      <p>Luego, se define y denota la <b>matriz aumentada</b> del sistema por:
+        $$[A,b]:=\begin{pmatrix} 
+        a_{11} & a_{12} & \cdots & a_{1n} & \vdots & a_{1(n+1)} \\
+        a_{21} & a_{22} & \cdots & a_{2n} & \vdots & a_{2(n+1)} \\
+        \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} & \vdots & a_{n(n+1)} \\
+       \end{pmatrix}$$
+
+       Los elementos en la $(n+1)$-ésima columna son los valores de $\vec{b}$.
+      </p>  
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Técnicas directas y técnicas iterativas</h2>
+      <p>
+    <p>Para resolver el sistema $A\vec{x}=\vec{b}$ se pueden aplicar <b>técnicas directas</b> y <b>técnicas iterativas</b>. </p>
+
+    <ul>
+    <li>
+      Los <b>métodos directos</b> son técnicas que proporcionan una respuesta en un número fijo de pasos y sólo
       esta sujetos a errores de redondeo.  
-    </p>
+    </li><br> 
 
-    <p>Los métodos iterativos generan una sucesión de aproximaciones (que puede tener límite)
+    <li>Los <b>métodos iterativos</b> generan una sucesión de aproximaciones (que puede tener límite)
       a partir de un valor inicial. Si esta sucesión tiene límite, dicho límite es una solución al 
-    sistema $A\vec{x}=\vec{b}$. </p>
-
+    sistema $A\vec{x}=\vec{b}$. 
+    </li>
+    </ul>
     
     </div>
 
@@ -162,17 +178,18 @@
 
     <div class="nota-box"> <h2 class="number-title"> Eliminación Gaussina</h2>
       <p>
-       En un sistema de ecuaciones lineales se pueden utilizar las siguientes operaciones:
+       En un sistema de ecuaciones lineales $A\vec{x}=\vec{b}$ se pueden utilizar las siguientes operaciones 
+       para simplificar el sistema:
        <ol>
         <li>La ecuación $E_{i}$ se puede multiplicar por una constante $\lambda \in \mathbb{R}$ 
           distinta de cero y la ecuación resultante se emplea en vez de $E_{i}$. Esta operación 
           se denota por 
           $$(\lambda E_{i}) \longrightarrow (E_{i})$$
         </li><br>
-        <li>La ecuación $E_{i}$ se puede multiplicar por una constante $\lambda \in \mathbb{R}$ 
+        <li>La ecuación $E_{j}$ se puede multiplicar por una constante $\lambda \in \mathbb{R}$ 
           distinta de cero y sumarse a la ecuación resultante se emplea en vez de $E_{i}$. Esta operación 
           se denota por 
-          $$(E_{i} + \lambda E_{i}) \longrightarrow (E_{i})$$
+          $$(E_{i} + \lambda E_{j}) \longrightarrow (E_{i})$$
         </li><br>
         <li>El orden de la ecuaciones $E_{i}$ y $E_{j}$ pueden intercambiars. Esta operación 
           se denota por 
@@ -180,8 +197,10 @@
         </li><br>
        </ol>
 
-       Con estas  operaciones, podemos transformar un sistema lineal en otro que puede resolverse 
-       más fácilmente con las mismas soluciones.
+       Aplicando esta serie de operaciones  podemos <b>transformar
+       un sistema de ecuaciones lineales en otro que sea más fácil de resolver y
+       con las mismas soluciones.
+      </b>
       </p>
     </div>
 
@@ -189,6 +208,22 @@
     
     <div class="nota-box"> <h2 class="number-title"> Eliminación Gaussina hacia atras</h2>
       <p>
+        El método de eliminación Gaussiana hacia atras consiste en transformar mediante
+        las operaciones definidas previamente el sistema original:
+
+        $$A\vec{x}=\vec{b}$$
+        
+        en un sistema lineal equivalente:
+        
+        $$U\vec{x}=\vec{y}$$
+
+        donde $U$ es una matriz triangular superior. La razon de lograr ésta transformación
+        del sistema es que el nuevo sistema es más simple y resolverlo sólo requiere un
+        proceso hacia atrás.
+      </p>
+
+      <p>
+        Por ejemplo 
       </p>
     </div>
 
