@@ -145,7 +145,8 @@
     </p>
 
       <p>Luego, se define y denota la <b>matriz aumentada</b> del sistema por:
-        $$[A,b]:=\begin{pmatrix} 
+
+        $$\tilde{A}=[A,b]:=\begin{pmatrix} 
         a_{11} & a_{12} & \cdots & a_{1n} & \vdots & a_{1(n+1)} \\
         a_{21} & a_{22} & \cdots & a_{2n} & \vdots & a_{2(n+1)} \\
         \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
@@ -226,6 +227,243 @@
         
       </p>
     </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>Resuelve el siguiente sistema aplicando el método de eliminación Gaussiana hacia atras:
+        $$
+        \begin{matrix} 
+        x_{1}  & + &  x_{2}  & + &       & + &   x_{4} & =& 4 \\
+        2x_{1} & + &  x_{2}  & - & x_{3} & + &   x_{4} & =& 1 \\
+        3x_{1} & - &  x_{2}  & - & x_{3} & + &  2x_{4} & =& -3 \\
+        -x_{1} & + &  2x_{2} & + & 3x_{3}& - &   x_{4} & =& 4 \\
+       
+       \end{matrix}
+          $$
+
+      </p>
+      <p><b>Solución:</b></p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Método de eliminación Gaussina hacia atras</h2>
+      <p>
+        Enseguida presentamos el procedimiento general de eleminacón Gaussiana hacia atras aplicado al sistema:
+      
+      $$
+      \begin{matrix} 
+      \mathbf{E_{1}}: & a_{11}x_{1} & + &  a_{12}x_{2} & + & \cdots & + &  a_{1n}x_{n} & =& b_{1} \\
+      \mathbf{E_{2}}:  & a_{21}x_{1} & + & a_{22}x_{2}  & + & \cdots & + &  a_{2n}x_{n} & =& b_{2} \\
+    \vdots  &  &\vdots&           &\vdots &  \ddots &  \vdots & &  \vdots&   \\
+    \mathbf{E_{n}}:  & a_{n1}x_{1} & + & a_{n2}x_{2}  & + & \cdots & +  &  a_{nn}x_{n} &  = & b_{n}
+     \end{matrix}
+        $$
+        Sea $A$ la matriz de coeficientes del sistema y $\vec{b}$ el vector de terminos independientes 
+        del sistema. Consideremos la matriz aumentada del sistema:
+
+        $$\tilde{A}=\tilde{A}^{(1)}=[A,b]:=\begin{pmatrix} 
+        a_{11} & a_{12} & \cdots & a_{1n} & \vdots & a_{1(n+1)} \\
+        a_{21} & a_{22} & \cdots & a_{2n} & \vdots & a_{2(n+1)} \\
+        \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} & \vdots & a_{n(n+1)} \\
+       \end{pmatrix}$$
+
+       donde $a_{i(n+1)}= b_{i}$ para cada $i=1,\ldots,n$.
+      </p>
+
+      <p>Si $a_{11}\not =0$, para cada $j=2,3,4,\ldots, n$ realizamos las siguientes operaciones entre ecuaciones:
+      
+        $$\left(E_{j} - \displaystyle{\left(\frac{a_{j1}}{a_{11}}\right)E_{1}}\right) \longrightarrow (E_{j})$$
+      
+        observemos que estas operaciones tienen como efecto convertir en cero  el coeficiente de $x_{1}$ en cada uno de las
+        ecuaciones  $E_{j}$ para $j=2,3,\ldots,n$ 
+        
+      </p>
+
+      <p>
+        En general, los coeficientes en las ecuaciones $E_{j}$ para $j=2,3,\ldots,n$  cambian, por lo que 
+        denotamos a la matriz  aumentada del sistema resultante como:
+
+       
+        $$\tilde{A}^{(2)}=\left( a_{ij}^{(2)} \right):=\begin{pmatrix} 
+        a_{11} & a_{12} & \cdots & a_{1n} & \vdots & a_{1(n+1)} \\
+        0 & a_{22}^{(2)} & \cdots & a_{2n}^{(2)} & \vdots & a_{2(n+1)}^{(2)} \\
+        \vdots & \vdots & \ddots & \vdots & \vdots & \vdots \\
+        0 & a_{n2}^{(2)} & \cdots & a_{nn}^{(2)} & \vdots & a_{n(n+1)}^{(2)} \\
+       \end{pmatrix}$$
+
+       Luego, si $a_{22}\not= 0 $ para cada $j=3,4\ldots,n $ realizamos  las siguientes 
+       operaciones entre ecuaciones:
+
+        $$\left(E_{j} - \displaystyle{\left(\frac{a_{j2}}{a_{22}}\right)E_{2}}\right) \longrightarrow (E_{j})$$
+
+        similarmente, observemos  el efecto de realizar estas operaciones: hacer cero el coeficiente de $x_{2}$ 
+        en cada uno de las ecuaciones  $E_{j}$ para $j=3,\ldots,n$, obteniendo 
+
+        
+        $$\tilde{A}^{(3)}=\left( a_{ij}^{(3)} \right):=\begin{pmatrix} 
+        a_{11} & a_{12} & a_{13} & a_{14} & \cdots & a_{1n} &   \vdots & a_{1(n+1)} \\
+        0 & a_{22}^{(2)} & a_{23}^{(2)}     &  a_{24}^{(2)} &\cdots & a_{2n}^{(2)} & \vdots & a_{2(n+1)}^{(2)} \\
+        0 &     0        & a_{33}^{(3)}     &  a_{34}^{(3)} &\cdots & a_{3n}^{(3)} & \vdots & a_{3(n+1)}^{(3)} \\
+        \vdots & \vdots &  \vdots & \vdots & \ddots & \vdots &\vdots &\vdots \\
+        0 &     0      &  a_{n3}^{(3)} &  a_{n4}^{(3)}& \cdots & a_{nn}^{(3)} & \vdots & a_{n(n+1)}^{(3)} \\
+       \end{pmatrix}$$
+
+      
+      </p>
+
+      <p>
+        Continuando sucesivamente con este procedimiento: Para cada  $i=3,4,\ldots, n-1$.
+      </p>
+
+      <p>Siempre que $a_{ii}\not = 0$. Realizamos para  $j=i+1, \ldots , n$ las operaciones entre ecuaciones:
+
+        $$\left(E_{j} - \displaystyle{\left(\frac{a_{ji}}{a_{ii}}\right)E_{i}}\right) \longrightarrow (E_{j})$$
+
+        con cada una de estas operaciones se transforma el coeficiente de $x_{i}$ en cada ecuación  debajo de la $i$-ésima  
+        ecuación para cada  $i=1,2,3,\ldots,n-1$.   
+      </p>
+
+
+        <p>
+          Por lo tanto, mediante el proceso de eliminación Gaussiana, se obtiene una sucesión de matrices aumentadas:
+          $$\tilde{A}^{(1)}= \tilde{A},\,  \tilde{A}^{(2)},\,  \ldots , \tilde{A}^{(n)}$$ 
+
+          Para  $k\in\{2,3,\ldots,n \}$ los elementos de la matriz $\tilde{A}^{(k)} = \left( a_{i,j}^{(k)}\right)$, 
+          estan definidos como:
+          $$
+          a_{ij}^{(k)} := \begin{cases}
+            a_{ij}^{(k-1)}& \text{ cuando } i=1,2,\ldots, k-1 \text{ y } j=1,2,\ldots, n+1\\
+            & \\
+            0 &  \text{ cuando } i=k,k+1\ldots, n \text{ y } j=1,2,\ldots, k-1\\
+            &\\
+            \displaystyle{  a_{ij}^{(k-1)}  - \frac{ a_{i(k-1)}^{(k-1)}  }{ a_{(k-1)(k-1)}^{(k-1)}}  a_{(k-1)j}^{(k-1)}  } & \text{ cuando } i=k,k+1\ldots, n \text{ y } j=k, k+1, \ldots, n+1\\
+            \end{cases}
+          $$
+          
+        </p>
+
+      <p>La matriz resultante tiene la forma:
+          
+        $$\overline{A} =\left( \overline{a}_{ij} \right):=\begin{pmatrix} 
+        \overline{a}_{11} & \overline{a}_{12} & \overline{a}_{13} & \overline{a}_{14} & \cdots & \overline{a}_{1n} &   \vdots & \overline{a}_{1(n+1)} \\
+        0 & \overline{a}_{22} & \overline{a}_{23}     &  \overline{a}_{24} &\cdots & \overline{a}_{2n} & \vdots & \overline{a}_{2(n+1)} \\
+        0 &     0        & \overline{a}_{33}     &  \overline{a}_{34} &\cdots & \overline{a}_{3n} & \vdots & \overline{a}_{3(n+1)} \\
+        \vdots & \vdots &  \vdots & \vdots & \ddots & \vdots &\vdots &\vdots \\
+        0 &     0      &   0      &    0   & \cdots & \overline{a}_{nn} & \vdots & \overline{a}_{n(n+1)} \\
+       \end{pmatrix}$$
+      
+      donde salvo el primer renglon no se espera que los valores de $a_{ij}$ coincidan con los valores de la matriz aumentada 
+        original $\tilde{A}=\tilde{A^{1}}$.
+      </p>
+
+
+      <p> La matriz $\overline{A}$ representa el  sistema de ecuaciones lineales $U \vec{x}= \vec{y}$  donde 
+         
+         $$U:=\begin{pmatrix} 
+         \overline{a}_{11} & \overline{a}_{12} & \overline{a}_{13} & \overline{a}_{14} & \cdots & \overline{a}_{1n}  \\
+         0 & \overline{a}_{22} & \overline{a}_{23}     &  \overline{a}_{24} &\cdots & \overline{a}_{2n}  \\
+         0 &     0        & \overline{a}_{33}     &  \overline{a}_{34} &\cdots & \overline{a}_{3n}  \\
+         \vdots & \vdots &  \vdots & \vdots & \ddots & \vdots  \\
+         0 &     0      &   0      &    0   & \cdots & \overline{a}_{nn}  \\
+        \end{pmatrix}$$
+
+         es una matriz triangular superior y 
+        
+         $$\vec{y}:=\begin{pmatrix} 
+         \overline{a}_{1(n+1)} \\
+         \overline{a}_{2(n+1)} \\
+         \vdots \\
+         \overline{a}_{n(n+1)}
+        \end{pmatrix}$$
+           
+        es el nuevo vector de términos independientes.
+      </p>
+        
+        <p>
+        El sistema $U \vec{x}= \vec{y}$ posee  el mismo conjunto de soluciones que el sistema original $A\tilde{x}=\tilde{b}$.
+        </p>
+
+
+        <p>Dado que el nuevo sistema de ecuaciones $U \vec{x}= \vec{y}$ es triangular:
+          
+        
+          $$
+          \begin{matrix} 
+           \overline{a}_{11}x_{1} & + &  \overline{a}_{12}x_{2} & + & \cdots & + &  \overline{a}_{1n}x_{n} & = & \overline{a}_{1(n+1)} \\
+           0 & + & \overline{a}_{22}x_{2}  & + & \cdots & + &  \overline{a}_{2n}x_{n} & =& \overline{a}_{2(n+1)} \\
+                       &\vdots&           &\vdots &  \ddots &  \vdots & &  \vdots&   \\
+           0 & + &   0    & + & \cdots & +  &  \overline{a}_{nn}x_{n} &  = & \overline{a}_{n(n+1)}
+         \end{matrix}
+            $$
+          
+            podemos realizar la  sustitución hacia  atras. Al resolver la $n$-ésima ecuacion para $x_{n}$
+            obtenemos:
+
+            $$x_{n}= \displaystyle{\frac{\overline{a}_{n(n+1)}}{\overline{a}_{nn}}}$$
+          
+            Luego, al resolver la $(n-1$-ésima ecuación para $x_{n-1}$  y al utilizar el valor de la incognita 
+            $x_{n}$ se tiene que:
+            $$x_{n-1} = \displaystyle{\frac{\overline{a}_{(n-1)(n+1)} - \overline{a}_{(n-1)n}x_{n}}{\overline{a}_{(n-1)(n-1)}}}$$ 
+          </p>
+
+          <p>Continuando sucesivamente con este proceso para cada $i=n-1, n-2, \ldots, 2,1$ se obtiene que:
+
+            $$x_{i} = \displaystyle{\frac{\overline{a}_{i(n+1)} - \overline{a}_{in}x_{n} - \overline{a}_{i(n-1)}x_{n-1} - \cdots - \overline{a}_{i(i+1)}x_{i+1}}{\overline{a}_{ii}} = \frac{\overline{a}_{i(n+1)} - \displaystyle{\sum_{j=i+1}^{n} \overline{a}_{ij} x_{j}}}{\overline{a}_{ii}} } $$ 
+
+
+          
+
+          </p>
+    </div>
+
+
+
+
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <p>
+        El procedimiento presentado en el método de eliminación Gaussiana hacia atras falla si uno de 
+        de los elementos $a_{11}^{(1)}, a_{22}^{(2)}, a_{33}^{(3)}, \ldots , a_{nn}^{(n)}$ 
+        es cero. 
+        
+        <ul>
+          <li>Si en algún momento $a_{kk}^{(k)}$ es cero para algún $k\in \{1,2,\ldots,n-1\}$, entonces no es posible realizar 
+            la operacion:
+        $$\left(E_{j} - \displaystyle{\left(\frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}\right)E_{k}}\right) \longrightarrow (E_{j})$$
+          </li><br>
+          <li>
+            Si $a_{nn}^{(n)} = 0$, entonces, no es posible realizar la sustitución hacia atras
+          </li>
+        </ul>
+      </p>
+      
+      <p>
+       En cualquiera  de estos dos casos, no podemos concluir  que el sistema no tiene solución, 
+       si no que debemos modificar el método para obtenerla.
+
+
+
+      </p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>Resuelve el siguiente sistema aplicando el método de eliminación Gaussiana hacia atras:
+        $$
+        \begin{matrix} 
+          x_{1}  & - &  x_{2}  & + & 2x_{3}& - &   x_{4} & =& -8 \\
+          2x_{1} & - &  2x_{2} & + & 3x_{3} & - &  3 x_{4} & =& -20 \\
+          x_{1} & + &  x_{2}  & + & x_{3} &  &  & =& -2 \\
+          x_{1} & - & x_{2} & + & 4x_{3}& + &   3x_{4} & =& 4 \\
+       
+       \end{matrix}
+          $$
+
+      </p>
+      <p><b>Solución:</b></p>
+    </div>
+
+
+    
 
 
 
