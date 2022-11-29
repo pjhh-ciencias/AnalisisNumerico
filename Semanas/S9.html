@@ -205,7 +205,6 @@
       </p>
     </div>
 
-
     
     <div class="nota-box"> <h2 class="number-title"> Eliminación Gaussina hacia atras</h2>
       <p>
@@ -421,27 +420,23 @@
 
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
       <p>
-        El procedimiento presentado en el método de eliminación Gaussiana hacia atras falla si uno de 
-        de los elementos $a_{11}^{(1)}, a_{22}^{(2)}, a_{33}^{(3)}, \ldots , a_{nn}^{(n)}$ 
+        El procedimiento presentado en el método de eliminación Gaussiana tiene problemas si en algun 
+        momento uno los elementos $a_{11}^{(1)}, a_{22}^{(2)}, a_{33}^{(3)}, \ldots , a_{nn}^{(n)}$ 
         es cero. 
         
         <ul>
-          <li>Si en algún momento $a_{kk}^{(k)}$ es cero para algún $k\in \{1,2,\ldots,n-1\}$, entonces no es posible realizar 
-            la operacion:
-        $$\left(E_{j} - \displaystyle{\left(\frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}\right)E_{k}}\right) \longrightarrow (E_{j})$$
+          <li>Si  para algún $k\in \{1,2,\ldots,n-1\}$,  $a_{kk}^{(k)}$ es cero,  entonces no
+             es posible realizar la operacion:
+              $$\left(E_{j} - \displaystyle{\left(\frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}\right)E_{k}}\right) \longrightarrow (E_{j})$$
+              Y no podemos utilizar la $k$-ésima fila para eliminar los elementos de la columna 
+              $k$-ésima que estan por debajo de la diagonal principal. 
+              Sin embargo, en general  esto no implica que el sistema no tenga solución. 
+              Podemos intentar intercambiar la $k$-ésima fila con alguba fila posterior.      
           </li><br>
-          <li>
-            Si $a_{nn}^{(n)} = 0$, entonces, no es posible realizar la sustitución hacia atras
+          <li>Si $a_{nn}^{(n)} = 0$, entonces, no es posible realizar la sustitución hacia atras y en este 
+            caso el sistema tiene infinitas soluciones.
           </li>
         </ul>
-      </p>
-      
-      <p>
-       En cualquiera  de estos dos casos, no podemos concluir  que el sistema no tiene solución, 
-       si no que debemos modificar el método para obtenerla.
-
-
-
       </p>
     </div>
 
