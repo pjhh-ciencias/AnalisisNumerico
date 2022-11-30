@@ -457,8 +457,152 @@
       <p><b>Solución:</b></p>
     </div>
 
+    
+    <h1 class="title flexbox"> Eliminación Gaussina con pivote</h1>  
+      
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Resolver el siguiente sistema de ecuaciones lineales aplicando eliminación Gaussiana hacia atras:
+        $$
+        \begin{matrix} 
+          \mu x_{1}  & + &  x_{2} & = & 1 \\
+              x_{1}  & + &  x_{2} & = & 2  \\
+       \end{matrix}
+        $$
+        
+       donde $\mu= 1\times 10^{-12}$
+      </p>
+    </div>
+  
+    
+    <h1 class="title flexbox"> Eliminación Gaussina con pivote parcial</h1>     
+
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+      <p>
+        Cuando se aplica eliminación gaussiana hacia atras, en ocasiones 
+        se obtienen resultados que no son soluciones del sistema en cuestión, esto se debe a 
+        la aritmética de precisión  finita con efectuan las operaciones las calculadoras y/o computadoras.      
+      </p>
+
+      <p>
+        Este es el caso del ejemplo anterior, ya que el elemento pivote $a_{11}$ es muy pequeño 
+        por lo que el cociente $\displaystyle{\frac{1}{a_{11}}}$ resulta ser muy grande y al utilizarlo 
+        aplicando redondeo a una cifra determinada se obtiene un error que en ocasiones afecta a la solución 
+        final 
+      </p>
+    </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Eliminación Gaussina con pivote parcial</h2>
+        <p>
+      <p>
+        Para evitar este tipo de resultados cuando se aplica el método de Gauss hacia atras se elige 
+        como pivote $a_{ii}$ al elemento que tiene máximo valor absoluto de los $a_{ji}$, $1\leq j \leq n$.  
+      </p>
+
+      <p>
+        Si este elemento resulta ser $a_{pi}$, se intercambian la fila $i$ con la fila $p$, esto es 
+        $$(E_{i}) \longrightarrow (E_{p}):$$ 
+      </p>
+
+      <p>A este método se le llama <b>eliminación Gaussiana con pivote parcial </b></p>
+    </div>
+
+ 
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Resolver el siguiente sistema de ecuaciones lineales aplicando el método de 
+        eliminación Gaussiana con pivote parcial:
+           
+        $$
+        \begin{matrix} 
+               &   & 2 x_{2}  & + & x_{3}   & + &  2 x_{4} & = & 5 \\
+        x_{1} &  &            & + & x_{3}   & + &  3 x_{4} & =  & -5 \\
+      3 x_{1} & + &  x_{2}    & - & 4 x_{3}   & + &  2 x_{4}   & =& 2 \\
+      -4x_{1} &   &           & + & x_{3}   & + &    x_{4} & =& -2 \\
+       \end{matrix}
+        $$
+       </p>
+    </div>
 
     
+    
+    <h1 class="title flexbox"> Eliminación Gaussina con pivote parcial escalonado</h1>    
+
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+      <p>
+       Cuando en un sistema de ecuaciones lineales se tienen
+      coeficientes cuyos valores absolutos son muy grandes,
+      en ocasiones el pivote parcial no es suficiente para 
+      encontrar la solución exacta del sistema ya que la aritmética
+      utilizada por las calculadoras y/p computadoras
+      producen errores que en ocasiones afectan al resultado
+      final del método. Este es el caso del ejemplo ejemplo siguientes. 
+                </p>
+   
+      <p>
+       Cuando en un sistema de ecuaciones lineales se tienen
+      coeficientes cuyos valores absolutos son muy grandes,
+      en ocasiones el pivote parcial no es suficiente para 
+      encontrar la solución exacta del sistema ya que la aritmética
+      utilizada por las calculadoras y/p computadoras
+      producen errores que en ocasiones afectan al resultado
+      final del método. Este es el caso del ejemplo  siguiente. 
+                </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Resolver el siguiente sistema de ecuaciones lineales:
+           
+        $$
+        \begin{matrix} 
+         x_{1} & + & x_{2} & =  & 2 \\
+         2x_{1} & + & 1\times 10^{10} x_{2} &  = 1\times 10^{10}\\
+       \end{matrix}
+        $$
+       </p>
+    </div>
+
+  
+
+    <div class="nota-box"> <h2 class="number-title"> Eliminación Gaussina con pivote parcial</h2>
+      <p>
+        En casos como el del ejemplo anterior se recomienda  utilizar el pivote parcial escalonado 
+        o pivoteo de escalonado de columna. 
+      </p>
+
+      <p>El primer paso del procedimiento consiste en definir para cada renglon, un factor de escala 
+        $s_{i}$ por medio de 
+        
+        $$s_{i}:= \max_{1\leq j \leq n}\{a_{i,j} \}$$
+
+        Si para algún $i$, $s_{i}=0$, el sistema no tiene solución única. Por otro lado, si $s_{i} \not= 0 $
+        para toda $1\leq i \leq n$. El intercambio adecuado de renglones para poner 
+        ceros en la primera columna se determina seleccionando el menor $p$ tal que:
+        
+        $$\frac{|a_{p_{1}}|}{s_{p}} = \max_{1 \leq k \leq n}  \frac{|a_{k_{1}}|}{s_{k}}$$
+        
+        y realizando $(E_{1}) \longrightarrow  (E_{p})$
+      </p>
+
+      <p>El cambio de escala garantiza que el mayor elemento de cada renglon tiene magnitud relativa $1$
+        antes de realizar la comparación para el intercambio de renglones. 
+      </p>
+
+      <p>De forma similar, antes de eliminar la variable $x_{i}$ se elige el menor entero $p\geq i$ tal que 
+
+        $$\frac{|a_{p_{1}}|}{s_{p}} = \max_{1 \leq k \leq n}  \frac{|a_{k_{i}}|}{s_{k}}$$
+
+        y se repite el intercambio de renglones $(E_{i}) \longrightarrow (E_{p})$.
+         </p>
+
+         <p>Si $i\not= p$, los factores de cambio $s_{i}$ se calculan sólo una vez, al inicio del procedimiento 
+          y también deben intercambiarse al realizar los cambios de renglon. 
+         </p>
+
+    </div>
 
 
 
