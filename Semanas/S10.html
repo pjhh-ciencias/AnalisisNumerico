@@ -132,7 +132,7 @@
     <div class="nota-box"> <h2 class="number-title"> Eliminación Gaussina con pivoteo parcial escalonado</h2>
       <p>
         En casos como el del ejemplo anterior se recomienda  utilizar el <b>pivoteo parcial escalonado</b> 
-        o <b>pivoteo de escalado  de columna</b>. 
+        o <b>pivoteo de escalonado  de columna</b>. 
       </p>
 
       <p>El primer paso del procedimiento consiste en definir para cada renglon, un <b>factor de escala</b> 
@@ -193,19 +193,33 @@
     </div>
 
  
+    <h1 class="title flexbox"> Eliminación Gaussina con pivoteo parcial escalonado completo</h1>    
+
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+      <p>
+        En el método de eliminación Gaussina con pivoteo parcial escalonado. Si los factores escalares 
+        $s_{1}, s_{2}, \ldots, s_{n}$ se determinan cada vez que se tienen 
+        una decision de intercambio de renglones se incrementa el tiempo de computo, esta técnica 
+        se llama <b>pivoteo parcial escalonado completo</b> 
+      </p>
+
+    </div>
+
     <h1 class="title flexbox"> Eliminación Gaussina con pivoteo parcial completo</h1>    
 
 
     
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
       <p>
-        Si los factores escalares $s_{1}, s_{2}, \ldots, s_{n}$ se determinan cada vez que se tienen 
-        una decision de intercambio de renglones se incrementa el tiempo de computo, esta técnica 
-        se llama <b>pivote parcial escalado completo</b> 
-      </p>
 
       <p>
-        Si un sistema requiere de este tipo de pivoteo se recomiendo mejor aplicar <b>eliminación Gaussiana con pivoteo completo</b>
+        Si un sistema de ecuaciones lineales requiere de un pivoteo parcial escalonado completo
+        se recomiendo mejor aplicar <b>eliminación Gaussiana con pivoteo completo</b>:
+      </p>
+      <p>El cual consiste en elegir el pivote $a_{kk}$ como el elemento de mayor magnitud de los valores 
+        $a_{ij}$ para $1\leq i,j \leq n$. Una vez localizado este elemento se realizan los cambio de renglones y columnas 
       </p>
     </div>
     </body>
