@@ -502,12 +502,14 @@
       <div class="nota-box"> <h2 class="number-title"> Eliminación Gaussina con pivoteo parcial</h2>
         <p>
       <p>
-        Para evitar este tipo de resultados cuando se aplica el método de Gauss hacia atras se elige 
-        como pivote $a_{ii}$ al elemento $a_{ji}$, $1\leq j \leq n$ que tiene máximo valor absoluto. 
+        Para evitar este tipo de resultados cuando se aplica el método de Gauss hacia atras 
+        para cada $i=1,2,\ldots, n$ se elige como pivote $a_{ii}$ al elemento 
+        $a_{pi}$ con $i\leq p\leq n$  tal que
+        $$|a_{pi}|= \max_{i \leq j \leq n } |a_{ji}|$$
       </p>
 
       <p>
-        Si este elemento resulta ser $a_{pi}$, se intercambian la fila $i$ con la fila $p$, esto es se realiza la operación:
+        Si $p\not= i$, entonces  se intercambian la fila $i$ con la fila $p$, esto es se realiza la operación:
         $$(E_{i}) \longleftrightarrow (E_{p})$$ 
       </p>
 
