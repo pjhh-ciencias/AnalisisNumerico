@@ -135,6 +135,8 @@
         o <b>pivoteo de escalonado  de columna</b>. 
       </p>
 
+      <ul>
+      <li>
       <p>El primer paso del procedimiento consiste en definir para cada renglon, un <b>factor de escala</b> 
         $s_{i}$ como:
         
@@ -142,11 +144,12 @@
 
         Si para algún $i$, $s_{i}=0$, el sistema no tiene solución única.
       </p>
-
+      </li>
+      <li>
       <p>
         Por otro lado, si $s_{i} \not= 0 $ para toda $1\leq i \leq n$. El intercambio adecuado de 
         renglones para poner ceros en la primera columna se determina seleccionando
-        el menor número entero $1\leq p \leq n$ tal que:
+        el <b>menor número entero</b> $1\leq p \leq n$ tal que:
         
         $$\frac{|a_{p_{1}}|}{s_{p}} = \max_{1 \leq k \leq n}  \frac{|a_{k_{1}}|}{s_{k}}$$
         
@@ -154,11 +157,15 @@
         y el intercambio de los correspondientes factores de escala: $s_{1} \longleftrightarrow  s_{p}$.
 
       </p>
+    </li>
+    </li>
 
-      <p>El cambio de escala garantiza que el mayor elemento de cada renglon tiene magnitud relativa $1$
+      <p><b>El cambio de escala garantiza que el mayor elemento de cada renglon tiene magnitud relativa $1$
         antes de realizar la comparación para el intercambio de renglones. 
+      </b>
       </p>
 
+      <li>
       <p>De forma similar, para $i\geq 2$ antes de eliminar los coeficientes de la variable $x_{i}$ 
         en las ecuaciones que se encuentran debajo del renglon $i$,   se elige el menor entero $i \leq p \leq n$ tal que 
 
@@ -172,6 +179,8 @@
          <p><b>Observación:</b> Los factores de escala $s_{i}$ se calculan sólo una vez, al inicio del procedimiento 
           y también <b>deben intercambiarse al realizar los cambios de renglon</b>. 
          </p>
+        </li>
+        </ul>
     </div>
 
     <!--
@@ -234,10 +243,25 @@
         se recomiendo mejor aplicar <b>eliminación Gaussiana con pivoteo completo</b>:
       </p>
       <p>El cual consiste en elegir  para cada $k \in \{1,\ldots, n \}$ el pivote $a_{kk}$ como el elemento de mayor magnitud
-        de entre los valores  $a_{ij}$ para $k\leq i,j \leq n$. Una vez localizado este elemento se realizan los cambio de renglones y columnas 
+        de entre los valores  $|a_{ij}|$ para $k\leq i,j \leq n$. Una vez localizado este elemento se realizan los cambio de renglones y columnas 
         para poner el elemento el elemento en la posición pivote. 
       </p>
     </div>
 
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Resolver el siguiente sistema de ecuaciones lineales aplicando el método de 
+        eliminación Gaussiana con pivoteo completo:
+           
+        $$
+        \begin{matrix} 
+         2x_{1}   &  - & 3x_{2}  & + & 2x_{3}  & = & 5 \\
+        -4x_{1}   &  + & 2x_{2}  & - & 6x_{3}  & = & -14 \\
+         2x_{1}   &  + &  2x_{2} & + & 4 x_{3} & = & 8 \\
+       \end{matrix}
+        $$
+       </p>
+       <p><b>Solución:</b></p>
+    </div>
 
     </body>
