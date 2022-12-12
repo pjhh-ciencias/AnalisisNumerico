@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 10 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 10 cardCounter ;
+        }
+    </style>
+  
+    <!-- Top Menu  -->
+
+
+    <header class="main-header">
+        <h1> Análisis Númerico  </h1>
+       <nav class="top-nav">
+        <ul>
+          <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Home.html"> Inicio  </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Informacion_General.html"> Información general </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Notas.html"> Notas </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Ejercicios.html"> Ejercicios </a> </li>
+        <li> <a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Enlaces_externos.html"> Links </a> </li>
+        </ul>
+
+       </nav>
+       <!-- 
+        <nav class="small-nav" align=right>
+          <button onclick="myFunction()">Claro/Obscuro 
+        </nav> 
+      -->
+
+      </header>
+
+      <!-- This part is for title in tab-->
+      <title> Semana 11   </title>
+    
+  </head>
+  <body class="fondo-body" >
+    
+    <h1 class="number-title flexbox"> Semana 11</h1>   
+    <h1 class="title flexbox"></h1>   
+
+
+    
+    <h1 class="title flexbox">Método de Doolittle y método de Crout </h1>    
+
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+      <p>
+      El primer paso en el proceso de eliminación Gaussiana consiste 
+      en realizar, para cada $j=1, \ldots ,n$ las operaciones:
+      $$ (E_{j} + m_{j1} E_{1}) \longrightarrow E_{j}$$
+      donde $$m_{j1}:= \frac{-a^{(1)}_{j1}}{a^{(1)}_{11}}$$
+      Estas  operaciones transforman el sistema en uno en que 
+      todas las entradas en la primera  columna por debajo de la diagonal 
+      son cero. 
+      </p>
+
+      <p>Alternativamente, el efecto de realizar estas operaciones 
+        se logra simultaneamente al multiplicar (por la derecha) la 
+        matriz original $A^{(1)}:= A$ por la matriz $M^{(1)}$:
+        $$M^{(1)}:= \left(M^{(1)}_{i,j}\right)=
+        \begin{pmatrix} 
+        1      &  0     &   0     & \cdots & 0       \\
+        m_{21} & 1 &   0     & \cdots & 0  \\
+        m_{31} & 0 &   1     & \cdots & 0  \\
+        \vdots & \vdots & \vdots &\ddots & \vdots  \\
+        m_{n1} & 0 & 0 &\cdots & 1  \\
+        \end{pmatrix}
+        $$
+        donde $$m_{j1}:= \frac{-a^{(1)}_{j1}}{a^{(1)}_{11}}, \text{ para cada } j=2,3,\ldots,n$$
+      </p>
+
+      <p>Esto es, realizar cada una de las operaciones se logra realizando la siguiente multiplicación de matrices:
+         $ M^{(1)}A^{(1)}$. A la matriz $M^{(1)}$ se le llama <b>primera matriz de transformación Gaussiana</b>.
+      </p>
+
+      <p>En efecto, 
+        \begin{align*} 
+        A^{(2)}:= M^{(1)} A^{(1)} &= \begin{pmatrix} 
+        1      &  0     & 0  & \cdots & 0       \\
+        m_{21} & 1 & 0  & \cdots & 0  \\
+        m_{31} & 0 &  1  & \cdots & 0  \\
+        \vdots & \vdots & \vdots &  \ddots & \vdots  \\
+        m_{n1} & 0 & 0 & \cdots & 1  \\
+       \end{pmatrix} \begin{pmatrix} 
+       a_{11}^{(1)} & a_{12}^{(1)} & a_{13}^{(1)} & \cdots & a_{1n}^{(1)}  \\
+       a_{21}^{(1)} & a_{22}^{(1)} & a_{23}^{(1)} & \cdots & a_{2n}^{(1)}  \\
+       a_{31}^{(1)} & a_{32}^{(1)} & a_{33}^{(1)} &\cdots & a_{3n}^{(1)}  \\
+       \vdots & \vdots & \vdots &  \ddots & \vdots  \\
+       a_{n1}^{(1)} & a_{n2}^{(1)} & a_{n3}^{(1)} & \cdots & a_{nn}^{(1)}  \\
+      \end{pmatrix}\\
+      &\\
+      &=  \begin{pmatrix} 
+      a_{11}^{(1)} & a_{12}^{(1)} & a_{13}^{(1)} & \cdots & a_{1n}^{(1)}  \\
+      m_{21}a_{11}^{(1)} + a_{21}^{(1)} & a_{22}^{(1)} & a_{23}^{(1)} & \cdots & a_{2n}^{(1)}  \\
+      m_{31}a_{11}^{(1)}  + a_{31}^{(1)} & a_{32}^{(1)} & a_{33}^{(1)} &\cdots & a_{3n}^{(1)}  \\
+      \vdots & \vdots & \vdots &  \ddots & \vdots  \\
+      m_{n1}a_{11}^{(1)} + a_{n1}^{(1)} & a_{n2}^{(1)} &  a_{n3}^{(1)} & \cdots & a_{nn}^{(1)} 
+      
+     \end{pmatrix}\\
+     &\\
+     &=  \begin{pmatrix} 
+     a_{11}^{(1)} & a_{12}^{(1)} & a_{13}^{(1)} & \cdots & a_{1n}^{(1)}  \\
+     0 & a_{22}^{(1)} & a_{23}^{(1)} & \cdots & a_{2n}^{(1)}  \\
+     0 & a_{32}^{(1)} & a_{33}^{(1)} &\cdots & a_{3n}^{(1)}  \\
+     \vdots & \vdots & \vdots &  \ddots & \vdots  \\
+    0 & a_{n2}^{(1)} &  a_{n3}^{(1)} & \cdots & a_{nn}^{(1)} 
+     
+    \end{pmatrix}
+      \end{align*}
+      </p>
+
+      <p>Denotamos la matriz resultante por: $A^{(2)}$ y el vector resultante del producto de $M^{(1)}$ con 
+        $\vec{b}^{(1)}:=\vec{b}$ por $\vec{b}^{(2)}$. Esto es, 
+        
+        $$A^{(2)}\vec{x}= \left(M^{(1)} A^{(1)}\right) \vec{x}= M^{(1)} \left( A^{(1)} \vec{x}\right)= M^{(1)}  \vec{b}= \vec{b}^{(2)} $$
+
+
+        Obteniendo de esta manera el sistema $A^{(2)}\vec{x}= \vec{b}^{(2)}$.
+      
+      </p>
+
+      <p>De manera similar,  construimos la matriz $M^{(2)}$:
+        $$M^{(2)}:= \left(M^{(1)}_{i,j}\right)= \begin{pmatrix} 
+        1      &  0     &   0     & 0     &\cdots & 0       \\
+        0 & 1 &   0     & 0     & \cdots & 0  \\
+        0 & m_{32} &   1     & 0     & \cdots & 0  \\
+        0 & m_{42} &   0    & 1     &\cdots & 0  \\
+        \vdots & \vdots & \vdots & \vdots &\ddots & \vdots  \\
+        0 & m_{n2} & 0 & 0 & \cdots & 1  \\
+       \end{pmatrix}$$
+       donde $$m_{j2}:= \frac{-a^{(2)}_{j2}}{a^{(2)}_{22}}, \text{ para cada } j=3,4\ldots,n$$
+       Esta es la <b>segunda matriz de transformación gaussiana</b>. 
+      </p>
+
+      <p>Observemos que el producto de $A^{(2)}$ con la matriz $M^{(2)}$  tiene ceros 
+        por debajo de la diagonal en  las primeras dos columnas: En efecto, 
+        \begin{align*} 
+        A^{(3)}:= M^{(2)} A^{(2)} &= \begin{pmatrix} 
+        1      &  0     &   0     & 0     &\cdots & 0       \\
+        0 & 1 &   0     & 0     & \cdots & 0  \\
+        0 & m_{32} &   1     & 0     & \cdots & 0  \\
+        0 & m_{42} &   0    & 1     &\cdots & 0  \\
+        \vdots & \vdots & \vdots & \vdots &\ddots & \vdots  \\
+        0 & m_{n2} & 0 & 0 & \cdots & 1  \\
+       \end{pmatrix} \begin{pmatrix} 
+       a_{11}^{(2)} & a_{12}^{(2)} & a_{13}^{(2)} & \cdots & a_{1n}^{(2)}  \\
+       0 & a_{22}^{(2)} & a_{23}^{(2)} & \cdots & a_{2n}^{(2)}  \\
+       0 & a_{32}^{(2)} & a_{33}^{(2)} &\cdots & a_{3n}^{(2)}  \\
+       \vdots & \vdots & \vdots &  \ddots & \vdots  \\
+       0 & a_{n2}^{(2)} & a_{n2}^{(1)} & \cdots & a_{nn}^{(2)}  \\
+      \end{pmatrix}\\
+      &\\
+      &=  \begin{pmatrix} 
+      a_{11}^{(2)} & a_{12}^{(2)} & a_{13}^{(2)} & \cdots & a_{1n}^{(2)}  \\
+      0 & a_{22}^{(2)} & a_{23}^{(2)} & \cdots & a_{2n}^{(2)}  \\
+      0& m_{32}a_{22}^{(2)}  + a_{32}^{(2)}  & a_{33}^{(2)} &\cdots & a_{3n}^{(2)}  \\
+      \vdots & \vdots & \vdots &  \ddots & \vdots  \\
+      0 & m_{n3}a_{22}^{(2)} + a_{n2}^{(2)}&  a_{n3}^{(2)} & \cdots & a_{nn}^{(2)} 
+      
+     \end{pmatrix}\\
+     &\\
+     &=  \begin{pmatrix} 
+     a_{11}^{(2)} & a_{12}^{(2)} & a_{13}^{(2)} & \cdots & a_{1n}^{(2)}  \\
+     0 & a_{22}^{(2)} & a_{23}^{(2)} & \cdots & a_{2n}^{(2)}  \\
+     0 & 0 & a_{33}^{(2)} &\cdots & a_{3n}^{(2)}  \\
+     \vdots & \vdots & \vdots &  \ddots & \vdots  \\
+     0 & 0 &  a_{n3}^{(2)} & \cdots & a_{nn}^{(2)} 
+     
+    \end{pmatrix}
+      \end{align*}
+
+      </p>
+
+
+      <p>Denotamos por $A^{(3)}$ el producto  $M^{(2)} A^{(2)}$ y por $\vec{b}^{(3)}$ el producto  
+        $M^{(2)} \vec{b}^{(2)}$, de esta manera, se tiene que:
+        \begin{align*}
+        A^{(3)} \vec{x}  &= \left(M^{(2)} A^{(2)}\right) \vec{x}\\
+        &=  \left(M^{(2)}\left[M^{(1)}A^{(1)}\right] \right) \vec{x} \\
+        &=  \left(M^{(2)}M^{(1)} \right)\left[ A^{(1)}\vec{x}\right] \\
+        &=  \left(M^{(2)}M^{(1)} \right)\vec{b}^{(1)} \\
+        &=  M^{(2)} \left(M^{(1)}\vec{b}^{(1)} \right)\\
+        &=  M^{(2)} \vec{b}^{(2)} \\
+        &=  \vec{b}^{(3)} \\
+       \end{align*} </p>
+
+       <p>Obteniendo el sistema: $ A^{(3)} \vec{x}= \vec{b}^{(3)} $.</p>
+
+
+       <p> En general, para $k \in \{1,\ldots, n-1 \}$ con el sistema $ A^{(k)} \vec{x}= \vec{b}^{(k)}$ ya formado, 
+        multiplicamos por la <b>$k$-ésima matriz de transformación gaussiana</b>:
+      $$M^{(k)}= \left(M_{ij}^{(k)} \right):= \begin{cases}
+      1, & \text{ si } i=j \\
+      m_{jk}:= \displaystyle{\frac{-a_{jk}^{(k)}}{a_{kk}^{(k)}}}, & \text{para  } j=k+1,k+2, \ldots ,n \\
+      0, & \text{ d.o.f. } 
+    \end{cases} $$
+      </p>
+
+      <p>Para obtener 
+        \begin{align*}
+        A^{(k+1)} \vec{x} &= \left( M^{(k)} A^{k} \right) \vec{x} \\
+        &= \left( M^{(k)} \left[M^{(k-1)} A^{k-1}  \right] \right) \vec{x}\\
+        &= \left( M^{(k)} \left[M^{(k-1)} \left\{M^{(k-1} A^{k-2}  \right\} \right] \right) \vec{x}\\
+        &\hspace{0.35cm}\vdots\\
+        &=  M^{(k)} M^{(k-1)} \cdots  M^{(4)}  M^{(3)}M^{(2)} M^{(1)} A \vec{x}\\
+        &=  M^{(k)} M^{(k-1)} \cdots M^{(4)}  M^{(3)}M^{(2)}  M^{(1)} \left( A \vec{x}\right)\\
+        &=  M^{(k)} M^{(k-1)} \cdots  M^{(4)}  M^{(3)}M^{(2)}  \left( M^{(1)} \vec{b}^{(1)}\right)\\
+        &=  M^{(k)} M^{(k-1)} \cdots  M^{(4)}  M^{(3)}  M^{(2)}   \vec{b}^{(2)} \\
+        &=  M^{(k)} M^{(k-1)} \cdots  M^{(4)}  M^{(3)} \left( M^{(2)}   \vec{b}^{(2)} \right)\\
+        &=  M^{(k)} M^{(k-1)} \cdots  M^{(4)}  M^{(3)}   \vec{b}^{(3)} \\
+        &\hspace{0.35cm}\vdots\\
+        &=  M^{(k)}  \vec{b}^{k}\\
+        
+
+
+        
+        \end{align*}
+      </p>
+    
+   
+     
+    </div>
+
+   
+
+    </body>
