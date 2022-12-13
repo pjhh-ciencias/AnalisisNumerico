@@ -151,7 +151,7 @@
      \end{pmatrix}\\
      &\\
      &=  \begin{pmatrix} 
-     a_{11}^{(2)} & a_{12}^{(2)} & a_{13}^{(2)} & \cdots & a_{1n}^{(2)}  \\
+     a_{11}^{(1)} & a_{12}^{(1)} & a_{13}^{(1)} & \cdots & a_{1n}^{(1)}  \\
      0 & a_{22}^{(2)} & a_{23}^{(2)} & \cdots & a_{2n}^{(2)}  \\
      0 & a_{32}^{(2)} & a_{33}^{(2)} &\cdots & a_{3n}^{(2)}  \\
      \vdots & \vdots & \vdots &  \ddots & \vdots  \\
@@ -212,8 +212,8 @@
      \end{pmatrix}\\
      &\\
      &=  \begin{pmatrix} 
-     a_{11}^{(3)} & a_{12}^{(3)} & a_{13}^{(3)} & \cdots & a_{1n}^{(3)}  \\
-     0 & a_{22}^{(3)} & a_{23}^{(3)} & \cdots & a_{2n}^{(3)}  \\
+     a_{11}^{(2)} & a_{12}^{(2)} & a_{13}^{(2)} & \cdots & a_{1n}^{(2)}  \\
+     0 & a_{22}^{(2)} & a_{23}^{(2)} & \cdots & a_{2n}^{(2)}  \\
      0 & 0 & a_{33}^{(3)} &\cdots & a_{3n}^{(3)}  \\
      \vdots & \vdots & \vdots &  \ddots & \vdots  \\
      0 & 0 &  a_{n3}^{(3)} & \cdots & a_{nn}^{(3)} 
@@ -242,8 +242,9 @@
        <p> En general, para $k \in \{1,\ldots, n-1 \}$ con el sistema $ A^{(k)} \vec{x}= \vec{b}^{(k)}$ ya formado, 
         multiplicamos por la <b>$k$-ésima matriz de transformación gaussiana</b>:
       \begin{align*} 
-      M^{(k)} &=  \left(M_{ij}^{(k)} \right)
-       := \begin{pmatrix} 
+      M^{(k)} &=  \left(M_{ij}^{(k)} \right)\\
+      &\\
+      &:= \begin{pmatrix} 
       1 & 0 & 0 &  \cdots  \cdots \cdots &&0 & & \cdots  \cdots \cdots & 0    \\
       0 & 1 & 0 &  \cdots \cdots \cdots &  &0 & &\cdots  \cdots \cdots & 0\\
       0 & 0 & 1 &  \cdots \cdots \cdots &  &0 &  &\cdots  \cdots \cdots & 0\\
@@ -255,16 +256,13 @@
       0 &       0      &   0 & \cdots\cdots \cdots && m_{nk}&   & \cdots \cdots \cdots & 1 \\
       
      \end{pmatrix}\\
-     \end{align*}
-
-     Esto es, 
-     
-     $$ M^{(k)} =  \left(M_{ij}^{(k)} \right):=\begin{cases}
+     &\\
+     &=\begin{cases}
       1, & \text{ si } i=j \\
       m_{jk}:= \displaystyle{\frac{-a_{jk}^{(k)}}{a_{kk}^{(k)}}}, & \text{para  } j=k+1,k+2, \ldots ,n \\
       0, & \text{ d.o.f. } 
     \end{cases} 
-    $$
+    \end{align*}
     
   
   </p>
@@ -282,18 +280,11 @@
         &=  M^{(k)} M^{(k-1)} \cdots  M^{(4)}  M^{(3)} \left( M^{(2)}   \vec{b}^{(2)} \right)\\
         &=  M^{(k)} M^{(k-1)} \cdots  M^{(4)}  M^{(3)}   \vec{b}^{(3)} \\
         &\hspace{0.35cm}\vdots\\
-        &=  M^{(k)}  \vec{b}^{k}\\
-        
-
-
-        
+        &=  M^{(k)}  \vec{b}^{k}
         \end{align*}
       </p>
 
       
-    
-   
-     
     </div>
 
    

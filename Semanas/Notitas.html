@@ -99,8 +99,92 @@
     
     
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
-      <p>
+      <p>El proceso termina con la formación del sistema: $A^{(n)} \vec{x} = \vec{b}^{(n)}$ donde la matriz 
+        $A^{(n)}$ resultante es la siguiente  matriz triangular superior:
+        \begin{align*} 
+        A^{(n)} &= M^{(n-1)} M^{(n-2)}  \cdots M^{(2)} M^{(1)} A \\ 
+        &= \begin{pmatrix} 
+        a_{11}^{(1)} & a_{12}^{(1)} & a_{13}^{(1)} & a_{14}^{(1)} & \cdots & a_{1n}^{(1)}  \\
+        0 & a_{22}^{(2)} & a_{23}^{(2)}     &  a_{24}^{(2)} &\cdots & a_{2n}^{(2)}  \\
+        0 &     0        & a_{33}^{(3)}     &  a_{34}^{(3)} &\cdots & a_{3n}^{(3)}  \\
+        0 &     0        & 0     &  a_{44}^{(4)} &\cdots & a_{4n}^{(4)}  \\
+        \vdots & \vdots &  \vdots & \vdots & \ddots & \vdots  \\
+        0 &     0      &   0      &    0   & \cdots & a_{nn}^{(n)}  \\
+       \end{pmatrix}
+       \end{align*}
+      </p>
 
+     
+   
+      <p><b>Mediante esteprocedimiento se construye la matriz triangular superior </b> $\mathrm{U}:=A^{(n)}$ en la factorización $\mathrm{LU}$
+        de la matriz $A$.
+      </p>
+
+      <p><b>Para determinar la matriz complementaria triangular inferior $\mathrm{L}$ en la factorización  $\mathrm{LU}$</b>, recordemos el efecto 
+        que tiene multiplicar $A^{(k)}$ y $\vec{b}^{(k)}$ por la $k$-ésima  transformación Gaussiana $M^{(k)}$
+        utilizada para obtener el sistema de ecuaciones: $A^{(k+1)} \vec{x} = b^{(k+1)},$
+        mediante $$A^{(k+1)} \vec{x}= M^{(k)} A^{(k)}  \vec{x} = M^{(k)}   \vec{b}^{(k)} = \vec{b}^{(k+1)} $$ donde 
+        multiplicar por la matriz $M^{(k)}$ tiene como efecto realizar las  siguientes operaciones de filas:
+       
+        $$ (E_{j} + m_{jk} E_{k}) \longrightarrow E_{j}, \text{  para cada } j=k+1, \ldots ,n$$
+        donde $$m_{jk}:= \frac{-a^{(k)}_{jk}}{a^{(k)}_{11}}$$
+ 
+      </p>
+
+      <p>
+       <b>Invertir los efectos de estas transformaciones y regresar de $A^{(k+1)}$   a $A^{(k)}$  requiere realizar 
+        las siguientes operaciones</b>:
+        $$(E_{j} - m_{jk} E_{k}) \longrightarrow E_{j}, \text{  para cada } j=k+1, \ldots ,n$$
+        lo cual equivale a multiplicar la matriz $A^{(k+1)}$ por la inversa de la matriz $M^{(k)}$, i.e. por la matriz 
+
+        \begin{align*} 
+      L^{(k)} &:=  \left(M_{ij}^{(k)} \right)^{-1}\\
+      &\\
+       &= \begin{pmatrix} 
+      1 & 0 & 0 &  \cdots  \cdots \cdots &&0 & & \cdots  \cdots \cdots & 0    \\
+      0 & 1 & 0 &  \cdots \cdots \cdots &  &0 & &\cdots  \cdots \cdots & 0\\
+      0 & 0 & 1 &  \cdots \cdots \cdots &  &0 &  &\cdots  \cdots \cdots & 0\\
+      0 & 0 & 0 &  \ddots  && 0 & & \cdots   \cdots \cdots& 0 \\
+      \vdots &  \vdots & \vdots & \vdots& &\vdots & & \vdots& \vdots  \\
+      0 & 0 & 0  & \cdots \cdots \cdots & & 1 & &\cdots \cdots \cdots  & 0\\
+      0 & 0 & 0  & \cdots \cdots \cdots && -m_{(k+1)k} & &\cdots \cdots \cdots  & 0\\
+      \vdots &   \vdots & \vdots & \vdots& & \vdots  & & \ddots & \vdots\\
+      0 &       0      &   0 & \cdots\cdots \cdots && -m_{nk}&   & \cdots \cdots \cdots & 1 \\
+      
+     \end{pmatrix}\\
+     &\\
+    &=\begin{cases}
+      1, & \text{ si } i=j \\
+      -m_{jk}:= \displaystyle{-\left(\frac{-a_{jk}^{(k)}}{a_{kk}^{(k)}}\right)= \frac{a_{jk}^{(k)}}{a_{kk}^{(k)}}}, & \text{para  } j=k+1,k+2, \ldots ,n \\
+      0, & \text{ d.o.f. } 
+    \end{cases} 
+    \end{align*}
+      </p>
+
+      <p>Bajo esta idea, revirtiendo el efecto de cada una de las matrices $M^{(k)}$  la matriz que se obtiene 
+        como resultado de realizar el producto de las matrices 
+        $L^{(k)}$, para cada $k=1,2,\ldots, n-1$, es una matriz triangular inferior de la forma:
+
+        \begin{align*} 
+        L&= L^{(1)} \cdot L^{(2)}  \cdots L^{(n-1)}\\
+         &= \begin{pmatrix} 
+        1 & 0 & 0 &  \cdots\cdots &  0 & 0  \\
+        -m_{21} & 1 & 0  &\cdots\cdots & 0 &0  \\
+        -m_{31} & -m_{32} & 1  &\cdots\cdots & 0 & 0   \\
+        -m_{41} & -m_{42} & -m_{43} &\ddots & 0 & 0  \\
+        \vdots & \vdots &  \vdots & \vdots & \ddots & \vdots  \\
+        -m_{n1} & -m_{n2} & -m_{n3} &  \cdots \cdots & -m_{n(n-1)}& 1  \\
+       \end{pmatrix} 
+       \end{align*}
+       
+       Más aún,  $L$ es la matriz triangular inferior  en la factorización $LU$ de $A$.
+
+      </p>
+
+      <p>En efecto, para $U$ y $L$ definidas como antes, se sigue que:
+       \begin{align*} 
+        LU & = \left(L^{(1)} \cdot L^{(2)}  \cdots L^{(n-1)}\right)
+       \end{align*}  
       </p>
     </div>
 
