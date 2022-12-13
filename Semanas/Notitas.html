@@ -233,7 +233,48 @@
       </p>
     </div>
 
-    <h1 class="number-title flexbox"> Factorización $\mathrm{LD}\mathrm{L}^{t}$ </h1>      
+    <h1 class="title flexbox"> Factorización $\mathrm{LD}\mathrm{L}^{t}$ </h1>      
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Factorización $\mathrm{LD}\mathrm{L}^{t}$</h2>
+      <p>Sea  $A \in \mathbb{M}_{n\times n} (\mathbb{R})$. Si $A$ es una matriz
+        definida positiva, entonces $A$ tiene una factorización de la forma
+      
+        $$A=\mathrm{LU}$$
+      
+        donde $\mathrm{L}$ es una matriz triangular inferior y $\mathrm{U}$ es una matriz triangular superior. 
+        Sin embargo,  Como $A$ es simétrica, 
+      
+        $$A=A^{t}$$  
+      
+        Luego, de las propiedades del producto de matrices se deduce que:
+      
+        $$\mathrm{LU} = \left( \mathrm{LU} \right)^{t} = \mathrm{U}^{t} \mathrm{L}^{t}$$
+      
+        Al aplicar el método de Doolittle se asegura que existe $\mathrm{L}^{-1}$  por lo que la expresion anterior 
+        toma la forma:
+
+        $$\mathrm{U}= \mathrm{L}^{-1}\mathrm{U}^{t} \mathrm{L}^{t}$$
+
+        o bien que: 
+        
+        $$\mathrm{U} \left( \mathrm{L}^{t} \right)^{-1} = \mathrm{L}^{-1}\mathrm{U}^{t}$$
+
+        Observemos que la matriz $\mathrm{U} \left( \mathrm{L}^{t} \right)^{-1}$ es una matriz triangular superior 
+        mientras que   la matriz $\mathrm{L}^{-1}\mathrm{U}^{t}$ es una matriz triangular inferior, por lo tanto ambas 
+        matrices son diagonales. Definiendo 
+
+        $$\mathrm{D}= \mathrm{L}^{-1}\mathrm{U}^{t}$$
+
+        entonces 
+        
+        $$\mathrm{U} =  \mathrm{D}\mathrm{L}^{t}$$
+
+        Al sustituir en  $A=\mathrm{LU}$ se obtiene:
+
+        $$A=\mathrm{LD}\mathrm{L}^{t}$$
+
+       </p>
     
 
 </body>
