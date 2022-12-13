@@ -195,7 +195,7 @@
         \vdots & \vdots & \vdots & \vdots &\ddots & \vdots  \\
         0 & m_{n2} & 0 & 0 & \cdots & 1  \\
        \end{pmatrix} \begin{pmatrix} 
-       a_{11}^{(2)} & a_{12}^{(2)} & a_{13}^{(2)} & \cdots & a_{1n}^{(2)}  \\
+       a_{11}^{(1)} & a_{12}^{(1)} & a_{13}^{(1)} & \cdots & a_{1n}^{(1)}  \\
        0 & a_{22}^{(2)} & a_{23}^{(2)} & \cdots & a_{2n}^{(2)}  \\
        0 & a_{32}^{(2)} & a_{33}^{(2)} &\cdots & a_{3n}^{(2)}  \\
        \vdots & \vdots & \vdots &  \ddots & \vdots  \\
@@ -203,7 +203,7 @@
       \end{pmatrix}\\
       &\\
       &=  \begin{pmatrix} 
-      a_{11}^{(2)} & a_{12}^{(2)} & a_{13}^{(2)} & \cdots & a_{1n}^{(2)}  \\
+      a_{11}^{(1)} & a_{12}^{(1)} & a_{13}^{(1)} & \cdots & a_{1n}^{(1)}  \\
       0 & a_{22}^{(2)} & a_{23}^{(2)} & \cdots & a_{2n}^{(2)}  \\
       0& m_{32}a_{22}^{(2)}  + a_{32}^{(2)}  & a_{33}^{(3)} &\cdots & a_{3n}^{(3)}  \\
       \vdots & \vdots & \vdots &  \ddots & \vdots  \\
@@ -212,7 +212,7 @@
      \end{pmatrix}\\
      &\\
      &=  \begin{pmatrix} 
-     a_{11}^{(2)} & a_{12}^{(2)} & a_{13}^{(2)} & \cdots & a_{1n}^{(2)}  \\
+     a_{11}^{(1)} & a_{12}^{(1)} & a_{13}^{(1)} & \cdots & a_{1n}^{(1)}  \\
      0 & a_{22}^{(2)} & a_{23}^{(2)} & \cdots & a_{2n}^{(2)}  \\
      0 & 0 & a_{33}^{(3)} &\cdots & a_{3n}^{(3)}  \\
      \vdots & \vdots & \vdots &  \ddots & \vdots  \\
@@ -285,11 +285,6 @@
       </p>
 
       
-    </div>
-
-
-    
-    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
       <p>El proceso termina con la formación del sistema: $A^{(n)} \vec{x} = \vec{b}^{(n)}$ donde la matriz 
         $A^{(n)}$ resultante es la siguiente  matriz triangular superior:
         \begin{align*} 
