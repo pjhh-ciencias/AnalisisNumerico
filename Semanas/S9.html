@@ -269,17 +269,17 @@
        donde $a_{i(n+1)}= b_{i}$ para cada $i=1,\ldots,n$.
       </p>
 
-      <p>Si $a_{11}\not =0$, para cada $j=2,3,4,\ldots, n$ realizamos las siguientes operaciones entre ecuaciones:
+      <p>Si $a_{11}\not =0$, para cada $i=2,3,4,\ldots, n$ realizamos las siguientes operaciones entre ecuaciones:
       
-        $$\left(E_{j} - \displaystyle{\left(\frac{a_{j1}}{a_{11}}\right)E_{1}}\right) \longrightarrow (E_{j})$$
+        $$\left(E_{i} - \displaystyle{\left(\frac{a_{i1}}{a_{11}}\right)E_{1}}\right) \longrightarrow (E_{i})$$
       
-        observemos que estas operaciones tienen como efecto convertir en cero  el coeficiente de $x_{1}$ en cada uno de las
-        ecuaciones  $E_{j}$ para $j=2,3,\ldots,n$ 
+        observemos que estas operaciones tienen como efecto convertir en cero  el coeficiente de $x_{1}$ en cada una de las
+        ecuaciones  $E_{i}$ para $i=2,3,\ldots,n$ 
         
       </p>
 
       <p>
-        En general, los coeficientes en las ecuaciones $E_{j}$ para $j=2,3,\ldots,n$  cambian, por lo que 
+        En general, los coeficientes en las ecuaciones $E_{i}$ para $i=2,3,\ldots,n$  cambian, por lo que 
         denotamos a la matriz  aumentada del sistema resultante como:
 
        
@@ -290,13 +290,13 @@
         0 & a_{n2}^{(2)} & \cdots & a_{nn}^{(2)} & \vdots & a_{n(n+1)}^{(2)} \\
        \end{pmatrix}$$
 
-       Luego, si $a_{22}\not= 0 $ para cada $j=3,4\ldots,n $ realizamos  las siguientes 
+       Luego, si $a_{22}^{(2)}\not= 0 $ para cada $i=3,4\ldots,n $ realizamos  las siguientes 
        operaciones entre ecuaciones:
 
-        $$\left(E_{j} - \displaystyle{\left(\frac{a_{j2}}{a_{22}}\right)E_{2}}\right) \longrightarrow (E_{j})$$
+        $$\left(E_{i} - \displaystyle{\left(\frac{a_{i2}^{(2)}}{a_{22}^{(2)}}\right)E_{2}}\right) \longrightarrow (E_{i}).$$
 
-        similarmente, observemos  el efecto de realizar estas operaciones: hacer cero el coeficiente de $x_{2}$ 
-        en cada uno de las ecuaciones  $E_{j}$ para $j=3,\ldots,n$, obteniendo 
+        Similarmente, observemos  el efecto de realizar estas operaciones: hacer cero el coeficiente de $x_{2}$ 
+        en cada uno de las ecuaciones  $E_{i}$ para $i=3,\ldots,n$, obteniendo 
 
         
         $$\tilde{A}^{(3)}=\left( a_{ij}^{(3)} \right):=\begin{pmatrix} 
@@ -311,15 +311,13 @@
       </p>
 
       <p>
-        Continuando sucesivamente con este procedimiento: Para cada  $i=3,4,\ldots, n-1$.
-      </p>
+        Continuando sucesivamente con este procedimiento para cada  $j=3,4,\ldots, n-1$. Si $a_{jj}^{(j)}\not = 0$, 
+        realizamos para cada $i=j+1, \ldots , n$ las operaciones entre ecuaciones:
 
-      <p>Siempre que $a_{ii}\not = 0$. Realizamos para  $j=i+1, \ldots , n$ las operaciones entre ecuaciones:
+        $$\left(E_{i} - \displaystyle{\left(\frac{a_{ij}^{(j)}}{a_{jj}^{(j)}}\right)E_{j}}\right) \longrightarrow (E_{i})$$
 
-        $$\left(E_{j} - \displaystyle{\left(\frac{a_{ji}}{a_{ii}}\right)E_{i}}\right) \longrightarrow (E_{j})$$
-
-        con cada una de estas operaciones se transforma el coeficiente de $x_{i}$ en cada ecuación  debajo de la $i$-ésima  
-        ecuación para cada  $i=1,2,3,\ldots,n-1$.   
+        con cada una de estas operaciones se transforma en cero el coeficiente de la variable $x_{j}$ para  cada ecuación  
+        debajo de la $j$-ésima ecuación para cada  $j=1,2,3,\ldots,n-1$.   
       </p>
 
 
