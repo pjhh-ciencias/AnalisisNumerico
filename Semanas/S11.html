@@ -98,9 +98,11 @@
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
       <p>
       El primer paso en el proceso de eliminación Gaussiana consiste 
-      en realizar, para cada $j=1, \ldots ,n$ las operaciones:
-      $$ (E_{j} + m_{j1} E_{1}) \longrightarrow E_{j}$$
-      donde $$m_{j1}:= \frac{-a^{(1)}_{j1}}{a^{(1)}_{11}}$$
+      en realizar, para cada $i=1, \ldots ,n$ las operaciones:
+
+      $$ (E_{i} + m_{i1} E_{1}) \longrightarrow E_{i}$$
+      
+      donde $$m_{i1}:= \frac{-a^{(1)}_{i1}}{a^{(1)}_{11}}$$
       <b>Estas  operaciones transforman el sistema en uno en el  que 
       todas las entradas en la primera  columna por debajo de la diagonal 
       son cero. </b>
@@ -118,10 +120,10 @@
         m_{n1} & 0 & 0 &\cdots & 1  \\
         \end{pmatrix}
         $$
-        donde $$m_{j1}:= \frac{-a^{(1)}_{j1}}{a^{(1)}_{11}}, \text{ para cada } j=2,3,\ldots,n$$
+        donde $$m_{i1}:= \frac{-a^{(1)}_{i1}}{a^{(1)}_{11}}, \text{ para cada } i=2,3,\ldots,n$$
       </p>
 
-      <p>Esto es, realizar cada una de las operaciones $ (E_{j} + m_{j1} E_{1}) \longrightarrow E_{j}$ se logra realizando la siguiente multiplicación de matrices:
+      <p>Esto es, realizar cada una de las operaciones $ (E_{i} + m_{i1} E_{1}) \longrightarrow E_{i}$ se logra realizando la siguiente multiplicación de matrices:
          $ M^{(1)}A^{(1)}$. A la matriz $M^{(1)}$ se le llama <b>primera matriz de transformación Gaussiana</b>.
       </p>
 
@@ -180,7 +182,7 @@
         \vdots & \vdots & \vdots & \vdots &\ddots & \vdots  \\
         0 & m_{n2} & 0 & 0 & \cdots & 1  \\
        \end{pmatrix}$$
-       donde $$m_{j2}:= \frac{-a^{(2)}_{j2}}{a^{(2)}_{22}}, \text{ para cada } j=3,4\ldots,n$$
+       donde $$m_{i2}:= \frac{-a^{(2)}_{i2}}{a^{(2)}_{22}}, \text{ para cada } i=3,4\ldots,n$$
        Esta es la <b>segunda matriz de transformación gaussiana</b>. 
       </p>
 
@@ -259,7 +261,7 @@
      &\\
      &=\begin{cases}
       1, & \text{ si } i=j \\
-      m_{jk}:= \displaystyle{\frac{-a_{jk}^{(k)}}{a_{kk}^{(k)}}}, & \text{para  } j=k+1,k+2, \ldots ,n \\
+      m_{ik}:= \displaystyle{\frac{-a_{jk}^{(k)}}{a_{kk}^{(k)}}}, & \text{para  } i=k+1,k+2, \ldots ,n \\
       0, & \text{ d.o.f. } 
     \end{cases} 
     \end{align*}
@@ -324,15 +326,15 @@
         
         donde  multiplicar por la matriz $M^{(k)}$ tiene como efecto realizar las  siguientes operaciones de filas:
        
-        $$ (E_{j} + m_{jk} E_{k}) \longrightarrow E_{j}, \text{  para cada } j=k+1, \ldots ,n$$
-        donde $$m_{jk}:= \frac{-a^{(k)}_{jk}}{a^{(k)}_{11}}
+        $$ (E_{i} + m_{ik} E_{k}) \longrightarrow (E_{i}), \text{  para cada } i=k+1, \ldots ,n$$
+        donde $$m_{ik}:= \frac{-a^{(k)}_{ik}}{a^{(k)}_{kk}}
         $$
       </p>
 
       <p>
        <b>Invertir los efectos de estas transformaciones y regresar de $A^{(k+1)}$   a $A^{(k)}$  requiere realizar 
         las siguientes operaciones</b>:
-        $$(E_{j} - m_{jk} E_{k}) \longrightarrow E_{j}, \text{  para cada } j=k+1, \ldots ,n$$
+        $$(E_{i} - m_{ik} E_{k}) \longrightarrow E_{i}, \text{  para cada } i=k+1, \ldots ,n$$
         lo cual equivale a multiplicar la matriz $A^{(k+1)}$ por la inversa de la matriz $M^{(k)}$:
 
         \begin{align*} 
@@ -353,7 +355,7 @@
      &\\
     &=\begin{cases}
       1, & \text{ si } i=j \\
-      -m_{jk}:= \displaystyle{-\left(\frac{-a_{jk}^{(k)}}{a_{kk}^{(k)}}\right)= \frac{a_{jk}^{(k)}}{a_{kk}^{(k)}}}, & \text{para  } j=k+1,k+2, \ldots ,n \\
+      -m_{ik}:= \displaystyle{-\left(\frac{-a_{ik}^{(k)}}{a_{kk}^{(k)}}\right)= \frac{a_{ik}^{(k)}}{a_{kk}^{(k)}}}, & \text{para  } i=k+1,k+2, \ldots ,n \\
       0, & \text{ d.o.f. } 
     \end{cases} 
     \end{align*}
@@ -364,7 +366,7 @@
         la matriz $L:= L^{(1)} \cdot L^{(2)}  \cdots L^{(n-1)}$ que se obtiene es una matriz triangular inferior:
 
         \begin{align*} 
-        L&= L^{(1)} \cdot L^{(2)}  \cdots L^{(n-1)}\\
+        L&= L^{(1)}  L^{(2)}  \cdots L^{(n-1)}\\
          &= \begin{pmatrix} 
         1 & 0 & 0 &  \cdots\cdots &  0 & 0  \\
         -m_{21} & 1 & 0  &\cdots\cdots & 0 &0  \\
@@ -427,7 +429,7 @@
     \end{pmatrix}
     \end{align*}
     donde para todo $k=1,2,\ldots, n$ y  $j=k+1, \ldots, n$ se define:
-    $$m_{jk}:= \frac{-a^{(k)}_{jk}}{a^{(k)}_{11}}.$$
+    $$m_{jk}:= \frac{-a^{(k)}_{jk}}{a^{(k)}_{kk}}.$$
     </p>
     <p>
     
