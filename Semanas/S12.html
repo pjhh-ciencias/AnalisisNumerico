@@ -245,32 +245,31 @@
        \\
        =&
       \begin{pmatrix}
-       d_{11} & 0  & 0 & \cdots & 0 & 0 \\
-       \ell_{12}d_{11} & d_{22} & 0 &  \cdots& 0 & 0   \\
-       \ell_{13}d_{11}& \ell_{23} d_{22} & d_{33} & \cdots & 0 &0 \\
-        \vdots & \vdots & \vdots& \ddots &\vdots\\
+      d_{11} & 0  & 0 & \cdots & 0 & 0 \\
+      \ell_{12}d_{11} & d_{22} & 0 &  \cdots& 0 & 0   \\
+      \ell_{13}d_{11}& \ell_{23} d_{22} & d_{33} & \cdots & 0 &0 \\
+      \vdots & \vdots & \vdots& \ddots &\vdots\\
       \ell_{1(n-1)}d_{11} &\ell_{2(n-1)}d_{22} &\ell_{3(n-1)}d_{33} & \cdots & d_{(n-1)(n-1)}&0 \\
-       \ell_{1n}d_{11}&\ell_{2n}d_{22} &\ell_{3n}d_{33} & \cdots&\ell_{(n-1)n}d_{(n-1)(n-1)}  & d_{nn} \\
-       \end{pmatrix}
-       \begin{pmatrix} 
+      \ell_{1n}d_{11}&\ell_{2n}d_{22} &\ell_{3n}d_{33} & \cdots&\ell_{(n-1)n}d_{(n-1)(n-1)}  & d_{nn} \\
+      \end{pmatrix}
+      \begin{pmatrix} 
         1 &\ell_{12} & \cdots &\ell_{1(n-1)}&\ell_{1n}  \\
-       
         0 & 1  &\cdots  &\ell_{2(n-1)} &\ell_{2n}  \\
       
         \vdots &   \vdots &  \hspace{0.5cm}\ddots  &\vdots & \vdots  \\
         0 &        0        & \cdots & \hspace{0.25cm}1 &\ell_{(n-1)n} \\
         0 &     0        & \cdots&0 &1 \\
-       \end{pmatrix}\\
+      \end{pmatrix}\\
       \\
       =&
       \begin{pmatrix}
-      d_{11} & d_{11}\ell_{21} & d_{11}\ell_{31}          & \cdots      & d_{11}\ell_{(n-1)1}       & d_{11}\ell_{n1}  \\
+      d_{11} & d_{11}\ell_{12} & d_{11}\ell_{13}          & \cdots      & d_{11}\ell_{(1n-1)}       & d_{11}\ell_{1n}  \\
       \ell_{12} d_{11}  & \ell_{21}^{2}d_{11} + d_{22}     & \ell_{21}\ell_{31}d_{11} + d_{22}\ell_{32}      &\cdots       &\ell_{21}\ell_{(n-1)1}d_{11} + d_{22}\ell_{(n-1)2}      &  \ell_{21}\ell_{n1}d_{11} + d_{22}\ell_{n2}\\
       \ell_{13} d_{11}  & \ell_{31}d_{11}\ell_{21} + \ell_{32}d_{22}    & \ell_{31}^{2}d_{11} + \ell_{32}^{2}d_{22} + d_{33}    &  \cdots &\ell_{31}d_{11}\ell_{(n-1)1} + \ell_{32}d_{22}\ell_{(n-1)2}  + d_{33}\ell_{(n-1)3}       & \ell_{31}d_{11}\ell_{n1} + \ell_{32}d_{22}\ell_{n2}  + d_{33}\ell_{n3}       \\
       \vdots& \vdots     & \vdots    &  \ddots   & \vdots     & \vdots     & \\
-       \ell_{(1n-1)} d_{11} &\displaystyle{ \sum_{k=1}^{2} \ell_{(n-1)k} d_{kk} \ell_{2k}}   & \displaystyle{\sum_{k=1}^{3} \ell_{(n-1)k} d_{kk} \ell_{3k} }   &\cdots      &  \displaystyle{\sum_{k=1}^{n-1} \ell_{(n-1)k} d_{kk} \ell_{(n-1)k} }    &   \displaystyle{\sum_{k=1}^{n} \ell_{(n-1)k} d_{kk} \ell_{nk} }    \\
-       \ell_{1n} d_{11} &\displaystyle{ \sum_{k=1}^{2} \ell_{nk} d_{kk} \ell_{2k}}   & \displaystyle{\sum_{k=1}^{3} \ell_{nk} d_{kk} \ell_{3k} }   &\cdots      &  \displaystyle{\sum_{k=1}^{n-1} \ell_{nk} d_{kk} \ell_{(n-1)k} }    &   \displaystyle{\sum_{k=1}^{n} \ell_{nk} d_{kk} \ell_{nk} }   \\
-       \end{pmatrix}
+      \ell_{(1n-1)} d_{11} &\displaystyle{ \sum_{k=1}^{2} \ell_{(n-1)k} d_{kk} \ell_{2k}}   & \displaystyle{\sum_{k=1}^{3} \ell_{(n-1)k} d_{kk} \ell_{3k} }   &\cdots      &  \displaystyle{\sum_{k=1}^{n-1} \ell_{(n-1)k} d_{kk} \ell_{(n-1)k} }    &   \displaystyle{\sum_{k=1}^{n} \ell_{(n-1)k} d_{kk} \ell_{nk} }    \\
+      \ell_{1n} d_{11} &\displaystyle{ \sum_{k=1}^{2} \ell_{nk} d_{kk} \ell_{2k}}   & \displaystyle{\sum_{k=1}^{3} \ell_{nk} d_{kk} \ell_{3k} }   &\cdots      &  \displaystyle{\sum_{k=1}^{n-1} \ell_{nk} d_{kk} \ell_{(n-1)k} }    &   \displaystyle{\sum_{k=1}^{n} \ell_{nk} d_{kk} \ell_{nk} }   \\
+      \end{pmatrix}
       \end{align*}
         </font>
         </p>
@@ -290,10 +289,9 @@
           Enseguida de  la ecuación que se encuentra sobre la diagonal en la fila $3$ se tiene que:
           
           $$\ell_{21}^{2}d_{11} + d_{22} \hspace{0.5cm}\Longrightarrow \hspace{0.5cm} d_{22} = \frac{a_{22} - d_{11}\left(\ell_{21}\right)^{2} }{d_{11}} $$
-         
           De aquí que, de  las ecuaciones en  las entradas debajo de la diagonal en la segunda columna podemos deducir :
           
-          $$\ell_{i1}d_{11} \ell_{21} + \ell_{i2}d_{22} \ell_{22}= a_{i2} \hspace{0.5cm}\Longrightarrow \hspace{0.5cm} \ell_{i2}= \frac{a_{i2} - \ell_{i1}d_{11}\ell_{21}}{a_{11}}\text{ para cada } i=2,\ldots,n$$
+          $$\ell_{i1}d_{11} \ell_{21} + \ell_{i2}d_{22} \ell_{22}= a_{i2} \hspace{0.5cm}\Longrightarrow \hspace{0.5cm} \ell_{i2}= \frac{a_{i2} - \ell_{i1}d_{11}\ell_{21}}{d_{22}}\text{ para cada } i=3,\ldots,n$$
           
           Continuando sucesivamente con este procedimiento, se puede observar lo siguiente:
           <ul>
@@ -316,7 +314,7 @@
 
               Por  lo tanto, 
 
-              $$\ell_{ki} = \displaystyle{\frac{1}{d_{jj}} \left(a_{ij} - \sum_{k=1}^{j-1} (\ell_{ik}d_{kk})\ell_{kj} \right)}$$
+              $$\ell_{ij} = \displaystyle{\frac{a_{ij} -\displaystyle{\sum_{k=1}^{j-1} (\ell_{ik}d_{kk})\ell_{kj}}}{d_{jj}}}$$
             </li>
         </p>
        </div>
