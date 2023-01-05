@@ -89,7 +89,7 @@
     <h1 class="number-title flexbox"> Semana 13</h1>   
     <h1 class="title flexbox"></h1>   
 
-    <h1 class="title flexbox">Métodos iterativos </h1>    
+    <h1 class="title flexbox">Métodos iterativos  para la resolución de sistemas de ecuaciones lineales </h1>    
 
 
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
@@ -97,8 +97,9 @@
       con $n$ ecuaciones y $n$ incógnitas expresados  matricialmente como: 
       $$A\vec{x} = \vec{b}$$
       donde $A \in \mathbb{M}_{n \times n}(\mathbb{R})$ es la matriz de coeficientes del sistema, 
-      $\vec{b}$ es el vector de términos independientes del sistema y  $\vec{x}$ al vector de valores 
-      a determinar (incognitas). Estos métodos utilizan una serie finita de operaciones
+      $\vec{b}$ es el vector columna $n$-dimensional de términos independientes del sistema y 
+      $\vec{x}$  al vector columna $n$-dimensional de valores a determinar (incognitas).
+      Estos métodos utilizan una serie finita de operaciones
       aritméticas para determinar la solución exacta del sistema, sujeta únicamente
       a errores de redondeo.
     </p>
@@ -121,8 +122,13 @@
 
     <p>
       Ahora,  presentaremos los  <b>métodos iterativos</b>para resolver sistemas de ecuaciones lineales</b> 
-      con $n$ ecuaciones y $n$.
+      con $n$ ecuaciones y $n$. Para ello necesitamos contar primero con un medio que nos permita
+      medir la distancia entre los vectores columna $n$-dimensionales, para determinar si una sucesión
+      de vectores convergen a una solución del sistema.
     </p>
+
+    <p>Denotemos con  $\mathbb{R}^n$ el conjunto de todos los vectores columna $n$-dimensionales con
+      cuyas componentes son números reales. </p>
     </div>
 
     <h1 class="title flexbox">Normas matriciales</h1>    
@@ -153,27 +159,29 @@
         $$\| \vec{x}\|_{2} :=\left( \displaystyle{\sum_{i=1}^{n} x_{i}^{2}}\right)^{\frac{1}{2}} $$
         y 
         $$\| \vec{x}\|_{\infty}:= \displaystyle{\max_{}\{|x_{i}| \colon 1\leq i \leq n \} }$$
-        donde $\vec{x}=( x_{1}, x_{2}, \ldots, x_{n}) \in \mathbb{R}^{n}.$
+        donde $\vec{x}=( x_{1}, x_{2}, \ldots, x_{n})^{t} \in \mathbb{R}^{n}.$
       </p>
       
     </div>
     
     <div class="nota-box"> <h2 class="number-title"> Proposición</h2>
       <p>
-        La función $\ell_{2}$ es una   norma  en  $\mathbb{R}^{n}$  y se llama 
-        <b>norma Euclideana del vector $\vec{x}$</b>
+        La función $\ell_{2}$ es una   norma  en  $\mathbb{R}^{n}$  y es conocida como la 
+        <b>norma Euclideana del vector $\vec{x}$.</b>
       </p>
+      <p><b>Demostración:</b></p>
     </div>
 
     <div class="nota-box"> <h2 class="number-title"> Proposición</h2>
       <p>
-        La función $\ell_{\infty}$ es una   norma  en  $\mathbb{R}^{n}$  y se llama 
-        <b>norma infinita de $\vec{x}$</b>
+        La función $\ell_{\infty}$ es una   norma  en  $\mathbb{R}^{n}$  y es conocida como la
+        <b>norma infinita de $\vec{x}$.</b>
       </p>
+      <p><b>Demostración:</b></p>
     </div>
 
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
-      <p>Sean $\vec{x}:=(x_{1}, x_{2}, \ldots, x_{n}), \vec{y}:= (y_{1}, y_{2}, \ldots, y_{n}) \in \mathbb{R}^{n}$ 
+      <p>Sean $\vec{x}:=(x_{1}, x_{2}, \ldots, x_{n})^{t}, \vec{y}:= (y_{1}, y_{2}, \ldots, y_{n})^{t} \in \mathbb{R}^{n}$ 
       <b>las distancias $\ell_{2}$ y $\ell_{\infty}$ entre $\vec{x}$ y $\vec{y}$</b> se definen como:
         $$\|\vec{x}-\vec{y} \|_{2} := \left( \sum_{i=1}^{n} (x_{i} - y_{i})^{2}\right)^{\frac{1}{2}}$$
       
@@ -187,7 +195,7 @@
     
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
       <p>Una sucesión de vectores  $\{\vec{x}_{n} \}_{n=1}^{\infty}$ en $\mathbb{R}^{n}$ 
-        <b>converge a un  vector  $\vec{x}$ con respecto a una norma $\|\cdot \|$ </b> si para 
+        <b>converge a un  vector  $\vec{x} \in \mathbb{R}^{n}$ con respecto a una norma $\|\cdot \|$ </b> si para 
         todo $\epsilon > 0$, existe $N(\epsilon) \in \mathbb{N}$ tal que
         $$\|\vec{x}^{(k)} - \vec{x}\|,  \,\,\,\, \forall k \geq N(\epsilon)$$
 
@@ -196,19 +204,56 @@
 
     
     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
-      <p>La sucesión de vectores $\{x^{(k)}\}_{k=1}^{\infty}$ converge a $\vec{x}$ respecto a la norma
+      <p>La sucesión de vectores $\{x^{(k)}\}_{k=1}^{\infty}$ en $\mathbb{R}^{n}$ converge a $\vec{x} \in \mathbb{R}^{n}$ respecto a la norma
       $\| \cdot \|_{\infty}$  si y sólo si  para cada  $i =1,\ldots, n$ se satisface
       $$\lim_{k \to \infty} x^{(k)}_{i} = x_{i} $$
-      donde $\vec{x}^{(k)}:= \left(x^{(k)}_{1}, x^{(k)}_{2}, \ldots, x^{(k)}_{n}\right)$ y
-      $\vec{x}:= (x_{1}, x_{2}, \ldots, x_{n})$ 
+      donde $\vec{x}^{(k)}:= \left(x^{(k)}_{1}, x^{(k)}_{2}, \ldots, x^{(k)}_{n}\right)^{t}$ y
+      $\vec{x}:= (x_{1}, x_{2}, \ldots, x_{n})^{t}$ 
       </p>
       <p><b>Demostración:</b></p>
     </div>
 
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Para cada $k \in \mathbb{N}$, sea $\vec{x}^{(k)} \in \mathbb{R}^{4}$ dado por 
+        $$\vec{x}^{(k)} := \left(x_{1}^{(k)}, x_{2}^{(k)}, \ldots , x_{4}^{(k)}\right):= \left(1,2+\frac{1}{k}, \frac{1}{k^{2}}, e^{-k} \mathrm{Sen}(k)\right)$$
+        entonces la sucesión de vectores $\{x^{(k)}\}_{k=1}^{\infty}$ en $\mathbb{R}^{4}$ en converge al vector $(1,2,0,0)^{t}$ 
+        respecto a la norma infinita.
 
 
+      </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>Dos normas $\| \cdot \|_{1} $ y $\| \cdot \|_{2} $ son <b>equivalentes</b> 
+        si existen números reales $\alpha$ y $\beta$ tales que 
+        $$\alpha \| \cdot\|_{1} \leq  \| \cdot\|_{2} \leq \beta \|\cdot \|_{1}  $$
+      </p>
+    </div>
 
 
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <p>Para todo $\vec{x} \in \mathbb{R}^{n}$, 
+        $$\| \cdot\|_{\infty} \leq  \| \cdot\|_{2} \leq \sqrt{n} \|\cdot \|_{\infty}  $$
+        esto es, las normas $\| \cdot\|_{\infty}$ y $  \| \cdot\|_{2}$ son equivalentes. 
+      </p>
+      <p><b>Demostración:</b></p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <p>Por el teorema anterior, se tiene que si  la sucesión de vectores 
+        $\{x^{(k)}\}_{k=1}^{\infty}$ en $\mathbb{R}^{n}$ en converge al vector $\vec{x}^{t} \in \mathbb{R}^{n}$ 
+      con la norma $\| \cdot\|_{\infty}$, entonces también converge a $\vec{x}$ con la norma  Euclideana $\| \cdot\|_{2}$</p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>
+        Para cada $k \in \mathbb{N}$, sea $\vec{x}^{(k)} \in \mathbb{R}^{4}$ dado por 
+        $$\vec{x}^{(k)} := \left(x_{1}^{(k)}, x_{2}^{(k)}, \ldots , x_{4}^{(k)}\right):= \left(1,2+\frac{1}{k}, \frac{1}{k^{2}}, e^{-k} \mathrm{Sen}(k)\right)$$
+        Prueba  que la sucesión de vectores $\{x^{(k)}\}_{k=1}^{\infty}$ en $\mathbb{R}^{4}$ en converge al vector $(1,2,0,0)^{t}$ 
+        con  la norma $\ell_{2}$.
+      </p>
+    </div>
 
 
     </body>
