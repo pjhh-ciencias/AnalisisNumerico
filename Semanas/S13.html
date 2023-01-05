@@ -93,26 +93,35 @@
 
 
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
-    <p>Previamente hemos estudiado  métodos  directos para resolver sistemas lineales con 
-      $n$ ecuaciones y  $n$ incógnitas expresadas en forma matricial como 
-      $A\vec{x} = \vec{b}$. Estas técnicas utilizan una serie finita de operaciones
+    <p>Previamente hemos estudiado <b>métodos directos para resolver sistemas de ecuaciones lineales</b> 
+      con $n$ ecuaciones y $n$ incógnitas expresados  matricialmente como: 
+      $$A\vec{x} = \vec{b}$$
+      donde $A \in \mathbb{M}_{n \times n}(\mathbb{R})$ es la matriz de coeficientes del sistema, 
+      $\vec{b}$ es el vector de términos independientes del sistema y  $\vec{x}$ al vector de valores 
+      a determinar (incognitas). Estos métodos utilizan una serie finita de operaciones
       aritméticas para determinar la solución exacta del sistema, sujeta únicamente
-      a errores de redondeo. Presentamos las técnicas de pivoteo para reducir
-      al mínimo los efectos del error de redondeo. Demostramos que la eliminación gaussiana sin
-      intercambio de filas permite  factorizar la matriz A en $\mathrm{LU}$, donde $\mathrm{L}$ 
-      es una matriz triangular inferior con unos en la diagonal y  $\mathrm{U}$ es una matriz
-      triangular superior. A esta factorización  se le llama <b>factorización de Doolittle</b>
-      Cuando la matriz $A$ es definida positiva, las factorizaciones adoptan una forma más 
-      simple. Por ejemplo, la factorización de Choleski presenta la forma A = LV, donde L es 
-      una matriz triangular inferior. Las matrices definidas positivas también pueden
-      factorizarse en la forma $A = LDL^{t}$ donde L es una matriz triangular inferior con 
-      unos en la diagonal y D es una matriz  diagonal. Con estas factorizaciones,
-      es posible simplificar la resolución del sistema $A\vec{x} = \vec{b}$.
+      a errores de redondeo.
+    </p>
+    
+    <p>
+      Presentamos también las <b>técnicas de pivoteo</b> para reducir
+      al mínimo los efectos del error de redondeo y  probamos que realizar eliminación 
+      gaussiana sin intercambio de filas permite  factorizar la matriz A en $\mathrm{LU}$, 
+      donde $\mathrm{L}$ es una matriz triangular inferior con unos en la diagonal y  
+      $\mathrm{U}$ es una matriz triangular superior. A esta factorización  se 
+      le llama <b>factorización de Doolittle</b>. Sin embargo, cuando la matriz
+      $A$ es definida positiva, es posible presentar factorizacaiones más simples de  la matriz $A$.
+      Por ejemplo, la <b>factorización de Choleski</b> que tiene  la forma $A = \mathrm{L}\mathrm{L}^{t}$, 
+      donde $\mathrm{L}$ es una matriz triangular inferior. Las matrices definidas positivas también pueden
+      factorizarse en la forma $A = \mathrm{L}\mathrm{D}\mathrm{L}^{t}$ donde $\mathrm{L}$ es una matriz
+      triangular inferior con unos en la diagonal y $\mathrm{D}$ es una matriz diagonal.
+      Con estas factorizaciones, es posible simplificar la resolución del sistema de ecuaciones
+      $A\vec{x} = \vec{b}$.
     </p>
 
     <p>
-      En este capítulo estudiaremos l os 
-      métodos iterativos con que se resuelve un sistema de este tipo. 
+      Ahora,  presentaremos los  <b>métodos iterativos</b>para resolver sistemas de ecuaciones lineales</b> 
+      con $n$ ecuaciones y $n$.
     </p>
     </div>
 
