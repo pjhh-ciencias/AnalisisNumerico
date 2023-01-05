@@ -182,23 +182,20 @@
 
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
       <p>Sean $\vec{x}:=(x_{1}, x_{2}, \ldots, x_{n})^{t}, \vec{y}:= (y_{1}, y_{2}, \ldots, y_{n})^{t} \in \mathbb{R}^{n}$ 
-      <b>las distancias $\| \cdot \|_{2}$ y $\| \cdot \|_{\infty}$ entre $\vec{x}$ y $\vec{y}$</b> se definen como:
-        $$\|\vec{x}-\vec{y} \|_{2} := \left( \sum_{i=1}^{n} (x_{i} - y_{i})^{2}\right)^{\frac{1}{2}}$$
+      <b>las distancias $d_{2}$ y $d_{\infty}$ entre $\vec{x}$ y $\vec{y}$</b> se definen como:
+        $$d_{2}(\vec{x},\vec{y}):= \|\vec{x}-\vec{y} \|_{2} := \left( \sum_{i=1}^{n} (x_{i} - y_{i})^{2}\right)^{\frac{1}{2}}$$
       
       y 
-      $$\|\vec{x}-\vec{y} \|_{\infty} := \max\left\{ |x_{i} - y_{i}| \colon 1 \leq i \leq n \right \}$$
+      $$d_{\infty(\vec{x},\vec{y})}:=\|\vec{x}-\vec{y} \|_{\infty} := \max\left\{ |x_{i} - y_{i}| \colon 1 \leq i \leq n \right \}$$
 
       </p>
     </div>
-
-
     
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
       <p>Una sucesión de vectores  $\{\vec{x}_{n} \}_{n=1}^{\infty}$ en $\mathbb{R}^{n}$ 
         <b>converge a un  vector  $\vec{x} \in \mathbb{R}^{n}$ con respecto a una norma $\|\cdot \|$ </b> si para 
         todo $\epsilon > 0$, existe $N(\epsilon) \in \mathbb{N}$ tal que
         $$\|\vec{x}^{(k)} - \vec{x}\|,  \,\,\,\, \forall k \geq N(\epsilon)$$
-
       </p>
     </div>
 
@@ -247,8 +244,7 @@
     </div>
 
     <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
-      <p>
-        Para cada $k \in \mathbb{N}$, sea $\vec{x}^{(k)} \in \mathbb{R}^{4}$ dado por 
+      <p>Para cada $k \in \mathbb{N}$, sea $\vec{x}^{(k)} \in \mathbb{R}^{4}$ dado por 
         $$\vec{x}^{(k)} := \left(x_{1}^{(k)}, x_{2}^{(k)}, \ldots , x_{4}^{(k)}\right):= \left(1,2+\frac{1}{k}, \frac{1}{k^{2}}, e^{-k} \mathrm{Sen}(k)\right)$$
         Prueba  que la sucesión de vectores $\{x^{(k)}\}_{k=1}^{\infty}$ en $\mathbb{R}^{4}$ en converge al vector $(1,2,0,0)^{t}$ 
         con  la norma $\| \cdot \|_{2}$.
