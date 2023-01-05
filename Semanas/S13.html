@@ -89,46 +89,19 @@
     <h1 class="number-title flexbox"> Semana 13</h1>   
     <h1 class="title flexbox"></h1>   
 
-    <h1 class="title flexbox">Métodos iterativos </h1>    
 
-
-    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
-    <p>Previamente hemos estudiado  métodos  directos para resolver sistemas lineales con 
-      $n$ ecuaciones y  $n$ incógnitas expresadas en forma matricial como 
-      $A\vec{x} = \vec{b}$. Estas técnicas utilizan una serie finita de operaciones
-      aritméticas para determinar la solución exacta del sistema, sujeta únicamente
-      a errores de redondeo. Presentamos las técnicas de pivoteo para reducir
-      al mínimo los efectos del error de redondeo. Demostramos que la eliminación gaussiana sin
-      intercambio de filas permite  factorizar la matriz A en $\mathrm{LU}$, donde $\mathrm{L}$ 
-      es una matriz triangular inferior con unos en la diagonal y  $\mathrm{U}$ es una matriz
-      triangular superior. A esta factorización  se le llama <b>factorización de Doolittle</b>
-      Cuando la matriz $A$ es definida positiva, las factorizaciones adoptan una forma más 
-      simple. Por ejemplo, la factorización de Choleski presenta la forma A = LV, donde L es 
-      una matriz triangular inferior. Las matrices definidas positivas también pueden
-      factorizarse en la forma $A = LDL^{t}$ donde L es una matriz triangular inferior con 
-      unos en la diagonal y D es una matriz  diagonal. Con estas factorizaciones,
-      es posible simplificar la resolución del sistema $A\vec{x} = \vec{b}$.
-    </p>
-
-    <p>
-      En este capítulo estudiaremos l os 
-      métodos iterativos con que se resuelve un sistema de este tipo. 
-    </p>
-    </div>
-
+    
     <h1 class="title flexbox">Normas matriciales</h1>    
 
 
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
-      <p>Una <b>norma</b> en $\mathbb{R}^{n}$  es una función 
-        $\| \cdot \| \colon \mathbb{R}^{n} \to \mathbb{R}_{+}$ con las siguientes
+      <p>Una norma vectorial en $\mathbb{R}^{n}$  es una función $\| \cdot \| \colon \mathbb{R}^{n} \to \mathbb{R}_{+}$ con las siguientes
         propiedades: 
         <ol>
-          <li>$\| \vec{x} \| \geq 0$ para todo $\vec{x} \in \mathbb{R}^{n}$ </li>
-          <li>$\| \vec{x} \| = 0$  si y sólo si  $\vec{x}=\vec{0}$</li>
-          <li>$\| \alpha \vec{x} \| = |\alpha| \|  x \| $ para todo $\vec{x} \in \mathbb{R}^{n}$ y para todo $\alpha \in \mathbb{R}$ </li>
-          <li>$\| \vec{x} + \vec{x} \| \leq \| \vec{x}  \| + \|  \vec{y} \|$ para cualesquiera 
-            $\vec{x}, \vec{y} \in \mathbb{R}^{n}$</li>
+          <li>$\| x \| \geq 0$ para todo $x \in \mathbb{R}^{n}$ </li>
+          <li>$\| x \| = 0$  si y sólo si  $x=\vec{0}$</li>
+          <li>$\| \alpha x \| = |\alpha| \|  x \| $ para todo $x \in \mathbb{R}^{n}$ y para todo $\alpha \in \mathbb{R}$ </li>
+          <li>$\| x + y \| \leq \| x  \| + \|  y \|$ para cualesquiera $x,y \in \mathbb{R}^{n}$</li>
         </ol>
       </p>
       <p>
@@ -141,9 +114,9 @@
       <p>
         En $\mathbb{R}^{n}$, se definen las funciones $\ell_{2}, \ell_{\infty} \colon \mathbb{R}^{n} \to \mathbb{R}$
         como:
-        $$\| \vec{x}\|_{2} :=\left( \displaystyle{\sum_{i=1}^{n} x_{i}^{2}}\right)^{\frac{1}{2}} $$
+        $$\| x\|_{2} :=\left( \displaystyle{\sum_{i=1}^{n} x_{i}^{2}}\right)^{\frac{1}{2}} $$
         y 
-        $$\| \vec{x}\|_{\infty}:= \displaystyle{\max_{}\{|x_{i}| \colon 1\leq i \leq n \} }$$
+        $$\| x\|_{\infty}:= \displaystyle{\max_{}\{|x_{i}| \colon 1\leq i \leq n \} }$$
         donde $\vec{x}=( x_{1}, x_{2}, \ldots, x_{n}) \in \mathbb{R}^{n}.$
       </p>
       
@@ -165,41 +138,23 @@
 
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
       <p>Sean $\vec{x}:=(x_{1}, x_{2}, \ldots, x_{n}), \vec{y}:= (y_{1}, y_{2}, \ldots, y_{n}) \in \mathbb{R}^{n}$ 
-      <b>las distancias $\ell_{2}$ y $\ell_{\infty}$ entre $\vec{x}$ y $\vec{y}$</b> se definen como:
-        $$\|\vec{x}-\vec{y} \|_{2} := \left( \sum_{i=1}^{n} (x_{i} - y_{i})^{2}\right)^{\frac{1}{2}}$$
-      
+      <b>las distancias $\ell_{2}$ y $\ell_{\infty}$ entre $\vec{x}$ y $\vec{y}$ se definen como:
+        $$\|x-y \|_{2} := \left( \sum_{i=1}^{n} (x_{i} - y_{i})^{2}\right)$$
+      </b>
       y 
-      $$\|\vec{x}-\vec{y} \|_{\infty} := \max\left\{ |x_{i} - y_{i}| \colon 1 \leq i \leq n \right \}$$
+      $$\|x-y \|_{\infty} := \max\left\{ |x_{i} - y_{i}| \colon 1 \leq i \leq n \right \}$$
 
       </p>
     </div>
-
 
     
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
-      <p>Una sucesión de vectores  $\{\vec{x}_{n} \}_{n=1}^{\infty}$ en $\mathbb{R}^{n}$ 
-        <b>converge a un  vector  $\vec{x}$ con respecto a una norma $\|\cdot \|$ </b> si para 
-        todo $\epsilon > 0$, existe $N(\epsilon) \in \mathbb{N}$ tal que
-        $$\|\vec{x}^{(k)} - \vec{x}\|,  \,\,\,\, \forall k \geq N(\epsilon)$$
+      <p>Una sucesión de vectores  $\{\vec{x}_{n} \}_{n=1}^{\infty}$ en $\mathbb{R}^{n}$      <b>converge a un  vector 
+        $\vec{x}$ con respecto a una norma $\|\cdot \|$  </b>  si para todo $\epsilon > 0$, existe $N(\epsilon) \in \mathbb{N}$ 
+        tal que 
+        $$\|x_ \|$$
 
       </p>
     </div>
-
-    
-    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
-      <p>La sucesión de vectores $\{x^{(k)}\}_{k=1}^{\infty}$ converge a $\vec{x}$ respecto a la norma
-      $\| \cdot \|_{\infty}$  si y sólo si  para cada  $i =1,\ldots, n$ se satisface
-      $$\lim_{k \to \infty} x^{(k)}_{i} = x_{i} $$
-      donde $\vec{x}^{(k)}:= \left(x^{(k)}_{1}, x^{(k)}_{2}, \ldots, x^{(k)}_{n}\right)$ y
-      $\vec{x}:= (x_{1}, x_{2}, \ldots, x_{n})$ 
-      </p>
-      <p><b>Demostración:</b></p>
-    </div>
-
-
-
-
-
-
 
     </body>
