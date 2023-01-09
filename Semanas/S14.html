@@ -90,8 +90,15 @@
     <h1 class="title flexbox"></h1>   
 
 
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>Dos normas $\| \cdot \|_{1} $ y $\| \cdot \|_{2} $ son <b>equivalentes</b> 
+        si existen números reales $\alpha$ y $\beta$ tales que 
+        $$\alpha \| \cdot\|_{1} \leq  \| \cdot\|_{2} \leq \beta \|\cdot \|_{1}  $$
+      </p>
+    </div>
+
     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
-      <p>Para todo $\vec{x} \in \mathbb{R}^{n}$, 
+      <p>Para todo $\vec{x} \in \mathbb{R}^{n}$, se satisface 
         $$\| \cdot\|_{\infty} \leq  \| \cdot\|_{2} \leq \sqrt{n} \|\cdot \|_{\infty}  $$
         esto es, las normas $\| \cdot\|_{\infty}$ y $  \| \cdot\|_{2}$ son equivalentes. 
       </p>
@@ -110,6 +117,58 @@
         Prueba  que la sucesión de vectores $\{x^{(k)}\}_{k=1}^{\infty}$ en $\mathbb{R}^{4}$ en converge al vector $(1,2,0,0)^{t}$ 
         con  la norma $\| \cdot \|_{2}$.
       </p>
+    </div>
+    
+    <h1 class="title flexbox">Normas matriciales</h1>   
+
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>Una <b>norma matricial</b> sobre el conjunto $\mathbb{M}_{n \times n}(\mathbb{R})$ de todas las matrices
+        de tamaño  $n \times n$ con entradas en $\mathbb{R}$  es una función $\| \cdot\|\colon \mathbb{M}_{n \times n}(\mathbb{R}) \to \mathbb{R}_{+}$, tal que 
+        <ol>
+          <li>$\| A \| \geq 0$ para todo $A \in \mathbb{M}_{n \times n}(\mathbb{R})$ </li>
+          <li>$\| A \| = 0$  si y sólo si  $A$ es la matriz de tamaño $n\times n$ cuyas entradas son todas iguales a cero. </li>
+          <li>$\| \alpha A \| = |\alpha| \|  A \| $ para todo $A \in \mathbb{R}^{n}$ y para todo $\alpha \in \mathbb{R}$ </li>
+          <li>$\| A + B \| \leq \| A  \| + \| B \|$ para cualesquiera 
+            $A,B \in \mathbb{M}_{n \times n}(\mathbb{R})$</li>
+            <li>$\| A  B \| \leq \| A  \| \| B \|$ para cualesquiera 
+              $A,B \in \mathbb{M}_{n \times n}(\mathbb{R})$</li>
+        </ol>
+      </p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>
+        Sean  $A,B \in \mathbb{M}_{n \times n}(\mathbb{R})$. Se  define la <b>distancia entre 
+        $A$ y $B$ respecto a la norma  $\|\cdot  \|$</b> como: 
+        $$\|A-B  \|$$
+      </p>
+      
+    </div>
+
+
+
+    
+
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <p>Si $\|\cdot\| $ es una norma en $\mathbb{R}^{n}$, entonces la  función
+        $\|\cdot \|\colon  \mathbb{M}_{n \times n}(\mathbb{R})  \to \mathbb{R}_{+}$ definida como:
+        $$\|A \|:=\max_{\|x\|=1} \| Ax\|$$
+        es una norma matricial y se le llama la <b>norma natural</b> o <b>inducida asociada con la norma $\|\cdot\|$</b>. 
+      </p>
+      <p><b>Demostración:</b></p>
+    </div>
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <p>
+       Para cualquier $\vec{z} \in \mathbb{R}^{n}$ con $\vec{z} \not= \vec{0}$, se satisface 
+       $$\max_{\|z\|=1} \| Az\| = \max_{\|z\|\not= \vec{0}} \left\| A\left(\displaystyle{\frac{z}{\|z \|}}\right) \right\|= \max_{\|z\|\not= \vec{0}} \displaystyle{ \frac{\| Az\|}{\|z \| } } $$
+      Por lo tanto, podemos escribir:
+      $$\|A \|= \max_{\|x\|\not= \vec{0}} \displaystyle{ \frac{\| Ax\|}{\|x \| } }$$
+
+      </p>
+      
     </div>
 
     </body>
