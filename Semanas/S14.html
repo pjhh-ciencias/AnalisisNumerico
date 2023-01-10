@@ -160,16 +160,130 @@
       
     </div>
 
+    <div class="nota-box"> <h2 class="number-title"> Corolario </h2>
+      <p>Si $\vec{z} \in \mathbb{R}^{n}$,  $\vec{z} \not= 0 $, $A\in \mathbb{M}_{n \times n}(\mathbb{R})$
+        y $\| \cdot \|$ la norma natural, entonces 
+        $$\|A\vec{z} \|\leq \| A\|\|\vec{z}\|$$
+      </p>
+      
+    </div>
+    
     
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
       <p>
-       Para cualquier $\vec{z} \in \mathbb{R}^{n}$ con $\vec{z} \not= \vec{0}$, se satisface 
-       $$\max_{\|z\|=1} \| Az\| = \max_{\|z\|\not= \vec{0}} \left\| A\left(\displaystyle{\frac{z}{\|z \|}}\right) \right\|= \max_{\|z\|\not= \vec{0}} \displaystyle{ \frac{\| Az\|}{\|z \| } } $$
+       Para cualquier $\vec{x} \in \mathbb{R}^{n}$ con $\vec{x} \not= \vec{0}$, se satisface 
+       $$\max_{\|\vec{x}\|=1} \| A\vec{x}\| = \max_{\vec{x}\not= \vec{0}} \left\| A\left(\displaystyle{\frac{\vec{x}}{\|\vec{x} \|}}\right) \right\|= \max_{\vec{x}\not= \vec{0}} \displaystyle{ \frac{\| A\vec{x}\|}{\|\vec{x} \| } } $$
       Por lo tanto, podemos escribir:
-      $$\|A \|= \max_{\|x\|\not= \vec{0}} \displaystyle{ \frac{\| Ax\|}{\|x \| } }$$
+      $$\|A \|= \max_{\vec{x}\not= \vec{0}} \displaystyle{ \frac{\| A\vec{x}\|}{\|\vec{x} \| } }$$
 
       </p>
       
     </div>
+
+   
+
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Ejemplos</h2>
+      <p>Sea $A\in \mathbb{M}_{n \times n}(\mathbb{R})$. Entonces
+        <ul>
+          <li>Para la norma vectorial  $\| \cdot \|_{2}$ en $\mathbb{R}^{n}$, se tiene que: 
+            $$\|A \|_{2}:=\max_{\|x\|=1} \| Ax\|_{2}$$
+          </li>
+          <li>Para la norma vectorial $\| \cdot \|_{\infty}$ en $\mathbb{R}^{n}$, se tiene que:
+            $$\|A \|_{\infty}:=\max_{\|x\|=1} \| Ax\|_{\infty}$$
+          </li>
+        </ul>
+
+      </p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <p>Si $A=(a_{ij}) \in   \mathbb{M}_{n \times n}(\mathbb{R})$ entonces 
+        $$\|A \|_{\infty}=\max\left\{\displaystyle{\sum_{j=1}^{n} |a_{ij}|}\, \, \colon \,\, 1\leq i \leq n \right\}$$
+        
+      </p>
+      <p><b>Demostración:</b></p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+      <p>Si $A= \begin{pmatrix} 1& 2 & -1 \\ 0 & 3 &  -1 \\ 5 & -1 & 1  \end{pmatrix}$, entonces 
+        $\|A\|_{\infty} = 7.$
+        
+      </p>
+    </div>
+
+    <h1 class="title flexbox"> Eigenvalores y eigenvectores </h1>    
+
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>Sea $A  \in   \mathbb{M}_{n \times n}(\mathbb{R})$, se define el <b>polinomio característico</b> de $A$  
+        como: 
+        $$p(\lambda) := \mathrm{det}(A- \lambda I_{n\times n})$$
+      </p>
+    </div>
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Observaciones </h2>
+      <p>
+        <ul>
+          <li>$p$ es un polinomio de grado $n$.</li><br>
+          <li>Si $\lambda$ es un cero de $p$, entonces $\mathrm{det}(A- \lambda I_{n\times n})=0$. Por lo tanto, 
+            el sistema de ecuaciones lineales definido por 
+            $$(A- \lambda I_{n\times n})\vec{x}=\vec{0}$$ 
+            tiene una solución  $\vec{x}\not= 0$.
+          </li><br>
+        </ul>       
+      </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Definición </h2>
+      <p>
+        <ul>
+          <li>Sea $A  \in   \mathbb{M}_{n \times n}(\mathbb{R})$. Si $p$ es el polinomio característico de la  
+        $A$, los ceros de $p$ son llamados <b>eigenvalores</b>  o <b>valores característicos</b> de la matriz $A$.
+        </li><br>
+        <li>Si $\lambda$ es un eigenvalor de $A$ y $\vec{x} \not= 0 $ satisface $(A- \lambda I_{n\times n})\vec{x}=\vec{0}$,
+          entonces $\vec{x}$ es un <b>eigenvector</b>  o <b>vector característico</b>  de $A$ correspondiente al eigenvalor $\lambda$
+           </li>
+      </ul>
+      </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Observaciones </h2>
+      <p>
+        <ul>
+          <li>$\lambda$ es un eigenvalor de $A$ si y sólo si  $\mathrm{det}(A- \lambda I_{n\times n})=0$
+
+          </li><br>
+          <li>Sea $\lambda$ es un eigenvalor de $A$, entonces  $\vec{x}\not= \vec{0} $ es un eigenvector de $A$ si y sólo si $\vec{x}$ 
+            es una solución del sistema  
+            $$(A- \lambda I_{n\times n})\vec{x}=\vec{0}$$
+          </li><br>
+        </ul>       
+      </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>Sea $A  \in   \mathbb{M}_{n \times n}(\mathbb{R})$.  El radio espectral $\rho(A)$ de $A$  de una matriz $A$ esta definido
+        por:
+        $$\rho(A):= \max\{| \lambda  |  \,  \colon \, \lambda  \text{ es un eigenvalor de } A \}$$
+      </p>
+    </div>
+
+
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <p>Si $A  \in   \mathbb{M}_{n \times n}(\mathbb{R})$, entonces 
+        <ul>
+          <li>$\|A \|_{2} = \left( \rho(A^{t} A) \right)^{\frac{1}{2}}$</li><br>
+          <li>$\rho(A) \leq \|A\|,\, \text{para cualquier norma natural  } \| \cdot \|. $</li>
+        </ul>
+      </p>
+      <p><b>Demostración:</b></p>
+    </div>
+
+
+
 
     </body>
