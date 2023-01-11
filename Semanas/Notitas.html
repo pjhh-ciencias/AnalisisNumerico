@@ -106,14 +106,30 @@
         ecuaciones diferenciales parciales, en la solución de los modelos resultantes en la simulación de columnas
         de destilación, etc. En favor de estos sistemas, puede decirse que tienen matrices con pocos elementos
         distintos de cero y que éstas poseen ciertas propiedades (simétricas, bandeadas, diagonal dominantes, en tre
-        otras), que permiten garantizar el éxito en la aplicación de los métodos que presentamos a continuación.</p>
+        otras), que permiten garantizar el éxito en la aplicación de los métodos que presentamos a continuación.
+      
+      </p>
+
+      <p>Como ya se ha indicado anteriormente, una dificultad que puede presentarse
+        al resolver un sistema lineal de gran dimensi´on es el volumen de
+        memoria que un computador puede requerir para almacenar la propia matriz
+        y las que surgen en su factorizaci´on. En estas circunstancias, algunos
+        m´etodos iterativos que generan una sucesi´on que se aproxima a la soluci´on,
+        pueden ser una buena alternativa.</p>
     </div>
 
     <h1 class="title flexbox"> Metodos de Jacobi y Gauss-Seidel </h1>    
     
 
 
-    <div class="nota-box"> <h2 class="number-title"> Métodos􀀃de􀀃Jacobi􀀃y􀀃Gauss-Seidel</h2>
+    <div class="nota-box"> <h2 class="number-title"> Métodos de Jacobi y Gauss-Seidel</h2>
+
+      <p>La idea básica de esta clase de métodos es la de considerar la solución como 
+        un punto fijo de una transformación $T\colon \mathbb{R}^{n} \to \mathbb{R}^{n}$ definida por:
+        $$T(\vec{x}):= H\vec{x} + c  $$  
+        donde $H \in \mathbb{M}_{n \times n}(\mathbb{R})$ y $\vec{c}\in \mathbb{r}^{n}$
+      </p>
+
       <p>Los métodos iterativos más sencillos y conocidos son una generalización del método de punto fijo,
         estudiado en el capítulo 2. Se puede aplicar la misma técnica a fin de elaborar métodos para la solución
         de A x = b, de la siguiente manera:
