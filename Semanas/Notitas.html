@@ -124,10 +124,15 @@
 
     <div class="nota-box"> <h2 class="number-title"> Métodos de Jacobi y Gauss-Seidel</h2>
 
-      <p>La idea básica de esta clase de métodos es la de considerar la solución como 
+      <p>La idea básica de esta clase de métodos es la de considerar la solución de un sistema lineal $A\vec{x}= \vec{b}$ como 
         un punto fijo de una transformación $T\colon \mathbb{R}^{n} \to \mathbb{R}^{n}$ definida por:
-        $$T(\vec{x}):= H\vec{x} + c  $$  
-        donde $H \in \mathbb{M}_{n \times n}(\mathbb{R})$ y $\vec{c}\in \mathbb{r}^{n}$
+        $$T(\vec{x}):= H\vec{x} + \vec{c} $$  
+        donde $H \in \mathbb{M}_{n \times n}(\mathbb{R})$ y $\vec{c}\in \mathbb{R}^{n}$
+      </p>
+
+      <p>La aplicacón reiterada de esta transformación, genera una sucesión de vectores en $\mathbb{R}^{n}$
+        $$\vec{x}^{(k+1)}= H \vec{x}^{(k)} + \vec{c}, \,\,\,\,\,\, \forall k \in \mathbb{N}$$
+        que bajo ciertas condiciones puede conducir a la solución del sistema.
       </p>
 
       <p>Los métodos iterativos más sencillos y conocidos son una generalización del método de punto fijo,
@@ -139,6 +144,21 @@
       </p>
       <p><b>Demostración:</b></p>
     </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <p>Existen muchas maneras de interpretar la solución el sistema $A\vec{x}=\vec{b}$ 
+        como un punto fijo de una transformación $x \mapsto H\vec{x} + \vec{c}$.  
+      </p>
+
+      <p>Consideremos una matriz $M$ invertible   
+
+      </p>
+
+
+    </div>
+
+
+
 
 
     
