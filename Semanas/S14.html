@@ -273,7 +273,7 @@
           <li>$\rho(A) \leq \|A\|,\, \text{para cualquier norma natural  } \| \cdot \|. $</li>
         </ul>
       </p>
-      <p><b>Demostración:</b></p>
+      <p><b>Demostración:</b></p> 
     </div>
 
     <h1 class="title flexbox">Número de condición y matrices mal condicionadas</h1>   
@@ -313,7 +313,7 @@
    
     
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
-    <p>El <b>número de condición</b> de un sistema de ecuaciones lineales $A\vec{x}=\vec{b}$ se define como 
+    <p>Se define el <b>número de condición</b> de un sistema de ecuaciones lineales $A\vec{x}=\vec{b}$  como la constante:
       $$\kappa(A)= \|A \|\,  \|A^{-1}\|$$ 
       </p>
     </div>
@@ -322,29 +322,20 @@
       <p>
         <ul>
           <li>El número de condición $\kappa(A)$ tiene cierta influencia en la solución númerica
-            de un sistema de ecuaciones lineales $A\vec{x}=\vec{x}$.
+            de un sistema de ecuaciones lineales $A\vec{x}=\vec{b}$. En la solución de sistemas 
+            de ecuaciones  el número de condición de la matriz de coeficientes
+            mide la sensibilidad del sistema a los errores en los datos.
           </li><br>
           <li>El número de condición $\kappa(A)$ mide la transferencia del error de la matriz $A$ 
             y el vector $\vec{b}$ a la solución $\vec{x}$. Resulta que si $\kappa(A)= 10^{k}$, entonces 
             se puede esperar perder al menos $k$ dígitos de precisión en la solución del sistema $A\vec{x}=\vec{b}$.    
-          </li><br>
-        </ul>
-      </p>
-    </div>
-
-    <div class="nota-box"> <h2 class="number-title"> Observaciones</h2>
-      <p>
-        <ul>
-          <li>En la solución de sistemas de ecuaciones  el número de condición de la matriz de coeficientes
-            mide la sensibilidad del sistema a los errores en los datos.
           </li><br>
           <li>Cuando el número de condición $\kappa(A)$ es grande, ¡la solución calculada del sistema 
             puede correr peligro de error! Se deben hacer mas verificaciones antes de aceptar la solución como correcta.
           </li><br>
           <li>Los valores del número de condición, cercanos a $1$ indican una matriz bien condicionada, 
             mientras que los valores grandes indican una matriz mal condicionada. 
-          </li><br>
-
+          </li>
         </ul>
       </p>
     </div>
