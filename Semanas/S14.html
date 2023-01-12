@@ -165,7 +165,7 @@
     
     <div class="nota-box"> <h2 class="number-title"> Observación</h2>
       <p>
-       Para cualquier $\vec{x} \in \mathbb{R}^{n}$ con $\vec{x} \not= \vec{0}$, se satisface 
+       Para cualquier $A \in \mathbb{M}_{n\times n}(\mathbb{R})$ se satisface 
        $$\max_{\|\vec{x}\|=1} \| A\vec{x}\| = \max_{\vec{x}\not= \vec{0}} \left\| A\left(\displaystyle{\frac{\vec{x}}{\|\vec{x} \|}}\right) \right\|= \max_{\vec{x}\not= \vec{0}} \displaystyle{ \frac{\| A\vec{x}\|}{\|\vec{x} \| } } $$
       Por lo tanto, podemos escribir:
       $$\|A \|= \max_{\vec{x}\not= \vec{0}} \displaystyle{ \frac{\| A\vec{x}\|}{\|\vec{x} \| } }$$
@@ -182,10 +182,10 @@
       <p>Sea $A\in \mathbb{M}_{n \times n}(\mathbb{R})$. Entonces
         <ul>
           <li>Para la norma vectorial  $\| \cdot \|_{2}$ en $\mathbb{R}^{n}$, se tiene que: 
-            $$\|A \|_{2}:=\max_{\|\vec{x}\|=1} \| A\vec{x}\|_{2}$$
+            $$\|A \|_{2}:=\max_{\|\vec{x}\|_{2}=1} \| A\vec{x}\|_{2}$$
           </li>
           <li>Para la norma vectorial $\| \cdot \|_{\infty}$ en $\mathbb{R}^{n}$, se tiene que:
-            $$\|A \|_{\infty}:=\max_{\|\vec{x}\|=1} \| A\vec{x}\|_{\infty}$$
+            $$\|A \|_{\infty}:=\max_{\|\vec{x}\|_{\infty}=1} \| A\vec{x}\|_{\infty}$$
           </li>
         </ul>
 
@@ -275,6 +275,93 @@
       </p>
       <p><b>Demostración:</b></p>
     </div>
+
+    <h1 class="title flexbox">Número de condición y matrices mal condicionadas</h1>   
+    
+    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+    <p>Consideremos el sistema de ecuaciones lineales $A\vec{x}=\vec{b}$ tal que que $\mathrm{det}(A)\not= 0$ y 
+      cuya  solución  es $\vec{x}_{0}$. 
+      Nos gustaría controlar los cambios que   se producen en la solución cuando hacemos 
+      pequeños cambios en las componentes de  $\vec{b}$ o de $A$.  
+    </p>
+
+      <p>Supongamos que el lado derecho es perturbado por la cantidad denotada por $\Delta \vec{b}$, 
+        entonces la solución correspondiente es perturbada por la cantidad denotada por el $\Delta  \vec{x}$.
+        De esta manera, se tiene que 
+        $$A(\vec{x} + \Delta  \vec{x})= A\vec{x} + A \Delta  \vec{x}= \vec{b} + \Delta  \vec{b} $$ 
+        de donde se sigue que
+        $$A\Delta \vec{x} = \Delta  \vec{b}.$$
+        Del sistema lineal original y las propiedades de las normas, se tiene que:
+        $$\|\vec{b}\| = \| A\vec{x}\|\leq \| A\| \|\vec{x}\| $$
+        Por lo tanto
+        $$\displaystyle{\frac{1}{\|\vec{x}\|} \leq \frac{\| A\|}{ \| \vec{b} \|} }$$
+      </p>
+
+      <p>Por otro lado del sistema lineal perturbado $A\Delta \vec{x} = \Delta  \vec{b} $, se tiene
+        $$\Delta  \vec{x} = A^{-1} \Delta  \vec{b}$$
+        y además, 
+        $$\|\Delta \vec{x}\| \leq \|A^{-1} \|\, \|\Delta  \vec{b}\|$$
+      </p>
+      <p>
+      Luego, de las dos desigualdades anteriores se deduce que:
+      $$\displaystyle{\frac{\|\Delta  \vec{x} \|}{\|\vec{x}\|} \leq  \left( \|A \| \, \|A^{-1}\|\right)  \frac{\| \Delta \vec{b} \|}{ \| \vec{b} \|} }$$
+    </p>
+
+    <p>Por lo tanto, la variación en el error relativo de la solución está asociada a la cantidad $\|A \| \, \|A^{-1}\|$</p>
+    </div>
+
+   
+    
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+    <p>El <b>número de condición</b> de un sistema de ecuaciones lineales $A\vec{x}=\vec{b}$ se define como 
+      $$\kappa(A)= \|A \|\,  \|A^{-1}\|$$ 
+      </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Observaciones</h2>
+      <p>
+        <ul>
+          <li>El número de condición $\kappa(A)$ tiene cierta influencia en la solución númerica
+            de un sistema de ecuaciones lineales $A\vec{x}=\vec{x}$.
+          </li><br>
+          <li>El número de condición $\kappa(A)$ mide la transferencia del error de la matriz $A$ 
+            y el vector $\vec{b}$ a la solución $\vec{x}$. Resulta que si $\kappa(A)= 10^{k}$, entonces 
+            se puede esperar perder al menos $k$ dígitos de precisión en la solución del sistema $A\vec{x}=\vec{b}$.    
+          </li><br>
+        </ul>
+      </p>
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Observaciones</h2>
+      <p>
+        <ul>
+          <li>En la solución de sistemas de ecuaciones  el número de condición de la matriz de coeficientes
+            mide la sensibilidad del sistema a los errores en los datos.
+          </li><br>
+          <li>Cuando el número de condición $\kappa(A)$ es grande, ¡la solución calculada del sistema 
+            puede correr peligro de error! Se deben hacer mas verificaciones antes de aceptar la solución como correcta.
+          </li><br>
+          <li>Los valores del número de condición, cercanos a $1$ indican una matriz bien condicionada, 
+            mientras que los valores grandes indican una matriz mal condicionada. 
+          </li><br>
+
+        </ul>
+      </p>
+    </div>
+
+      
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>Si el sistema de ecuaciones lineales $A\vec{x}=\vec{b}$ es sensible a las perturbaciones en los 
+        elementos de $A$, o a las perturbaciones de los  componentes  de $\vec{b}$, entonces esto se refleja en 
+        la matriz $A$, que tendra un número de condición muy alto. En tal caso, se dice que la matriz $A$ esta 
+        <b>mal condicionada</b>. Esto es, entre mayor sea el número de condición más mal condicionado esta el sistema.
+      </p>
+      </div>
+
+     
+
+
+  
 
   
 
