@@ -95,12 +95,12 @@
     <h1 class="title flexbox"> Métodos iterativos</h1>    
 
     <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
-      
       <p>En general los métodos iterativos no se utilizan  para resolver sistemas lineales de dimensión pequeña,
         ya que el tiempo necesario para conseguir una solución con una exactitud satisfactoria sobrepasa 
         el tiempo que requieren los métodos directos, como el método de  eliminación Gaussiana.
       </p>
 
+      
       <p>Por otro lado, la solución de sistemas lineales grandes ($n \geq 50$), se vuelve costosa y difícil
         en una computadora con los métodos de eliminación directos, ya que para ello se requiere de una memoria amplia;
         además, como el número de operaciones que se debe ejecutar es muy grande, pueden producirse errores de redondeo
@@ -117,15 +117,19 @@
       </p>
       -->
 
-      <p>La idea básica de esta clase de métodos es la de considerar la solución de un sistema lineal $A\vec{x}= \vec{b}$ como 
-        un punto fijo de una transformación $T\colon \mathbb{R}^{n} \to \mathbb{R}^{n}$ definida por:
+      <p>Un método iterativo para resolver el sistema de ecuaciones lineales $A\vec{x}= \vec{b}$
+        comienza con una aproximación inicial $\vec{x}^{(0)}$ a la solución $\vec{x}_{0}$ y genera una sucesión 
+        $\left\{\vec{x}^{(k)}\right\}_{k=0}^{\infty}$ que converge a $\vec{x}_{0}$. Más precisamente, la idea básica
+        de esta clase de métodos es la de considerar la solución $\vec{x}_{0}$ del sistema lineal
+        $A\vec{x}= \vec{b}$ como un punto fijo de una transformación $T\colon \mathbb{R}^{n} \to \mathbb{R}^{n}$
+        definida como:
         $$T(\vec{x}):= H\vec{x} + \vec{c} $$  
         donde $H \in \mathbb{M}_{n \times n}(\mathbb{R})$ es una matriz fija  y $\vec{c}\in \mathbb{R}^{n}$ un vector fijo.
       </p>
 
-      <p>Luego de elegir un vector inicial $\vec{x}^{(0)}$. La aplicacón reiterada de esta transformación, genera una sucesión  de vectores $\{\vec{x}^{(k)} \}_{k=1}^{\infty}$
-        en $\mathbb{R}^{n}$
-        $$\vec{x}^{(k+1)}= T\left(\vec{x}^{(k)}\right)=  H \vec{x}^{(k)} + \vec{c}, \,\,\,\,\,\, \forall k=1,2,\ldots$$
+      <p>Luego de elegir un vector inicial $\vec{x}^{(0)}$. La aplicación reiterada de esta transformación,
+        genera una sucesión  de vectores $\{\vec{x}^{(k)} \}_{k=1}^{\infty}$  en $\mathbb{R}^{n}$:
+        $$\vec{x}^{(k+1)}:= T\left(\vec{x}^{(k)}\right)=  H \vec{x}^{(k)} + \vec{c}, \,\,\,\,\,\, \forall k=1,2,\ldots$$
         que bajo ciertas condiciones converge a una solución $\vec{x}_{0}$ del sistema $A\vec{x}= \vec{b}$. 
       </p>
 
@@ -133,7 +137,7 @@
         estudiado en el capítulo 2. Se puede aplicar la misma técnica a fin de elaborar métodos para la solución
         de A x = b, de la siguiente manera:
       </p>
-      <p>
+      
     </div>
 
     <h1 class="title flexbox"> Metodos de Jacobi y Gauss-Seidel </h1>    
