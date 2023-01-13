@@ -119,39 +119,60 @@
 
       <p>Un método iterativo para resolver el sistema de ecuaciones lineales $A\vec{x}= \vec{b}$
         comienza con una aproximación inicial $\vec{x}^{(0)}$ a la solución $\vec{x}_{0}$ y genera una sucesión 
-        $\left\{\vec{x}^{(k)}\right\}_{k=0}^{\infty}$ que converge a $\vec{x}_{0}$. Más precisamente, la idea básica
+        $\left\{\vec{x}^{(k)}\right\}_{k=0}^{\infty}$ que converge a $\vec{x}_{0}$. Los métodos iterativos
+        más sencillos y conocidos son una generalización del método de punto fijo.
+        Más precisamente, la idea básica
         de esta clase de métodos es la de considerar la solución $\vec{x}_{0}$ del sistema lineal
-        $A\vec{x}= \vec{b}$ como un punto fijo de una transformación $T\colon \mathbb{R}^{n} \to \mathbb{R}^{n}$
+        $A\vec{x}= \vec{b}$ como un punto fijo de una transformación
+        $T\colon \mathbb{R}^{n} \to \mathbb{R}^{n}$
         definida como:
         $$T(\vec{x}):= H\vec{x} + \vec{c} $$  
-        donde $H \in \mathbb{M}_{n \times n}(\mathbb{R})$ es una matriz fija  y $\vec{c}\in \mathbb{R}^{n}$ un vector fijo.
-      </p>
+        donde $H \in \mathbb{M}_{n \times n}(\mathbb{R})$ es una matriz fija llamada <b>matriz de iteración</b> y $\vec{c}\in \mathbb{R}^{n}$ un vector fijo.
+        </p>
 
       <p>Luego de elegir un vector inicial $\vec{x}^{(0)}$. La aplicación reiterada de esta transformación,
-        genera una sucesión  de vectores $\{\vec{x}^{(k)} \}_{k=1}^{\infty}$  en $\mathbb{R}^{n}$:
+        obtiene una sucesión  de vectores $\{\vec{x}^{(k)} \}_{k=0}^{\infty}$  en $\mathbb{R}^{n}$:
         $$\vec{x}^{(k+1)}:= T\left(\vec{x}^{(k)}\right)=  H \vec{x}^{(k)} + \vec{c}, \,\,\,\,\,\, \forall k=1,2,\ldots$$
-        que bajo ciertas condiciones converge a una solución $\vec{x}_{0}$ del sistema $A\vec{x}= \vec{b}$. 
+        que bajo ciertas condiciones converge a la solución $\vec{x}_{0}$ del sistema $A\vec{x}= \vec{b}$. 
       </p>
+    </div>
 
-      <p>Los métodos iterativos más sencillos y conocidos son una generalización del método de punto fijo,
-        estudiado en el capítulo 2. Se puede aplicar la misma técnica a fin de elaborar métodos para la solución
-        de A x = b, de la siguiente manera:
+    
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <p>Para cualquier matriz cuadrada $A$ se satisface
+        $$\rho(A)= \inf \{\|A\| \colon \| \| \text{ es una norma matricial inducida}\}$$
       </p>
-      
+    </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Corolario</h2>
+      <p>Sea  $A \in mathbb{M}_{n\times n}(\mathbb{R})$. Las siguientes proposiciones son equivalentes:
+        <ol>
+          <li>$\lim_{n\to \infty} A^{n}=0_{n\times n}$</li><br>
+          <li>$\lim_{n\to \infty} \| A^{n} \|=0$, \text{ para alguna norma subordinada}</li><br>
+          <li>$\rho(A)< 1$</li><br>
+
+        </ol>
+        
+      </p>
+    </div>
+    
+
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+    <p>Sean $H$ una matriz cuadrada y $\vec{c}$ un vector tales que la ecuación $\vec{x} = H\vec{x}+c$
+      tiene una solución única $\vec{x}_{0}$. La sucesión $\{\vec{x}^{(k)} \}_{k=0}^{\infty}$ generada por
+      la transformación 
+      $$\vec{x}^{(k+1)}:= T\left(\vec{x}^{(k)}\right)=  H \vec{x}^{(k)} + \vec{c}, \,\,\,\,\,\, \forall k=1,2,\ldots$$
+      con un vector inicial $\vec{x}^{(0)}$, converge a $\vec{x}$ si y sólo si $\rho(H) < 1$.
+    </p>
+    <p><b>Demostración:</b></p>
     </div>
 
     <h1 class="title flexbox"> Metodos de Jacobi y Gauss-Seidel </h1>    
     
 
 
-    <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
-
      
-        
-      </p>
-      <p><b>Demostración:</b></p>
-    </div>
-
+      
     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
       <p>Existen muchas maneras de interpretar la solución el sistema $A\vec{x}=\vec{b}$ 
         como un punto fijo de una transformación $x \mapsto H\vec{x} + \vec{c}$.  
