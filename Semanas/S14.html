@@ -269,7 +269,7 @@
     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
       <p>Si $A  \in   \mathbb{M}_{n \times n}(\mathbb{R})$, entonces 
         <ul>
-          <li>$\|A \|_{2} = \left( \rho(A^{t} A) \right)^{\frac{1}{2}}$</li><br>
+          <li>$\|A \|_{2} = \sqrt{\rho(A^{t} A)}$</li><br>
           <li>$\rho(A) \leq \|A\|,\, \text{para cualquier norma natural  } \| \cdot \|. $</li>
         </ul>
       </p>
@@ -330,11 +330,11 @@
             y el vector $\vec{b}$ a la solución $\vec{x}$. Resulta que si $\kappa(A)= 10^{k}$, entonces 
             se puede esperar perder al menos $k$ dígitos de precisión en la solución del sistema $A\vec{x}=\vec{b}$.    
           </li><br>
-          <li>Cuando el número de condición $\kappa(A)$ es grande, ¡la solución calculada del sistema 
-            puede correr peligro de error! Se deben hacer mas verificaciones antes de aceptar la solución como correcta.
+          <li>Cuando el número de condición $\kappa(A)$ es grande, <b>¡la solución calculada del sistema 
+            puede correr peligro de error!</b> Se deben hacer más verificaciones antes de aceptar la solución como correcta.
           </li><br>
-          <li>Los valores del número de condición, cercanos a $1$ indican una matriz bien condicionada, 
-            mientras que los valores grandes indican una matriz mal condicionada. 
+          <li>Los valores del número de condición, cercanos a $1$ indican una <em>matriz bien condicionada</em>, 
+            mientras que los valores grandes indican una <em>matriz mal condicionada</em>. 
           </li>
         </ul>
       </p>
