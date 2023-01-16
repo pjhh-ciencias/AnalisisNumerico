@@ -392,7 +392,10 @@
       <p>Luego de elegir un vector inicial $\vec{x}^{(0)}$. La aplicación reiterada de esta transformación,
         genera una sucesión  de vectores $\{\vec{x}^{(k)} \}_{k=0}^{\infty}$  en $\mathbb{R}^{n}$:
         $$\vec{x}^{(k+1)}:= T\left(\vec{x}^{(k)}\right)=  H \vec{x}^{(k)} + \vec{c}, \,\,\,\,\,\, \forall k=1,2,\ldots$$
-        que bajo ciertas condiciones converge a la solución $\vec{x}_{0}$ del sistema $A\vec{x}= \vec{b}$. 
+        que bajo ciertas condiciones podemos garantizar que  converge a la solución $\vec{x}_{0}$ del sistema $A\vec{x}= \vec{b}$. 
+        En este caso se detiene el proceso cuando:
+        $$\|\vec{x}^{(k+1)} - \vec{x}^{(k)} \| < \epsilon$$
+        para un valor de $\epsilon >0$ lo suficientemente pequeño.
       </p>
     </div>
 
@@ -419,7 +422,6 @@
         norma matricial inducida por una  norma vectorial entonces $I_{n \times n}-D$ es no singular.
       </p>
     </div>
-
     
 
     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
