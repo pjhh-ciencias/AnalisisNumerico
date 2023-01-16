@@ -360,7 +360,7 @@
       </p>
 
       
-      <p>Por otro lado, la solución de sistemas lineales grandes ($n \geq 50$), se vuelve costosa y difícil
+      <p>Por otro lado, la solución de sistemas lineales grandes ( por ejemplo $n \geq 50$), se vuelve costosa y difícil
         en una computadora con los métodos de eliminación directos, ya que para ello se requiere de una memoria amplia;
         además, como el número de operaciones que se debe ejecutar es muy grande, pueden producirse errores de redondeo
         también muy grandes. En estas circunstancias, algunos métodos iterativos que generan una sucesión que se
@@ -376,7 +376,7 @@
       </p>
       -->
 
-      <p>Un método iterativo para resolver el sistema de ecuaciones lineales $A\vec{x}= \vec{b}$
+      <p>Un método iterativo para resolver un sistema de ecuaciones lineales $A\vec{x}= \vec{b}$
         comienza con una aproximación inicial $\vec{x}^{(0)}$ a la solución $\vec{x}_{0}$ y genera una sucesión 
         $\left\{\vec{x}^{(k)}\right\}_{k=0}^{\infty}$ que converge a $\vec{x}_{0}$. Los métodos iterativos
         más sencillos y conocidos son una generalización del método de punto fijo.
@@ -390,7 +390,7 @@
         </p>
 
       <p>Luego de elegir un vector inicial $\vec{x}^{(0)}$. La aplicación reiterada de esta transformación,
-        obtiene una sucesión  de vectores $\{\vec{x}^{(k)} \}_{k=0}^{\infty}$  en $\mathbb{R}^{n}$:
+        genera una sucesión  de vectores $\{\vec{x}^{(k)} \}_{k=0}^{\infty}$  en $\mathbb{R}^{n}$:
         $$\vec{x}^{(k+1)}:= T\left(\vec{x}^{(k)}\right)=  H \vec{x}^{(k)} + \vec{c}, \,\,\,\,\,\, \forall k=1,2,\ldots$$
         que bajo ciertas condiciones converge a la solución $\vec{x}_{0}$ del sistema $A\vec{x}= \vec{b}$. 
       </p>
@@ -398,8 +398,8 @@
 
     
     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
-      <p>Para cualquier matriz cuadrada $A$ se satisface
-        $$\rho(A)= \inf \{\|A\|\,  \colon\, \|\cdot \| \text{ es una norma matricial inducida}\}$$
+      <p>Para cualquier matriz cuadrada $A\in \mathbb{M}(\mathbb{R})_{n \times n}$ se satisface
+        $$\rho(A)= \inf \{\|A\|\,  \colon\, \|\cdot \| \text{ es una norma matricial inducida definida sobre } \mathbb{M}(\mathbb{R})_{n \times n}\}$$
       </p>
     </div>
 
@@ -425,9 +425,9 @@
     <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
     <p>Sean $H$ una matriz cuadrada y $\vec{c}$ un vector tales que la ecuación $\vec{x} = H\vec{x}+c$
       tiene una solución única $\vec{x}_{0}$. La sucesión $\{\vec{x}^{(k)} \}_{k=0}^{\infty}$ generada por
-      la transformación 
+      la transformación $T$ como:
       $$\vec{x}^{(k+1)}:= T\left(\vec{x}^{(k)}\right)=  H \vec{x}^{(k)} + \vec{c}, \,\,\,\,\,\, \forall k=1,2,\ldots$$
-      con un vector inicial $\vec{x}^{(0)}$, converge a $\vec{x}$ si y sólo si $\rho(H) < 1$.
+      con vector inicial $\vec{x}^{(0)}$, converge a $\vec{x}_{0}$ si y sólo si $\rho(H) < 1$.
     </p>
     <p><b>Demostración:</b></p>
     </div>
