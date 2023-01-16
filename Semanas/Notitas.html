@@ -97,52 +97,113 @@
         $$A\vec{x} = \vec{b}$$
         como el punto fijo de una transformación $\vec{x} = H\vec{x}  + \vec{c}$.
       </p>
+      <!--
       <p>Consideremos una matriz $M \in \mathbb{M}_{n\times n}(\mathbb{R})$ invertible. Con ayuda de esta matriz construyamos la siguiente ecuación 
         de punto fijo:
         $$\vec{x}= \left(\mathrm{I}_{n \times n} -  M^{-1}A\right)\vec{x} +M^{-1}\vec{b} $$
         en este caso $H:= \mathrm{I}_{n \times n} -  M^{-1}A $ y $\vec{c} := M^{-1}\vec{b} $
       </p>
+
+
+
+
       <p>Entonces de acuerdo con el teorema anterior, la dificultad radica en encontrar una matriz $M$ tal que:
         $$\rho(\mathrm{I}_{n \times n} - M^{-1}A) < 1$$
       </p>
+      -->
 
-      <p>Un grupo de métodos iterativos clásicos se obtienen si descomponemos la matriz  de coeficientes $A$
+      <p>Un par de métodos iterativos clásicos se obtienen si descomponemos la matriz  de coeficientes $A$
         como:
         $$A= \mathrm{D}- \mathrm{L} - \mathrm{U}$$
         donde 
         <ol>
-          <li>$\mathrm{D}$ es una matriz diagonal tal que 
+          <li> $$\mathrm{D}=(a_{ij}):=  \begin{pmatrix} 
+            a_{11} & 0 & 0& \cdots & 0  \\
+           0 & a_{22} &0& \cdots & 0 \\
+            0 & 0 & a_{33} &\cdots & 0  \\
+            \vdots & \vdots & \vdots&  \ddots & \vdots  \\
+            0 &0 & 0 & \cdots&a_{nn}  \\
+           \end{pmatrix}$$
+            <!--$\mathrm{D}$ es una matriz diagonal tal que 
             $$d_{ii}:= a_{ii}, \,\,\,\,\, \forall i=1,\ldots ,n$$
+            -->
           </li><br>
-          <li>$\mathrm{L}$  es una matriz triangular inferior tal que
-          $$\ell_{ij}:= - a_{i,j}, \,\,\,\,\, \forall i,j=1,\ldots ,n, i>j$$  
+          <li>$$\mathrm{U}=(u_{ij}):=\begin{pmatrix} 
+            -a_{11} & -a_{12} & -a_{13}  & \cdots & -a_{1n}  \\
+            0 & -a_{22} & -a_{23}       &\cdots & -a_{2n}  \\
+            0 &     0        & -a_{33} &\cdots & -a_{3n}  \\
+            \vdots & \vdots &  \vdots & \ddots & \vdots  \\
+            0 &     0      &   0        & \cdots & -a_{nn}  \\
+           \end{pmatrix}$$
+            <!--$\mathrm{L}$  es una matriz triangular inferior tal que
+          $$\ell_{ij}:= - -a_{i,j}, \,\,\,\,\, \forall i,j=1,\ldots ,n, i>j$$ -->
           </li><br>
-          <li>$\mathrm{U}$  es una matriz triangular superior tal que
-            $$u_{ij}:= - a_{i,j}, \,\,\,\,\, \forall i,j=1,\ldots ,n, i < j$$  
+          <li> $$\mathrm{L}=(\ell_{ij}):=\begin{pmatrix} 
+            -a_{11} & 0 & 0 &  \cdots & 0  \\
+            -a_{21} & -a_{22} &  0 &\cdots & 0  \\
+            -a_{31} & -a_{32} & -a_{33} & \cdots & 0  \\
+           
+             \vdots & \vdots &  \vdots &   \ddots & \vdots  \\
+            -a_{n1} & -a_{n2} &   -a_{n3}  &    \cdots & -a_{nn}  \\
+            \end{pmatrix}$$
+          <!-- $\mathrm{U}$  es una matriz triangular superior tal que
+            $$u_{ij}:= - -a_{i,j}, \,\,\,\,\, \forall i,j=1,\ldots ,n, i < j$$  
+          -->
             </li><br>
         </ol>
       </p>
-    </div>
 
-    
-    <div class="nota-box"> <h2 class="number-title"> Método de Jacobi</h2>
-      <p>El método de Jacobi se obtiene cuando $M=\mathrm{D}$. En este caso, la ecuación 
-        de punto fijo es:
-        $$\vec{x}^{(k+1)} = \mathrm{D}^{-1}(L + U)\vec{x}^{(k)} + \mathrm{D}^{-1}\vec{b}$$
-        
+      <p>
+        Entonces la ecuación $A\vec{x}= \vec{b}$ se transforma en:
+        $$(D - L - U )\vec{x} = \vec{b}$$
+        o bien 
+        $$D\vec{x} = (L + U )\vec{x} +  \vec{b}$$
+        Luego, si $D^{-1}$ existe, es decir si $a_{ii}\not= 0$ para todo $i=1,\ldots,n$, entonces 
+        se obtiene la ecuación de punto fijo:
+        $$\vec{x} = D^{-1}(L + U )\vec{x} + D^{-1}\vec{b}$$
+        De acuerdo al Teorema anterior $H:=D^{-1}(L + U )$ y $\vec{c}:= D^{-1}\vec{b} $
       </p>
     </div>
 
+    <h1 class="number-title flexbox"> Métodos de jacobi y Gauss-Seidel</h1>     
+
     
-    <div class="nota-box"> <h2 class="number-title"> Método de Gauss-Seidel</h2>
-      <p>El método de Gauss-Seidel se obtiene cuando $M=\mathrm{D}-\mathrm{L}$. En este caso, la ecuación 
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Método de Jacobi </h2>
+      <p>De la ecuación
+        $$\vec{x} = D^{-1}(L + U )\vec{x} + D^{-1}\vec{b}$$
+        Despejando $x_{i}$ de la $i$-ésima ecuación se obtiene:
+        $$x_{i}= \displaystyle{ \frac{b_{i} - \displaystyle{\sum_{j\not=i} a_{ij} x_{j}} }{a_{ii}}}$$
+        Por lo tanto, 
+        $$x_{i}= \displaystyle{ -\frac{1}{a_{ii}} \displaystyle{\sum_{j\not=i} a_{ij} x_{j} } + \frac{b_{i}}{a_{ii}} }, \,\,\,\, \text{ para cada } i=1,\ldots,n $$
+        
+        
+        El método de Jacobi consiste en calcular la $k$-ésima aproximación de la sucesión $\{\vec{x}^{(k)}\}_{k=1}^{\infty}$, 
+        $$\vec{x}^{(k)} :=\left(\vec{x}^{(k)}_{1}), \vec{x}^{(k)}_{2}, \ldots, \vec{x}^{(k)}_{n}\right)^{t} $$
+        a partir de la $(k-1)$-ésima iteración 
+        $$\vec{x}^{(k-1)} :=\left(\vec{x}^{(k-1)}_{1}), \vec{x}^{(k-1)}_{2}, \ldots, \vec{x}^{(k-1)}_{n}\right)^{t} $$
+        donde 
+        $$x^{(k)}_{i}= \displaystyle{ \frac{b_{i} - \displaystyle{\sum_{j\not=i} a_{ij} x^{(k-1)}_{j}} }{a_{ii}}}, \,\,\,\, \text{ para cada } i=1,\ldots,n$$
+
+
+        
+        <!-- se obtiene cuando $M=\mathrm{D}-\mathrm{L}$. En este caso, la ecuación 
         de punto fijo es:
         $$\vec{x}^{(k+1)} = \left(\mathrm{D} - L \right)^{-1} U \vec{x}^{(k)} + \left(\mathrm{D} - L \right)^{-1}\vec{b}$$
-
+        -->
         
       </p>
+    </div>
 
 
+
+    <div class="nota-box"> <h2 class="number-title"> Método de Gauss-Seidel  </h2>
+      <p>El método de Jacobi se obtiene haciendo 
+        $$\vec{x}^{(k+1)} = D^{-1}(L + U )\vec{x}^{(k)} + D^{-1}\vec{b}, \,\,\,\, \text{ para todo } k=0,1,\ldots$$
+        
+      </p>
+    </div>
 
 
     
