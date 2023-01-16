@@ -214,7 +214,7 @@
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
       <p>Sea $A  \in   \mathbb{M}_{n \times n}(\mathbb{R})$, se define el <b>polinomio característico</b> de $A$  
         como: 
-        $$p(\lambda) := \mathrm{det}(A- \lambda I_{n\times n})$$
+        $$p(\lambda) := \mathrm{det}(A- \lambda \mathrm{I}_{n\times n})$$
       </p>
     </div>
 
@@ -223,9 +223,9 @@
       <p>
         <ul>
           <li>$p$ es un polinomio de grado $n$.</li><br>
-          <li>Si $\lambda$ es un cero de $p$, entonces $\mathrm{det}(A- \lambda I_{n\times n})=0$. Por lo tanto, 
+          <li>Si $\lambda$ es un cero de $p$, entonces $\mathrm{det}(A- \lambda \mathrm{I}_{n\times n})=0$. Por lo tanto, 
             el sistema de ecuaciones lineales  determinado por 
-            $$(A- \lambda I_{n\times n})\vec{x}=\vec{0}$$ 
+            $$(A- \lambda \mathrm{I}_{n\times n})\vec{x}=\vec{0}$$ 
             tiene una solución  $\vec{x}\not= \vec{0}$.
           </li><br>
         </ul>       
@@ -238,7 +238,7 @@
           <li>Sea $A  \in   \mathbb{M}_{n \times n}(\mathbb{R})$. Si $p$ es el polinomio característico de la matriz 
         $A$, los ceros de $p$ son llamados <b>eigenvalores</b>  o <b>valores característicos</b> de  $A$.
         </li><br>
-        <li>Si $\lambda$ es un eigenvalor de $A$ y $\vec{x} \not= \vec{0} $ satisface $(A- \lambda I_{n\times n})\vec{x}=\vec{0}$,
+        <li>Si $\lambda$ es un eigenvalor de $A$ y $\vec{x} \not= \vec{0} $ satisface $(A- \lambda \mathrm{I}_{n\times n})\vec{x}=\vec{0}$,
           entonces $\vec{x}$ es un <b>eigenvector</b>  o <b>vector característico</b>  de $A$ correspondiente al eigenvalor $\lambda$
            </li>
       </ul>
@@ -248,12 +248,12 @@
     <div class="nota-box"> <h2 class="number-title"> Observaciones </h2>
       <p>
         <ul>
-          <li>$\lambda$ es un eigenvalor de $A$ si y sólo si  $\mathrm{det}(A- \lambda I_{n\times n})=0$
+          <li>$\lambda$ es un eigenvalor de $A$ si y sólo si  $\mathrm{det}(A- \lambda \mathrm{I}_{n\times n})=0$
 
           </li><br>
           <li>Sea $\lambda$ es un eigenvalor de $A$, entonces  $\vec{x}\not= \vec{0} $ es un eigenvector de $A$ si y sólo si $\vec{x}$ 
             es una solución no trivial del sistema  
-            $$(A- \lambda I_{n\times n})\vec{x}=\vec{0}$$
+            $$(A- \lambda \mathrm{I}_{n\times n})\vec{x}=\vec{0}$$
           </li><br>
         </ul>       
       </p>
@@ -419,7 +419,7 @@
     
     <div class="nota-box"> <h2 class="number-title"> Lema</h2>
       <p>Si $D\in \mathbb{M}_{n\times n}(\mathbb{R})$ tal que $\| D\| < 1$ para una determinada
-        norma matricial inducida por una  norma vectorial entonces $I_{n \times n}-D$ es no singular.
+        norma matricial inducida por una  norma vectorial entonces $\mathrm{I}_{n \times n}-D$ es no singular.
       </p>
     </div>
     
@@ -433,5 +433,35 @@
     </p>
     <p><b>Demostración:</b></p>
     </div>
+
+    
+    <div class="nota-box"> <h2 class="number-title"> Nota</h2>
+      <p>Existen muchas maneras de interpretar la solución de un sistema de ecuaciones lineales:
+        $$A\vec{x} = \vec{b}$$
+        como el punto fijo de una transformación $\vec{x} = H\vec{x}  + \vec{c}$.
+      </p>
+      <p>Consideremos una matriz $M \in \mathbb{M}_{n\times n}(\mathbb{R})$ invertible. Con ayuda de esta matriz construyamos la siguiente ecuación 
+        de punto fijo:
+        $$\vec{x}= \left(\mathrm{I}_{n \times n} -  M^{-1}A\right)\vec{x} +M^{-1}\vec{b} $$
+        en este caso $H:= \mathrm{I}_{n \times n} -  M^{-1}A $ y $\vec{c} := M^{-1}\vec{b} $
+      </p>
+      <p>Entonces de acuerdo con el teorema anterior, la dificultad radica en encontrar una matriz $M$ tal que:
+        $$\rho(\mathrm{I}_{n \times n} - M^{-1}A) < 1$$
+      </p>
+
+      <p>Un grupo de métodos iterativos clásicos se obtienen si descomponemos la matriz  de coeficientes $A$
+        como:
+        $$A= \mathrm{D}- \mathrm{L} - \mathrm{U}$$
+        donde 
+        <ol>
+          <li>$\mathrm{D}$ es una matriz diagonal tal que 
+            $$d_{ii}= a_{ii}, \,\,\,\,\, \forall i=1,\ldots ,n$$
+          </li><br>
+          <li>$\mathrm{D}$</li><br>
+          <li>$\mathrm{D}$</li><br>
+        </ol>
+      </p>
+    </div>
+    
 
     </body>
