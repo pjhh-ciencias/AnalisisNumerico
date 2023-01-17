@@ -438,16 +438,41 @@
                   en un arreglo y un vector respectivamente) 
                   correspondientes al sistema $A\vec{x}= \vec{b}$, <b>implemente
                   el  <a href="../Semanas/S15.html#Metodo_Jacobi">  Método de Jacobi </a> </b>
-                  para para encontrar una aproximación una solución del sistema de ecuaciones $A\vec{x}= \vec{b}$,
-                  de tal manera que el error absoluto sea menor que $1\times 10^{-5}$. Utiliza la norma infinita 
+                  para encontrar una aproximación a una solución del sistema de ecuaciones $A\vec{x}= \vec{b}$,
+                  de tal manera que el error absoluto sea menor que $1\times 10^{-5}$. Utiliza la norma vectorial infinita 
                   $\| \cdot \|_{\infty}$ para calcular la distancia entre dos  aproximaciones consecutivas. 
                 </p>
 
                 <p>Si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
-                  detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.</p>
+                  detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.
+                </p>
                   
               </div>
 
+              <div class="ejercicio-box" id=""><h2 class="number-title"> Ejercicio </h2>
+                <p>Dado un sistema de ecuaciones de la forma:
+                  $$A\vec{x}= \vec{b}$$
+                  donde $A$ es una matriz de tamaño $n\times n$ (matriz de coeficientes del sistema), $\vec{x}$ es el vector de incognitas 
+                  y $\vec{b}$ es el vector de términos independientes, $\vec{x}$ y $\vec{b}$ son vectores 
+                  de tamaño $n\times 1$.
+                </p>
+          
+                <p>
+                  Crea un programa utilizando Python o Scilab que dada la matriz de coeficientes  $A$
+                  y el vector de términos independientes $\vec{b}$ (previamente almacenados 
+                  en un arreglo y un vector respectivamente) 
+                  correspondientes al sistema $A\vec{x}= \vec{b}$, <b>implemente
+                  el  <a href="../Semanas/S15.html#Metodo_Gauss_Seidel">  Método de Gauss_Seidel </a> </b>
+                  para encontrar una aproximación a una solución del sistema de ecuaciones $A\vec{x}= \vec{b}$,
+                  de tal manera que el error absoluto sea menor que $1\times 10^{-5}$. Utiliza la norma vectorial infinita 
+                  $\| \cdot \|_{\infty}$ para calcular la distancia entre dos  aproximaciones consecutivas. 
+                </p>
+
+                <p>Si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
+                  detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.
+                </p>
+                  
+              </div>
           
 
 
