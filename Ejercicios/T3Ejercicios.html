@@ -285,7 +285,7 @@
                     igual a $1$, así como la matriz diagonal $\mathrm{D}$ y la matriz  $\mathrm{L}^{t}$ .
                   </p>
                 </div>
-                
+
 
                 <div class="ejercicio-box" id=""><h2 class="number-title"> Ejercicio </h2>
                   <p>Crea un programa utilizando Python o Scilab que dada una matriz cuadrada $A$
@@ -389,12 +389,66 @@
                           
                           \end{matrix}$$
                         </li><br>
-              </ol>
-            
-                </div>
+                    </ol>
+                  </div>
+
+                  <div class="ejercicio-box" id=""><h2 class="number-title"> Ejercicio </h2>
+                    <p>Considera el siguiente sistema de ecuaciones lineales:
+                      
+                    </p>
+                    <p>Implementa el método de Doolittle para hallar la factorización $\mathrm{LU}$ de la matriz
+                      de coeficientes. Muestra las matrices $\mathrm{L}$ y $\mathrm{U}$ obtenidas. Luego, con ayuda
+                      de esta factorización resuelve el sistema de ecuaciones.
+                    </p>
+                  </div>
+    
+              <div class="ejercicio-box" id=""><h2 class="number-title"> Ejercicio </h2>
+                <p>Considera el siguiente sistema de ecuaciones lineales:
+                  
+                </p>
+                <p>Encuentra la factorización $\mathrm{LD}\mathrm{L^{t}}$ de la matriz de coeficientes.
+                  Muestra las matrices $\mathrm{L}$ y $\mathrm{D}$ obtenidas. Luego, con ayuda
+                  de esta factorización resuelve el sistema de ecuaciones.
+                </p>
+              </div>
+                  
+              <div class="ejercicio-box" id=""><h2 class="number-title"> Ejercicio </h2>
+                <p>Considera el siguiente sistema de ecuaciones lineales:
+                  
+                </p>
+                <p>Implementa la factorización de Cholesky para hallar la factorización $\mathrm{L}\mathrm{L}^{t}$
+                  de la matriz de coeficientes. Muestra la matrices $\mathrm{L}$ resultante. Luego, con ayuda
+                  de esta factorización resuelve el sistema de ecuaciones.
+                </p>
+              </div>
+
+
+              
+              <div class="ejercicio-box" id=""><h2 class="number-title"> Ejercicio </h2>
+                <p>Dado un sistema de ecuaciones de la forma:
+                  $$A\vec{x}= \vec{b}$$
+                  donde $A$ es una matriz de tamaño $n\times n$ (matriz de coeficientes del sistema), $\vec{x}$ es el vector de incognitas 
+                  y $\vec{b}$ es el vector de términos independientes, $\vec{x}$ y $\vec{b}$ son vectores 
+                  de tamaño $n\times 1$.
+                </p>
+          
+                <p>
+                  Crea un programa utilizando Python o Scilab que dada la matriz de coeficientes  $A$
+                  y el vector de términos independientes $\vec{b}$ (previamente almacenados 
+                  en un arreglo y un vector respectivamente) 
+                  correspondientes al sistema $A\vec{x}= \vec{b}$, <b>implemente
+                  el  <a href="../Semanas/S15.html#Metodo_Jacobi">  Método de Jacobi </a> </b>
+                  para para encontrar una aproximación una solución del sistema de ecuaciones $A\vec{x}= \vec{b}$,
+                  de tal manera que el error absoluto sea menor que $1\times 10^{-5}$. Utiliza la norma infinita 
+                  $\| \cdot \|_{\infty}$ para calcular la distancia entre dos  aproximaciones consecutivas. 
+                </p>
+
+                <p>Si se excede de $10$ iteraciones antes de alcanzar la aproximación deseada 
+                  detener el algoritmo e imprimir la aproximación obtenida hasta ese punto.</p>
+                  
+              </div>
+
           
 
-          
 
-
-</body>
+</body> 
