@@ -176,15 +176,16 @@
         Despejando $x_{i}$ de la $i$-ésima ecuación se obtiene:
         $$x_{i}= \displaystyle{ \frac{b_{i} - \displaystyle{\sum_{j\not=i} a_{ij} x_{j}} }{a_{ii}}}$$
         Por lo tanto, 
-        $$x_{i}= \displaystyle{ -\frac{1}{a_{ii}} \displaystyle{\sum_{j\not=i} a_{ij} x_{j} } + \frac{b_{i}}{a_{ii}} }, \,\,\,\, \text{ para cada } i=1,\ldots,n $$
+        $$x_{i}= \displaystyle{-\frac{1}{a_{ii}} \left( \displaystyle{\sum_{j\not=i} a_{ij} x_{j} } + b_{i} \right)}, \,\,\,\, \text{ para cada } i=1,\ldots,n $$
         
         
-        El método de Jacobi consiste en calcular la $k$-ésima aproximación de la sucesión $\{\vec{x}^{(k)}\}_{k=1}^{\infty}$, 
-        $$\vec{x}^{(k)} :=\left(\vec{x}^{(k)}_{1}), \vec{x}^{(k)}_{2}, \ldots, \vec{x}^{(k)}_{n}\right)^{t} $$
-        a partir de la $(k-1)$-ésima iteración 
-        $$\vec{x}^{(k-1)} :=\left(\vec{x}^{(k-1)}_{1}), \vec{x}^{(k-1)}_{2}, \ldots, \vec{x}^{(k-1)}_{n}\right)^{t} $$
-        donde 
-        $$x^{(k)}_{i}= \displaystyle{ \frac{b_{i} - \displaystyle{\sum_{j\not=i} a_{ij} x^{(k-1)}_{j}} }{a_{ii}}}, \,\,\,\, \text{ para cada } i=1,\ldots,n$$
+        El método de Jacobi consiste en calcular el  $(k+1)$-ésima término de la sucesión 
+        $\{\vec{x}^{(k)}\}_{k=0}^{\infty}$
+        $$\vec{x}^{(k+1)} :=\left(x^{(k+1)}_{1}),  \ldots, x^{(k+1)}_{n}\right)^{t} $$
+        a partir de la $k$-ésima iteración: 
+        $$\vec{x}^{(k)} :=\left(x^{(k)}_{1}, \ldots, x^{(k)}_{n}\right)^{t} $$
+        De la siguiente manera: 
+        $$x^{(k+1)}_{i}= \displaystyle{-\frac{1}{a_{ii}} \left( \displaystyle{\sum_{j\not=i} a_{ij} x^{(k)}_{j} } + b_{i} \right)}, \,\,\,\, \text{ para cada } i=1,\ldots,n $$
 
 
         
@@ -199,9 +200,18 @@
 
 
     <div class="nota-box"> <h2 class="number-title"> Método de Gauss-Seidel  </h2>
-      <p>El método de Jacobi se obtiene haciendo 
-        $$\vec{x}^{(k+1)} = D^{-1}(L + U )\vec{x}^{(k)} + D^{-1}\vec{b}, \,\,\,\, \text{ para todo } k=0,1,\ldots$$
-        
+      <p> A diferencia del método de Jacobi se utilizan los valores más recientes del vector $\vec{x}^{(k+1)}$,
+        es decir aquellos que ya estan calculados, en lugar de los valores de la iteración anterior como 
+        en el método de Jacobi. Por esta razón, el método de Gauss-Seidel en general converge  o diverge 
+        más rápido que el método de Jacobi.     
+      </p>
+
+      <p>La fórmula de Gauss-Seidel se obtiene directamente de la fórmula de iteración de Jacobi, por ejemplo 
+        para obtener el $k+1$-ésimo término de la sucesión se separa la suma en dos partes: las componentes
+        que aún no han sido calculados se toman del $k$-ésimo término, mientras que las componentes que ya
+        estan calculados se les toma de la misma iteración $k+1$:
+        $$x^{(k+1)}_{i}= \displaystyle{-\frac{1}{a_{ii}} \left( \displaystyle{\sum_{j=1}^{i-1} a_{ij} x^{(k+1)}_{j} + \sum_{j=i+1}^{n} a_{ij} x^{(k)}_{j} } + b_{i} \right)}, \,\,\,\, \text{ para cada } i=1,\ldots,n $$
+
       </p>
     </div>
 
