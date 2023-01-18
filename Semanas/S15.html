@@ -180,8 +180,10 @@
       $$\vec{x} = H\vec{x} + \vec{c}$$
       se satisfacen:
       <ul>
-        <li></li><br>
-        <li></li><br>
+        <!--
+        <li>$\|\vec{x} - \vec{x}^{(k)} \| \leq \| H\|^{k} \| \vec{x}^{(0)} - \vec{x} \|$</li><br>
+        <li>$\|\vec{x} - \vec{x}^{(k)} \| \leq \displaystyle{\frac{\|H\|^{k}}{1 - \| H\|} \| \vec{x}^{(1)} - \vec{x}^{(0)} \|}$</li><br>
+      -->      
       </ul>
 
 
@@ -193,6 +195,7 @@
     
     
     <div class="nota-box"> <h2 class="number-title"> Métodos iterativos clásicos</h2>
+      
       <p>Existen muchas maneras de interpretar la solución de un sistema de ecuaciones lineales:
         $$A\vec{x} = \vec{b}$$
         como el punto fijo de una transformación $\vec{x} = H\vec{x}  + \vec{c}$.
@@ -265,7 +268,7 @@
       </p>
     </div>
 
-    <h1 class="number-title flexbox"> Métodos de jacobi y Gauss-Seidel</h1>     
+    <h1 class="title flexbox"> Métodos de Jacobi y Gauss-Seidel</h1>     
 
     
 
@@ -314,6 +317,13 @@
 
       </p>
     </div>
+
+    <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+      <p>Si $A$ es estrictamente diagonal dominante, entonces para cualquier aproximación inicial $\vec{x}^{(0)}$ 
+        el método de Jacobi como el método de Gauss-Seidel generan sucesiones $\{x^{(k)}\}_{k=0}^{\infty}$  que 
+        convergen a la solución única del sistema $A\vec{x}=\vec{b}$. 
+      </p>
+
 
 
     </body>
