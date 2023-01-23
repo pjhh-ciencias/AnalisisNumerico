@@ -205,9 +205,9 @@
             <thead>
               <tr>
                 <th>$x$</th>
-                <th>$x_{0}$</th>
-                <th>$x_{1}$</th>
-                <th>$x_{2}$</th>
+                <th>$2$</th>
+                <th>$2.5$</th>
+                <th>$0.25$</th>
               </tr>
               </thead>
                 <tbody >
@@ -233,6 +233,26 @@
         </p>
       </div>
 
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>Encuentra el tercer polinomio interpolante de Lagrange de la función $f(x)= e^{x}$,
+          en los puntos $x_{0}=-1,x_{1}=-0.5,x_{2}=0, x_{3}=1$ interpole en $x=0$.
+        </p>
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Nota</h2>
+        <p>El siguiente teorema proporciona un residuo o cota de error que se tiene 
+          al aproximar una función mediante el polinomio interpolante.
+        </p>
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Teorema </h2>
+        <p>Si $x_{0}, x_{1}, \ldots , x_{n}$ son $n+1$ puntos distintos en el intervalo $[a,b]$ y $f\in C[a,b]$, entonces para cada 
+          $x \in C[a,b]$ existe un número real $\xi(x) \in (a,b)$ tal que:
+          $$f(x)= p(x) + \displaystyle{\left[\frac{f^{(n+1)} (\xi(x))}{(n+1)!}\right]} (x - x_{0})(x - x_{1})\cdots (x - x_{n})$$
+          donde $p(x)$ es el $n$-ésimo polinomio interpolante de Lagrange. 
+        </p>
+        <p><b>Demostración:</b></p>
+      </div>
 
 
 
