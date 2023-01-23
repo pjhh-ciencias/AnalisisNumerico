@@ -168,8 +168,8 @@
           donde $x_{0}< x_{1} < \cdots < x_{n}$
         </p>
         <ol>
-          <li>Si $g(x)$ se usa para conocer valores en el intervalo $[x_{0}, x_{n}]$ se dice que $g(x)$ interpola a $f(x)$</li>
-          <li>Si $g(x)$ se usa para conocer valores fuera del intervalo $[x_{0}, x_{n}]$ se dice que $g(x)$ extrapola a $f(x)$</li>
+          <li>Si $g(x)$ se usa para conocer valores en el intervalo $[x_{0}, x_{n}]$ se dice que <b>$g(x)$ interpola a $f(x)$</b></li><br>
+          <li>Si $g(x)$ se usa para conocer valores fuera del intervalo $[x_{0}, x_{n}]$ se dice que <b>$g(x)$ extrapola a $f(x)$</b></li>
         </ol>
         </p>
       </div>
@@ -193,7 +193,7 @@
           &= \displaystyle{\prod_{i\not= k} \displaystyle{\frac{(x-x_{i})}{(x_{k}-x_{i})}}}
           \end{align*}
         </p>
-        <p>el polinomio $p(x)$ se llama <b></b>$n$-ésimo polinomio interpolante de Lagrange</b>:
+        <p>el polinomio $p(x)$ se llama <b>$n$-ésimo polinomio interpolante de Lagrange</b>.
          </p>
       </div>
 
@@ -255,8 +255,49 @@
       </div>
 
 
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>Sea $f(x)=e^{x}$ en $[0,1]$. Supongase quee se tiene que preparar una tabla de la función $f(x)= e^{x}$ para $x\in [0,1]$
+          y que el número de cifras decimales de cada valor $x_{i}$ es  $d\geq 8$; además la diferencia entre los valores adyacentes de $x_{i}$
+           es $h$.
+          ¿Cual debe ser el valor de $h$ para que el polinomio interpolante de Lagrange de grado $1$ tenga un error absoluto a lo maximo
+          de $10^{-6}$?
+        </p> 
+        <p><b>Solución:</b></p>
+
+      </div>
 
 
+      <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+        <p>Sea $f$ una función definida en $x_{0}, x_{1}, \ldots , x_{n}$ y supongamos que $m_{1}, \ldots , m_{n}$
+          son $k$ enteros distintos con $0\leq m_{i}\leq n$ para cada $i=1,\ldots,k$. El polinomio de Lagrange que 
+          es igual a $f(x)$ en los $k$ puntos $x_{m_{1}},  \ldots , x_{m_{k}}$ se denota por $P_{m_{1}\cdots m_{n}}(x)$
+        </p>
+      </div>
+
+      
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>Sea $f(x)=e^{x}$. Si $x_{0}=1, x_{1}=2, x_{2}=4, x_{3}=6$, entonces $P_{1,2,3}(x)$ es el polinomio de Lagrange 
+          que es igual a $e^{x}$ en los puntos $x_{1}, x_{2}$ y $x_{3}$, esto es,
+          $$P_{1,2,3}(x) := \displaystyle{e^{2}\left[\frac{(x-4)(x-6)}{(2-4)(2-6)}\right]+ e^{4} \left[\frac{(x-2)(x-6)}{(4-2)(4-6)}\right] + e^{6}\left[ \frac{(x-2)(x-4)}{(6-2)(6-4)}\right]} $$
+        </p> 
+
+      </div>
+
+      
+      <div class="nota-box"> <h2 class="number-title"> Nota</h2>
+        <p>El siguiente teorema describe un método con el que se generan recursivamente aproximaciones al polinomio de Lagrange.
+        </p>
+      </div>
+
+      
+      <div class="nota-box"> <h2 class="number-title"> Teorema </h2>
+        <p>Sea $f$ una función definida en $x_{0}, x_{1}, \ldots , x_{n}$ y $x_{i}, x_{j}$ dos números distintos de este conjunto, 
+          entonces 
+          $$P(x)= \displaystyle{\frac{(x- x_{j}) P_{0,1,\ldots,j-1,j+1,\ldots,k}(x) - (x- x_{i}) P_{0,1,\ldots,i-1,i+1,\ldots,k} (x)}{x_{i} - x_{j}}}$$
+          el es polinomiode Lagrange de grado $k$ que interpola $f$ en los $k+1$ puntos $x_{0}, x_{1}, \ldots, x_{k}$
+        </p>
+        <p><b>Demostración:</b></p>
+      </div>
 
 
     </body>
