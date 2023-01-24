@@ -223,11 +223,12 @@
           </table>
 
         </p>
+        <p><b>Solución:</b> $$p(x)= -0.5 (x-2.5)(x-4) - \frac{0.4}{0.75}(x-2)(x-4) + \frac{0.25}{3}(x-2)(x-2.5)$$</p>
       </div>
 
       <div class="nota-box"> <h2 class="number-title"> Teorema [Teorema generalizado de Rolle]</h2>
         <p>
-          Si $f\in C[a,b]$ es $n$-veces diferenciable  en $(a,b)$  y si $f(x)$ se anula en los $n+1$ puntos distintos 
+          Si $f\in C[a,b]$ es $n$-veces diferenciable  en $(a,b)$  y si $f(x)$ se anula en $n+1$ puntos distintos 
           $x_{0},x_{1}, \ldots , x_{n} $ en $[a,b]$, entonces existe un número $c\in (a,b)$ tal que 
           $$f^{(n)}(c)=0$$  
         </p>
@@ -248,18 +249,19 @@
 
       <div class="nota-box"> <h2 class="number-title"> Teorema </h2>
         <p>Si $x_{0}, x_{1}, \ldots , x_{n}$ son $n+1$ puntos distintos en el intervalo $[a,b]$ y $f\in C[a,b]$, entonces para cada 
-          $x \in C[a,b]$ existe un número real $\xi(x) \in (a,b)$ tal que:
+          $x \in C^{n+1}[a,b]$ existe un número real $\xi(x) \in (a,b)$ tal que:
           $$f(x)= p(x) + \displaystyle{\left[\frac{f^{(n+1)} (\xi(x))}{(n+1)!}\right]} (x - x_{0})(x - x_{1})\cdots (x - x_{n})$$
-          donde $p(x)$ es el $n$-ésimo polinomio interpolante de Lagrange. 
+          donde $p(x)$ es el $n$-ésimo polinomio interpolante de Lagrange cuya gráfica pasa por los puntos 
+          $(x_{0}, f(x_{0})), (x_{1}, f(x_{1})), \ldots, (x_{n}, f(x_{n}))$ . 
         </p>
         <p><b>Demostración:</b></p>
       </div>
 
       <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
-        <p>Sea $f(x)=e^{x}$ en $[0,1]$. Supongase quee se tiene que preparar una tabla de la función $f(x)= e^{x}$ para $x\in [0,1]$
+        <p>Sea $f(x)=e^{x}$ en $[0,1]$. Supongamos que se tiene que preparar una tabla de la función $f(x)= e^{x}$ para $x\in [0,1]$
           y que el número de cifras decimales de cada valor $x_{i}$ es  $d\geq 8$; además la diferencia entre los valores adyacentes de $x_{i}$
            es $h$.
-          ¿Cual debe ser el valor de $h$ para que el polinomio interpolante de Lagrange de grado $1$ tenga un error absoluto a lo maximo
+          ¿Cual debe ser el valor de $h$ para que el polinomio interpolante de Lagrange de grado $1$ tenga un error absoluto a lo máximo
           de $10^{-6}$?
         </p> 
         <p><b>Solución:</b></p>
