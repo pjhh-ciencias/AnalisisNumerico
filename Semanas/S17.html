@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1]
+          },
+          tags: "ams" /* this part is for numbered equations */
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+
+
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 16 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 16 cardCounter ;
+        }
+    </style>
+  
+    <!-- Top Menu  -->
+
+
+    <header class="main-header">
+        <h1> Análisis Númerico  </h1>
+       <nav class="top-nav">
+        <ul>
+        <li><a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Home.html"> Inicio  </a> </li>
+        <li><a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Informacion_General.html"> Información general </a> </li>
+        <li><a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Notas.html"> Notas </a> </li>
+        <li><a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Ejercicios.html"> Ejercicios </a> </li>
+        <li><a href="https://pjhh-ciencias.github.io/AnalisisNumerico/Enlaces_externos.html"> Links </a> </li>
+        </ul>
+
+       </nav>
+       <!-- 
+        <nav class="small-nav" align=right>
+          <button onclick="myFunction()">Claro/Obscuro 
+        </nav> 
+      -->
+
+      </header>
+
+      <!-- This part is for title in tab-->
+      <title> Semana 17   </title>
+    
+  </head>
+  <body class="fondo-body" >
+    
+    <h1 class="number-title flexbox"> Semana 17</h1>   
+    
+  
+
+    <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+      <p>Para $i,j\in \{0,1,\ldots, n\}$ con $0\leq i \leq j$ denotemos por $Q_{i,j}(x)$
+        al polinomio interpolante de Lagrange de grado $j$ en los $j+1$ números $x_{i-j}, x_{i-j+1}, \ldots, x_{i-1}, x_{i}$
+        esto es:
+        $$Q_{i,j}(x):= P_{i-j,i-j+1,\ldots , i-1,i}(x)$$
+
+      </p>
+     
+    </div>
+
+    
+      <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+
+        <p>Para $i,j\in \{0,1,\ldots, n\}$ con $0\leq i \leq j$ se satisface:</p>
+         $$Q_{i,j}(x)= \displaystyle{\frac{(x-x_{i-j})Q_{i,j-1}(x) - (x-x_{i})Q_{i-1,j-1}(x) }{x_{i} -x_{i-j}}} $$
+      </div>
+
+
+      <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+        <p>La implementación del Teorema para general los polinomios $Q_{i,j}(x)$ se llama <b>Método de Neville</b> 
+          
+        </p>
+      </div>
+
+      
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>Aplicar el método de Neville para interpolar la función $f(x)= \mathrm{ln}(x)$ en $x=2.1$, a partir de 
+          los datos:
+        </p>
+        
+        <p>
+          <table>
+            <thead>
+              <tr>
+                <th>$x$</th>
+                <th>$2$</th>
+                <th>$2.2$</th>
+                <th>$2.3$</th>
+              </tr>
+              </thead>
+                <tbody >
+    
+                  <tr>
+                    <td>$f(x)$</td>
+                    <td>$0.69314718$</td>
+                    <td>$0.78845736$</td>
+                    <td>$0.83290912$</td>
+                    
+                  </tr>
+              </tbody>
+          </table>
+
+        </p>
+        <p><b>Solución:</b>
+        </p>
+      </div>
+      
+      <h1 class="title flexbox"> Interpolación</h1>  
+
+
+     
+      <h1 class="title flexbox"> Diferencias divididas e Interpolación polinomial de Newton</h1>  
+
+      <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
+        <p> Si $x_{0}, x_{1}, \ldots , x_{n}$ son $n+1$ puntos distintos y $f$ es una función cuyps valores estan dados 
+          en esos números entonces existe un único polinomio $p(x)$ de grado  a lo mas $n$, con la propiedad de que 
+          $$f(x_{k})= p(x_{k}),\, \,\, \, k=0,1,\ldots, n$$ 
+          este polinomio esta dado por :
+          $$p(x)= f(x_{0}) L_{n,0}(x) + \cdots + f(x_{n}) L_{n,n}(x) = \sum_{k=0}^{n} f()x_{k} L_{n,k} $$
+          donde para cada $k=0,1,2,\ldots, n$:
+          \begin{align*} L_{n,k}(x)&:= \displaystyle{\frac{(x-x_{0})(x-x_{1})\cdots (x-x_{k-1})(x-x_{k+1})\cdots (x-x_{n})}{(x_{k}-x_{0})(x_{k}-x_{1})\cdots (x_{k}-x_{k-1})(x_{k}-x_{k+1})\cdots (x_{k}-x_{n})}}\\
+          &= \displaystyle{\prod_{i\not= k} \displaystyle{\frac{(x-x_{i})}{(x_{k}-x_{i})}}}
+          \end{align*}
+        </p>
+        <p>el polinomio $p(x)$ se llama <b>$n$-ésimo polinomio interpolante de Lagrange</b>.
+         </p>
+      </div>
+ $$p(x)= -0.5 (x-2.5)(x-4) - \frac{0.4}{0.75}(x-2)(x-4) + \frac{0.25}{3}(x-2)(x-2.5)$$</p>
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Teorema [Teorema generalizado de Rolle]</h2>
+        <p>
+          Si $f\in C[a,b]$ es $n$-veces diferenciable  en $(a,b)$  y si $f(x)$ se anula en $n+1$ puntos distintos 
+          $x_{0},x_{1}, \ldots , x_{n} $ en $[a,b]$, entonces existe un número $c\in (a,b)$ tal que 
+          $$f^{(n)}(c)=0$$  
+        </p>
+      </div>
+
+     <!-- <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>Encuentra el tercer polinomio interpolante de Lagrang
+          e de la función $f(x)= e^{x}$,
+          en los puntos $x_{0}=-1,x_{1}=-0.5,x_{2}=0, x_{3}=1$ interpole en $x=0$.
+        </p>
+      </div>
+      -->
+
+      <div class="nota-box"> <h2 class="number-title"> Nota</h2>
+        <p>El siguiente teorema proporciona un residuo o cota de error que se tiene 
+          al aproximar una función mediante el polinomio interpolante.
+        </p>
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Teorema </h2>
+        <p>Si $x_{0}, x_{1}, \ldots , x_{n}$ son $n+1$ puntos distintos en el intervalo $[a,b]$ y $f\in  C^{n+1}[a,b]$, entonces para cada 
+          $x \in [a,b]$ existe un número real $\xi(x) \in (a,b)$ tal que:
+          $$f(x)= p(x) + \displaystyle{\left[\frac{f^{(n+1)} (\xi(x))}{(n+1)!}\right]} (x - x_{0})(x - x_{1})\cdots (x - x_{n})$$
+          donde $p(x)$ es el $n$-ésimo polinomio interpolante de Lagrange cuya gráfica pasa por los puntos 
+          $(x_{0}, f(x_{0})), (x_{1}, f(x_{1})), \ldots, (x_{n}, f(x_{n}))$ . 
+        </p>
+        <p><b>Demostración:</b></p>
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>Sea $f(x)=e^{x}$ en $[0,1]$. Supongamos que se tiene que preparar una tabla de la función $f(x)= e^{x}$ para $x\in [0,1]$. La diferencia entre los valores adyacentes 
+          de $x_{i}$ es $h>0$. ¿Cuál debe ser el valor de $h$ para que el polinomio interpolante de Lagrange de grado $1$  tenga un error absoluto a lo máximo de $10^{-6}$?
+        </p> 
+        <p><b>Solución:</b></p>
+
+      </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Definición</h2>
+        <p>Sea $f$ una función definida en $x_{0}, x_{1}, \ldots , x_{n}$ y supongamos que $m_{1}, \ldots , m_{n}$
+          son $k$ enteros distintos con $0\leq m_{i}\leq n$ para cada $i=1,\ldots,k$. El polinomio de Lagrange que 
+          es igual a $f(x)$ en los $k$ puntos $x_{m_{1}},  \ldots , x_{m_{k}}$ se denota por $P_{m_{1}\cdots m_{n}}(x)$
+        </p>
+      </div>
+      
+      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
+        <p>Sea $f(x)=e^{x}$. Si $x_{0}=1, x_{1}=2, x_{2}=4, x_{3}=6$, entonces $P_{1,2,3}(x)$ es el polinomio de Lagrange 
+          que es igual a $e^{x}$ en los puntos $x_{1}, x_{2}$ y $x_{3}$, esto es,
+          $$P_{1,2,3}(x) := \displaystyle{e^{2}\left[\frac{(x-4)(x-6)}{(2-4)(2-6)}\right]+ e^{4} \left[\frac{(x-2)(x-6)}{(4-2)(4-6)}\right] + e^{6}\left[ \frac{(x-2)(x-4)}{(6-2)(6-4)}\right]} $$
+        </p> 
+
+      </div>
+      
+      <div class="nota-box"> <h2 class="number-title"> Nota</h2>
+        <p>El siguiente teorema describe un método con el que se generan recursivamente aproximaciones al polinomio de Lagrange.
+        </p>
+      </div>
+      
+      <div class="nota-box"> <h2 class="number-title"> Teorema </h2>
+        <p>Sea $f$ una función definida en $x_{0}, x_{1}, \ldots , x_{k}$ y $x_{i}, x_{j}$ dos números distintos de este conjunto, 
+          entonces 
+          $$P(x)= \displaystyle{\frac{(x- x_{j}) P_{0,1,\ldots,j-1,j+1,\ldots,k}(x) - (x- x_{i}) P_{0,1,\ldots,i-1,i+1,\ldots,k} (x)}{x_{i} - x_{j}}}$$
+          el es polinomiode Lagrange de grado $k$ que interpola $f$ en los $k+1$ puntos $x_{0}, x_{1}, \ldots, x_{k}$
+        </p>
+        <p><b>Demostración:</b></p>
+      </div>
+
+
+    </body>
