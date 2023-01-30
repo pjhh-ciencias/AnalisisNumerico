@@ -88,6 +88,7 @@
     
     <h1 class="number-title flexbox"> Semana 17</h1>   
     
+    <h1 class="title flexbox"> Método de Neville</h1>  
   
 
     <div class="nota-box"> <h2 class="number-title"> Definición</h2>
@@ -147,97 +148,65 @@
         </p>
       </div>
       
-      <h1 class="title flexbox"> Interpolación</h1>  
-
-
-     
+      
       <h1 class="title flexbox"> Diferencias divididas e Interpolación polinomial de Newton</h1>  
 
-      <div class="nota-box"> <h2 class="number-title"> Teorema</h2>
-        <p> Si $x_{0}, x_{1}, \ldots , x_{n}$ son $n+1$ puntos distintos y $f$ es una función cuyps valores estan dados 
-          en esos números entonces existe un único polinomio $p(x)$ de grado  a lo mas $n$, con la propiedad de que 
-          $$f(x_{k})= p(x_{k}),\, \,\, \, k=0,1,\ldots, n$$ 
-          este polinomio esta dado por :
-          $$p(x)= f(x_{0}) L_{n,0}(x) + \cdots + f(x_{n}) L_{n,n}(x) = \sum_{k=0}^{n} f()x_{k} L_{n,k} $$
-          donde para cada $k=0,1,2,\ldots, n$:
-          \begin{align*} L_{n,k}(x)&:= \displaystyle{\frac{(x-x_{0})(x-x_{1})\cdots (x-x_{k-1})(x-x_{k+1})\cdots (x-x_{n})}{(x_{k}-x_{0})(x_{k}-x_{1})\cdots (x_{k}-x_{k-1})(x_{k}-x_{k+1})\cdots (x_{k}-x_{n})}}\\
-          &= \displaystyle{\prod_{i\not= k} \displaystyle{\frac{(x-x_{i})}{(x_{k}-x_{i})}}}
-          \end{align*}
+      <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+        <p> La derivada de una función $f(x)$ en el punto $x_{0}$ se determina mediante la existencia del siguiente límite:
+          $$f^{'}(x)= \displaystyle{\lim_{x \to x_{0}} \frac{f(x) - f(x_{0}) }{x - x_{0}}}$$
+          Cuando la función  $f(x)$ esta dada en forma tabular:
+
+          <table class="info">
+            <thead>
+              <tr>
+                <th>$x$</th>
+                <th>$x_{0}$</th>
+                <th>$x_{1}$</th>
+                <th>$\ldots$</th>
+                <th>$x_{n}$</th>
+              </tr>
+              </thead>
+                <tbody >
+    
+                  <tr>
+                    <td>$f(x)$</td>
+                    <td>$f(x_{0})$</td>
+                    <td>$f(x_{1})$</td>
+                    <td>$\ldots$</td>
+                    <td>$f(x_{n})$</td>
+                    
+                  </tr>
+              </tbody>
+          </table>
+          La derivada de $f(x)$ sólo se puede obteneer aproximandola:
         </p>
-        <p>el polinomio $p(x)$ se llama <b>$n$-ésimo polinomio interpolante de Lagrange</b>.
-         </p>
-      </div>
- $$p(x)= -0.5 (x-2.5)(x-4) - \frac{0.4}{0.75}(x-2)(x-4) + \frac{0.25}{3}(x-2)(x-2.5)$$</p>
-      </div>
 
-      <div class="nota-box"> <h2 class="number-title"> Teorema [Teorema generalizado de Rolle]</h2>
-        <p>
-          Si $f\in C[a,b]$ es $n$-veces diferenciable  en $(a,b)$  y si $f(x)$ se anula en $n+1$ puntos distintos 
-          $x_{0},x_{1}, \ldots , x_{n} $ en $[a,b]$, entonces existe un número $c\in (a,b)$ tal que 
-          $$f^{(n)}(c)=0$$  
+        <p>Por ejemplo, si $x_{0} < x < x_{1}$ entonces la derivada se puede aproximar por:
+          $$f^{'}(x)\approx \displaystyle{ \frac{f(x_{1}) - f(x_{0}) }{x_{1} - x_{0}}}$$
+        Esta aproximación se conoce como la <b>primera diferencia dividida de $f(x)$ 
+          respecto a los argumentos $x_{0}$ y $x_{1}$</b>, y se denota por $f[x_{0},x_{1}]$,
+          esto es:
+          $$f[x_{0},x_{1}]=\displaystyle{ \frac{f(x_{1}) - f(x_{0}) }{x_{1} - x_{0}}}$$
+          En general, la primera diferencia dividida de $f(x)$ respecto a los argumentos 
+          $x_{i}$ y $x_{i+1}$ es:
+          $$f[x_{i}, x_{i+1}]=\displaystyle{ \frac{f(x_{i+1}) - f(x_{i}) }{x_{i+1} - x_{i}}}$$
+          para obtener aproximaciones de derivadas de orden más alto, se estiende el 
+          concepto de diferencias divididas a 
+          ordenes más altos, por ejemplo, <b> la aproximacón de la segunda derivada en el 
+          intervalo $[x_{0},x_{2}]$</b>, esta dada por la segunda diferncia dividida de $f(x)$
+          con argumentos $x_{0},x_{1}, x_{2}$, esto es,
+          $$f[x_{0},x_{1},x_{2}]=\displaystyle{ \frac{f[x_{1},x_{2}] - f[x_{0}, x_{1}] }{x_{2} - x_{0}}}$$
+          La tercera derivada de una función  $f(x)$ en el intervalo $[x_{0},x_{3}]$ se aproxima con la tercera 
+          diferencia dividida de $f(x)$ con argumentos $x_{0}, x_{1}, x_{2}, x_{3}$, esto es, 
+          $$f[x_{0},x_{1},x_{2},x_{3}]=\displaystyle{ \frac{f[x_{1},x_{2},x_{3}] - f[x_{0}, x_{1},x_{2}] }{x_{3} - x_{0}}}$$
+          En general, la $k$-esima diferencia dividida de $f(x)$ con respecto a los argumentos $x_{j}, x_{j+1}, \ldots , x_{j+k}$
+          esta dada por:
+          $$f[x_{j},x_{j+1},\ldots, x_{j+k}]=\displaystyle{ \frac{f[x_{j+1},x_{j+2},\ldots, x_{j+k}] - f[x_{j},x_{j+1},\ldots, x_{j+k-1}] }{x_{j+k} - x_{j}}}$$
+
+        
         </p>
+        
+        
       </div>
-
-     <!-- <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
-        <p>Encuentra el tercer polinomio interpolante de Lagrang
-          e de la función $f(x)= e^{x}$,
-          en los puntos $x_{0}=-1,x_{1}=-0.5,x_{2}=0, x_{3}=1$ interpole en $x=0$.
-        </p>
-      </div>
-      -->
-
-      <div class="nota-box"> <h2 class="number-title"> Nota</h2>
-        <p>El siguiente teorema proporciona un residuo o cota de error que se tiene 
-          al aproximar una función mediante el polinomio interpolante.
-        </p>
-      </div>
-
-      <div class="nota-box"> <h2 class="number-title"> Teorema </h2>
-        <p>Si $x_{0}, x_{1}, \ldots , x_{n}$ son $n+1$ puntos distintos en el intervalo $[a,b]$ y $f\in  C^{n+1}[a,b]$, entonces para cada 
-          $x \in [a,b]$ existe un número real $\xi(x) \in (a,b)$ tal que:
-          $$f(x)= p(x) + \displaystyle{\left[\frac{f^{(n+1)} (\xi(x))}{(n+1)!}\right]} (x - x_{0})(x - x_{1})\cdots (x - x_{n})$$
-          donde $p(x)$ es el $n$-ésimo polinomio interpolante de Lagrange cuya gráfica pasa por los puntos 
-          $(x_{0}, f(x_{0})), (x_{1}, f(x_{1})), \ldots, (x_{n}, f(x_{n}))$ . 
-        </p>
-        <p><b>Demostración:</b></p>
-      </div>
-
-      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
-        <p>Sea $f(x)=e^{x}$ en $[0,1]$. Supongamos que se tiene que preparar una tabla de la función $f(x)= e^{x}$ para $x\in [0,1]$. La diferencia entre los valores adyacentes 
-          de $x_{i}$ es $h>0$. ¿Cuál debe ser el valor de $h$ para que el polinomio interpolante de Lagrange de grado $1$  tenga un error absoluto a lo máximo de $10^{-6}$?
-        </p> 
-        <p><b>Solución:</b></p>
-
-      </div>
-
-      <div class="nota-box"> <h2 class="number-title"> Definición</h2>
-        <p>Sea $f$ una función definida en $x_{0}, x_{1}, \ldots , x_{n}$ y supongamos que $m_{1}, \ldots , m_{n}$
-          son $k$ enteros distintos con $0\leq m_{i}\leq n$ para cada $i=1,\ldots,k$. El polinomio de Lagrange que 
-          es igual a $f(x)$ en los $k$ puntos $x_{m_{1}},  \ldots , x_{m_{k}}$ se denota por $P_{m_{1}\cdots m_{n}}(x)$
-        </p>
-      </div>
-      
-      <div class="nota-box"> <h2 class="number-title"> Ejemplo</h2>
-        <p>Sea $f(x)=e^{x}$. Si $x_{0}=1, x_{1}=2, x_{2}=4, x_{3}=6$, entonces $P_{1,2,3}(x)$ es el polinomio de Lagrange 
-          que es igual a $e^{x}$ en los puntos $x_{1}, x_{2}$ y $x_{3}$, esto es,
-          $$P_{1,2,3}(x) := \displaystyle{e^{2}\left[\frac{(x-4)(x-6)}{(2-4)(2-6)}\right]+ e^{4} \left[\frac{(x-2)(x-6)}{(4-2)(4-6)}\right] + e^{6}\left[ \frac{(x-2)(x-4)}{(6-2)(6-4)}\right]} $$
-        </p> 
-
-      </div>
-      
-      <div class="nota-box"> <h2 class="number-title"> Nota</h2>
-        <p>El siguiente teorema describe un método con el que se generan recursivamente aproximaciones al polinomio de Lagrange.
-        </p>
-      </div>
-      
-      <div class="nota-box"> <h2 class="number-title"> Teorema </h2>
-        <p>Sea $f$ una función definida en $x_{0}, x_{1}, \ldots , x_{k}$ y $x_{i}, x_{j}$ dos números distintos de este conjunto, 
-          entonces 
-          $$P(x)= \displaystyle{\frac{(x- x_{j}) P_{0,1,\ldots,j-1,j+1,\ldots,k}(x) - (x- x_{i}) P_{0,1,\ldots,i-1,i+1,\ldots,k} (x)}{x_{i} - x_{j}}}$$
-          el es polinomiode Lagrange de grado $k$ que interpola $f$ en los $k+1$ puntos $x_{0}, x_{1}, \ldots, x_{k}$
-        </p>
-        <p><b>Demostración:</b></p>
-      </div>
-
 
     </body>
