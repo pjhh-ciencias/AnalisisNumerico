@@ -217,20 +217,55 @@
         </p>
       </div>
 
-
-
-
-      <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+      <div class="nota-box"> <h2 class="number-title"> Nota</h2>
         <p>
           Sea $P_{n}(x)$ el énesimo polinomio de interpolación de Lagrange que coincide con la función $f$
           en los diferentes números $x_{0},x_{1},\ldots, x_{n}$. A pesar de que este polinomio es único, existen 
           representaciones algebraicas que son útiles en ciertas circunstancias. El <b>método de las diferencias 
-          divididas de $f$ respecto a $x_{0},x_{1},\ldots, x_{n}$</b> se utilizan para expresar $P_{n}/x)$ 
+          divididas de $f$ respecto a $x_{0},x_{1},\ldots, x_{n}$</b> se utilizan para expresar $P_{n}(x)$ 
           en la forma:
           $$P_{n}(x)= a_{0} + a_{1}(x-x_{0})+a_{2}(x-x_{0})(x-x_{1}) + \cdots + a_{n}(x-x_{0})\cdots (x-x_{n-1})$$     
           para constantes apropiadas $a_{0}, a_{1}, \ldots, a_{n}$ 
         </p>
       </div>
+
+      <div class="nota-box"> <h2 class="number-title"> Nota</h2>
+        <p>Supongamos que se tienen$n+1$ datos:</p>
+          <p>
+          <table class="info">
+            <thead>
+              <tr>
+                <th>$x$</th>
+                <th>$x_{0}$</th>
+                <th>$x_{1}$</th>
+                <th>$\ldots$</th>
+                <th>$x_{n}$</th>
+              </tr>
+              </thead>
+                <tbody >
+    
+                  <tr>
+                    <td>$f(x)$</td>
+                    <td>$f(x_{0})$</td>
+                    <td>$f(x_{1})$</td>
+                    <td>$\ldots$</td>
+                    <td>$f(x_{n})$</td>
+                    
+                  </tr>
+              </tbody>
+          </table>
+        </p>
+        <p>
+          Utilizando el <b>método de las diferencias divididas de $f$ respecto a $x_{0},x_{1},\ldots, x_{n}$</b> 
+          el polinomio de grado a lo más $n$que pasa por los $n+1$ puntos dados es:
+          $$P_{n}(x)= f[x_0] + \displaystyle{ \sum_{k=1}^{n} f[x_{0}, x_{1}, \ldots , x_{n}] } (x-x_{0})(x-x_{1})  \cdots (x-x_{k-1})$$     
+          
+          Este polinomio se conoce como el polinomio de  <b>diferencias divididas interpolante de Newton.</b>
+        </p>
+      </div>
+
+
+
 
 
 
