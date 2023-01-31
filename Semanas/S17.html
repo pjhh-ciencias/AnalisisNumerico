@@ -102,15 +102,16 @@
     </div>
 
     
-      <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+      <div class="nota-box"> <h2 class="number-title"> Proposición</h2>
 
-        <p>Para $i,j\in \{0,1,\ldots, n\}$ con $0\leq i \leq j$ se satisface:</p>
+        <p>Para $i,j\in \{0,1,\ldots, n\}$ con $0\leq j \leq i$ se satisface:</p>
          $$Q_{i,j}(x)= \displaystyle{\frac{(x-x_{i-j})Q_{i,j-1}(x) - (x-x_{i})Q_{i-1,j-1}(x) }{x_{i} -x_{i-j}}} $$
       </div>
 
 
       <div class="nota-box"> <h2 class="number-title"> Definición</h2>
-        <p>La implementación del Teorema para general los polinomios $Q_{i,j}(x)$ se llama <b>Método de Neville</b> 
+        <p>A la implementación del <a href="../Semanas/S16.html#Teo:metodo_neville">Teorema 16.14</a> 
+          para generar los polinomios $Q_{i,j}(x)$ se le llama <b>Método de Neville</b> 
           
         </p>
       </div>
@@ -151,8 +152,12 @@
       
       <h1 class="title flexbox"> Diferencias divididas e Interpolación polinomial de Newton</h1>  
 
-      <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
-        <p> La derivada de una función $f(x)$ en el punto $x_{0}$ se determina mediante la existencia del siguiente límite:
+     
+
+      <div class="nota-box"> <h2 class="number-title"> Diferencias divididas</h2>
+
+
+        <p>Recordemos que  la derivada de una función $f(x)$ en el punto $x_{0}$ se determina mediante la existencia del siguiente límite:
           $$f^{'}(x)= \displaystyle{\lim_{x \to x_{0}} \frac{f(x) - f(x_{0}) }{x - x_{0}}}$$
           Cuando la función  $f(x)$ esta dada en forma tabular:
 
@@ -202,11 +207,31 @@
           En general, la $k$-esima diferencia dividida de $f(x)$ con respecto a los argumentos $x_{j}, x_{j+1}, \ldots , x_{j+k}$
           esta dada por:
           $$f[x_{j},x_{j+1},\ldots, x_{j+k}]=\displaystyle{ \frac{f[x_{j+1},x_{j+2},\ldots, x_{j+k}] - f[x_{j},x_{j+1},\ldots, x_{j+k-1}] }{x_{j+k} - x_{j}}}$$
-
-        
         </p>
-        
-        
       </div>
+
+      
+
+      <div class="nota-box"> <h2 class="number-title"> Observación</h2>
+        <p>
+        </p>
+      </div>
+
+
+
+
+      <div class="nota-box"> <h2 class="number-title"> Introducción</h2>
+        <p>
+          Sea $P_{n}(x)$ el énesimo polinomio de interpolación de Lagrange que coincide con la función $f$
+          en los diferentes números $x_{0},x_{1},\ldots, x_{n}$. A pesar de que este polinomio es único, existen 
+          representaciones algebraicas que son útiles en ciertas circunstancias. El <b>método de las diferencias 
+          divididas de $f$ respecto a $x_{0},x_{1},\ldots, x_{n}$</b> se utilizan para expresar $P_{n}/x)$ 
+          en la forma:
+          $$P_{n}(x)= a_{0} + a_{1}(x-x_{0})+a_{2}(x-x_{0})(x-x_{1}) + \cdots + a_{n}(x-x_{0})\cdots (x-x_{n-1})$$     
+          para constantes apropiadas $a_{0}, a_{1}, \ldots, a_{n}$ 
+        </p>
+      </div>
+
+
 
     </body>
